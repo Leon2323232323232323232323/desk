@@ -554,3 +554,168 @@
                             <div style="color:var(--text-muted); text-transform:uppercase; font-size:9px;">${k}</div>
                             <div style="font-weight:600; margin-top:2px;">${v}</div>
                           </div>
+                        `).join('')}
+                      </div>
+                    </div>
+                  </div>
+                ` : ''}
+
+                <!-- 3. PROS & CONS -->
+                ${(item.pros || item.cons) ? `
+                  <div class="sub-accordion ${activeSubSections.has(`${item.id}:proscons`) ? 'active' : ''}">
+                    <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'proscons')">
+                      <span class="sub-accordion-title">⚖️ Advantages & Disadvantages</span>
+                      <span class="sub-accordion-arrow">▼</span>
+                    </div>
+                    <div class="sub-accordion-body">
+                      <div class="pro-con-grid">
+                        <div style="display:flex; flex-direction:column; gap:6px;">
+                          ${(item.pros || []).map(p => `<div class="pro-con-item pro-item">✓ ${p}</div>`).join('')}
+                        </div>
+                        <div style="display:flex; flex-direction:column; gap:6px;">
+                          ${(item.cons || []).map(c => `<div class="pro-con-item con-item">✕ ${c}</div>`).join('')}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ` : ''}
+
+                <!-- 4. MICROSWITCH GUIDE -->
+                ${(item.buttonSwitchMapping && item.buttonSwitchMapping.length > 0) ? `
+                  <div class="sub-accordion ${activeSubSections.has(`${item.id}:switches`) ? 'active' : ''}">
+                    <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'switches')">
+                      <span class="sub-accordion-title">🔌 Per-Button Microswitch Suggestions</span>
+                      <span class="sub-accordion-arrow">▼</span>
+                    </div>
+                    <div class="sub-accordion-body">
+                      <table class="switch-table">
+                        <thead>
+                          <tr>
+                            <th>Button Zone</th>
+                            <th>Recommended Switch</th>
+                            <th>Tactile & Acoustic Reason</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          ${item.buttonSwitchMapping.map(m => {
+                            const sw = microswitches[m.recommendedSwitchId] || {};
+                            return `
+                              <tr>
+                                <td><strong>${m.buttonGroup}</strong></td>
+                                <td>
+                                  <div><strong>${sw.name || m.recommendedSwitchId}</strong></div>
+                                  <div style="color:var(--text-muted); font-size:10px;">${sw.force || ''} | ${sw.lifespan || ''}</div>
+                                </td>
+                                <td style="color:var(--text-muted); font-size:11px;">${m.reason || sw.feel || ''}</td>
+                              </tr>
+                            `;
+                          }).join('')}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                ` : ''}
+
+                <!-- 5. MODDING & REPAIR NOTES -->
+                ${item.setupNotes ? `
+                  <div class="sub-accordion ${activeSubSections.has(`${item.id}:notes`) ? 'active' : ''}">
+                    <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'notes')">
+                      <span class="sub-accordion-title">🔧 Modding, Repair & Wiring Notes</span>
+                      <span class="sub-accordion-arrow">▼</span>
+                    </div>
+                    <div class="sub-accordion-body">
+                      <ul class="bullet-list">
+                        ${(Array.isArray(item.setupNotes) ? item.setupNotes : [item.setupNotes]).map(n => `<li>${n}</li>`).join('')}
+                      </ul>
+                    </div>
+                  </div>
+                ` : ''}
+
+                ${item.purchaseUrl ? `
+                  <div style="display:flex; justify-content:flex-end; padding-top:4px;">
+                    <a href="${item.purchaseUrl}" target="_blank" class="buy-link">Official Buy Page ↗</a>
+                  </div>
+                ` : ''}
+
+              </div>
+
+              <!-- Card Expand Footer Bar -->
+              <div class="card-expand-bar" onclick="window.deskApp.toggleCard('${item.id}')">
+                <span>${isExpanded ? '▲ Close Card Sections' : '▼ Expand Sub-Sections (Ergonomics, Specs, Switches)'}</span>
+                <span>${item.price || ''}</span>
+              </div>
+
+            </div>
+          `;
+        }).join('');
+      }
+
+      function toggleCard(id) {
+        if (expandedCardIds.has(id)) {
+          expandedCardIds.delete(id);
+        } else {
+          expandedCardIds.add(id);
+        }
+        renderProducts();
+      }
+
+      function toggleSub(cardId, subSectionKey) {
+        const key = `${cardId}:${subSectionKey}`;
+        if (activeSubSections.has(key)) {
+          activeSubSections.delete(key);
+        } else {
+          activeSubSections.add(key);
+        }
+        renderProducts();
+      }
+
+      function openAndJump(cardId, subSectionKey) {
+        expandedCardIds.add(cardId);
+        activeSubSections.add(`${cardId}:${subSectionKey}`);
+        renderProducts();
+      }
+
+      function setupEventListeners() {
+        categoryNav.addEventListener('click', (e) => {
+          const navItem = e.target.closest('.nav-item');
+          if (!navItem) return;
+          activeCategory = navItem.dataset.cat;
+          location.hash = activeCategory;
+          expandedCardIds.clear();
+          activeSubSections.clear();
+          renderNav();
+          renderProducts();
+        });
+
+        searchInput.addEventListener('input', (e) => {
+          searchQuery = e.target.value;
+          renderProducts();
+        });
+
+        btnExpandAll.addEventListener('click', () => {
+          const filtered = getFilteredProducts();
+          filtered.forEach(p => {
+            expandedCardIds.add(p.id);
+            activeSubSections.add(`${p.id}:ergonomics`);
+            activeSubSections.add(`${p.id}:properties`);
+            activeSubSections.add(`${p.id}:switches`);
+            activeSubSections.add(`${p.id}:proscons`);
+            activeSubSections.add(`${p.id}:notes`);
+          });
+          renderProducts();
+        });
+
+        btnCollapseAll.addEventListener('click', () => {
+          expandedCardIds.clear();
+          activeSubSections.clear();
+          renderProducts();
+        });
+      }
+
+      window.deskApp = { toggleCard, toggleSub, openAndJump };
+
+      init();
+    })();
+  </script>
+</body>
+</html>
