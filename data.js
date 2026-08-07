@@ -1,3 +1,8 @@
+    {
+      id: "basilisk-v3-x",
+      ...
+    },   // <-- comma added here
+
     /* ==========================================================================
        MONITORS CATEGORY
        ========================================================================== */
@@ -279,3 +284,5 @@
         "ARM MOUNT: Use heavy-duty arm; the monitor is front-heavy. Cable management in arm’s channel is essential."
       ]
     }
+  ]
+};
