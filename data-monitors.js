@@ -11,11 +11,7 @@ window.DESK_MONITORS = [
       "HDR Support": "VESA DisplayHDR 400", "VESA Mount": "100 x 100 mm",
       "Connectivity": "DisplayPort 1.4 (DSC), HDMI 2.0 x2, USB 3.2 Hub", "Weight with Stand": "7.6 kg (16.8 lbs)"
     },
-    panelDetails: {
-      panelTech: "AUO M270DAN08.0 Fast-IPS (AHVA)", colorGamut: "98% DCI-P3 / 160% sRGB", deltaE: "< 2 (Factory Calibrated)",
-      osdPreset: "Racing Mode → Color Temp: User (R97 G98 B100), Overdrive: Normal, Dark Boost: Off. For desktop: sRGB Emulation Mode (clamps wide gamut)",
-      iccProfile: "Download ASUS PG279QM ICC from RTINGS.com for sRGB clamp; alternatively use Windows Color Management to load sRGB IEC61966-2.1 profile."
-    },
+    panelDetails: { panelTech: "AUO M270DAN08.0 Fast-IPS (AHVA)", colorGamut: "98% DCI-P3 / 160% sRGB", deltaE: "< 2 (Factory Calibrated)", osdPreset: "Racing Mode → Color Temp: User (R97 G98 B100), Overdrive: Normal, Dark Boost: Off. For desktop: sRGB Emulation Mode (clamps wide gamut)", iccProfile: "Download ASUS PG279QM ICC from RTINGS.com for sRGB clamp; alternatively use Windows Color Management to load sRGB IEC61966-2.1 profile." },
     procurement: [
       { label: "Monitor Arm (Heavy Duty)", cnTerm: "桌面显示器支架 承重10公斤 气压弹簧" },
       { label: "DisplayPort 1.4 DSC Cable", cnTerm: "DP1.4 视频线 8K 240Hz DSC" },
@@ -32,58 +28,14 @@ window.DESK_MONITORS = [
     setupNotes: ["DESK MOUNT: Replace bulky stock stand with Ergotron LX or Amazon Basics arm. Frees up huge desk real estate. Use VESA 100x100mm holes.", "CABLE MANAGEMENT: Route DP 1.4 cable through arm channel. Use 90° right-angle adapter for cleaner look against wall.", "OSD CALIBRATION: For competitive gaming, set Overdrive to 'Normal' (fastest without inverse ghosting). For photo work, enable sRGB Emulation Mode to lock gamut.", "NVIDIA G-SYNC SETUP: Enable in NVIDIA Control Panel for both fullscreen and windowed. Turn V-Sync ON in NVCP and OFF in-game for optimal tear-free motion.", "REFRESH RATE CHECK: Ensure DisplayPort is used; Windows Display Settings → Advanced → 240Hz (or 270Hz OC in monitor OSD)."]
   },
   {
-    id: "dell-u2723qe", category: "monitors", name: "UltraSharp U2723QE", brand: "Dell", status: "Owned", isTopPick: true,
-    topPickBadge: "Best 4K Productivity & USB-C Hub Monitor", price: "$619",
-    purchaseUrl: "https://www.dell.com/en-us/shop/dell-ultrasharp-27-4k-usb-c-hub-monitor-u2723qe/apd/210-bdpf/monitors-monitor-accessories",
-    tags: ["4K", "IPS Black", "USB-C 90W", "Daisy Chain", "KVM", "sRGB 100%"],
-    summary: "Secondary productivity monitor with innovative IPS Black panel delivering 2000:1 contrast ratio. Built-in USB-C hub with 90W power delivery, RJ45 Ethernet, and KVM switch makes it a complete docking station for work laptops.",
-    properties: {
-      "Screen Size": "27-inch Flat", "Resolution": "3840 x 2160 (4K UHD)", "Refresh Rate": "60Hz", "Response Time": "5ms (GtG, Fast Mode)",
-      "Panel Technology": "IPS Black (LGD AH-IPS)", "Color Gamut": "100% sRGB / 98% DCI-P3 / DisplayHDR 400",
-      "HDR Support": "VESA DisplayHDR 400 (edge-lit)", "VESA Mount": "100 x 100 mm",
-      "Connectivity": "USB-C 90W PD, USB-C 15W, DP 1.4, HDMI, 4x USB-A, USB-C Hub, RJ45", "Weight with Stand": "6.6 kg (14.6 lbs)"
-    },
-    panelDetails: {
-      panelTech: "IPS Black (LGD LM270WR8-SSA1)", colorGamut: "100% sRGB, 98% DCI-P3", deltaE: "< 2 (Factory Calibrated sRGB/Rec709)",
-      osdPreset: "Standard Mode → Color Temp: 6500K; Smart HDR: Off. For sRGB work: Color Space → sRGB mode (clamps gamut). For movies: Movie HDR mode with local dimming (edge-lit).",
-      iccProfile: "Pre-installed Dell ICC profile. Use Dell Display Manager for auto-profile switching."
-    },
-    procurement: [
-      { label: "VESA Gas Spring Arm", cnTerm: "显示器支架 气压弹簧 承重 8公斤" },
-      { label: "USB-C 3.2 Gen 2 Cable (1m)", cnTerm: "USB-C 3.2 Gen2 100W 10Gbps 数据线" },
-      { label: "Monitor Light Bar", cnTerm: "明基 ScreenBar 屏幕挂灯" },
-      { label: "Color Calibrator (SpyderX)", cnTerm: "Datacolor SpyderX Pro 校色仪" }
-    ],
-    softwareConfig: { utility: "Dell Display Manager 2.0 / Dell Power Button Sync", runtimeDependency: "DDM.exe runs in background for Easy Arrange layouts", baseLayer: "Easy Arrange grid (12 layouts), PIP/PBP dual source mode", gShiftLayer: "N/A" },
-    glidesAndPad: { stockSkates: "Fully Adjustable Stand (Height, Tilt, Swivel, Pivot)", recommendedSkates: "Single gas spring monitor arm (e.g., Ergotron LX or Amazon Basics)", recommendedPadType: "Desk grommet mount for clean cable routing" },
-    lifespanEstimates: { chassisLife: "8 – 10 years (IPS Black panel, USB-C hub electronics robust)", stockSwitchesLife: "N/A", moddedSwitchesLife: "N/A", limitingFactor: "LED backlight aging or USB-C hub controller failure from power surges." },
-    ergonomicDetails: { scoreReason: "9.5/10 – Perfect 4K 27″ clarity (163 PPI) for text and UI, eliminates scaling artifacts. IPS Black panel reduces eye strain with deeper blacks and high contrast. USB-C single cable connectivity reduces desk clutter.", specificShapeContour: "Thin bezel InfinityEdge design, anti-glare 3H coating. Minimal stand footprint with cable management hole in neck.", comparisonVsCloseCompetitors: "Vs Apple Studio Display: U2723QE is half the price, offers more ports and better ergo stand (height/pivot), but lacks 5K resolution and built-in speakers. Vs ASUS ProArt PA279CV: Dell has much better contrast (2000:1 vs 1000:1) and USB-C hub with Ethernet. Vs LG 27UP850: Dell’s IPS Black delivers superior black levels and more I/O." },
-    pros: ["Revolutionary IPS Black panel – 2000:1 contrast ratio with deep blacks and no IPS glow", "Comprehensive USB-C hub with 90W charging, Ethernet, and KVM switch", "Excellent factory color calibration (Delta E < 2) for sRGB and DCI-P3", "Daisy chain support (MST) for a second 4K monitor via DP-Out", "4-sided virtually borderless design – perfect for multi-monitor setups"],
-    cons: ["60Hz refresh rate unsuitable for high-refresh gaming", "HDR performance limited to edge-lit local dimming (mediocre for movies)", "No built-in speakers (requires external audio solution)", "Plastic construction feels less premium than metal Apple Studio Display"],
-    setupNotes: ["USB-C DOCKING: Use the USB-C upstream port (90W PD). Connect laptop → monitor with single cable. Attach keyboard/mouse to monitor’s USB-A ports; KVM auto-switches between USB-C and DP inputs.", "DAISY CHAIN: Enable MST in OSD. Connect DP-out to a second monitor (e.g., another U2723QE) for dual 4K@60Hz over one cable from laptop.", "CALIBRATION: Use sRGB mode for web design. Switch to DCI-P3 for video editing. Recalibrate with SpyderX Pro every 3-6 months for critical work.", "ARM MOUNT: Remove stand (quick release button). Attach VESA 100x100 plate. Use a heavy-duty arm rated for 8kg+."]
-  },
-  {
     id: "lg-27gr95qe", category: "monitors", name: "UltraGear 27GR95QE-B", brand: "LG", status: "Wishlist", isTopPick: false,
     topPickBadge: "OLED Upgrade Candidate", price: "$799 - $999",
     purchaseUrl: "https://www.lg.com/us/monitors/lg-27gr95qe-b-gaming-monitor",
     tags: ["OLED", "240Hz", "0.03ms", "1440p", "G-Sync", "HDMI 2.1"],
     summary: "Future upgrade target: 27-inch 1440p OLED gaming monitor with true 0.03ms response time, per-pixel dimming, and HDMI 2.1 for console support. Offers infinite contrast ratio and stunning motion clarity.",
-    properties: {
-      "Screen Size": "27-inch Flat", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "240Hz (Native)", "Response Time": "0.03ms (GtG OLED)",
-      "Panel Technology": "OLED (WOLED MLA+)", "Color Gamut": "98.5% DCI-P3", "HDR Support": "VESA DisplayHDR True Black 400",
-      "VESA Mount": "100 x 100 mm", "Connectivity": "HDMI 2.1 x2, DisplayPort 1.4, USB 3.0 Hub", "Weight with Stand": "7.9 kg (17.4 lbs)"
-    },
-    panelDetails: {
-      panelTech: "LG WOLED with MLA+ (Micro Lens Array)", colorGamut: "98.5% DCI-P3", deltaE: "< 1 (Factory Calibrated Gamer 1 mode)",
-      osdPreset: "Gamer 1 → Black Stabilizer: 50, Response Time: Fast, OLED Care features ON. Brightness: 100 nits SDR (100% white window limited due to ABL).",
-      iccProfile: "Use LG Calibration Studio or Windows HDR Calibration app for HDR profiling."
-    },
-    procurement: [
-      { label: "OLED Cleaning Kit", cnTerm: "OLED屏幕清洁剂 无酒精" },
-      { label: "HDMI 2.1 Cable (2m)", cnTerm: "HDMI 2.1 超高速48Gbps 线材" },
-      { label: "Monitor Arm (Heavy)", cnTerm: "桌面支架 承重10公斤" },
-      { label: "BIAS Lighting Strip", cnTerm: "屏幕背光 氛围灯 USB供电 5V" }
-    ],
+    properties: { "Screen Size": "27-inch Flat", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "240Hz (Native)", "Response Time": "0.03ms (GtG OLED)", "Panel Technology": "OLED (WOLED MLA+)", "Color Gamut": "98.5% DCI-P3", "HDR Support": "VESA DisplayHDR True Black 400", "VESA Mount": "100 x 100 mm", "Connectivity": "HDMI 2.1 x2, DisplayPort 1.4, USB 3.0 Hub", "Weight with Stand": "7.9 kg (17.4 lbs)" },
+    panelDetails: { panelTech: "LG WOLED with MLA+ (Micro Lens Array)", colorGamut: "98.5% DCI-P3", deltaE: "< 1 (Factory Calibrated Gamer 1 mode)", osdPreset: "Gamer 1 → Black Stabilizer: 50, Response Time: Fast, OLED Care features ON. Brightness: 100 nits SDR (100% white window limited due to ABL).", iccProfile: "Use LG Calibration Studio or Windows HDR Calibration app for HDR profiling." },
+    procurement: [ { label: "OLED Cleaning Kit", cnTerm: "OLED屏幕清洁剂 无酒精" }, { label: "HDMI 2.1 Cable (2m)", cnTerm: "HDMI 2.1 超高速48Gbps 线材" }, { label: "Monitor Arm (Heavy)", cnTerm: "桌面支架 承重10公斤" }, { label: "BIAS Lighting Strip", cnTerm: "屏幕背光 氛围灯 USB供电 5V" } ],
     softwareConfig: { utility: "LG OnScreen Control / LG Calibration Studio", runtimeDependency: "None (OSD only for most features)", baseLayer: "240Hz, G-Sync Compatible, 10-bit, SDR/HDR Auto Switch", gShiftLayer: "N/A" },
     glidesAndPad: { stockSkates: "VESA 100x100 Mount + Sturdy Stand (Height/Swivel/Tilt/Pivot)", recommendedSkates: "Ergotron HX (heavy-duty) or Amazon Basics Heavy Single Arm", recommendedPadType: "Desk clamp mount with steel reinforcement" },
     lifespanEstimates: { chassisLife: "4 – 6 years (OLED burn-in risk mitigated by pixel refresh and screen move)", stockSwitchesLife: "N/A", moddedSwitchesLife: "N/A", limitingFactor: "OLED burn-in (static HUD elements in LoL, CS2 crosshair, Windows taskbar). Requires active OLED care habits." },
@@ -98,20 +50,9 @@ window.DESK_MONITORS = [
     purchaseUrl: "https://www.gigabyte.com/Monitor/M27Q-rev-20",
     tags: ["1440p", "170Hz", "IPS", "KVM", "USB-C", "Budget"],
     summary: "Excellent value 27-inch 1440p IPS gaming monitor with 170Hz refresh rate, built-in KVM switch, and USB-C connectivity. Covers 95% DCI-P3 for vibrant colors at a budget price.",
-    properties: {
-      "Screen Size": "27-inch Flat", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "170Hz (OC)", "Response Time": "1ms (MPRT) / 4ms (GtG)",
-      "Panel Technology": "IPS (SS IPS)", "Color Gamut": "95% DCI-P3 / 140% sRGB", "HDR Support": "VESA DisplayHDR 400",
-      "VESA Mount": "100 x 100 mm", "Connectivity": "USB-C 18W, DisplayPort 1.4, HDMI 2.0 x2, USB 3.0 Hub", "Weight with Stand": "5.5 kg (12.1 lbs)"
-    },
-    panelDetails: {
-      panelTech: "Sharp IGZO SS IPS", colorGamut: "95% DCI-P3 / 140% sRGB", deltaE: "~2.5 (Pre-calibrated, acceptable for gaming)",
-      osdPreset: "Picture Mode: Standard, Overdrive: Balanced (middle), Black Equalizer: 10, Color Temp: User",
-      iccProfile: "RTINGS ICC profile available. Use sRGB mode in OSD for color-accurate work (clamps gamut)."
-    },
-    procurement: [
-      { label: "Monitor Arm", cnTerm: "显示器支架 气压弹簧 5公斤" },
-      { label: "USB-C Cable", cnTerm: "USB-C 3.2 Gen2 10Gbps 视频线" }
-    ],
+    properties: { "Screen Size": "27-inch Flat", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "170Hz (OC)", "Response Time": "1ms (MPRT) / 4ms (GtG)", "Panel Technology": "IPS (SS IPS)", "Color Gamut": "95% DCI-P3 / 140% sRGB", "HDR Support": "VESA DisplayHDR 400", "VESA Mount": "100 x 100 mm", "Connectivity": "USB-C 18W, DisplayPort 1.4, HDMI 2.0 x2, USB 3.0 Hub", "Weight with Stand": "5.5 kg (12.1 lbs)" },
+    panelDetails: { panelTech: "Sharp IGZO SS IPS", colorGamut: "95% DCI-P3 / 140% sRGB", deltaE: "~2.5 (Pre-calibrated, acceptable for gaming)", osdPreset: "Picture Mode: Standard, Overdrive: Balanced (middle), Black Equalizer: 10, Color Temp: User", iccProfile: "RTINGS ICC profile available. Use sRGB mode in OSD for color-accurate work (clamps gamut)." },
+    procurement: [ { label: "Monitor Arm", cnTerm: "显示器支架 气压弹簧 5公斤" }, { label: "USB-C Cable", cnTerm: "USB-C 3.2 Gen2 10Gbps 视频线" } ],
     softwareConfig: { utility: "Gigabyte OSD Sidekick", runtimeDependency: "OSD_Sidekick.exe (Windows only)", baseLayer: "170Hz OC, G-Sync Compatible, sRGB mode for work", gShiftLayer: "N/A" },
     glidesAndPad: { stockSkates: "VESA 100x100 + Sturdy Stand (Height/Tilt/Pivot)", recommendedSkates: "Single gas spring monitor arm", recommendedPadType: "Desk clamp mount" },
     lifespanEstimates: { chassisLife: "5 – 7 years (SS IPS panel, solid build)", stockSwitchesLife: "N/A", moddedSwitchesLife: "N/A", limitingFactor: "KVM USB controller chip or backlight LED aging." },
@@ -121,48 +62,13 @@ window.DESK_MONITORS = [
     setupNotes: ["KVM SETUP: Connect keyboard/mouse to monitor USB-A ports, USB-C to laptop. Switch between DP (desktop) and USB-C (laptop) in OSD.", "OVERDRIVE: Set to 'Balanced' for best motion clarity without overshoot. 'Speed' introduces ghosting.", "COLOR MODE: Use sRGB mode for web work to clamp wide gamut. Standard mode for gaming vibrancy.", "REFRESH RATE: Enable 170Hz OC in monitor OSD, then set in Windows Display Settings."]
   },
   {
-    id: "dell-s2722qc", category: "monitors", name: "S2722QC", brand: "Dell", status: "Wishlist", isTopPick: true,
-    topPickBadge: "Best Budget 4K USB-C Productivity Monitor", price: "$269 - $309",
-    purchaseUrl: "https://www.dell.com/en-us/shop/dell-27-4k-uhd-usb-c-monitor-s2722qc/apd/210-bccp/monitors-monitor-accessories",
-    tags: ["4K", "USB-C 65W", "IPS", "Budget", "VESA", "Productivity"],
-    summary: "Affordable 27-inch 4K IPS monitor with USB-C 65W power delivery, AMD FreeSync, and built-in speakers. Perfect budget 4K productivity display for work-from-home and casual media consumption.",
-    properties: {
-      "Screen Size": "27-inch Flat", "Resolution": "3840 x 2160 (4K UHD)", "Refresh Rate": "60Hz", "Response Time": "4ms (GtG Extreme)",
-      "Panel Technology": "IPS", "Color Gamut": "99% sRGB", "HDR Support": "HDR10 (software)", "VESA Mount": "100 x 100 mm",
-      "Connectivity": "USB-C 65W PD, HDMI 2.0 x2, USB 3.2 Gen1 x2", "Weight with Stand": "5.0 kg (11.0 lbs)"
-    },
-    panelDetails: {
-      panelTech: "IPS (LG Display LM270WR4-SSC1 variant)", colorGamut: "99% sRGB", deltaE: "~2.0 (Pre-calibrated, decent out of box)",
-      osdPreset: "Standard mode, Brightness: 75%, Contrast: 75%, Response Time: Normal (not Extreme – avoids ghosting).",
-      iccProfile: "Dell factory ICC loaded. For sRGB work, no additional calibration needed for most users."
-    },
-    procurement: [
-      { label: "Monitor Arm (Light)", cnTerm: "显示器支架 承重5公斤 气压弹簧" },
-      { label: "USB-C Cable (included)", cnTerm: "USB-C 3.2 Gen1 65W 数据线" }
-    ],
-    softwareConfig: { utility: "Dell Display Manager", runtimeDependency: "DDM.exe (optional, for Easy Arrange layouts)", baseLayer: "Easy Arrange grid, Auto-input switching", gShiftLayer: "N/A" },
-    glidesAndPad: { stockSkates: "VESA 100x100 + Tilt-Adjustable Stand", recommendedSkates: "Light single monitor arm", recommendedPadType: "Desk clamp mount" },
-    lifespanEstimates: { chassisLife: "6 – 8 years (IPS panel, simple electronics)", stockSwitchesLife: "N/A", moddedSwitchesLife: "N/A", limitingFactor: "USB-C port wear or backlight LED aging. Power delivery circuit may degrade after 5+ years." },
-    ergonomicDetails: { scoreReason: "7.5/10 – Height-adjustable and tilt-capable, but lacks swivel and pivot on stock stand. 27″ 4K at 163 PPI delivers razor-sharp text for coding and documents.", specificShapeContour: "Slim 3-sided bezel, subtle textured plastic back. Clean, professional look for office or home desk.", comparisonVsCloseCompetitors: "Vs Apple Studio Display: 1/5th the price, but no 5K, no metal build, no speakers quality. Vs LG 27UP600: Dell includes USB-C 65W PD and better stand. Vs Gigabyte M28U: M28U is 144Hz gaming-focused and $200 more." },
-    pros: ["Affordable entry into 4K USB-C productivity ($269-$309)", "USB-C 65W PD charges most laptops with single cable", "Sharp 163 PPI for crisp text and UI elements", "Decent factory color calibration (99% sRGB, ΔE ~2)", "Built-in dual 3W speakers (basic but functional)"],
-    cons: ["60Hz only — not suitable for gaming beyond casual play", "Limited to sRGB gamut (no DCI-P3 for creative work)", "Tilt-only stand out of box (no swivel/pivot)", "Contrast typical of IPS (~1000:1), blacks not deep", "Response time 'Extreme' mode introduces ghosting — stick to Normal"],
-    setupNotes: ["SINGLE CABLE SETUP: USB-C cable carries 4K video + 65W power to laptop. Connect keyboard/mouse to monitor USB-A ports for a clean docking experience.", "RESPONSE TIME: Set to 'Normal' in OSD. 'Extreme' causes severe inverse ghosting and is not recommended.", "BRIGHTNESS: Reduce to 50-60% for comfortable SDR office use (~120 nits). Monitor can reach ~350 nits max.", "COLOR ACCURACY: For non-critical work, factory calibration is sufficient. No wide-gamut clamping needed (sRGB native).", "ARM MOUNT: Lightweight at 5kg, any budget gas-spring arm will handle it easily."]
-  },
-  {
     id: "aoc-24g2", category: "monitors", name: "24G2", brand: "AOC", status: "Wishlist",
     topPickBadge: "Best Budget 144Hz 1080p Gaming", price: "$179",
     purchaseUrl: "https://aoc.com/us/gaming/products/monitors/24g2",
     tags: ["1080p", "144Hz", "IPS", "Budget", "FreeSync", "1ms"],
     summary: "The entry‑level 144Hz king. 24‑inch IPS panel with 1ms MPRT, FreeSync Premium, and surprisingly good color accuracy for under $180. Ideal for competitive gaming on a tight budget.",
-    properties: {
-      "Screen Size": "23.8‑inch Flat", "Resolution": "1920 x 1080 (FHD)", "Refresh Rate": "144Hz", "Response Time": "1ms (MPRT)",
-      "Panel Technology": "IPS", "Color Gamut": "126% sRGB", "VESA Mount": "100 x 100 mm",
-      "Connectivity": "DisplayPort 1.2, HDMI 1.4 x2, VGA", "Weight with Stand": "4.2 kg"
-    },
-    panelDetails: {
-      panelTech: "IPS (Panda LC238LF1F)", colorGamut: "126% sRGB / 96% DCI‑P3", deltaE: "~2.5 (decent)",
-      osdPreset: "Game Mode: FPS, Overdrive: Medium, Shadow Control: 50", iccProfile: "RTINGS ICC available. Out‑of‑box decent for gaming."
-    },
+    properties: { "Screen Size": "23.8‑inch Flat", "Resolution": "1920 x 1080 (FHD)", "Refresh Rate": "144Hz", "Response Time": "1ms (MPRT)", "Panel Technology": "IPS", "Color Gamut": "126% sRGB", "VESA Mount": "100 x 100 mm", "Connectivity": "DisplayPort 1.2, HDMI 1.4 x2, VGA", "Weight with Stand": "4.2 kg" },
+    panelDetails: { panelTech: "IPS (Panda LC238LF1F)", colorGamut: "126% sRGB / 96% DCI‑P3", deltaE: "~2.5 (decent)", osdPreset: "Game Mode: FPS, Overdrive: Medium, Shadow Control: 50", iccProfile: "RTINGS ICC available. Out‑of‑box decent for gaming." },
     softwareConfig: { utility: "AOC G‑Menu", runtimeDependency: "None (standalone .exe)" },
     glidesAndPad: { stockSkates: "Tilt‑only stand (can VESA mount)", recommendedSkates: "Single gas spring arm", recommendedPadType: "Desk clamp" },
     lifespanEstimates: { chassisLife: "4 – 6 years", limitingFactor: "LED backlight or capacitors" },
@@ -177,16 +83,8 @@ window.DESK_MONITORS = [
     purchaseUrl: "https://www.lg.com/us/monitors/lg-27gp850-b-gaming-monitor",
     tags: ["1440p", "180Hz", "Nano IPS", "1ms", "G‑Sync Compatible"],
     summary: "Incredible 27‑inch Nano IPS with 180Hz overclock, 1ms GtG, and 98% DCI‑P3 coverage. The ideal middle ground between speed and color at a great price.",
-    properties: {
-      "Screen Size": "27‑inch Flat", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "165Hz (180Hz OC)", "Response Time": "1ms (GtG)",
-      "Panel Technology": "Nano IPS", "Color Gamut": "98% DCI‑P3 / 135% sRGB", "VESA Mount": "100 x 100 mm",
-      "Connectivity": "DisplayPort 1.4, HDMI 2.0 x2, USB 3.0 Hub", "Weight with Stand": "6.3 kg"
-    },
-    panelDetails: {
-      panelTech: "LG Nano IPS (LM270WQA‑SSA1)", colorGamut: "98% DCI‑P3 / 135% sRGB", deltaE: "~2.0 (factory calibrated)",
-      osdPreset: "Gamer 1, Black Stabilizer: 50, Response Time: Fast, Overdrive: Normal",
-      iccProfile: "RTINGS ICC available; sRGB mode locks gamut for accurate work."
-    },
+    properties: { "Screen Size": "27‑inch Flat", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "165Hz (180Hz OC)", "Response Time": "1ms (GtG)", "Panel Technology": "Nano IPS", "Color Gamut": "98% DCI‑P3 / 135% sRGB", "VESA Mount": "100 x 100 mm", "Connectivity": "DisplayPort 1.4, HDMI 2.0 x2, USB 3.0 Hub", "Weight with Stand": "6.3 kg" },
+    panelDetails: { panelTech: "LG Nano IPS (LM270WQA‑SSA1)", colorGamut: "98% DCI‑P3 / 135% sRGB", deltaE: "~2.0 (factory calibrated)", osdPreset: "Gamer 1, Black Stabilizer: 50, Response Time: Fast, Overdrive: Normal", iccProfile: "RTINGS ICC available; sRGB mode locks gamut for accurate work." },
     softwareConfig: { utility: "LG OnScreen Control", runtimeDependency: "None (OSD)" },
     glidesAndPad: { stockSkates: "Height/Tilt/Pivot stand + VESA", recommendedSkates: "Ergotron LX arm", recommendedPadType: "Desk clamp" },
     lifespanEstimates: { chassisLife: "5 – 7 years", limitingFactor: "Backlight LED aging or USB hub controller" },
@@ -201,16 +99,8 @@ window.DESK_MONITORS = [
     purchaseUrl: "https://www.samsung.com/us/computing/monitors/gaming/27--odyssey-g5-g50a-gaming-monitor-ls27ag500pnxza/",
     tags: ["1440p", "165Hz", "IPS", "FreeSync Premium", "Budget"],
     summary: "Solid 27‑inch 1440p IPS panel with 165Hz, FreeSync Premium, and low input lag at a very attractive price. Great entry into 1440p high refresh.",
-    properties: {
-      "Screen Size": "27‑inch Flat", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "165Hz", "Response Time": "1ms (MPRT)",
-      "Panel Technology": "IPS", "Color Gamut": "99% sRGB", "VESA Mount": "100 x 100 mm",
-      "Connectivity": "DisplayPort 1.2, HDMI 2.0", "Weight with Stand": "5.5 kg"
-    },
-    panelDetails: {
-      panelTech: "IPS (BOE MV270QHM‑NX1)", colorGamut: "99% sRGB", deltaE: "~3.0 (average)",
-      osdPreset: "Custom (FPS) mode, Response Time: Faster, Black Equalizer: 13",
-      iccProfile: "RTINGS ICC available. Calibration recommended."
-    },
+    properties: { "Screen Size": "27‑inch Flat", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "165Hz", "Response Time": "1ms (MPRT)", "Panel Technology": "IPS", "Color Gamut": "99% sRGB", "VESA Mount": "100 x 100 mm", "Connectivity": "DisplayPort 1.2, HDMI 2.0", "Weight with Stand": "5.5 kg" },
+    panelDetails: { panelTech: "IPS (BOE MV270QHM‑NX1)", colorGamut: "99% sRGB", deltaE: "~3.0 (average)", osdPreset: "Custom (FPS) mode, Response Time: Faster, Black Equalizer: 13", iccProfile: "RTINGS ICC available. Calibration recommended." },
     softwareConfig: { utility: "Samsung Monitor Software", runtimeDependency: "None" },
     glidesAndPad: { stockSkates: "Tilt + height adjustable stand", recommendedSkates: "Monitor arm", recommendedPadType: "Desk clamp" },
     lifespanEstimates: { chassisLife: "4 – 6 years", limitingFactor: "Backlight or power board" },
@@ -220,44 +110,13 @@ window.DESK_MONITORS = [
     setupNotes: ["OVERDRIVE: Set to 'Faster' for gaming; 'Fastest' causes overshoot.", "COLOR: Custom mode with reduced red can improve accuracy out of box."]
   },
   {
-    id: "dell-s2721qs", category: "monitors", name: "S2721QS", brand: "Dell", status: "Wishlist",
-    topPickBadge: "Best budget 4K home office", price: "$279",
-    purchaseUrl: "https://www.dell.com/en-us/shop/dell-27-4k-uhd-monitor-s2721qs/apd/210-axsw/monitors-monitor-accessories",
-    tags: ["4K", "IPS", "Budget", "VESA", "Productivity"],
-    summary: "Affordable 27‑inch 4K IPS monitor with AMD FreeSync, dual HDMI, and a clean design. Perfect for productivity, coding, and media consumption.",
-    properties: {
-      "Screen Size": "27‑inch Flat", "Resolution": "3840 x 2160 (4K UHD)", "Refresh Rate": "60Hz", "Response Time": "4ms (GtG)",
-      "Panel Technology": "IPS", "Color Gamut": "99% sRGB", "VESA Mount": "100 x 100 mm",
-      "Connectivity": "HDMI 2.0 x2, DisplayPort 1.2", "Weight with Stand": "5.6 kg"
-    },
-    panelDetails: {
-      panelTech: "IPS (LG Display LM270WR3‑SSC1)", colorGamut: "99% sRGB", deltaE: "~2.5",
-      osdPreset: "Standard mode, Brightness: 75%, Contrast: 75%", iccProfile: "Factory calibrated, decent out of box."
-    },
-    softwareConfig: { utility: "Dell Display Manager", runtimeDependency: "DDM.exe (optional)" },
-    glidesAndPad: { stockSkates: "Tilt + height + swivel stand", recommendedSkates: "Monitor arm (optional)", recommendedPadType: "Desk clamp" },
-    lifespanEstimates: { chassisLife: "5 – 7 years", limitingFactor: "Backlight LED aging" },
-    ergonomicDetails: { scoreReason: "8/10 – Good stand with height, tilt, swivel. No pivot though. 163 PPI is crisp for text.", comparisonVsCloseCompetitors: "Vs LG 27UP600: Dell has a better stand and more connectivity. Vs S2722QC (USB‑C): cheaper but no USB‑C or built‑in speakers." },
-    pros: ["Sharp 4K at a low price", "Good ergonomic stand", "99% sRGB, decent color", "Dell build quality"],
-    cons: ["No USB‑C", "No built‑in speakers", "60Hz only", "Contrast typical IPS"],
-    setupNotes: ["BRIGHTNESS: ~65% for comfortable SDR (~120 nits).", "COLOR: Standard mode is fine for most work; no wide‑gamut."]
-  },
-  {
     id: "gigabyte-m28u", category: "monitors", name: "M28U", brand: "Gigabyte", status: "Wishlist",
     topPickBadge: "Best value 4K 144Hz gaming", price: "$499",
     purchaseUrl: "https://www.gigabyte.com/Monitor/M28U",
     tags: ["4K", "144Hz", "IPS", "HDMI 2.1", "KVM", "USB‑C"],
     summary: "The sweet spot for 4K gaming: 28‑inch IPS, 144Hz, HDMI 2.1 for consoles, and a built‑in KVM. Under $500 it’s a steal.",
-    properties: {
-      "Screen Size": "28‑inch Flat", "Resolution": "3840 x 2160 (4K UHD)", "Refresh Rate": "144Hz (120Hz console)", "Response Time": "1ms (MPRT) / 4ms (GtG)",
-      "Panel Technology": "IPS (SS IPS)", "Color Gamut": "94% DCI‑P3 / 120% sRGB", "VESA Mount": "100 x 100 mm",
-      "Connectivity": "HDMI 2.1 x2, DisplayPort 1.4, USB‑C 18W, USB 3.0 Hub", "Weight with Stand": "6.9 kg"
-    },
-    panelDetails: {
-      panelTech: "Innolux M280DCA‑E7B IPS", colorGamut: "94% DCI‑P3 / 120% sRGB", deltaE: "~2.5",
-      osdPreset: "Picture Mode: Standard, Overdrive: Balanced, Black Equalizer: 10",
-      iccProfile: "RTINGS ICC available. sRGB mode for color‑critical work."
-    },
+    properties: { "Screen Size": "28‑inch Flat", "Resolution": "3840 x 2160 (4K UHD)", "Refresh Rate": "144Hz (120Hz console)", "Response Time": "1ms (MPRT) / 4ms (GtG)", "Panel Technology": "IPS (SS IPS)", "Color Gamut": "94% DCI‑P3 / 120% sRGB", "VESA Mount": "100 x 100 mm", "Connectivity": "HDMI 2.1 x2, DisplayPort 1.4, USB‑C 18W, USB 3.0 Hub", "Weight with Stand": "6.9 kg" },
+    panelDetails: { panelTech: "Innolux M280DCA‑E7B IPS", colorGamut: "94% DCI‑P3 / 120% sRGB", deltaE: "~2.5", osdPreset: "Picture Mode: Standard, Overdrive: Balanced, Black Equalizer: 10", iccProfile: "RTINGS ICC available. sRGB mode for color‑critical work." },
     softwareConfig: { utility: "Gigabyte OSD Sidekick", runtimeDependency: "OSD_Sidekick.exe" },
     glidesAndPad: { stockSkates: "Height/Tilt/Swivel stand + VESA", recommendedSkates: "Monitor arm", recommendedPadType: "Desk clamp" },
     lifespanEstimates: { chassisLife: "5 – 7 years", limitingFactor: "KVM USB controller or backlight" },
@@ -272,15 +131,8 @@ window.DESK_MONITORS = [
     purchaseUrl: "https://www.asus.com/displays-desktops/monitors/tuf-gaming/tuf-gaming-vg259qm/",
     tags: ["1080p", "280Hz", "IPS", "ELMB SYNC", "Esports"],
     summary: "A true esports weapon: 24.5‑inch 1080p IPS, overclockable to 280Hz, with ELMB SYNC (motion blur reduction while adaptive sync is active). Unbeatable for competitive shooters.",
-    properties: {
-      "Screen Size": "24.5‑inch Flat", "Resolution": "1920 x 1080 (FHD)", "Refresh Rate": "240Hz (280Hz OC)", "Response Time": "1ms (GtG)",
-      "Panel Technology": "IPS", "Color Gamut": "100% sRGB", "VESA Mount": "100 x 100 mm",
-      "Connectivity": "DisplayPort 1.2, HDMI 2.0 x2", "Weight with Stand": "5.1 kg"
-    },
-    panelDetails: {
-      panelTech: "AUO M250HAN01.6 IPS", colorGamut: "100% sRGB", deltaE: "~2.5",
-      osdPreset: "Racing Mode, Overdrive: 80, ELMB SYNC: On (for motion clarity)", iccProfile: "RTINGS ICC available."
-    },
+    properties: { "Screen Size": "24.5‑inch Flat", "Resolution": "1920 x 1080 (FHD)", "Refresh Rate": "240Hz (280Hz OC)", "Response Time": "1ms (GtG)", "Panel Technology": "IPS", "Color Gamut": "100% sRGB", "VESA Mount": "100 x 100 mm", "Connectivity": "DisplayPort 1.2, HDMI 2.0 x2", "Weight with Stand": "5.1 kg" },
+    panelDetails: { panelTech: "AUO M250HAN01.6 IPS", colorGamut: "100% sRGB", deltaE: "~2.5", osdPreset: "Racing Mode, Overdrive: 80, ELMB SYNC: On (for motion clarity)", iccProfile: "RTINGS ICC available." },
     softwareConfig: { utility: "ASUS DisplayWidget", runtimeDependency: "None" },
     glidesAndPad: { stockSkates: "Height/Tilt/Swivel/Pivot stand", recommendedSkates: "Arm (optional)", recommendedPadType: "Desk clamp" },
     lifespanEstimates: { chassisLife: "4 – 6 years", limitingFactor: "Backlight or capacitor aging" },
@@ -289,23 +141,14 @@ window.DESK_MONITORS = [
     cons: ["1080p resolution (not ideal for productivity)", "Average contrast ratio", "HDR400 is basic"],
     setupNotes: ["OVERDRIVE: Set to 80 for best motion clarity. ELMB SYNC works with G‑Sync/FreeSync.", "CONSOLE: HDMI 2.0 limits you to 144Hz. Use DisplayPort for PC."]
   },
-
-  // ——— NEW: extra budget/value champions ———
   {
     id: "acer-xv252q", category: "monitors", name: "Nitro XV252Q F", brand: "Acer", status: "Wishlist",
     topPickBadge: "Best Budget 240Hz 1080p for Competitive Esports", price: "$199",
     purchaseUrl: "https://www.acer.com/us-en/predator/monitors/nitro-xv2/pdp/UM.KX2AA.F01",
     tags: ["1080p", "240Hz", "IPS", "FreeSync Premium", "Budget"],
     summary: "One of the cheapest 240Hz IPS monitors on the market. 24.5‑inch with 1ms response, FreeSync Premium, and a fully ergonomic stand. Perfect for competitive players who need high refresh without the premium price tag.",
-    properties: {
-      "Screen Size": "24.5‑inch Flat", "Resolution": "1920 x 1080 (FHD)", "Refresh Rate": "240Hz", "Response Time": "1ms (GtG)",
-      "Panel Technology": "IPS", "Color Gamut": "99% sRGB", "VESA Mount": "100 x 100 mm",
-      "Connectivity": "DisplayPort 1.2, HDMI 2.0 x2", "Weight with Stand": "4.8 kg"
-    },
-    panelDetails: {
-      panelTech: "IPS (AUO M250HAN01.C)", colorGamut: "99% sRGB", deltaE: "~2.8",
-      osdPreset: "Action mode, Overdrive: Normal, Black Boost: 5", iccProfile: "RTINGS ICC available."
-    },
+    properties: { "Screen Size": "24.5‑inch Flat", "Resolution": "1920 x 1080 (FHD)", "Refresh Rate": "240Hz", "Response Time": "1ms (GtG)", "Panel Technology": "IPS", "Color Gamut": "99% sRGB", "VESA Mount": "100 x 100 mm", "Connectivity": "DisplayPort 1.2, HDMI 2.0 x2", "Weight with Stand": "4.8 kg" },
+    panelDetails: { panelTech: "IPS (AUO M250HAN01.C)", colorGamut: "99% sRGB", deltaE: "~2.8", osdPreset: "Action mode, Overdrive: Normal, Black Boost: 5", iccProfile: "RTINGS ICC available." },
     softwareConfig: { utility: "Acer Display Widget", runtimeDependency: "None" },
     glidesAndPad: { stockSkates: "Height/Tilt/Swivel/Pivot stand", recommendedSkates: "Monitor arm", recommendedPadType: "Desk clamp" },
     lifespanEstimates: { chassisLife: "4 – 6 years", limitingFactor: "Backlight or capacitor aging" },
@@ -320,15 +163,8 @@ window.DESK_MONITORS = [
     purchaseUrl: "https://www.gigabyte.com/Monitor/G34WQC",
     tags: ["Ultrawide", "1440p", "144Hz", "VA", "FreeSync Premium", "Budget"],
     summary: "The most affordable 34‑inch ultrawide 1440p 144Hz on the market. Immersive 1500R curve, deep VA contrast, and FreeSync Premium make it perfect for sim racing, RPGs, and productivity (side‑by‑side windows).",
-    properties: {
-      "Screen Size": "34‑inch Curved (1500R)", "Resolution": "3440 x 1440 (UWQHD)", "Refresh Rate": "144Hz", "Response Time": "1ms (MPRT)",
-      "Panel Technology": "VA", "Color Gamut": "90% DCI‑P3 / 120% sRGB", "VESA Mount": "100 x 100 mm",
-      "Connectivity": "DisplayPort 1.4, HDMI 2.0 x2", "Weight with Stand": "8.2 kg"
-    },
-    panelDetails: {
-      panelTech: "VA (Samsung SVA)", colorGamut: "90% DCI‑P3 / 120% sRGB", deltaE: "~3.0",
-      osdPreset: "FPS mode, Overdrive: Balanced, Black Equalizer: 10", iccProfile: "RTINGS ICC available."
-    },
+    properties: { "Screen Size": "34‑inch Curved (1500R)", "Resolution": "3440 x 1440 (UWQHD)", "Refresh Rate": "144Hz", "Response Time": "1ms (MPRT)", "Panel Technology": "VA", "Color Gamut": "90% DCI‑P3 / 120% sRGB", "VESA Mount": "100 x 100 mm", "Connectivity": "DisplayPort 1.4, HDMI 2.0 x2", "Weight with Stand": "8.2 kg" },
+    panelDetails: { panelTech: "VA (Samsung SVA)", colorGamut: "90% DCI‑P3 / 120% sRGB", deltaE: "~3.0", osdPreset: "FPS mode, Overdrive: Balanced, Black Equalizer: 10", iccProfile: "RTINGS ICC available." },
     softwareConfig: { utility: "Gigabyte OSD Sidekick", runtimeDependency: "OSD_Sidekick.exe" },
     glidesAndPad: { stockSkates: "Tilt + height adjustable stand", recommendedSkates: "Monitor arm (heavy‑duty)", recommendedPadType: "Desk clamp" },
     lifespanEstimates: { chassisLife: "5 – 7 years", limitingFactor: "Backlight or VA panel black smearing" },
@@ -336,28 +172,5 @@ window.DESK_MONITORS = [
     pros: ["3440x1440 ultrawide immersion at a bargain price", "144Hz, FreeSync Premium", "VA panel delivers deep blacks and good contrast", "Height/tilt adjustable stand"],
     cons: ["VA panel has slight black smearing", "No USB‑C or KVM", "Stand footprint is large"],
     setupNotes: ["OVERDRIVE: Set to 'Balanced' – 'Speed' introduces overshoot.", "COLOR: Use sRGB mode for accurate work; FPS mode for gaming.", "MOUNT: Monitor is heavy (8.2 kg) – use a heavy‑duty arm."]
-  },
-  {
-    id: "dell-s2722dgm", category: "monitors", name: "S2722DGM", brand: "Dell", status: "Wishlist",
-    topPickBadge: "Best Budget 1440p Gaming with Deep Blacks", price: "$249",
-    purchaseUrl: "https://www.dell.com/en-us/shop/dell-27-curved-gaming-monitor-s2722dgm/apd/210-ayml/monitors-monitor-accessories",
-    tags: ["1440p", "165Hz", "VA", "FreeSync Premium", "Curved"],
-    summary: "A strong budget 1440p gaming monitor with a curved VA panel, 165Hz, and excellent contrast (deeper blacks than IPS). Great for cinematic games and dark‑room gaming.",
-    properties: {
-      "Screen Size": "27‑inch Curved (1500R)", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "165Hz", "Response Time": "1ms (MPRT)",
-      "Panel Technology": "VA", "Color Gamut": "99% sRGB", "VESA Mount": "100 x 100 mm",
-      "Connectivity": "DisplayPort 1.4, HDMI 2.0 x2", "Weight with Stand": "5.8 kg"
-    },
-    panelDetails: {
-      panelTech: "VA (Samsung SVA)", colorGamut: "99% sRGB", deltaE: "~2.5",
-      osdPreset: "Game mode: FPS, Response Time: Super Fast, Dark Stabilizer: 0", iccProfile: "RTINGS ICC available."
-    },
-    softwareConfig: { utility: "Dell Display Manager", runtimeDependency: "DDM.exe (optional)" },
-    glidesAndPad: { stockSkates: "Height/Tilt adjustable stand", recommendedSkates: "Monitor arm", recommendedPadType: "Desk clamp" },
-    lifespanEstimates: { chassisLife: "4 – 6 years", limitingFactor: "Backlight or panel wear" },
-    ergonomicDetails: { scoreReason: "7.5/10 – Curved 1500R adds immersion. Height and tilt adjustable but no swivel or pivot.", comparisonVsCloseCompetitors: "Vs Samsung Odyssey G5 (IPS): Dell has far better contrast (VA) and similar price. Vs Gigabyte M27Q (IPS): Dell trades slightly worse viewing angles and response times for much deeper blacks and a $20 lower price." },
-    pros: ["Excellent VA contrast (3000:1) for deep blacks", "165Hz, FreeSync Premium", "Immersive 1500R curve", "Dell build quality and stand"],
-    cons: ["VA panel can exhibit black smearing at high refresh", "No wide gamut (sRGB only)", "No USB‑C", "Stand lacks swivel/pivot"],
-    setupNotes: ["OVERDRIVE: Set to 'Super Fast' – 'Extreme' causes overshoot.", "DARK STABILIZER: Set to 0 for natural blacks; increase for competitive visibility.", "MOUNT: VESA mount compatible."]
   }
 ];
