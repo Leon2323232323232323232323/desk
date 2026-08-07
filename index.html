@@ -344,13 +344,27 @@
       line-height: 1.4;
     }
 
-    .stock-box {
-      background: rgba(245, 158, 11, 0.05);
-      border: 1px solid rgba(245, 158, 11, 0.2);
+    .lifespan-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 8px;
+    }
+
+    .lifespan-pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 8px 10px;
       border-radius: 6px;
-      padding: 10px 12px;
-      font-size: 12px;
-      color: #fef3c7;
+    }
+
+    .mod-card {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
 
     .switch-table { width: 100%; border-collapse: collapse; font-size: 12px; }
@@ -477,7 +491,9 @@
             
             const props = (item.properties && typeof item.properties === 'object') ? item.properties : {};
             const ergo = (item.ergonomicDetails && typeof item.ergonomicDetails === 'object') ? item.ergonomicDetails : null;
-            const stock = (item.stockSwitches && typeof item.stockSwitches === 'object') ? item.stockSwitches : null;
+            const stockList = Array.isArray(item.stockSwitchesList) ? item.stockSwitchesList : [];
+            const modsList = Array.isArray(item.modsAndAddons) ? item.modsAndAddons : [];
+            const lifespan = (item.lifespanEstimates && typeof item.lifespanEstimates === 'object') ? item.lifespanEstimates : null;
             const pros = Array.isArray(item.pros) ? item.pros : [];
             const cons = Array.isArray(item.cons) ? item.cons : [];
             const setupNotes = Array.isArray(item.setupNotes) ? item.setupNotes : (item.setupNotes ? [String(item.setupNotes)] : []);
@@ -507,45 +523,109 @@
                     <span class="spec-key">Ergonomic Score ↗</span>
                     <span class="spec-val">${props["Ergonomic Rating"] || 'N/A'}</span>
                   </div>
+                  <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'lifespan')">
+                    <span class="spec-key">Modded Life ↗</span>
+                    <span class="spec-val">${lifespan ? lifespan.moddedSwitchesLife : 'N/A'}</span>
+                  </div>
                   <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'stock')">
-                    <span class="spec-key">Stock Clicks & dB ↗</span>
-                    <span class="spec-val">${stock ? stock.mainSoundLevel : 'N/A'}</span>
+                    <span class="spec-key">Stock Buttons ↗</span>
+                    <span class="spec-val">${stockList.length} Button Types</span>
                   </div>
-                  <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'ergonomics')">
-                    <span class="spec-key">Grip Style ↗</span>
-                    <span class="spec-val">${props["Grip Style Match"] || 'N/A'}</span>
-                  </div>
-                  <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'switches')">
-                    <span class="spec-key">Switch Sockets ↗</span>
-                    <span class="spec-val">${props["Switch Mounting"] || 'N/A'}</span>
+                  <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'mods')">
+                    <span class="spec-key">Mods & Add-ons ↗</span>
+                    <span class="spec-val">${modsList.length} Available</span>
                   </div>
                 </div>
 
                 <!-- Expanded Content Body -->
                 <div class="card-scroll-body">
                   
-                  <!-- 1. STOCK SWITCHES & ACOUSTICS -->
-                  ${stock ? `
-                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:stock`) ? 'active' : ''}" id="sub-${item.id}-stock">
-                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'stock')">
-                        <span class="sub-accordion-title">🏭 Factory Stock Switches & Acoustic Baseline</span>
+                  <!-- 1. LIFESPAN ESTIMATION MATRIX -->
+                  ${lifespan ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:lifespan`) ? 'active' : ''}" id="sub-${item.id}-lifespan">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'lifespan')">
+                        <span class="sub-accordion-title">⏳ Mouse & Switch Lifespan Matrix</span>
                         <span class="sub-accordion-arrow">▼</span>
                       </div>
                       <div class="sub-accordion-body">
-                        <div class="stock-box">
-                          <div><strong>Main Clicks:</strong> ${stock.mainClicks} (${stock.mainLifespan})</div>
-                          <div style="margin-top:2px;"><strong>Stock Noise Level:</strong> ${stock.mainSoundLevel}</div>
-                          ${stock.failureMechanism ? `<div style="margin-top:6px; color:#fde68a;"><strong>Stock Failure Cause:</strong> ${stock.failureMechanism}</div>` : ''}
+                        <div class="lifespan-grid">
+                          <div class="lifespan-pill">
+                            <div class="spec-key">Mouse Chassis & Sensor Life</div>
+                            <div class="spec-val" style="color:var(--primary);">${lifespan.chassisLife}</div>
+                          </div>
+                          <div class="lifespan-pill">
+                            <div class="spec-key">Stock Switches (Before Swap)</div>
+                            <div class="spec-val" style="color:#f87171;">${lifespan.stockSwitchesLife}</div>
+                          </div>
+                          <div class="lifespan-pill">
+                            <div class="spec-key">Custom Switches (After Swap)</div>
+                            <div class="spec-val" style="color:#4ade80;">${lifespan.moddedSwitchesLife}</div>
+                          </div>
                         </div>
-                        <div style="font-size:12px; color:var(--text-muted);">
-                          <div><strong>Secondary Clicks (Side/DPI/Middle):</strong> ${stock.secondaryClicks}</div>
-                          <div style="margin-top:2px;"><strong>Secondary Clicks Noise & Life:</strong> ${stock.secondarySoundLevel} | ${stock.secondaryLifespan}</div>
+                        <div class="comparison-box" style="margin-top:4px;">
+                          <strong>⚠️ Primary Hardware Limiting Factor:</strong>
+                          <div style="margin-top:2px;">${lifespan.limitingFactor}</div>
                         </div>
                       </div>
                     </div>
                   ` : ''}
 
-                  <!-- 2. ERGONOMICS & DETAILED SHAPE COMPARISON -->
+                  <!-- 2. FACTORY STOCK SWITCHES PER BUTTON -->
+                  ${stockList.length > 0 ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:stock`) ? 'active' : ''}" id="sub-${item.id}-stock">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'stock')">
+                        <span class="sub-accordion-title">🏭 Stock Switches by Individual Button</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <table class="switch-table">
+                          <thead>
+                            <tr>
+                              <th>Button Group</th>
+                              <th>Stock Switch Model</th>
+                              <th>Factory Lifespan</th>
+                              <th>Sound Level</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            ${stockList.map(s => `
+                              <tr>
+                                <td><strong>${s.buttonGroup}</strong></td>
+                                <td>${s.switchModel}</td>
+                                <td><span style="color:#f87171; font-weight:600;">${s.lifespan}</span></td>
+                                <td>${s.sound}</td>
+                              </tr>
+                            `).join('')}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 3. MODS & ADD-ONS LIBRARY -->
+                  ${modsList.length > 0 ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:mods`) ? 'active' : ''}" id="sub-${item.id}-mods">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'mods')">
+                        <span class="sub-accordion-title">🛠 Mods & Add-ons Library (${modsList.length})</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <div style="display:flex; flex-direction:column; gap:6px;">
+                          ${modsList.map(m => `
+                            <div class="mod-card">
+                              <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <strong>${m.name}</strong>
+                                <span class="top-pick-tag" style="font-size:10px;">${m.difficulty || 'Mod'}</span>
+                              </div>
+                              <div style="font-size:11px; color:var(--text-muted); margin-top:2px;">${m.impact}</div>
+                            </div>
+                          `).join('')}
+                        </div>
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 4. ERGONOMICS & DETAILED SHAPE COMPARISON -->
                   ${ergo ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:ergonomics`) ? 'active' : ''}" id="sub-${item.id}-ergonomics">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'ergonomics')">
@@ -580,7 +660,7 @@
                     </div>
                   ` : ''}
 
-                  <!-- 3. TECHNICAL SPECS -->
+                  <!-- 5. TECHNICAL SPECS -->
                   ${Object.keys(props).length > 0 ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:properties`) ? 'active' : ''}" id="sub-${item.id}-properties">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'properties')">
@@ -600,7 +680,7 @@
                     </div>
                   ` : ''}
 
-                  <!-- 4. PROS & CONS -->
+                  <!-- 6. PROS & CONS -->
                   ${(pros.length > 0 || cons.length > 0) ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:proscons`) ? 'active' : ''}" id="sub-${item.id}-proscons">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'proscons')">
@@ -620,7 +700,7 @@
                     </div>
                   ` : ''}
 
-                  <!-- 5. MICROSWITCH GUIDE -->
+                  <!-- 7. CUSTOM MICROSWITCH RECOMMENDATIONS -->
                   ${switchMappings.length > 0 ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:switches`) ? 'active' : ''}" id="sub-${item.id}-switches">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'switches')">
@@ -656,11 +736,11 @@
                     </div>
                   ` : ''}
 
-                  <!-- 6. MODDING & REPAIR NOTES -->
+                  <!-- 8. MODDING & REPAIR BULLET NOTES -->
                   ${setupNotes.length > 0 ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:notes`) ? 'active' : ''}" id="sub-${item.id}-notes">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'notes')">
-                        <span class="sub-accordion-title">🔧 Modding, Repair & Wiring Notes</span>
+                        <span class="sub-accordion-title">🔧 Step-by-Step Modding & Wiring Bullet Notes</span>
                         <span class="sub-accordion-arrow">▼</span>
                       </div>
                       <div class="sub-accordion-body">
@@ -681,7 +761,7 @@
 
                 <!-- Card Expand Footer Bar -->
                 <div class="card-expand-bar" onclick="window.deskApp.toggleCard('${item.id}')">
-                  <span>${isExpanded ? '▲ Close Card Sections' : '▼ Expand Sub-Sections (Stock Switches, Ergonomics, Specs, Mods)'}</span>
+                  <span>${isExpanded ? '▲ Close Card Sections' : '▼ Expand Sub-Sections (Stock Buttons, Mods, Lifespan, Ergonomics)'}</span>
                   <span>${item.price || ''}</span>
                 </div>
 
@@ -753,7 +833,9 @@
           const filtered = getFilteredProducts();
           filtered.forEach(p => {
             expandedCardIds.add(p.id);
+            activeSubSections.add(`${p.id}:lifespan`);
             activeSubSections.add(`${p.id}:stock`);
+            activeSubSections.add(`${p.id}:mods`);
             activeSubSections.add(`${p.id}:ergonomics`);
             activeSubSections.add(`${p.id}:properties`);
             activeSubSections.add(`${p.id}:switches`);
