@@ -43,7 +43,6 @@
 
     #app { display: flex; width: 100%; height: 100%; }
 
-    /* Sidebar Navigation */
     sidebar {
       width: 250px;
       background-color: var(--sidebar-bg);
@@ -100,7 +99,6 @@
       color: var(--text-muted);
     }
 
-    /* Main Section */
     main { flex-grow: 1; display: flex; flex-direction: column; overflow: hidden; }
 
     header {
@@ -152,10 +150,8 @@
 
     .btn-action:hover { background: rgba(255, 255, 255, 0.12); color: var(--text); }
 
-    /* Scrollable Page Viewport */
     .content-viewport { padding: 20px; overflow-y: auto; flex-grow: 1; scroll-behavior: smooth; }
 
-    /* Multi-Column Responsive Grid */
     .comparison-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
@@ -165,7 +161,6 @@
 
     @media (max-width: 1080px) { .comparison-grid { grid-template-columns: 1fr; } }
 
-    /* Card Box Structure */
     .card {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -219,7 +214,6 @@
 
     .card-summary { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
 
-    /* Interactive Quick Spec Pills */
     .quick-specs-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -264,7 +258,6 @@
 
     .card-expand-bar:hover { background: rgba(99, 102, 241, 0.08); }
 
-    /* Sub-Section Accordion */
     .card-scroll-body {
       display: none;
       padding: 16px;
@@ -349,6 +342,15 @@
       font-size: 12px;
       color: #e2e8f0;
       line-height: 1.4;
+    }
+
+    .stock-box {
+      background: rgba(245, 158, 11, 0.05);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      border-radius: 6px;
+      padding: 10px 12px;
+      font-size: 12px;
+      color: #fef3c7;
     }
 
     .switch-table { width: 100%; border-collapse: collapse; font-size: 12px; }
@@ -473,9 +475,9 @@
             const isExpanded = expandedCardIds.has(item.id);
             const statusClass = item.status === 'Owned' ? 'status-owned' : (item.status === 'Alternative' ? 'status-alternative' : 'status-wishlist');
             
-            // Safe Property Getters
             const props = (item.properties && typeof item.properties === 'object') ? item.properties : {};
             const ergo = (item.ergonomicDetails && typeof item.ergonomicDetails === 'object') ? item.ergonomicDetails : null;
+            const stock = (item.stockSwitches && typeof item.stockSwitches === 'object') ? item.stockSwitches : null;
             const pros = Array.isArray(item.pros) ? item.pros : [];
             const cons = Array.isArray(item.cons) ? item.cons : [];
             const setupNotes = Array.isArray(item.setupNotes) ? item.setupNotes : (item.setupNotes ? [String(item.setupNotes)] : []);
@@ -505,9 +507,9 @@
                     <span class="spec-key">Ergonomic Score ↗</span>
                     <span class="spec-val">${props["Ergonomic Rating"] || 'N/A'}</span>
                   </div>
-                  <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'properties')">
-                    <span class="spec-key">Weight Profile ↗</span>
-                    <span class="spec-val">${props["Weight Profile"] || props["Weight"] || 'N/A'}</span>
+                  <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'stock')">
+                    <span class="spec-key">Stock Clicks & dB ↗</span>
+                    <span class="spec-val">${stock ? stock.mainSoundLevel : 'N/A'}</span>
                   </div>
                   <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'ergonomics')">
                     <span class="spec-key">Grip Style ↗</span>
@@ -522,25 +524,51 @@
                 <!-- Expanded Content Body -->
                 <div class="card-scroll-body">
                   
-                  <!-- 1. ERGONOMICS & COMPARISON -->
-                  ${ergo ? `
-                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:ergonomics`) ? 'active' : ''}" id="sub-${item.id}-ergonomics">
-                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'ergonomics')">
-                        <span class="sub-accordion-title">📐 Ergonomics & Multi-Mouse Comparison</span>
+                  <!-- 1. STOCK SWITCHES & ACOUSTICS -->
+                  ${stock ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:stock`) ? 'active' : ''}" id="sub-${item.id}-stock">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'stock')">
+                        <span class="sub-accordion-title">🏭 Factory Stock Switches & Acoustic Baseline</span>
                         <span class="sub-accordion-arrow">▼</span>
                       </div>
                       <div class="sub-accordion-body">
-                        ${ergo.scoreReason ? `
+                        <div class="stock-box">
+                          <div><strong>Main Clicks:</strong> ${stock.mainClicks} (${stock.mainLifespan})</div>
+                          <div style="margin-top:2px;"><strong>Stock Noise Level:</strong> ${stock.mainSoundLevel}</div>
+                          ${stock.failureMechanism ? `<div style="margin-top:6px; color:#fde68a;"><strong>Stock Failure Cause:</strong> ${stock.failureMechanism}</div>` : ''}
+                        </div>
+                        <div style="font-size:12px; color:var(--text-muted);">
+                          <div><strong>Secondary Clicks (Side/DPI/Middle):</strong> ${stock.secondaryClicks}</div>
+                          <div style="margin-top:2px;"><strong>Secondary Clicks Noise & Life:</strong> ${stock.secondarySoundLevel} | ${stock.secondaryLifespan}</div>
+                        </div>
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 2. ERGONOMICS & DETAILED SHAPE COMPARISON -->
+                  ${ergo ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:ergonomics`) ? 'active' : ''}" id="sub-${item.id}-ergonomics">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'ergonomics')">
+                        <span class="sub-accordion-title">📐 Deep Ergonomic Shape & Contour Analysis</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <div>
+                          <strong>Why this Ergonomic Score (${props["Ergonomic Rating"] || ''}):</strong>
+                          <p style="font-size:12px; color:var(--text-muted); margin-top:2px;">${ergo.scoreReason}</p>
+                        </div>
+
+                        ${ergo.specificShapeContour ? `
                           <div>
-                            <strong>Why this Ergonomic Score (${props["Ergonomic Rating"] || ''}):</strong>
-                            <p style="font-size:12px; color:var(--text-muted); margin-top:2px;">${ergo.scoreReason}</p>
+                            <strong>Shell Contour, Curves & Ledges:</strong>
+                            <p style="font-size:12px; color:#d1d5db; margin-top:2px; line-height:1.4;">${ergo.specificShapeContour}</p>
                           </div>
                         ` : ''}
 
-                        ${ergo.comparisonVsOthers ? `
+                        ${ergo.comparisonVsCloseCompetitors ? `
                           <div class="comparison-box">
-                            <strong>⚔️ Comparison Against Other Mice:</strong>
-                            <p style="margin-top:4px;">${ergo.comparisonVsOthers}</p>
+                            <strong>⚔️ Comparison Against Close Competitors:</strong>
+                            <p style="margin-top:4px;">${ergo.comparisonVsCloseCompetitors}</p>
                           </div>
                         ` : ''}
 
@@ -552,7 +580,7 @@
                     </div>
                   ` : ''}
 
-                  <!-- 2. TECHNICAL SPECS -->
+                  <!-- 3. TECHNICAL SPECS -->
                   ${Object.keys(props).length > 0 ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:properties`) ? 'active' : ''}" id="sub-${item.id}-properties">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'properties')">
@@ -572,7 +600,7 @@
                     </div>
                   ` : ''}
 
-                  <!-- 3. PROS & CONS -->
+                  <!-- 4. PROS & CONS -->
                   ${(pros.length > 0 || cons.length > 0) ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:proscons`) ? 'active' : ''}" id="sub-${item.id}-proscons">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'proscons')">
@@ -592,11 +620,11 @@
                     </div>
                   ` : ''}
 
-                  <!-- 4. MICROSWITCH GUIDE -->
+                  <!-- 5. MICROSWITCH GUIDE -->
                   ${switchMappings.length > 0 ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:switches`) ? 'active' : ''}" id="sub-${item.id}-switches">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'switches')">
-                        <span class="sub-accordion-title">🔌 Per-Button Microswitch Suggestions</span>
+                        <span class="sub-accordion-title">🔌 Per-Button Custom Microswitch Recommendations</span>
                         <span class="sub-accordion-arrow">▼</span>
                       </div>
                       <div class="sub-accordion-body">
@@ -605,7 +633,7 @@
                             <tr>
                               <th>Button Zone</th>
                               <th>Recommended Switch</th>
-                              <th>Tactile & Acoustic Reason</th>
+                              <th>Tactile, Durability & Acoustic Reason</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -628,7 +656,7 @@
                     </div>
                   ` : ''}
 
-                  <!-- 5. MODDING & REPAIR NOTES -->
+                  <!-- 6. MODDING & REPAIR NOTES -->
                   ${setupNotes.length > 0 ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:notes`) ? 'active' : ''}" id="sub-${item.id}-notes">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'notes')">
@@ -653,7 +681,7 @@
 
                 <!-- Card Expand Footer Bar -->
                 <div class="card-expand-bar" onclick="window.deskApp.toggleCard('${item.id}')">
-                  <span>${isExpanded ? '▲ Close Card Sections' : '▼ Expand Sub-Sections (Ergonomics, Specs, Switches)'}</span>
+                  <span>${isExpanded ? '▲ Close Card Sections' : '▼ Expand Sub-Sections (Stock Switches, Ergonomics, Specs, Mods)'}</span>
                   <span>${item.price || ''}</span>
                 </div>
 
@@ -725,6 +753,7 @@
           const filtered = getFilteredProducts();
           filtered.forEach(p => {
             expandedCardIds.add(p.id);
+            activeSubSections.add(`${p.id}:stock`);
             activeSubSections.add(`${p.id}:ergonomics`);
             activeSubSections.add(`${p.id}:properties`);
             activeSubSections.add(`${p.id}:switches`);
