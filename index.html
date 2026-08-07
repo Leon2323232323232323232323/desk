@@ -468,7 +468,17 @@
           `;
         }
 
-        // Fallback for mice and gadgets (generic)
+        // New: custom pills for gadgets
+        if (activeCategory === 'gadgets') {
+          return `
+            <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'properties')"><span class="spec-key">Type ↗</span><span class="spec-val">${props["Type"] || 'N/A'}</span></div>
+            <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'properties')"><span class="spec-key">Price ↗</span><span class="spec-val">${item.price || 'N/A'}</span></div>
+            <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'properties')"><span class="spec-key">DIY Difficulty ↗</span><span class="spec-val">${item.diyDifficulty || 'N/A'}</span></div>
+            <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'ergonomics')"><span class="spec-key">Why It's Good ↗</span><span class="spec-val">${item.topPickBadge || item.summary ? 'See details' : 'N/A'}</span></div>
+          `;
+        }
+
+        // Fallback for mice (original)
         return `
           <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'ergonomics')"><span class="spec-key">Ergonomic Score ↗</span><span class="spec-val">${props["Ergonomic Rating"] || 'N/A'}</span></div>
           <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'lifespan')"><span class="spec-key">Modded Life ↗</span><span class="spec-val">${lifespan ? lifespan.moddedSwitchesLife : 'N/A'}</span></div>
