@@ -29,6 +29,9 @@
       --radius: 10px;
       --compare-bg: #0d1317;
     }
+    .price-filter { display: flex; align-items: center; gap: 4px; }
+    .price-filter input::placeholder { color: var(--text-faint); }
+    .price-filter input::-webkit-inner-spin-button { opacity: 0.5; }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -408,12 +411,26 @@
       function parsePrice(str) { if (!str) return NaN; const nums = String(str).match(/[\d,]+(?:\.\d+)?/g); if (!nums || !nums.length) return NaN; const vals = nums.map(n => parseFloat(n.replace(/,/g, ''))); return vals.reduce((a,b)=>a+b,0)/vals.length; }
 
       function getFilteredProducts() {
+        const minPriceVal = parseFloat(document.getElementById('priceMin')?.value);
+        const maxPriceVal = parseFloat(document.getElementById('priceMax')?.value);
         return products.filter(p => {
           if (!p) return false;
           const matchesCategory = p.category === activeCategory;
           if (statusFilter !== 'all' && p.status !== statusFilter) return false;
           const query = searchQuery.toLowerCase();
-          return matchesCategory && (!query || (p.name&&p.name.toLowerCase().includes(query))||(p.brand&&p.brand.toLowerCase().includes(query))||(p.tags&&Array.isArray(p.tags)&&p.tags.some(t=>String(t).toLowerCase().includes(query)))||(p.summary&&p.summary.toLowerCase().includes(query)));
+          const nameMatch = !query || (p.name && p.name.toLowerCase().includes(query)) ||
+            (p.brand && p.brand.toLowerCase().includes(query)) ||
+            (p.tags && Array.isArray(p.tags) && p.tags.some(t => String(t).toLowerCase().includes(query))) ||
+            (p.summary && p.summary.toLowerCase().includes(query));
+          if (!nameMatch) return false;
+          // Price filter (parses price string)
+          if (!isNaN(minPriceVal) || !isNaN(maxPriceVal)) {
+            const priceNum = parsePrice(p.price);
+            if (isNaN(priceNum)) return false;  // items without a valid price are hidden when price filter is active
+            if (!isNaN(minPriceVal) && priceNum < minPriceVal) return false;
+            if (!isNaN(maxPriceVal) && priceNum > maxPriceVal) return false;
+          }
+          return matchesCategory;
         });
       }
 
@@ -931,6 +948,8 @@
         if(metaBar) metaBar.addEventListener('click', e => { const chip = e.target.closest('.chip'); if(!chip) return; statusFilter = chip.dataset.status; renderMetaBar(); renderProducts(); });
         categoryNav.addEventListener('click', e => { const nav = e.target.closest('.nav-item'); if(!nav) return; activeCategory = nav.dataset.cat; statusFilter='all'; location.hash=activeCategory; expandedCardIds.clear(); activeSubSections.clear(); renderNav(); renderMetaBar(); renderProducts(); });
         searchInput.addEventListener('input', e => { searchQuery = e.target.value; renderProducts(); });
+        document.getElementById('priceMin').addEventListener('input', renderProducts);
+        document.getElementById('priceMax').addEventListener('input', renderProducts);
         btnExpandAll.addEventListener('click', () => { getFilteredProducts().forEach(p => { expandedCardIds.add(p.id); ['procurement','repairability','weight','software','glides','lifespan','stock','mods','ergonomics','properties','switches','proscons','notes'].forEach(k=>activeSubSections.add(`${p.id}:${k}`)); if(activeCategory==='monitors') activeSubSections.add(`${p.id}:panel`); if(activeCategory==='keyboards') activeSubSections.add(`${p.id}:switches`); }); renderProducts(); });
         btnCollapseAll.addEventListener('click', () => { expandedCardIds.clear(); activeSubSections.clear(); renderProducts(); });
         compareBtn.addEventListener('click', showCompare);
