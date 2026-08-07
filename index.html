@@ -246,6 +246,56 @@
     @media (min-width: 861px) {
       .hamburger { display: none; }
     }
+        /* ===== META BAR & FILTER CHIPS (missing styles) ===== */
+    .meta-bar {
+      display: flex; flex-direction: column; gap: 10px;
+      padding: 2px 2px 18px; border-bottom: 1px solid var(--border); margin-bottom: 18px;
+    }
+    .meta-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+    .meta-stats { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+    .meta-stats strong { color: var(--text); }
+    .meta-divider { color: var(--text-faint); opacity: 0.4; }
+    .invested-value { color: var(--primary); font-weight: 600; }
+
+    .filter-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip {
+      all: unset; cursor: pointer; background: transparent;
+      font-size: 11px; padding: 5px 11px; border-radius: 20px;
+      border: 1px solid var(--border); color: var(--text-muted);
+      transition: all .15s ease;
+    }
+    .chip:hover { border-color: var(--primary); color: var(--text); }
+    .chip.active { background: var(--primary); border-color: var(--primary); color: #fff; font-weight: 600; }
+        /* ===== MOBILE HAMBURGER MENU ===== */
+    @media (max-width: 860px) {
+      body { height: auto; overflow-y: auto; }
+      #app { flex-direction: column; height: auto; min-height: 100vh; }
+      sidebar {
+        width: 100%; border-right: none; border-bottom: 1px solid var(--border);
+        flex-direction: row; flex-wrap: wrap; align-items: center;
+        padding: 8px 16px; gap: 8px;
+      }
+      .brand { border-bottom: none; padding: 0; }
+      .nav-list {
+        display: none; width: 100%; flex-direction: column; overflow-y: visible;
+        padding: 8px 0 0; order: 3;
+      }
+      .nav-list.open { display: flex; }
+      .hamburger {
+        display: flex; flex-direction: column; gap: 4px; cursor: pointer;
+        background: none; border: none; padding: 4px; margin-left: auto;
+      }
+      .hamburger span { display: block; width: 20px; height: 2px; background: var(--text); border-radius: 2px; }
+      .comparison-grid { grid-template-columns: 1fr; }
+      .content-viewport { padding: 12px; }
+      header { flex-wrap: wrap; gap: 8px; }
+      .search-box { width: 100%; }
+      .compare-bar { flex-wrap: wrap; gap: 8px; }
+    }
+
+    @media (min-width: 861px) {
+      .hamburger { display: none; }
+    }
   </style>
 </head>
 <body>
