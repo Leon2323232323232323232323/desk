@@ -29,29 +29,22 @@ window.DESK_DATA = {
       feel: "Crisp tactile snap engineered for right-angle side PCB contact pads.",
       bestFor: "Razer Basilisk M4/M5 Side Buttons"
     },
-    "ttc-gold-80m": {
-      name: "TTC Dustproof Gold 80M",
-      force: "60g - 65g",
-      lifespan: "80 Million Clicks",
-      feel: "Crisp, bouncy actuation, high-frequency sound, dustproof wall enclosure.",
-      bestFor: "Main Clicks / Fast MOBAs & Shooters"
-    },
-    "omron-d2f-01f": {
-      name: "Japanese Omron D2F-01F",
-      force: "50g - 60g",
-      lifespan: "10 Million Clicks",
-      feel: "Ultra-smooth tactile depression, gold alloy contacts, rich metallic tone.",
-      bestFor: "Custom Heavy Productivity / Light Click Enthusiasts"
-    },
-    "huano-yellow-5mm": {
-      name: "Huano Brown Shell Yellow Dot (6x6x5.0mm Square)",
+    "kailh-5mm-tactile": {
+      name: "Kailh 6x6x5.0mm High-Durability Tactile (50M)",
       force: "65g - 70g",
+      lifespan: "50 Million Clicks",
+      feel: "Maximum durability 2-pin 5.0mm square tactile switch. Ultra-crisp rebound, sharp tactile snap, built for heavy non-silent usage.",
+      bestFor: "G502 Middle Click, DPI Up/Down & Profile Buttons"
+    },
+    "kailh-silent-5mm": {
+      name: "Kailh Mute 6x6x5.0mm Silent Square 2-Pin",
+      force: "60g - 65g",
       lifespan: "30 Million Clicks",
-      feel: "Near-silent (~35 dB), heavy tactile bump, compact 5.0mm vertical footprint.",
-      bestFor: "Middle Click (G3), DPI & Profile Buttons"
+      feel: "Near-silent (~35 dB) muted actuation with a cushioned rubber bottom-out and solid 5.0mm vertical fit.",
+      bestFor: "Office Middle Mouse Clicks & Gesture Wing Buttons (MX Master 3S, M650)"
     },
     "huano-silent-yellow-73mm": {
-      name: "Huano Silent Square Yellow Dot (6x6x7.3mm)",
+      name: "Huano Silent Square Yellow Dot 2-Pin (6x6x7.3mm)",
       force: "60g - 65g",
       lifespan: "30 Million Clicks",
       feel: "Near-silent (~35–38 dB), firm tactile return without squishy rubber bottom-out.",
@@ -63,6 +56,13 @@ window.DESK_DATA = {
       lifespan: "60 Million Clicks",
       feel: "Tactile mechanical snap (~46 dB acoustic profile), gold-alloy oxidation resistant contacts.",
       bestFor: "MX Master 3S High-Durability Mod (Clipped Pin 3)"
+    },
+    "omron-d2f-01f": {
+      name: "Japanese Omron D2F-01F",
+      force: "50g - 60g",
+      lifespan: "10 Million Clicks",
+      feel: "Ultra-smooth tactile depression, gold alloy contacts, rich metallic tone.",
+      bestFor: "Custom Heavy Productivity / Light Click Enthusiasts"
     }
   },
 
@@ -92,11 +92,22 @@ window.DESK_DATA = {
         "Switch Mounting": "100% Through-Hole Mechanical (All 11)"
       },
 
+      stockSwitches: {
+        mainClicks: "Omron D2FC-F-K 50M (Chinese Omron)",
+        mainLifespan: "50 Million Clicks (Rated)",
+        mainSoundLevel: "52 - 55 dB (High-pitched metallic clack)",
+        failureMechanism: "Low operating voltage (1.8V-3V) in wireless mode lacks wetting current to burn off copper oxidation, causing premature double-clicking within 6-12 months.",
+        secondaryClicks: "Standard 2-pin SMD/DIP Tactile switches (G3/G7/G8/G9)",
+        secondaryLifespan: "10 - 20 Million Clicks",
+        secondarySoundLevel: "48 - 50 dB"
+      },
+
       ergonomicDetails: {
-        scoreReason: "Scored 9.5/10 due to its contoured right-hand asymmetry, natural thumb ledge, and perfectly positioned index-finger DPI buttons. It prevents thumb drag and accommodates long gaming/work sessions without wrist fatigue.",
-        comparisonVsOthers: "Vs MX Master 3S: G502 is much lighter (101.5g vs 141g) and supports 1000Hz gaming polling (vs MX Master's 125Hz limit). Vs Basilisk V3 X: G502 offers superior 100% mechanical switch replacement across all 11 buttons and features a dual-mode scroll wheel. Vs M650: G502 provides full hand support versus M650's small travel footprint.",
+        scoreReason: "Scored 9.5/10 for its asymmetrical right-hand contour, 14mm flared thumb rest wing, and double-beveled index DPI buttons. It prevents thumb drag and accommodates long gaming/work sessions without wrist fatigue.",
+        specificShapeContour: "132mm length x 75mm width x 40mm arch height. Features a 18° downward right-hand slope that guides hand placement into an active hybrid claw/palm grip. Left thumb ledge keeps thumb fully elevated above the pad. Index finger rest features double-beveled G7/G8 button ledges reachable without shifting hand grip.",
+        comparisonVsCloseCompetitors: "Vs Razer Basilisk V3: G502's thumb wing has a steeper grip angle and its index DPI buttons (G7/G8) are much easier to actuate than Basilisk's top DPI toggle. Vs Logitech G Pro X Superlight: G502 provides a dedicated thumb wing and 11 buttons (vs GPX's bare egg shape 5-button shell). Vs MX Master 3S: G502 is 11mm lower in height (40mm vs 51mm), allowing fast twitch movements and 1000Hz gaming polling.",
         gripCompatibility: "Optimal for Medium-to-Large hands using Palm or Hybrid Claw grip.",
-        wristAndPosture: "Neutral wrist pronation; thumb rest removes friction against mousepad."
+        wristAndPosture: "18° downward ergonomic slope reduces wrist pronation while thumb rest removes pad drag."
       },
 
       pros: [
@@ -128,37 +139,37 @@ window.DESK_DATA = {
         {
           buttonGroup: "Main Left & Right Click (M1 / M2)",
           recommendedSwitchId: "huano-btspd-80m",
-          reason: "Eliminates double-clicking, delivers deep 'thock' tone (~49–51 dB), and offers 80M click durability. (Alt: TTC Dustproof Gold 80M)."
+          reason: "Eliminates double-clicking, delivers deep 'thock' tone (~49–51 dB), and offers max 80M click durability."
         },
         {
           buttonGroup: "Side Forward & Back (G4 / G5)",
           recommendedSwitchId: "huano-bspd-80m",
-          reason: "Solid housing creates complete tactile and acoustic uniformity with main clicks."
+          reason: "Solid housing creates 80M durability with complete tactile and acoustic uniformity."
         },
         {
           buttonGroup: "Thumb Sniper / G-Shift Clutch",
           recommendedSwitchId: "huano-bspd-80m",
-          reason: "Crisp 70g actuation prevents accidental sniper triggers during twitch mouse movements."
+          reason: "Crisp 70g actuation prevents accidental sniper triggers during twitch movements."
         },
         {
           buttonGroup: "Middle Scroll Wheel Click (G3)",
-          recommendedSwitchId: "huano-yellow-5mm",
-          reason: "5.0mm vertical footprint fits underneath scroll wheel cradle with heavy tactile feedback."
+          recommendedSwitchId: "kailh-5mm-tactile",
+          reason: "50M click rated 5.0mm Kailh tactile switch. Max durability footprint under scroll cradle."
         },
         {
           buttonGroup: "Index Finger DPI Up & Down (G7 / G8)",
-          recommendedSwitchId: "huano-yellow-5mm",
-          reason: "Compact 5.0mm square switch clears upper shell plastics."
+          recommendedSwitchId: "kailh-5mm-tactile",
+          reason: "50M click rated 5.0mm Kailh square tactile switch clearing upper shell plastics."
         },
         {
           buttonGroup: "Top Profile Switch Button (G9)",
-          recommendedSwitchId: "huano-yellow-5mm",
-          reason: "Durable 30M click square tactile switch replacing weak stock membrane button."
+          recommendedSwitchId: "kailh-5mm-tactile",
+          reason: "Replaces weak stock membrane button with 50M click durable 2-pin tactile switch."
         },
         {
           buttonGroup: "Scroll Wheel Tilt Left & Right",
-          recommendedSwitchId: "huano-yellow-5mm",
-          reason: "Ensures crisp horizontal scrolling response on scroll cradle assembly."
+          recommendedSwitchId: "kailh-5mm-tactile",
+          reason: "High durability 50M rating for heavy horizontal scrolling tasks."
         }
       ]
     },
@@ -188,11 +199,22 @@ window.DESK_DATA = {
         "Switch Mounting": "2-Pin Silent Square (7.45mm height)"
       },
 
+      stockSwitches: {
+        mainClicks: "Kailh 2-Pin Silent Square (7.45mm height)",
+        mainLifespan: "10 - 15 Million Clicks",
+        mainSoundLevel: "34 - 36 dB (Near-silent cushioned thud)",
+        failureMechanism: "Silicone internal dampening pads fatigue over time and low voltage causes intermittent double-clicks or loss of tactile rebound.",
+        secondaryClicks: "2-pin square silent switch (Middle/Gesture)",
+        secondaryLifespan: "10 Million Clicks",
+        secondarySoundLevel: "35 dB"
+      },
+
       ergonomicDetails: {
         scoreReason: "Scored 9.8/10 as the gold standard for office desk work. Its 57-degree vertical incline rotates the forearm into a natural handshake posture, relieving median nerve pressure.",
-        comparisonVsOthers: "Vs G502: MX Master offers significantly better palm support and horizontal thumb scrolling for spreadsheets, but its 125Hz polling and 141g weight make it poor for gaming. Vs Basilisk V3 X: Far quieter clicks (~35dB stock) and much higher build quality. Vs M650: Completely fills the hand for full-day office comfort.",
+        specificShapeContour: "125mm length x 84.3mm width x 51mm arch height. Steep 57° vertical incline prevents forearm pronation. Features a 22mm wide thumb rest wing with integrated gesture pad and flared right-side contour supporting ring/pinky fingers.",
+        comparisonVsCloseCompetitors: "Vs MX Anywhere 3S: MX Master fills the palm completely, eliminating claw cramps, whereas Anywhere 3S is a flat fingertip travel mouse. Vs G502: MX Master is 11mm taller with a much wider palm arch, filling the hand fully for office productivity, but its 141g weight and 125Hz polling limit make it poor for gaming. Vs Keychron M6: MX Master features a superior electromagnetic MagSpeed wheel and deeper thumb rest wing.",
         gripCompatibility: "Designed strictly for Medium to Large hands using a Palm Grip.",
-        wristAndPosture: "Elevated ergonomic angle reduces forearm pronation and carpal tunnel compression."
+        wristAndPosture: "57° elevated ergonomic angle reduces forearm pronation and carpal tunnel compression."
       },
 
       pros: [
@@ -220,7 +242,7 @@ window.DESK_DATA = {
         {
           buttonGroup: "Main Left & Right Click (Option A - Silent)",
           recommendedSwitchId: "huano-silent-yellow-73mm",
-          reason: "Matches stock silent acoustic profile (~35–38 dB) while providing a snappier tactile feel and 30M click lifespan."
+          reason: "Matches stock silent acoustic profile (~35–38 dB) while providing snappier tactile feel and 30M click lifespan."
         },
         {
           buttonGroup: "Main Left & Right Click (Option B - Durability)",
@@ -228,24 +250,19 @@ window.DESK_DATA = {
           reason: "Clipped Pin 3 mechanical mod. Eliminates squishy rubber feel, increases tactile feedback (~46 dB), and ensures 60M click durability."
         },
         {
-          buttonGroup: "Main Left & Right Click (Option C - Premium Feel)",
-          recommendedSwitchId: "omron-d2f-01f",
-          reason: "Japanese Omron mechanical switch. Delivers ultra-crisp tactile feel for heavy desktop productivity."
-        },
-        {
           buttonGroup: "Middle Scroll Wheel Click (G3)",
-          recommendedSwitchId: "huano-yellow-5mm",
-          reason: "5.0mm square switch fits beneath electromagnetic MagSpeed wheel cage."
+          recommendedSwitchId: "kailh-silent-5mm",
+          reason: "30M click rated 5.0mm Kailh Mute Silent switch. Fits under MagSpeed wheel cage maintaining ~35 dB silent operation."
         },
         {
           buttonGroup: "Thumb Gesture Wing Button",
-          recommendedSwitchId: "huano-yellow-5mm",
-          reason: "Replaces delicate stock tactile pad under the rubber thumb ledge."
+          recommendedSwitchId: "kailh-silent-5mm",
+          reason: "30M click 5.0mm Kailh Mute switch. Replaces delicate stock tactile pad under rubber thumb ledge."
         },
         {
           buttonGroup: "Side Wheel Forward & Back Buttons",
           recommendedSwitchId: "huano-silent-yellow-73mm",
-          reason: "Keeps side thumb navigation completely silent."
+          reason: "30M click silent 7.3mm switch keeping side thumb navigation completely silent."
         }
       ]
     },
@@ -275,9 +292,20 @@ window.DESK_DATA = {
         "Teardown Repairability": "10 / 10 (3-Screw Disassembly)"
       },
 
+      stockSwitches: {
+        mainClicks: "Kailh / Logitech Silent Square 2-Pin (7.3mm)",
+        mainLifespan: "10 Million Clicks",
+        mainSoundLevel: "34 - 36 dB (Near-silent cushioned click)",
+        failureMechanism: "Rubber dampener breakdown and internal oxidation on 2-pin contacts.",
+        secondaryClicks: "Tactile DIP 2-pin (Middle/Side)",
+        secondaryLifespan: "5 - 10 Million Clicks",
+        secondarySoundLevel: "45 - 48 dB"
+      },
+
       ergonomicDetails: {
         scoreReason: "Scored 7.5/10 due to its small, flat travel form factor. It lacks thumb wing support and palm arch height, which causes hand cramping during prolonged desktop use for larger hands.",
-        comparisonVsOthers: "Vs MX Master 3S & G502: Much more compact and travel-friendly at a fraction of the cost ($39), but provides far less hand support. Vs Basilisk V3 X: Quieter clicking and simpler 3-screw repair chassis.",
+        specificShapeContour: "107mm length x 61.8mm width x 37.8mm height. Symmetrical compact curvature with rubberized side grip panels. Lacks thumb ledge or high palm arch.",
+        comparisonVsOthers: "Vs MX Anywhere 3S: M650 is half the price ($39 vs $79) with quieter clicks and a far simpler 3-screw repair chassis. Vs M650 L: Standard M650 is compact for travel, whereas M650 L adds 11mm length for larger hands.",
         gripCompatibility: "Best for Small-to-Medium hands using Fingertip or Claw grip.",
         wristAndPosture: "Flat posture requires more wrist movement over long periods."
       },
@@ -305,17 +333,17 @@ window.DESK_DATA = {
         {
           buttonGroup: "Main Left & Right Click",
           recommendedSwitchId: "huano-silent-yellow-73mm",
-          reason: "Direct replacement for stock silent 2-pin switches. Delivers 30M click lifespan with crisp tactile actuation."
+          reason: "Direct replacement for stock silent 2-pin switches. Delivers 30M click lifespan with crisp silent actuation (~35 dB)."
         },
         {
           buttonGroup: "Middle Mouse Click (G3)",
-          recommendedSwitchId: "huano-yellow-5mm",
-          reason: "5.0mm height fits beneath SmartWheel carriage. Delivers heavy tactile bump and quiet operation."
+          recommendedSwitchId: "kailh-silent-5mm",
+          reason: "30M click 5.0mm Kailh Mute switch. Fits under SmartWheel carriage delivering quiet (~35 dB) tactile response."
         },
         {
           buttonGroup: "Side Navigation Buttons (M4 / M5)",
           recommendedSwitchId: "huano-silent-yellow-73mm",
-          reason: "Maintains silent acoustic profile across side thumb buttons."
+          reason: "Maintains silent acoustic profile (~35 dB) across side thumb buttons."
         }
       ]
     },
@@ -345,9 +373,20 @@ window.DESK_DATA = {
         "Switch Mounting": "3-Pin Mechanical (Main: Std, Sides: 90° Bent)"
       },
 
+      stockSwitches: {
+        mainClicks: "Razer Gen-2 Mechanical Switches (Kailh GM 4.0 variant)",
+        mainLifespan: "60 Million Clicks",
+        mainSoundLevel: "57 - 60 dB (Loud hollow acoustic clack)",
+        failureMechanism: "Stiff 70g spring force causes finger fatigue, and internal AA battery chamber creates loud acoustic echo chamber.",
+        secondaryClicks: "90° bent pin 3-pin mechanical (Sides) & 5.0mm square (DPI/Middle)",
+        secondaryLifespan: "20 - 30 Million Clicks",
+        secondarySoundLevel: "55 dB"
+      },
+
       ergonomicDetails: {
         scoreReason: "Scored 9.0/10 for its comfortable right-hand ergonomic contour and wide thumb rest wing. Deducted 1.0 point due to rear-heavy AA battery balance and hollow click echo.",
-        comparisonVsOthers: "Vs G502: Very similar outer shape, but G502 has better button placement, a dual-mode scroll wheel, and higher moddability. Vs MX Master 3S: Higher 1000Hz gaming performance, but much louder click profile (~60dB stock).",
+        specificShapeContour: "130mm length x 75mm width x 42mm height. Ergonomic right-hand swoop heavily inspired by G502, with a flared left thumb rest wing and rubberized side grip textures.",
+        comparisonVsCloseCompetitors: "Vs G502 LIGHTSPEED: Nearly identical outer shell shape, but Basilisk's internal AA battery cavity creates a rear-heavy weight balance and hollow acoustic resonance (~60 dB) compared to G502's balanced internal battery tray.",
         gripCompatibility: "Ideal for Medium-to-Large hands using Palm or Claw grip.",
         wristAndPosture: "Low wrist strain with comfortable thumb rest wing support."
       },
@@ -375,17 +414,17 @@ window.DESK_DATA = {
         {
           buttonGroup: "Main Left & Right Click",
           recommendedSwitchId: "huano-btspd-80m",
-          reason: "Replaces stiff stock Razer Gen-2 switches. Lowers click force, increases tactile snap, and dampens high-pitched clack."
+          reason: "Replaces stiff stock Razer Gen-2 switches. Lowers click force, increases tactile snap, and dampens high-pitched clack (~49-51 dB)."
         },
         {
           buttonGroup: "Side Navigation Buttons (M4 / M5)",
           recommendedSwitchId: "huano-bspd-90deg",
-          reason: "Requires 90° right-angle pre-bent pins to mate with vertical side PCB contact pads."
+          reason: "80M click rated 90° right-angle pre-bent pins to mate with vertical side PCB contact pads."
         },
         {
           buttonGroup: "Middle Scroll Click & DPI Cycle",
-          recommendedSwitchId: "huano-yellow-5mm",
-          reason: "5.0mm square switch clears scroll wheel cradle."
+          recommendedSwitchId: "kailh-5mm-tactile",
+          reason: "50M click rated 5.0mm Kailh square tactile switch clearing scroll wheel cradle."
         }
       ]
     }
