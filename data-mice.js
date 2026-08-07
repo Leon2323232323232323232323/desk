@@ -38,15 +38,43 @@ window.DESK_MICE = [
       { name: "0.5mm Rogers PORON Acoustic Foam Lining", difficulty: "Easy", impact: "Lowers high-pitched plastic shell resonance by 3-4 dB." },
       { name: "Corepad / Tiger Ice PTFE Skates", difficulty: "Easy", impact: "Upgrades glide speed and stops bottom drag." }
     ],
-    ergonomicDetails: { scoreReason: "Scored 9.5/10 for its asymmetrical right-hand contour, 14mm flared thumb rest wing, and double-beveled index DPI buttons.", specificShapeContour: "132mm length x 75mm width x 40mm arch height.", comparisonVsCloseCompetitors: "Vs Razer Basilisk V3: G502's thumb wing has a steeper grip angle. Vs MX Master 3S: G502 is 11mm lower in height, allowing fast twitch movements and 1000Hz gaming polling.", gripCompatibility: "Optimal for Medium-to-Large hands using Palm or Hybrid Claw grip.", wristAndPosture: "18° downward ergonomic slope reduces wrist pronation while thumb rest removes pad drag." },
-    pros: ["100% mechanical through-hole switches across all 11 buttons (fully solder-replaceable)", "Dual-mode scroll wheel", "G-Shift functionality", "Weight-neutral double battery capacity mod"],
-    cons: ["Stock Omron 50M switches prone to double-click", "Front-heavy stock weight", "Recessed Micro-USB port"],
-    setupNotes: ["BATTERY PINOUT: Pin 1 Red(+), Pin 2 White(NTC), Pin 3 Black(-)", "WEIGHT SAVINGS: Remove POWERPLAY puck door (-5g), copper coil (-5.5g), steel wheel swap (-9g) = ~19.5g saved"],
+    ergonomicDetails: {
+      scoreReason: "Scored 9.5/10 for its asymmetrical right-hand contour, 14mm flared thumb rest wing, and double-beveled index DPI buttons. It prevents thumb drag and accommodates long gaming/work sessions without wrist fatigue.",
+      specificShapeContour: "132mm length x 75mm width x 40mm arch height. Features an 18° downward right-hand slope that guides hand placement into an active hybrid claw/palm grip. Left thumb ledge keeps thumb fully elevated above the pad. Index finger rest features double-beveled G7/G8 button ledges reachable without shifting hand grip.",
+      comparisonVsCloseCompetitors: "Vs Razer Basilisk V3: G502's thumb wing has a steeper grip angle and its index DPI buttons (G7/G8) are much easier to actuate than Basilisk's top DPI toggle. Vs Logitech G Pro X Superlight: G502 provides a dedicated thumb wing and 11 buttons (vs GPX's bare egg shape 5-button shell). Vs MX Master 3S: G502 is 11mm lower in height (40mm vs 51mm), allowing fast twitch movements and 1000Hz gaming polling.",
+      gripCompatibility: "Optimal for Medium-to-Large hands using Palm or Hybrid Claw grip.",
+      wristAndPosture: "18° downward ergonomic slope reduces wrist pronation while thumb rest removes pad drag."
+    },
+    pros: [
+      "100% mechanical through-hole switches across all 11 buttons (fully solder-replaceable)",
+      "Dual-mode scroll wheel with hyper-fast spin and tactile ratchet",
+      "G-Shift functionality enables up to 22 executable commands across 2 software layers",
+      "Weight-neutral double battery capacity mod (upgrades to 500mAh while reducing net weight by 1.5g)",
+      "High weight-reduction ceiling (induction coil, battery tray, & wheel swap saves ~18g total)",
+      "Sculpted thumb rest with dedicated sniper clutch button"
+    ],
+    cons: [
+      "Stock Omron 50M (D2FC-F-K) switches prone to low-voltage double-click contact oxidation",
+      "Stock front-heavy weight bias due to heavy 14.5g steel scroll wheel",
+      "Recessed stock Micro-USB charging port prone to wear",
+      "Complex disassembly requiring tracking 22 internal screws"
+    ],
+    setupNotes: [
+      "BATTERY PINOUT SAFETY: Standard aftermarket 3.7V Li-Po batteries reverse GND (Black) and NTC (White) wires. Logitech pinout is strictly Pin 1: Red (+), Pin 2: White (NTC), Pin 3: Black (-). Swap wires on JST 1.25mm plug before connection.",
+      "BATTERY & WEIGHT MATH: Stock 240mAh cell (5.5g) + bracket (5.5g) = 11.0g. Upgraded 500mAh cell (9.0g) + tape (0.5g) = 9.5g. Delta: -1.5g net weight with +108% battery runtime.",
+      "WEIGHT SAVINGS CEILING: Remove POWERPLAY puck door (-5g), copper coil (-5.5g), and swap steel wheel for G903 aluminum wheel (-9g). Saves ~19.5g total.",
+      "PINKY REST MOD: Mold Sugru or Bostik Blu-Tack along lower right edge to eliminate pinky drag.",
+      "CHARGING PORT MOD: Install aftermarket G502 Wireless Type-C daughterboard or 540° magnetic charging tip.",
+      "ACOUSTIC TUNING: Line lower chassis floor with 0.5mm Rogers PORON foam to eliminate plastic echo."
+    ],
     buttonSwitchMapping: [
       { buttonGroup: "Main Left & Right Click (M1 / M2)", recommendedSwitchId: "huano-btspd-80m", reason: "Eliminates double-clicking, delivers deep 'thock' tone (~49–51 dB), and offers max 80M click durability." },
       { buttonGroup: "Side Forward & Back (G4 / G5)", recommendedSwitchId: "huano-bspd-80m", reason: "Solid housing creates 80M durability with complete tactile and acoustic uniformity." },
       { buttonGroup: "Thumb Sniper / G-Shift Clutch", recommendedSwitchId: "huano-bspd-80m", reason: "Crisp 70g actuation prevents accidental sniper triggers during twitch movements." },
-      { buttonGroup: "Middle Scroll Wheel Click (G3)", recommendedSwitchId: "kailh-5mm-tactile", reason: "50M click rated 5.0mm Kailh tactile switch. Max durability footprint under scroll cradle." }
+      { buttonGroup: "Middle Scroll Wheel Click (G3)", recommendedSwitchId: "kailh-5mm-tactile", reason: "50M click rated 5.0mm Kailh tactile switch. Max durability footprint under scroll cradle." },
+      { buttonGroup: "Index Finger DPI Up & Down (G7 / G8)", recommendedSwitchId: "kailh-5mm-tactile", reason: "50M click rated 5.0mm Kailh square tactile switch clearing upper shell plastics." },
+      { buttonGroup: "Top Profile Switch Button (G9)", recommendedSwitchId: "kailh-5mm-tactile", reason: "Replaces weak stock membrane button with 50M click durable 2-pin tactile switch." },
+      { buttonGroup: "Scroll Wheel Tilt Left & Right", recommendedSwitchId: "kailh-5mm-tactile", reason: "High durability 50M rating for heavy horizontal scrolling tasks." }
     ]
   },
   {
@@ -81,10 +109,31 @@ window.DESK_MICE = [
       { name: "0.1mm Enamel Jumper Wire Trace Repair", difficulty: "Advanced", impact: "Bridges torn copper pads if desoldering damages PCB traces." },
       { name: "Corepad Replacement PTFE Skates", difficulty: "Easy", impact: "Restores smooth glide on office desk pads." }
     ],
-    ergonomicDetails: { scoreReason: "Scored 9.8/10 as the gold standard for office desk work. Its 57-degree vertical incline rotates the forearm into a natural handshake posture, relieving median nerve pressure.", specificShapeContour: "125mm length x 84.3mm width x 51mm arch height. Steep 57° vertical incline prevents forearm pronation. Features a 22mm wide thumb rest wing with integrated gesture pad and flared right-side contour supporting ring/pinky fingers.", comparisonVsCloseCompetitors: "Vs MX Anywhere 3S: MX Master fills the palm completely, eliminating claw cramps, whereas Anywhere 3S is a flat fingertip travel mouse. Vs G502: MX Master is 11mm taller with a much wider palm arch, filling the hand fully for office productivity, but its 141g weight and 125Hz polling limit make it poor for gaming. Vs Keychron M6: MX Master features a superior electromagnetic MagSpeed wheel and deeper thumb rest wing.", gripCompatibility: "Designed strictly for Medium to Large hands using a Palm Grip.", wristAndPosture: "57° elevated ergonomic angle reduces forearm pronation and carpal tunnel compression." },
-    pros: ["Electromagnetic MagSpeed wheel auto-shifts from line-by-line ratchet to free-spin", "Thumb gesture button and dedicated horizontal side scroll wheel", "Darkfield 8K DPI sensor tracks smoothly on glass and high-gloss office surfaces", "Near-silent stock operation (~35 dB) ideal for quiet office environments", "Native USB-C fast charging port"],
-    cons: ["Low 125Hz polling rate causes cursor jitter on high refresh rate displays (144Hz+)", "Heavy 141g weight causes wrist fatigue during fast mouse movements or gaming", "Stock silent switches prone to internal contact oxidation and rubber dampener fatigue", "Fragile FFC ribbon cable and easily lifted PCB solder pads during desoldering"],
-    setupNotes: ["TRACE REPAIR BLUEPRINT: If a solder pad is lifted during desoldering, scrape copper mask on trace, apply Rosin Flux, and bridge 0.1mm enamel jumper wire directly to switch pin.", "PRE-TRAVEL SHIM TUNING: Stock switches are 7.45mm tall. Standard 7.30mm switches leave 0.15mm gap. Stick 0.1mm aluminum foil tape onto button plungers.", "EMERGENCY CONTACT FIX: Flushing failing switches with 91%+ IPA temporarily dissolves contact oxidation before full soldering repair."],
+    ergonomicDetails: {
+      scoreReason: "Scored 9.8/10 as the gold standard for office desk work. Its 57-degree vertical incline rotates the forearm into a natural handshake posture, relieving median nerve pressure.",
+      specificShapeContour: "125mm length x 84.3mm width x 51mm arch height. Steep 57° vertical incline prevents forearm pronation. Features a 22mm wide thumb rest wing with integrated gesture pad and flared right-side contour supporting ring/pinky fingers.",
+      comparisonVsCloseCompetitors: "Vs MX Anywhere 3S: MX Master fills the palm completely, eliminating claw cramps, whereas Anywhere 3S is a flat fingertip travel mouse. Vs G502: MX Master is 11mm taller with a much wider palm arch, filling the hand fully for office productivity, but its 141g weight and 125Hz polling limit make it poor for gaming. Vs Keychron M6: MX Master features a superior electromagnetic MagSpeed wheel and deeper thumb rest wing.",
+      gripCompatibility: "Designed strictly for Medium to Large hands using a Palm Grip.",
+      wristAndPosture: "57° elevated ergonomic angle reduces forearm pronation and carpal tunnel compression."
+    },
+    pros: [
+      "Electromagnetic MagSpeed wheel auto-shifts from line-by-line ratchet to free-spin",
+      "Thumb gesture button and dedicated horizontal side scroll wheel",
+      "Darkfield 8K DPI sensor tracks smoothly on glass and high-gloss office surfaces",
+      "Near-silent stock operation (~35 dB) ideal for quiet office environments",
+      "Native USB-C fast charging port"
+    ],
+    cons: [
+      "Low 125Hz polling rate causes cursor jitter on high refresh rate displays (144Hz+)",
+      "Heavy 141g weight causes wrist fatigue during fast mouse movements or gaming",
+      "Stock silent switches prone to internal contact oxidation and rubber dampener fatigue",
+      "Fragile FFC ribbon cable and easily lifted PCB solder pads during desoldering"
+    ],
+    setupNotes: [
+      "TRACE REPAIR BLUEPRINT: If a solder pad is lifted during desoldering, scrape copper mask on trace, apply Rosin Flux, and bridge 0.1mm enamel jumper wire directly to switch pin.",
+      "PRE-TRAVEL SHIM TUNING: Stock switches are 7.45mm tall. Standard 7.30mm switches leave 0.15mm gap. Stick 0.1mm aluminum foil tape onto button plungers.",
+      "EMERGENCY CONTACT FIX: Flushing failing switches with 91%+ IPA temporarily dissolves contact oxidation before full soldering repair."
+    ],
     buttonSwitchMapping: [
       { buttonGroup: "Main Left & Right Click (Option A - Silent)", recommendedSwitchId: "huano-silent-yellow-73mm", reason: "Matches stock silent acoustic profile (~35–38 dB) while providing snappier tactile feel and 30M click lifespan." },
       { buttonGroup: "Main Left & Right Click (Option B - Durability)", recommendedSwitchId: "zippy-df3-p1", reason: "Clipped Pin 3 mechanical mod. Eliminates squishy rubber feel, increases tactile feedback (~46 dB), and ensures 60M click durability." },
@@ -120,7 +169,13 @@ window.DESK_MICE = [
       { name: "0.5mm Rogers PORON Foam Lining", difficulty: "Easy", impact: "Dampens internal resonance inside the 78g hollow chassis." },
       { name: "PTFE Glass Feet / Tiger Ice Skates", difficulty: "Easy", impact: "Creates effortless friction-free gliding across desk mats." }
     ],
-    ergonomicDetails: { scoreReason: "Combines MX Master 3S ergonomic palm support with 78g body and 1000Hz polling. Zero cursor lag on 144Hz+ monitors at half the weight and price.", specificShapeContour: "121.5mm length x 75.4mm width x 40.5mm height. Features a steep right-hand ergonomic slope, wide thumb rest ledge, side thumb wheel, and a dual-mode infinite scroll wheel.", comparisonVsCloseCompetitors: "Vs MX Master 3S: Keychron M6 is drastically better for high-refresh displays (1000Hz vs 125Hz limit) and almost half the weight (78g vs 141g), while costing half the price ($49 vs $99). Vs G502: M6 is 23.5g lighter and features a dedicated side thumb wheel for horizontal scrolling.", gripCompatibility: "Medium-to-Large hands, Palm or Claw grip.", wristAndPosture: "Neutral ergonomic tilt and low weight eliminate wrist drag and forearm strain." },
+    ergonomicDetails: {
+      scoreReason: "Combines MX Master 3S ergonomic palm support with 78g body and 1000Hz polling. Zero cursor lag on 144Hz+ monitors at half the weight and price.",
+      specificShapeContour: "121.5mm length x 75.4mm width x 40.5mm height. Features a steep right-hand ergonomic slope, wide thumb rest ledge, side thumb wheel, and a dual-mode infinite scroll wheel.",
+      comparisonVsCloseCompetitors: "Vs MX Master 3S: Keychron M6 is drastically better for high-refresh displays (1000Hz vs 125Hz limit) and almost half the weight (78g vs 141g), while costing half the price ($49 vs $99). Vs G502: M6 is 23.5g lighter and features a dedicated side thumb wheel for horizontal scrolling.",
+      gripCompatibility: "Medium-to-Large hands, Palm or Claw grip.",
+      wristAndPosture: "Neutral ergonomic tilt and low weight eliminate wrist drag and forearm strain."
+    },
     pros: ["1000Hz polling rate completely fixes the MX Master 3S cursor lag on 144Hz+ monitors", "Extremely lightweight at 78g (45% lighter than MX Master 3S)", "Features both a top dual-mode infinite scroll wheel AND a side thumb wheel", "100% standard mechanical through-hole switches (easily solder-replaceable)", "Includes both Type-C and Type-A 2.4GHz wireless receivers in the box"],
     cons: ["Stock mechanical clicks are noticeable (~48 dB) and require silent switch soldering for quiet office use", "Lacks electromagnetic MagSpeed wheel auto-shifting (requires manual top button push for infinite spin)"],
     setupNotes: ["SILENT MOD: Desolder stock Huano 80M mechanical switches and solder Huano Silent Square 2-Pin (7.3mm) switches on M1/M2 for an ultra-quiet 1000Hz productivity mouse.", "DUAL RECEIVER FEATURE: Includes both USB-C and USB-A 2.4GHz dongles for seamless laptop/desktop switching."],
@@ -131,7 +186,6 @@ window.DESK_MICE = [
       { buttonGroup: "Middle Click", recommendedSwitchId: "huano-yellow-5mm", reason: "5.0mm square switch under top scroll carriage." }
     ]
   },
-    // --- additional mice – excellent price‑to‑value ---
   {
     id: "razer-da-v3", category: "mice", name: "DeathAdder V3", brand: "Razer", status: "Wishlist",
     topPickBadge: "Best light‑ergo wireless mouse", price: "$149",
