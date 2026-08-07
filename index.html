@@ -14,11 +14,10 @@
       --card-bg: #1f2937;
       --card-expanded-bg: #162032;
       --border: #374151;
-      --border-accent: #4f46e5;
+      --border-accent: #6366f1;
       --text: #f9fafb;
       --text-muted: #9ca3af;
       --primary: #6366f1;
-      --primary-hover: #4f46e5;
       --primary-light: rgba(99, 102, 241, 0.15);
       --badge-owned-bg: rgba(34, 197, 94, 0.15);
       --badge-owned: #4ade80;
@@ -26,16 +25,10 @@
       --badge-wishlist: #fde047;
       --badge-alt-bg: rgba(239, 68, 68, 0.15);
       --badge-alt: #f87171;
-      --pro-color: #4ade80;
-      --con-color: #f87171;
       --radius: 10px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -48,13 +41,8 @@
       line-height: 1.5;
     }
 
-    #app {
-      display: flex;
-      width: 100%;
-      height: 100%;
-    }
+    #app { display: flex; width: 100%; height: 100%; }
 
-    /* Sidebar Navigation */
     sidebar {
       width: 260px;
       background-color: var(--sidebar-bg);
@@ -68,7 +56,6 @@
       padding: 20px;
       font-size: 1.1rem;
       font-weight: 700;
-      letter-spacing: -0.02em;
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
@@ -86,12 +73,7 @@
       font-size: 13px;
     }
 
-    .nav-list {
-      list-style: none;
-      padding: 12px 8px;
-      overflow-y: auto;
-      flex-grow: 1;
-    }
+    .nav-list { list-style: none; padding: 12px 8px; overflow-y: auto; flex-grow: 1; }
 
     .nav-item {
       padding: 10px 12px;
@@ -106,16 +88,8 @@
       transition: all 0.15s ease;
     }
 
-    .nav-item:hover {
-      background-color: rgba(255, 255, 255, 0.05);
-      color: var(--text);
-    }
-
-    .nav-item.active {
-      background-color: var(--primary-light);
-      color: var(--primary);
-      font-weight: 600;
-    }
+    .nav-item:hover { background-color: rgba(255, 255, 255, 0.05); color: var(--text); }
+    .nav-item.active { background-color: var(--primary-light); color: var(--primary); font-weight: 600; }
 
     .counter-badge {
       background: rgba(255, 255, 255, 0.08);
@@ -125,13 +99,7 @@
       color: var(--text-muted);
     }
 
-    /* Main Viewport */
-    main {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
+    main { flex-grow: 1; display: flex; flex-direction: column; overflow: hidden; }
 
     header {
       padding: 16px 24px;
@@ -143,10 +111,7 @@
       background: var(--sidebar-bg);
     }
 
-    .search-box {
-      position: relative;
-      width: 340px;
-    }
+    .search-box { position: relative; width: 340px; }
 
     .search-box input {
       width: 100%;
@@ -159,10 +124,7 @@
       font-size: 13px;
     }
 
-    .search-box input:focus {
-      border-color: var(--primary);
-    }
-
+    .search-box input:focus { border-color: var(--primary); }
     .search-box::before {
       content: '🔍';
       position: absolute;
@@ -173,11 +135,7 @@
       opacity: 0.5;
     }
 
-    .controls-group {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .controls-group { display: flex; align-items: center; gap: 10px; }
 
     .btn-action {
       background: rgba(255, 255, 255, 0.06);
@@ -188,21 +146,12 @@
       cursor: pointer;
       font-size: 12px;
       font-weight: 500;
-      transition: all 0.15s ease;
     }
 
-    .btn-action:hover {
-      background: rgba(255, 255, 255, 0.12);
-      color: var(--text);
-    }
+    .btn-action:hover { background: rgba(255, 255, 255, 0.12); color: var(--text); }
 
-    .content-viewport {
-      padding: 24px;
-      overflow-y: auto;
-      flex-grow: 1;
-    }
+    .content-viewport { padding: 24px; overflow-y: auto; flex-grow: 1; }
 
-    /* Accordion Product List */
     .product-list {
       display: flex;
       flex-direction: column;
@@ -216,7 +165,7 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
-      transition: border-color 0.15s ease, background-color 0.15s ease;
+      transition: border-color 0.15s ease;
     }
 
     .card.expanded {
@@ -225,7 +174,6 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
 
-    /* Card Header Bar (Always Visible) */
     .card-header {
       padding: 16px 20px;
       cursor: pointer;
@@ -236,30 +184,11 @@
       user-select: none;
     }
 
-    .card-header:hover {
-      background: rgba(255, 255, 255, 0.02);
-    }
+    .card-header:hover { background: rgba(255, 255, 255, 0.02); }
 
-    .card-title-group {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .product-brand {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .product-name {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text);
-    }
+    .card-title-group { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .product-brand { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
+    .product-name { font-size: 1.1rem; font-weight: 700; color: var(--text); }
 
     .status-badge {
       padding: 3px 10px;
@@ -267,7 +196,6 @@
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.03em;
     }
 
     .status-owned { background: var(--badge-owned-bg); color: var(--badge-owned); }
@@ -284,18 +212,8 @@
       font-weight: 600;
     }
 
-    .card-header-meta {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-shrink: 0;
-    }
-
-    .product-price {
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--text);
-    }
+    .card-header-meta { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+    .product-price { font-weight: 700; font-size: 1rem; color: var(--text); }
 
     .expand-toggle {
       width: 28px;
@@ -309,13 +227,8 @@
       transition: transform 0.2s ease;
     }
 
-    .card.expanded .expand-toggle {
-      transform: rotate(180deg);
-      background: var(--primary);
-      color: #fff;
-    }
+    .card.expanded .expand-toggle { transform: rotate(180deg); background: var(--primary); color: #fff; }
 
-    /* Summary Bar */
     .card-summary-bar {
       padding: 0 20px 14px 20px;
       font-size: 13px;
@@ -323,29 +236,17 @@
       border-bottom: 1px solid transparent;
     }
 
-    .card.expanded .card-summary-bar {
-      border-bottom-color: var(--border);
-    }
+    .card.expanded .card-summary-bar { border-bottom-color: var(--border); }
 
-    /* Expandable Content Area */
     .card-body {
       display: none;
       padding: 20px;
       flex-direction: column;
       gap: 20px;
-      animation: fadeIn 0.2s ease-in-out;
     }
 
-    .card.expanded .card-body {
-      display: flex;
-    }
+    .card.expanded .card-body { display: flex; }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-4px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Distinct Section Blocks */
     .section-block {
       background: rgba(0, 0, 0, 0.25);
       border: 1px solid var(--border);
@@ -367,10 +268,9 @@
       gap: 8px;
     }
 
-    /* Specs Grid */
     .properties-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
       gap: 10px;
     }
 
@@ -383,36 +283,14 @@
       flex-direction: column;
     }
 
-    .property-key {
-      font-size: 10px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
+    .property-key { font-size: 10px; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
+    .property-val { font-size: 13px; font-weight: 600; color: var(--text); margin-top: 2px; }
 
-    .property-val {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text);
-      margin-top: 2px;
-    }
+    .pro-con-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
-    /* Pros & Cons Columns */
-    .pro-con-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
+    @media (max-width: 768px) { .pro-con-grid { grid-template-columns: 1fr; } }
 
-    @media (max-width: 768px) {
-      .pro-con-grid { grid-template-columns: 1fr; }
-    }
-
-    .pro-column, .con-column {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
+    .pro-column, .con-column { display: flex; flex-direction: column; gap: 8px; }
 
     .pro-con-item {
       font-size: 12px;
@@ -421,35 +299,18 @@
       display: flex;
       align-items: flex-start;
       gap: 8px;
-      line-height: 1.4;
     }
 
-    .pro-item {
-      background: rgba(34, 197, 94, 0.08);
-      border: 1px solid rgba(34, 197, 94, 0.2);
-      color: #dcfce7;
-    }
+    .pro-item { background: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.2); color: #dcfce7; }
+    .con-item { background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.2); color: #fee2e2; }
 
-    .con-item {
-      background: rgba(239, 68, 68, 0.08);
-      border: 1px solid rgba(239, 68, 68, 0.2);
-      color: #fee2e2;
-    }
-
-    /* Bullet Notes Formatting */
-    .bullet-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
+    .bullet-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 
     .bullet-list li {
       position: relative;
       padding-left: 18px;
       font-size: 13px;
       color: #d1d5db;
-      line-height: 1.5;
     }
 
     .bullet-list li::before {
@@ -459,15 +320,9 @@
       color: var(--primary);
       font-weight: bold;
       font-size: 16px;
-      line-height: 1;
     }
 
-    /* Microswitch Mapping Table */
-    .switch-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 12px;
-    }
+    .switch-table { width: 100%; border-collapse: collapse; font-size: 12px; }
 
     .switch-table th, .switch-table td {
       padding: 8px 12px;
@@ -475,14 +330,8 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .switch-table th {
-      color: var(--text-muted);
-      font-size: 10px;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
+    .switch-table th { color: var(--text-muted); font-size: 10px; text-transform: uppercase; font-weight: 700; }
 
-    /* Software Setup Block */
     .software-box {
       background: rgba(99, 102, 241, 0.05);
       border: 1px solid rgba(99, 102, 241, 0.2);
@@ -494,21 +343,13 @@
       gap: 6px;
     }
 
-    /* Empty State */
-    .empty-state {
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--text-muted);
-    }
+    .empty-state { text-align: center; padding: 60px 20px; color: var(--text-muted); }
 
     .buy-link {
       color: var(--primary);
       text-decoration: none;
       font-weight: 600;
       font-size: 12px;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
     }
 
     .buy-link:hover { text-decoration: underline; }
@@ -517,7 +358,6 @@
 <body>
 
   <div id="app">
-    <!-- Sidebar -->
     <sidebar>
       <div class="brand">
         <div class="brand-icon">⚡</div>
@@ -526,7 +366,6 @@
       <ul class="nav-list" id="categoryNav"></ul>
     </sidebar>
 
-    <!-- Main Content Area -->
     <main>
       <header>
         <div class="search-box">
@@ -538,40 +377,35 @@
         </div>
       </header>
 
-      <!-- Viewport -->
       <div class="content-viewport">
         <div class="product-list" id="productList"></div>
       </div>
     </main>
   </div>
 
-<script>
-  window.DESK_DATA = {
-    // Paste all contents of data.js here
-  };
-</script>
+  <script src="data.js"></script>
+
   <script>
     (function () {
+      const productList = document.getElementById('productList');
+
       if (!window.DESK_DATA) {
-        document.getElementById('productList').innerHTML = `
+        productList.innerHTML = `
           <div class="empty-state">
-            <h2>data.js file missing!</h2>
-            <p style="margin-top:8px">Please ensure <code>data.js</code> exists in the root folder.</p>
+            <h2>data.js file missing or failed to load!</h2>
+            <p style="margin-top:8px">Ensure <code>data.js</code> and <code>index.html</code> are in the exact same folder.</p>
           </div>`;
         return;
       }
 
       const { categories = [], products = [], microswitches = {} } = window.DESK_DATA;
 
-      // State
       let activeCategory = categories[0]?.id || 'mice';
       let searchQuery = '';
-      let expandedCardIds = new Set(); // Tracks open accordions for side-by-side comparison
+      let expandedCardIds = new Set();
 
-      // Elements
       const categoryNav = document.getElementById('categoryNav');
       const searchInput = document.getElementById('searchInput');
-      const productList = document.getElementById('productList');
       const btnExpandAll = document.getElementById('btnExpandAll');
       const btnCollapseAll = document.getElementById('btnCollapseAll');
 
@@ -610,21 +444,18 @@
             p.name.toLowerCase().includes(query) ||
             p.brand.toLowerCase().includes(query) ||
             (p.tags && p.tags.some(t => t.toLowerCase().includes(query))) ||
-            (p.summary && p.summary.toLowerCase().includes(query)) ||
-            (p.setupNotes && p.setupNotes.toLowerCase().includes(query));
+            (p.summary && p.summary.toLowerCase().includes(query));
 
           return matchesCategory && matchesSearch;
         });
       }
 
-      // Convert long text blocks into concise bullet lists
-      function formatConciseBullets(text) {
-        if (!text) return '';
-        const lines = text.split('\n')
-          .map(l => l.trim())
-          .filter(l => l.length > 0);
-        
-        return `<ul class="bullet-list">${lines.map(line => `<li>${line.replace(/^[-•]\s*/, '')}</li>`).join('')}</ul>`;
+      function renderBulletNotes(notes) {
+        if (!notes) return '';
+        if (Array.isArray(notes)) {
+          return `<ul class="bullet-list">${notes.map(n => `<li>${n}</li>`).join('')}</ul>`;
+        }
+        return `<ul class="bullet-list"><li>${notes}</li></ul>`;
       }
 
       function renderProducts() {
@@ -634,7 +465,7 @@
           productList.innerHTML = `
             <div class="empty-state">
               <h3>No items match your search</h3>
-              <p style="margin-top: 6px;">Try clearing filters or switching category tabs.</p>
+              <p style="margin-top: 6px;">Try clearing search filters or selecting another category.</p>
             </div>`;
           return;
         }
@@ -645,7 +476,6 @@
 
           return `
             <div class="card ${isExpanded ? 'expanded' : ''}" id="card-${item.id}">
-              <!-- Always Visible Header Bar -->
               <div class="card-header" onclick="window.deskApp.toggleCard('${item.id}')">
                 <div class="card-title-group">
                   <span class="product-brand">${item.brand}</span>
@@ -659,18 +489,14 @@
                 </div>
               </div>
 
-              <!-- Summary Sub-Bar -->
               <div class="card-summary-bar">
                 ${item.summary || ''}
               </div>
 
-              <!-- Expanded Detailed Body -->
               <div class="card-body">
-                
-                <!-- SECTION 1: Technical Properties Grid -->
                 ${item.properties ? `
                   <div class="section-block">
-                    <div class="section-title">📊 Technical Specifications</div>
+                    <div class="section-title">📊 Specs & Ergonomic Ratings</div>
                     <div class="properties-grid">
                       ${Object.entries(item.properties).map(([key, val]) => `
                         <div class="property-pill">
@@ -682,10 +508,9 @@
                   </div>
                 ` : ''}
 
-                <!-- SECTION 2: Pros & Cons -->
                 ${(item.pros || item.cons) ? `
                   <div class="section-block">
-                    <div class="section-title">⚖️ Advantages & Disadvantages</div>
+                    <div class="section-title">⚖️ Pros & Cons</div>
                     <div class="pro-con-grid">
                       <div class="pro-column">
                         ${(item.pros || []).map(p => `<div class="pro-con-item pro-item">✓ ${p}</div>`).join('')}
@@ -697,7 +522,6 @@
                   </div>
                 ` : ''}
 
-                <!-- SECTION 3: Per-Button Microswitch Recommendations -->
                 ${(item.buttonSwitchMapping && item.buttonSwitchMapping.length > 0) ? `
                   <div class="section-block">
                     <div class="section-title">🔌 Per-Button Microswitch Configuration</div>
@@ -728,15 +552,13 @@
                   </div>
                 ` : ''}
 
-                <!-- SECTION 4: Short & Concise Modding / Hardware Notes -->
                 ${item.setupNotes ? `
                   <div class="section-block">
-                    <div class="section-title">🔧 Modding & Hardware Bullet Notes</div>
-                    ${formatConciseBullets(item.setupNotes)}
+                    <div class="section-title">🔧 Modding & Repair Notes</div>
+                    ${renderBulletNotes(item.setupNotes)}
                   </div>
                 ` : ''}
 
-                <!-- SECTION 5: Software & Macro Profile Config -->
                 ${item.softwareSetup ? `
                   <div class="section-block">
                     <div class="section-title">🎛 Software & Macro Layout</div>
@@ -748,13 +570,11 @@
                   </div>
                 ` : ''}
 
-                <!-- Footer External Purchase Link -->
                 ${item.purchaseUrl ? `
                   <div style="display:flex; justify-content:flex-end; padding-top:4px;">
                     <a href="${item.purchaseUrl}" target="_blank" class="buy-link">Official Product Page / Buy Link ↗</a>
                   </div>
                 ` : ''}
-
               </div>
             </div>
           `;
@@ -776,7 +596,7 @@
           if (!navItem) return;
           activeCategory = navItem.dataset.cat;
           location.hash = activeCategory;
-          expandedCardIds.clear(); // Reset expansion on category change
+          expandedCardIds.clear();
           renderNav();
           renderProducts();
         });
