@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desk Setup Catalog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --sidebar-bg: #111827;
+      --card-bg: #1f2937;
+      --card-hover: #374151;
+      --border: #374151;
+      --text: #f9fafb;
+      --text-muted: #9ca3af;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --primary-light: rgba(99, 102, 241, 0.15);
+      --badge-owned-bg: rgba(34, 197, 94, 0.15);
+      --badge-owned: #4ade80;
+      --badge-wishlist-bg: rgba(234, 179, 8, 0.15);
+      --badge-wishlist: #fde047;
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* Layout Skeleton */
+    #app {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Sidebar */
+    sidebar {
+      width: 260px;
+      background-color: var(--sidebar-bg);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+
+    .brand {
+      padding: 20px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-icon {
+      width: 24px;
+      height: 24px;
+      background: var(--primary);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    .nav-list {
+      list-style: none;
+      padding: 12px 8px;
+      overflow-y: auto;
+      flex-grow: 1;
+    }
+
+    .nav-item {
+      padding: 10px 12px;
+      margin-bottom: 4px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      color: var(--text-muted);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.15s ease;
+    }
+
+    .nav-item:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+    }
+
+    .nav-item.active {
+      background-color: var(--primary-light);
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .counter-badge {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Main View Area */
+    main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    header {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: var(--sidebar-bg);
+    }
+
+    .search-box {
+      position: relative;
+      width: 320px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 8px 12px 8px 36px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      outline: none;
+      font-size: 13px;
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary);
+    }
+
+    .search-box::before {
+      content: '🔍';
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      opacity: 0.5;
+    }
+
+    /* Tab Controls */
+    .view-tabs {
+      display: flex;
+      gap: 8px;
+      padding: 12px 24px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(17, 24, 39, 0.5);
+    }
+
+    .tab-btn {
+      padding: 6px 14px;
+      border-radius: 6px;
+      border: 1px solid border;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 13px;
+      transition: all 0.15s ease;
+    }
+
+    .tab-btn:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .content-viewport {
+      padding: 24px;
+      overflow-y: auto;
+      flex-grow: 1;
+    }
+
+    /* Cards Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      border-color: #4b5563;
+      transform: translateY(-2px);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .product-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .product-brand {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .status-badge {
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .status-owned {
+      background: var(--badge-owned-bg);
+      color: var(--badge-owned);
+    }
+
+    .status-wishlist {
+      background: var(--badge-wishlist-bg);
+      color: var(--badge-wishlist);
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .specs-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      font-size: 12px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      border-radius: 6px;
+    }
+
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .spec-label {
+      color: var(--text-muted);
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+    .spec-value {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .pro-con-box {
+      font-size: 12px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .pro-list, .con-list {
+      list-style: none;
+    }
+
+    .pro-list li::before { content: "✓ "; color: var(--badge-owned); }
+    .con-list li::before { content: "✕ "; color: #ef4444; }
+
+    /* Component / Microswitch View Specifics */
+    .switch-matrix {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .mapping-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 13px;
+    }
+
+    .mapping-table th, .mapping-table td {
+      text-align: left;
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mapping-table th {
+      color: var(--text-muted);
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    /* Switch Library Table */
+    .switch-lib-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .switch-card {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+    }
+
+    /* Modal / Drawer */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px);
+      display: none;
+      justify-content: flex-end;
+      z-index: 100;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-drawer {
+      width: 100%;
+      max-width: 500px;
+      background: var(--sidebar-bg);
+      height: 100%;
+      border-left: 1px solid var(--border);
+      padding: 24px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .modal-close {
+      align-self: flex-end;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 40px;
+      color: var(--text-muted);
+    }
+
+    /* Utilities */
+    .btn-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .btn-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <!-- Sidebar -->
+    <sidebar>
+      <div class="brand">
+        <div class="brand-icon">⚡</div>
+        <span>Desk Directory</span>
+      </div>
+      <ul class="nav-list" id="categoryNav"></ul>
+    </sidebar>
+
+    <!-- Main Content Area -->
+    <main>
+      <header>
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search equipment, specs, switches...">
+        </div>
+        <div id="activeCategoryTitle" style="font-weight: 600; font-size: 1.1rem;">Select Category</div>
+      </header>
+
+      <!-- Section Tabs -->
+      <div class="view-tabs" id="sectionTabs">
+        <button class="tab-btn active" data-tab="catalog">Full Catalog & Specs</button>
+        <button class="tab-btn" data-tab="top-picks">Top Picks</button>
+        <button class="tab-btn" data-tab="components">Modding & Switches</button>
+      </div>
+
+      <!-- Viewport -->
+      <div class="content-viewport" id="viewport"></div>
+    </main>
+  </div>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" id="detailModal">
+    <div class="modal-drawer">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Import the Database File -->
+  <script src="data.js"></script>
+
+  <!-- Engine Logic -->
+  <script>
+    (function () {
+      // Guard check for database load
+      if (!window.DESK_DATA) {
+        document.getElementById('viewport').innerHTML = `
+          <div class="empty-state">
+            <h2>data.js file not found!</h2>
+            <p style="margin-top:8px">Please create <code>data.js</code> in the same repository folder.</p>
+          </div>`;
+        return;
+      }
+
+      const { categories = [], products = [], microswitches = {} } = window.DESK_DATA;
+
+      // State
+      let activeCategory = categories[0]?.id || 'mice';
+      let activeTab = 'catalog';
+      let searchQuery = '';
+
+      // Elements
+      const categoryNav = document.getElementById('categoryNav');
+      const searchInput = document.getElementById('searchInput');
+      const sectionTabs = document.getElementById('sectionTabs');
+      const viewport = document.getElementById('viewport');
+      const activeCategoryTitle = document.getElementById('activeCategoryTitle');
+      const detailModal = document.getElementById('detailModal');
+      const modalBody = document.getElementById('modalBody');
+      const modalClose = document.getElementById('modalClose');
+
+      // Initialize
+      function init() {
+        renderNav();
+        setupEventListeners();
+        handleHashRoute();
+        renderView();
+      }
+
+      // Hash Handling
+      function handleHashRoute() {
+        const hash = location.hash.replace('#', '');
+        if (hash) {
+          const matchedCategory = categories.find(c => c.id === hash);
+          if (matchedCategory) activeCategory = matchedCategory.id;
+        }
+      }
+
+      // Render Navigation
+      function renderNav() {
+        categoryNav.innerHTML = categories.map(cat => {
+          const count = products.filter(p => p.category === cat.id).length;
+          return `
+            <li class="nav-item ${cat.id === activeCategory ? 'active' : ''}" data-cat="${cat.id}">
+              <span>${cat.label}</span>
+              <span class="counter-badge">${count}</span>
+            </li>
+          `;
+        }).join('');
+      }
+
+      // Filtered Data Engine
+      function getFilteredProducts() {
+        return products.filter(p => {
+          const matchesCategory = p.category === activeCategory;
+          const query = searchQuery.toLowerCase();
+          const matchesSearch = !query || 
+            p.name.toLowerCase().includes(query) ||
+            p.brand.toLowerCase().includes(query) ||
+            (p.tags && p.tags.some(t => t.toLowerCase().includes(query))) ||
+            (p.summary && p.summary.toLowerCase().includes(query));
+
+          return matchesCategory && matchesSearch;
+        });
+      }
+
+      // Main Render Router
+      function renderView() {
+        const currentCatObj = categories.find(c => c.id === activeCategory);
+        activeCategoryTitle.textContent = currentCatObj ? currentCatObj.label : 'Catalog';
+
+        const filtered = getFilteredProducts();
+
+        if (filtered.length === 0) {
+          viewport.innerHTML = `
+            <div class="empty-state">
+              <h3>No products found</h3>
+              <p style="margin-top: 4px;">Try updating your search query or switching categories.</p>
+            </div>`;
+          return;
+        }
+
+        if (activeTab === 'catalog') {
+          renderCatalogView(filtered);
+        } else if (activeTab === 'top-picks') {
+          renderTopPicksView(filtered);
+        } else if (activeTab === 'components') {
+          renderComponentsView(filtered);
+        }
+      }
+
+      // TAB 1: Catalog & Specs View
+      function renderCatalogView(items) {
+        viewport.innerHTML = `
+          <div class="product-grid">
+            ${items.map(item => `
+              <div class="card" onclick="window.appEngine.openDetail('${item.id}')">
+                <div class="card-header">
+                  <div>
+                    <div class="product-brand">${item.brand}</div>
+                    <div class="product-title">${item.name}</div>
+                  </div>
+                  <span class="status-badge ${item.status === 'Owned' ? 'status-owned' : 'status-wishlist'}">
+                    ${item.status || 'Wishlist'}
+                  </span>
+                </div>
+
+                ${item.summary ? `<p style="font-size:12px; color:var(--text-muted);">${item.summary}</p>` : ''}
+
+                ${item.tags ? `
+                  <div class="tag-container">
+                    ${item.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+                  </div>
+                ` : ''}
+
+                ${item.properties ? `
+                  <div class="specs-list">
+                    ${Object.entries(item.properties).slice(0, 4).map(([k, v]) => `
+                      <div class="spec-item">
+                        <span class="spec-label">${k}</span>
+                        <span class="spec-value">${v}</span>
+                      </div>
+                    `).join('')}
+                  </div>
+                ` : ''}
+
+                ${(item.pros || item.cons) ? `
+                  <div class="pro-con-box">
+                    <ul class="pro-list">
+                      ${(item.pros || []).slice(0, 2).map(p => `<li>${p}</li>`).join('')}
+                    </ul>
+                    <ul class="con-list">
+                      ${(item.cons || []).slice(0, 2).map(c => `<li>${c}</li>`).join('')}
+                    </ul>
+                  </div>
+                ` : ''}
+
+                <div style="margin-top:auto; display:flex; justify-content:space-between; align-items:center; pt-8;">
+                  <span style="font-weight:600;">${item.price || ''}</span>
+                  <span class="btn-link">View Details →</span>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+      }
+
+      // TAB 2: Top Picks
+      function renderTopPicksView(items) {
+        const topPicks = items.filter(i => i.isTopPick);
+
+        if (topPicks.length === 0) {
+          viewport.innerHTML = `<div class="empty-state"><p>No items marked as "Top Pick" in this category yet.</p></div>`;
+          return;
+        }
+
+        viewport.innerHTML = `
+          <div class="product-grid">
+            ${topPicks.map(item => `
+              <div class="card" style="border-color: var(--primary);" onclick="window.appEngine.openDetail('${item.id}')">
+                <div style="background:var(--primary-light); color:var(--primary); font-size:11px; font-weight:600; padding:4px 8px; border-radius:4px; align-self:flex-start;">
+                  ★ ${item.topPickBadge || 'Top Recommendation'}
+                </div>
+                <div class="product-title" style="font-size:1.1rem;">${item.name}</div>
+                <p style="font-size:13px; color:var(--text-muted);">${item.summary || ''}</p>
+                <div style="margin-top:auto;">
+                  <span class="btn-link">Read full spec breakdown →</span>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+      }
+
+      // TAB 3: Component & Microswitch Matrix
+      function renderComponentsView(items) {
+        const itemsWithSwitches = items.filter(i => i.buttonSwitchMapping && i.buttonSwitchMapping.length > 0);
+
+        viewport.innerHTML = `
+          <div class="switch-matrix">
+            <h3 style="font-weight:600;">Hardware & Modding Specifications</h3>
+            
+            ${itemsWithSwitches.length === 0 ? `
+              <div class="empty-state"><p>No microswitch/button mappings registered for products in this category.</p></div>
+            ` : itemsWithSwitches.map(item => `
+              <div class="mapping-card">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <h4>${item.name}</h4>
+                  <span class="tag" style="color:var(--primary);">${item.properties?.switchReplaceability || 'Moddable'}</span>
+                </div>
+                <table class="mapping-table">
+                  <thead>
+                    <tr>
+                      <th>Button Location</th>
+                      <th>Recommended Microswitch</th>
+                      <th>Reason / Tactical Feel</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${item.buttonSwitchMapping.map(m => {
+                      const sw = microswitches[m.recommendedSwitchId] || {};
+                      return `
+                        <tr>
+                          <td><strong>${m.buttonGroup}</strong></td>
+                          <td>
+                            <div><strong>${sw.name || m.recommendedSwitchId}</strong></div>
+                            <div style="font-size:11px; color:var(--text-muted);">${sw.force || ''} | ${sw.lifespan || ''}</div>
+                          </td>
+                          <td style="color:var(--text-muted);">${m.reason || sw.feel || ''}</td>
+                        </tr>
+                      `;
+                    }).join('')}
+                  </tbody>
+                </table>
+              </div>
+            `).join('')}
+
+            <h3 style="font-weight:600; margin-top:24px;">Global Microswitch Library</h3>
+            <div class="switch-lib-grid">
+              ${Object.entries(microswitches).map(([id, sw]) => `
+                <div class="switch-card">
+                  <div style="font-weight:600; color:var(--text);">${sw.name}</div>
+                  <div style="font-size:12px; color:var(--primary); margin:4px 0;">${sw.bestFor || ''}</div>
+                  <div style="font-size:12px; color:var(--text-muted);">${sw.feel}</div>
+                  <div style="margin-top:8px; font-size:11px; display:flex; gap:10px; color:var(--text-muted);">
+                    <span>Force: ${sw.force}</span>
+                    <span>Life: ${sw.lifespan}</span>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      // Drawer / Modal View
+      function openDetail(productId) {
+        const item = products.find(p => p.id === productId);
+        if (!item) return;
+
+        modalBody.innerHTML = `
+          <div class="product-brand">${item.brand}</div>
+          <h2>${item.name}</h2>
+          <div style="font-size:1.1rem; font-weight:600; color:var(--primary);">${item.price || ''}</div>
+          
+          <p style="color:var(--text-muted);">${item.summary || ''}</p>
+
+          ${item.purchaseUrl ? `<a href="${item.purchaseUrl}" target="_blank" class="btn-link" style="margin-bottom:12px;">Store / Official Link ↗</a>` : ''}
+
+          <hr style="border-color:var(--border);">
+
+          <h4>Technical Properties</h4>
+          ${item.properties ? `
+            <div class="specs-list" style="grid-template-columns:1fr;">
+              ${Object.entries(item.properties).map(([k, v]) => `
+                <div class="spec-item" style="flex-direction:row; justify-content:space-between;">
+                  <span class="spec-label">${k}:</span>
+                  <span class="spec-value">${v}</span>
+                </div>
+              `).join('')}
+            </div>
+          ` : '<p style="color:var(--text-muted);">No extra specs listed.</p>'}
+
+          ${item.setupNotes ? `
+            <h4>Personal Setup & Cable Routing Notes</h4>
+            <div style="background:rgba(0,0,0,0.2); padding:12px; border-radius:6px; font-size:13px;">${item.setupNotes}</div>
+          ` : ''}
+
+          ${(item.pros || item.cons) ? `
+            <h4>Pros & Cons</h4>
+            <div class="pro-con-box" style="grid-template-columns:1fr;">
+              <ul class="pro-list">${(item.pros || []).map(p => `<li>${p}</li>`).join('')}</ul>
+              <ul class="con-list">${(item.cons || []).map(c => `<li>${c}</li>`).join('')}</ul>
+            </div>
+          ` : ''}
+        `;
+
+        detailModal.classList.add('active');
+      }
+
+      function closeModal() {
+        detailModal.classList.remove('active');
+      }
+
+      // Event Listeners
+      function setupEventListeners() {
+        // Category navigation click
+        categoryNav.addEventListener('click', (e) => {
+          const navItem = e.target.closest('.nav-item');
+          if (!navItem) return;
+          activeCategory = navItem.dataset.cat;
+          location.hash = activeCategory;
+          renderNav();
+          renderView();
+        });
+
+        // Tab selection
+        sectionTabs.addEventListener('click', (e) => {
+          if (!e.target.classList.contains('tab-btn')) return;
+          document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+          e.target.classList.add('active');
+          activeTab = e.target.dataset.tab;
+          renderView();
+        });
+
+        // Search input
+        searchInput.addEventListener('input', (e) => {
+          searchQuery = e.target.value;
+          renderView();
+        });
+
+        // Modal triggers
+        modalClose.addEventListener('click', closeModal);
+        detailModal.addEventListener('click', (e) => {
+          if (e.target === detailModal) closeModal();
+        });
+
+        window.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') closeModal();
+        });
+      }
+
+      // Expose globally for inline click triggers
+      window.appEngine = { openDetail };
+
+      // Boot App
+      init();
+    })();
+  </script>
+</body>
+</html>
