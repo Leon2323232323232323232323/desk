@@ -130,7 +130,7 @@ window.DESK_MICE = [
       { buttonGroup: "Side Buttons", recommendedSwitchId: "huano-bspd-80m", reason: "80M side navigation upgrade." },
       { buttonGroup: "Middle Click", recommendedSwitchId: "huano-yellow-5mm", reason: "5.0mm square switch under top scroll carriage." }
     ]
-  }
+  },
     // --- additional mice – excellent price‑to‑value ---
   {
     id: "razer-da-v3", category: "mice", name: "DeathAdder V3", brand: "Razer", status: "Wishlist",
