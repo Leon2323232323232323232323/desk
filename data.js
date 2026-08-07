@@ -92,19 +92,36 @@ window.DESK_DATA = {
         "Switch Mounting": "100% Through-Hole Mechanical (All 11)"
       },
 
-      stockSwitches: {
-        mainClicks: "Omron D2FC-F-K 50M (Chinese Omron)",
-        mainLifespan: "50 Million Clicks (Rated)",
-        mainSoundLevel: "52 - 55 dB (High-pitched metallic clack)",
-        failureMechanism: "Low operating voltage (1.8V-3V) in wireless mode lacks wetting current to burn off copper oxidation, causing premature double-clicking within 6-12 months.",
-        secondaryClicks: "Standard 2-pin SMD/DIP Tactile switches (G3/G7/G8/G9)",
-        secondaryLifespan: "10 - 20 Million Clicks",
-        secondarySoundLevel: "48 - 50 dB"
+      lifespanEstimates: {
+        chassisLife: "7 - 10 Years (HERO 25K Sensor & main PCB durability)",
+        stockSwitchesLife: "6 - 12 Months (~5M - 10M Clicks before low-voltage double-clicking)",
+        moddedSwitchesLife: "5 - 8+ Years (80 Million Clicks via Huano BTSPD gold contacts)",
+        limitingFactor: "Li-Po battery chemical capacity decay (~3-5 years) or main scroll wheel mechanical axle wear."
       },
+
+      stockSwitchesList: [
+        { buttonGroup: "Main Left & Right (M1/M2)", switchModel: "Omron D2FC-F-K (50M)", lifespan: "50M Rated (Fails ~5M-10M in wireless mode)", sound: "52 - 55 dB (High clack)" },
+        { buttonGroup: "Side Forward & Back (G4/G5)", switchModel: "Omron D2FC-F-7N (20M)", lifespan: "20M Clicks", sound: "50 - 52 dB" },
+        { buttonGroup: "Thumb Sniper Clutch", switchModel: "Omron D2FC-F-7N (20M)", lifespan: "20M Clicks", sound: "50 - 52 dB" },
+        { buttonGroup: "Middle Scroll Click (G3)", switchModel: "Standard 2-Pin Tactile DIP (5.0mm)", lifespan: "10M Clicks", sound: "48 - 50 dB" },
+        { buttonGroup: "Index Finger DPI Up/Down (G7/G8)", switchModel: "Standard 2-Pin Tactile DIP (5.0mm)", lifespan: "10M Clicks", sound: "48 - 50 dB" },
+        { buttonGroup: "Top Profile Switch (G9)", switchModel: "Standard 2-Pin Tactile DIP (5.0mm)", lifespan: "10M Clicks", sound: "48 - 50 dB" },
+        { buttonGroup: "Scroll Tilts (Left/Right)", switchModel: "Standard 2-Pin Tactile DIP (5.0mm)", lifespan: "10M Clicks", sound: "48 - 50 dB" }
+      ],
+
+      modsAndAddons: [
+        { name: "USB-C Daughterboard Conversion Mod", difficulty: "Easy", impact: "Replaces recessed Micro-USB port with native USB-C charging." },
+        { name: "500mAh Double Battery Upgrade", difficulty: "Moderate", impact: "Doubles battery runtime from 48h to 120h+ with net 1.5g weight reduction." },
+        { name: "G903 Aluminum Scroll Wheel Swap", difficulty: "Moderate", impact: "Cuts 9g of front-heavy mass (14.5g steel wheel -> 5.5g aluminum wheel)." },
+        { name: "POWERPLAY Coil & Bottom Door Removal", difficulty: "Easy", impact: "Saves 10.5g of unnecessary bottom chassis weight." },
+        { name: "Sugru / Bostik Blu-Tack Pinky Rest Wing", difficulty: "Easy", impact: "Eliminates right-side pinky desk drag on mousepads." },
+        { name: "0.5mm Rogers PORON Acoustic Foam Lining", difficulty: "Easy", impact: "Lowers high-pitched plastic shell resonance by 3-4 dB." },
+        { name: "Corepad / Tiger Ice PTFE Skates", difficulty: "Easy", impact: "Upgrades glide speed and stops bottom drag." }
+      ],
 
       ergonomicDetails: {
         scoreReason: "Scored 9.5/10 for its asymmetrical right-hand contour, 14mm flared thumb rest wing, and double-beveled index DPI buttons. It prevents thumb drag and accommodates long gaming/work sessions without wrist fatigue.",
-        specificShapeContour: "132mm length x 75mm width x 40mm arch height. Features a 18° downward right-hand slope that guides hand placement into an active hybrid claw/palm grip. Left thumb ledge keeps thumb fully elevated above the pad. Index finger rest features double-beveled G7/G8 button ledges reachable without shifting hand grip.",
+        specificShapeContour: "132mm length x 75mm width x 40mm arch height. Features an 18° downward right-hand slope that guides hand placement into an active hybrid claw/palm grip. Left thumb ledge keeps thumb fully elevated above the pad. Index finger rest features double-beveled G7/G8 button ledges reachable without shifting hand grip.",
         comparisonVsCloseCompetitors: "Vs Razer Basilisk V3: G502's thumb wing has a steeper grip angle and its index DPI buttons (G7/G8) are much easier to actuate than Basilisk's top DPI toggle. Vs Logitech G Pro X Superlight: G502 provides a dedicated thumb wing and 11 buttons (vs GPX's bare egg shape 5-button shell). Vs MX Master 3S: G502 is 11mm lower in height (40mm vs 51mm), allowing fast twitch movements and 1000Hz gaming polling.",
         gripCompatibility: "Optimal for Medium-to-Large hands using Palm or Hybrid Claw grip.",
         wristAndPosture: "18° downward ergonomic slope reduces wrist pronation while thumb rest removes pad drag."
@@ -199,15 +216,26 @@ window.DESK_DATA = {
         "Switch Mounting": "2-Pin Silent Square (7.45mm height)"
       },
 
-      stockSwitches: {
-        mainClicks: "Kailh 2-Pin Silent Square (7.45mm height)",
-        mainLifespan: "10 - 15 Million Clicks",
-        mainSoundLevel: "34 - 36 dB (Near-silent cushioned thud)",
-        failureMechanism: "Silicone internal dampening pads fatigue over time and low voltage causes intermittent double-clicks or loss of tactile rebound.",
-        secondaryClicks: "2-pin square silent switch (Middle/Gesture)",
-        secondaryLifespan: "10 Million Clicks",
-        secondarySoundLevel: "35 dB"
+      lifespanEstimates: {
+        chassisLife: "6 - 8 Years (Darkfield 8K sensor & MagSpeed electromagnetic wheel)",
+        stockSwitchesLife: "8 - 18 Months (~3M - 8M Clicks before silent dampener collapse)",
+        moddedSwitchesLife: "5 - 7+ Years (60 Million Clicks via Zippy DF3-P1 or 30M Huano Silent)",
+        limitingFactor: "Fragile FFC ribbon cables during repair or outer rubberized palm coating peeling over time."
       },
+
+      stockSwitchesList: [
+        { buttonGroup: "Main Left & Right (M1/M2)", switchModel: "Kailh Silent Square 2-Pin (7.45mm)", lifespan: "10M Rated (Fails ~3M-5M from dampener fatigue)", sound: "34 - 36 dB (Near-silent)" },
+        { buttonGroup: "Middle Scroll Click (G3)", switchModel: "Kailh Silent Square 2-Pin (5.0mm)", lifespan: "10M Clicks", sound: "35 dB" },
+        { buttonGroup: "Thumb Gesture Wing Button", switchModel: "Tactile Membrane Pad", lifespan: "5M Clicks", sound: "32 dB" },
+        { buttonGroup: "Side Wheel Forward/Back", switchModel: "Kailh Silent Square 2-Pin (7.3mm)", lifespan: "10M Clicks", sound: "35 dB" }
+      ],
+
+      modsAndAddons: [
+        { name: "Zippy DF3-P1 60M Mechanical Switch Mod", difficulty: "Moderate", impact: "Replaces silent switches with 60M tactile mechanical switches." },
+        { name: "0.1mm Aluminum Plunger Shim Tape", difficulty: "Easy", impact: "Bridges 0.15mm gap between 7.45mm stock and 7.30mm aftermarket switches." },
+        { name: "0.1mm Enamel Jumper Wire Trace Repair", difficulty: "Advanced", impact: "Bridges torn copper pads if desoldering damages PCB traces." },
+        { name: "Corepad Replacement PTFE Skates", difficulty: "Easy", impact: "Restores smooth glide on office desk pads." }
+      ],
 
       ergonomicDetails: {
         scoreReason: "Scored 9.8/10 as the gold standard for office desk work. Its 57-degree vertical incline rotates the forearm into a natural handshake posture, relieving median nerve pressure.",
@@ -292,20 +320,29 @@ window.DESK_DATA = {
         "Teardown Repairability": "10 / 10 (3-Screw Disassembly)"
       },
 
-      stockSwitches: {
-        mainClicks: "Kailh / Logitech Silent Square 2-Pin (7.3mm)",
-        mainLifespan: "10 Million Clicks",
-        mainSoundLevel: "34 - 36 dB (Near-silent cushioned click)",
-        failureMechanism: "Rubber dampener breakdown and internal oxidation on 2-pin contacts.",
-        secondaryClicks: "Tactile DIP 2-pin (Middle/Side)",
-        secondaryLifespan: "5 - 10 Million Clicks",
-        secondarySoundLevel: "45 - 48 dB"
+      lifespanEstimates: {
+        chassisLife: "5 - 7 Years (Simple rugged PCB)",
+        stockSwitchesLife: "12 - 24 Months (~5M - 10M Clicks)",
+        moddedSwitchesLife: "4 - 6 Years (30 Million Clicks via Huano Silent Yellow Dot)",
+        limitingFactor: "Middle click wheel carriage plastic wear or AA battery terminal spring corrosion."
       },
+
+      stockSwitchesList: [
+        { buttonGroup: "Main Left & Right (M1/M2)", switchModel: "Kailh / Logi Silent Square 2-Pin (7.3mm)", lifespan: "10M Clicks", sound: "34 - 36 dB (Near-silent)" },
+        { buttonGroup: "Middle Scroll Click (G3)", switchModel: "Standard 2-Pin Tactile DIP (5.0mm)", lifespan: "5M Clicks", sound: "46 - 48 dB" },
+        { buttonGroup: "Side Forward & Back (M4/M5)", switchModel: "Kailh Silent Square 2-Pin (7.3mm)", lifespan: "10M Clicks", sound: "35 dB" }
+      ],
+
+      modsAndAddons: [
+        { name: "Huano/Kailh Silent Yellow Dot 30M Switch Swap", difficulty: "Easy", impact: "Upgrades main silent clicks from 10M to 30M click lifespan." },
+        { name: "Kailh Mute 5.0mm Middle Click Swap", difficulty: "Easy", impact: "Fixes stock middle-click mechanical fatigue." },
+        { name: "Tiger Ice PTFE Skates", difficulty: "Easy", impact: "Smooths bottom glide." }
+      ],
 
       ergonomicDetails: {
         scoreReason: "Scored 7.5/10 due to its small, flat travel form factor. It lacks thumb wing support and palm arch height, which causes hand cramping during prolonged desktop use for larger hands.",
         specificShapeContour: "107mm length x 61.8mm width x 37.8mm height. Symmetrical compact curvature with rubberized side grip panels. Lacks thumb ledge or high palm arch.",
-        comparisonVsOthers: "Vs MX Anywhere 3S: M650 is half the price ($39 vs $79) with quieter clicks and a far simpler 3-screw repair chassis. Vs M650 L: Standard M650 is compact for travel, whereas M650 L adds 11mm length for larger hands.",
+        comparisonVsCloseCompetitors: "Vs MX Anywhere 3S: M650 is half the price ($39 vs $79) with quieter clicks and a far simpler 3-screw repair chassis. Vs M650 L: Standard M650 is compact for travel, whereas M650 L adds 11mm length for larger hands.",
         gripCompatibility: "Best for Small-to-Medium hands using Fingertip or Claw grip.",
         wristAndPosture: "Flat posture requires more wrist movement over long periods."
       },
@@ -373,15 +410,24 @@ window.DESK_DATA = {
         "Switch Mounting": "3-Pin Mechanical (Main: Std, Sides: 90° Bent)"
       },
 
-      stockSwitches: {
-        mainClicks: "Razer Gen-2 Mechanical Switches (Kailh GM 4.0 variant)",
-        mainLifespan: "60 Million Clicks",
-        mainSoundLevel: "57 - 60 dB (Loud hollow acoustic clack)",
-        failureMechanism: "Stiff 70g spring force causes finger fatigue, and internal AA battery chamber creates loud acoustic echo chamber.",
-        secondaryClicks: "90° bent pin 3-pin mechanical (Sides) & 5.0mm square (DPI/Middle)",
-        secondaryLifespan: "20 - 30 Million Clicks",
-        secondarySoundLevel: "55 dB"
+      lifespanEstimates: {
+        chassisLife: "1 - 3 Years (High risk of 2.4GHz HyperSpeed USB dongle chip failure)",
+        stockSwitchesLife: "18 - 36 Months (~15M - 25M Clicks)",
+        moddedSwitchesLife: "5 - 7 Years (80 Million Clicks via Huano BTSPD)",
+        limitingFactor: "Hardware dongle IC solder micro-fractures (Device Descriptor Request Failed)."
       },
+
+      stockSwitchesList: [
+        { buttonGroup: "Main Left & Right (M1/M2)", switchModel: "Razer Gen-2 Mechanical (Kailh GM 4.0 variant)", lifespan: "60M Rated", sound: "57 - 60 dB (Loud clack)" },
+        { buttonGroup: "Side Forward & Back (M4/M5)", switchModel: "90° Bent Pin 3-Pin Mechanical", lifespan: "20M Clicks", sound: "55 dB" },
+        { buttonGroup: "Middle Scroll & DPI Buttons", switchModel: "Standard 2-Pin Tactile DIP (5.0mm)", lifespan: "10M Clicks", sound: "52 dB" }
+      ],
+
+      modsAndAddons: [
+        { name: "0.5mm Rogers PORON Battery Cavity Foam", difficulty: "Easy", impact: "Dampens loud hollow AA battery cavity echo from 60dB to 50dB." },
+        { name: "Huano BTSPD 80M Main Switch Swap", difficulty: "Moderate", impact: "Replaces stiff 70g stock springs with crisp 80M switches." },
+        { name: "90° Bent Pin Side Switch Upgrade", difficulty: "Moderate", impact: "Upgrades side buttons to Huano BSPD 80M." }
+      ],
 
       ergonomicDetails: {
         scoreReason: "Scored 9.0/10 for its comfortable right-hand ergonomic contour and wide thumb rest wing. Deducted 1.0 point due to rear-heavy AA battery balance and hollow click echo.",
