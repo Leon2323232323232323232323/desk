@@ -26,7 +26,7 @@ window.DESK_DATA = {
       name: "Huano Blue Shell Pink Dot 80M (90° Bent Pins)",
       force: "70g",
       lifespan: "80 Million Clicks",
-      feel: "Crisp tactile snap engineered specifically for right-angle side PCB contact pads.",
+      feel: "Crisp tactile snap engineered for right-angle side PCB contact pads.",
       bestFor: "Razer Basilisk M4/M5 Side Buttons"
     },
     "ttc-gold-80m": {
@@ -82,14 +82,14 @@ window.DESK_DATA = {
       summary: "Primary daily workhorse for MOBAs, FPS, and high-DPI productivity. Features 11 fully programmable mechanical buttons, dual-mode hyper-fast scroll wheel, and complete switch moddability.",
       
       properties: {
-        "Ergonomic Rating": "9.5 / 10 (S-Tier Ergonomic Palm/Claw)",
+        "Ergonomic Rating": "9.5 / 10 (S-Tier Palm/Claw)",
         "Grip Style Match": "Palm / Hybrid Claw (Medium to Large hands)",
-        "Wrist Strain Index": "Low (Deep thumb rest wing reduces pad friction)",
-        "Pinky Support": "Needs Sugru / Blu-Tack wing mod to eliminate right-side desk drag",
-        "Weight Profile": "114g Stock → 101.5g Modded (Weight-Neutral Battery Upgrade)",
+        "Wrist Strain Index": "Low (Sculpted thumb rest reduces pad drag)",
+        "Pinky Support": "Needs Sugru / Blu-Tack wing mod to stop desk drag",
+        "Weight Profile": "114g Stock → 101.5g Modded (Weight-Neutral Battery)",
         "Sensor & Speed": "HERO 25K (100-25,600 DPI) | 1000Hz / 1ms Polling",
         "Battery Specs": "240mAh Stock (48h) → 500mAh Modded (120h+ Runtime)",
-        "Acoustic Level": "48–51 dB (Deep 'thock' with 0.5mm PORON internal foam)",
+        "Acoustic Level": "48–51 dB (Deep 'thock' with 0.5mm PORON foam)",
         "Switch Mounting": "100% Through-Hole Mechanical across all 11 buttons"
       },
 
@@ -117,12 +117,6 @@ window.DESK_DATA = {
         "CHARGING PORT MOD: Install aftermarket G502 Wireless Type-C daughterboard or 540° magnetic charging tip.",
         "ACOUSTIC TUNING: Line lower chassis floor with 0.5mm Rogers PORON foam to eliminate plastic echo."
       ],
-
-      softwareSetup: {
-        agentRequirement: "G HUB background agent (lghub_agent.exe) must run at startup for multi-step sequence macros (Hold Alt + Tab).",
-        baseLayer: "M1: Left Click | M2: Right Click (GestureSign) | M3: Middle Click | G4: M Alt-Tab Hold | G5: G-Shift Modifier | G7: Task View | G8: Play/Pause | Tilts: Scroll L/R",
-        gShiftLayer: "M1: Task View | M2: Minimize All | M3: Enter | G4: Screenshot | G5: Battery Check | G7: Brightness | Tilts: Desktop Swipe L/R"
-      },
 
       buttonSwitchMapping: [
         {
@@ -178,7 +172,7 @@ window.DESK_DATA = {
       summary: "Dedicated stationary office productivity mouse featuring electromagnetic MagSpeed scrolling, side thumb wheel, gesture button, and ultra-quiet stock clicking.",
 
       properties: {
-        "Ergonomic Rating": "9.8 / 10 (Gold Standard for Office Palm Grip)",
+        "Ergonomic Rating": "9.8 / 10 (Gold Standard Office Palm)",
         "Grip Style Match": "Strict Palm Grip (Fills palm fully, reduces forearm pronation)",
         "Wrist Strain Index": "Ultra-Low (57° angled posture minimizes carpal tunnel pressure)",
         "Pinky Support": "Full sculpted thumb wing; right side flared for ring/pinky rest",
@@ -258,7 +252,7 @@ window.DESK_DATA = {
       summary: "Compact, long-battery-life portable office mouse featuring SmartWheel adaptive scrolling, silent switch dampers, and simple dual-side button navigation.",
 
       properties: {
-        "Ergonomic Rating": "7.5 / 10 (Compact Portable Ergonomics)",
+        "Ergonomic Rating": "7.5 / 10 (Compact Portable)",
         "Grip Style Match": "Fingertip / Claw Grip (Small to Medium hands)",
         "Wrist Strain Index": "Moderate (Lacks thumb wing support)",
         "Weight Profile": "101g (Including 1x AA Alkaline Battery)",
