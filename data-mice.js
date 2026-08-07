@@ -252,4 +252,3 @@ window.DESK_MICE = [
     ]
   }
 ];
-];
