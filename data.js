@@ -7,25 +7,6 @@ window.DESK_DATA = {
     { id: "desks", label: "Desks & Standing Frames", icon: "table" }
   ],
 
-  taobaoDictionary: {
-    "G502_MAIN_SWITCH": "华诺 透明蓝壳粉点 8000万次",
-    "G502_SIDE_SWITCH": "华诺 蓝壳粉点 8000万次",
-    "G502_SQUARE_SWITCH": "华诺 棕壳黄点 5.0mm",
-    "G502_TYPE_C_BOARD": "G502无线 Type-C 改装小板",
-    "G502_LIGHT_WHEEL": "G903 铝合金滚轮",
-    "G502_BATTERY": "3.7V 500mAh 1.25 3P 锂电池",
-    "G502_SKATES": "G502 LIGHTSPEED 脚贴 虎符冰符",
-    "G502_GRIP_TAPE": "G502 罗技 防滑贴",
-    "MX_MASTER_SILENT": "华诺 棕壳黄点 静音方型微动 6x6x7.3",
-    "MX_MASTER_ZIPPY": "ZIPPY DF3-P1 6000万次",
-    "JUMPER_WIRE": "漆包线 飞线 0.1mm",
-    "ROSIN_FLUX": "机械师 助焊膏",
-    "BASILISK_BENT_SWITCH": "华诺 蓝壳粉点 弯脚",
-    "SUGRU_PUTTY": "Sugru 塑形硅胶 / Bostik 蓝丁胶",
-    "PORON_FOAM": "0.5mm PORON 泡棉板 带背胶",
-    "FOIL_TAPE": "铝箔胶带 0.1mm"
-  },
-
   microswitches: {
     "huano-btspd-80m": {
       name: "Huano Transparent Blue Shell Pink Dot (BTSPD)",
@@ -55,13 +36,6 @@ window.DESK_DATA = {
       feel: "Crisp, bouncy actuation, high-frequency sound, dustproof wall enclosure.",
       bestFor: "Main Clicks / Fast MOBAs & Shooters"
     },
-    "kailh-gm8-blackmamba": {
-      name: "Kailh GM 8.0 Black Mamba",
-      force: "65g",
-      lifespan: "80 Million Clicks",
-      feel: "Very crisp, light actuation, sharp rebound feel.",
-      bestFor: "Main Clicks / High-Precision FPS"
-    },
     "omron-d2f-01f": {
       name: "Japanese Omron D2F-01F",
       force: "50g - 60g",
@@ -82,13 +56,6 @@ window.DESK_DATA = {
       lifespan: "30 Million Clicks",
       feel: "Near-silent (~35–38 dB), firm tactile return without squishy rubber bottom-out.",
       bestFor: "Office Main Clicks (MX Master 3S, M650)"
-    },
-    "huano-white-silent-73mm": {
-      name: "Huano Brown Shell White Dot Silent (6x6x7.3mm)",
-      force: "50g - 55g",
-      lifespan: "10 Million Clicks",
-      feel: "Ultra-soft, dampened click feel, whisper-quiet (~32 dB).",
-      bestFor: "Stealth Office / Silent Travel Mice"
     },
     "zippy-df3-p1": {
       name: "Zippy DF3-P1 (3-Pin Mechanical)",
@@ -116,7 +83,7 @@ window.DESK_DATA = {
       
       properties: {
         "Ergonomic Rating": "9.5 / 10 (S-Tier Ergonomic Palm/Claw)",
-        "Grip Style Match": "Palm / Hybrid Claw (Medium to Large hands: 17.5 - 20.5 cm)",
+        "Grip Style Match": "Palm / Hybrid Claw (Medium to Large hands)",
         "Wrist Strain Index": "Low (Deep thumb rest wing reduces pad friction)",
         "Pinky Support": "Needs Sugru / Blu-Tack wing mod to eliminate right-side desk drag",
         "Weight Profile": "114g Stock → 101.5g Modded (Weight-Neutral Battery Upgrade)",
@@ -324,7 +291,7 @@ window.DESK_DATA = {
         {
           buttonGroup: "Main Left & Right Click",
           recommendedSwitchId: "huano-silent-yellow-73mm",
-          reason: "Direct replacement for stock silent 2-pin switches. Delivers 30M click lifespan with crisp tactile actuation. (Alt: Huano White Dot Silent)."
+          reason: "Direct replacement for stock silent 2-pin switches. Delivers 30M click lifespan with crisp tactile actuation."
         },
         {
           buttonGroup: "Middle Mouse Click (G3)",
@@ -387,7 +354,7 @@ window.DESK_DATA = {
         {
           buttonGroup: "Main Left & Right Click",
           recommendedSwitchId: "huano-btspd-80m",
-          reason: "Replaces stiff stock Razer Gen-2 switches. Lowers click force, increases tactile snap, and dampens high-pitched clack. (Alt: Kailh GM 8.0)."
+          reason: "Replaces stiff stock Razer Gen-2 switches. Lowers click force, increases tactile snap, and dampens high-pitched clack."
         },
         {
           buttonGroup: "Side Navigation Buttons (M4 / M5)",
