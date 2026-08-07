@@ -7,7 +7,6 @@ window.DESK_DATA = {
     { id: "desks", label: "Desks & Standing Frames", icon: "table" }
   ],
 
-  // Central Procurement Lookup Dictionary for Taobao / AliExpress
   taobaoDictionary: {
     "G502_MAIN_SWITCH": "华诺 透明蓝壳粉点 8000万次",
     "G502_SIDE_SWITCH": "华诺 蓝壳粉点 8000万次",
@@ -27,7 +26,6 @@ window.DESK_DATA = {
     "FOIL_TAPE": "铝箔胶带 0.1mm"
   },
 
-  // Expanded Microswitch Reference Library
   microswitches: {
     "huano-btspd-80m": {
       name: "Huano Transparent Blue Shell Pink Dot (BTSPD)",
@@ -102,9 +100,6 @@ window.DESK_DATA = {
   },
 
   products: [
-    /* ==========================================================================
-       1. LOGITECH G502 LIGHTSPEED WIRELESS
-       ========================================================================== */
     {
       id: "g502-lightspeed",
       category: "mice",
@@ -147,12 +142,14 @@ window.DESK_DATA = {
         "Complex disassembly requiring tracking 22 internal screws"
       ],
 
-      setupNotes: `- CRITICAL BATTERY PINOUT SAFETY: Standard aftermarket 3.7V Li-Po batteries reverse GND (Black) and NTC (White) wires. Logitech pinout is strictly Pin 1: Red (+), Pin 2: White (NTC), Pin 3: Black (-). Swap wires on JST 1.25mm plug before connection.
-- BATTERY & WEIGHT MATH: Stock 240mAh cell (5.5g) + bracket (5.5g) = 11.0g. Upgraded 500mAh cell (9.0g) + tape (0.5g) = 9.5g. Delta: -1.5g net weight with +108% battery runtime.
-- WEIGHT SAVINGS CEILING: Remove POWERPLAY puck door (-5g), copper coil (-5.5g), and swap steel wheel for G903 aluminum wheel (-9g). Saves ~19.5g total.
-- PINKY REST MOD: Mold Sugru or Bostik Blu-Tack along the lower right edge to eliminate pinky drag on mousepads.
-- CHARGING PORT MOD: Install aftermarket G502 Wireless Type-C daughterboard or 540° magnetic charging tip.
-- ACOUSTIC TUNING: Line lower chassis floor with 0.5mm Rogers PORON foam to eliminate plastic echo.`,
+      setupNotes: [
+        "CRITICAL BATTERY PINOUT SAFETY: Standard aftermarket 3.7V Li-Po batteries reverse GND (Black) and NTC (White) wires. Logitech pinout is strictly Pin 1: Red (+), Pin 2: White (NTC), Pin 3: Black (-). Swap wires on JST 1.25mm plug before connection.",
+        "BATTERY & WEIGHT MATH: Stock 240mAh cell (5.5g) + bracket (5.5g) = 11.0g. Upgraded 500mAh cell (9.0g) + tape (0.5g) = 9.5g. Delta: -1.5g net weight with +108% battery runtime.",
+        "WEIGHT SAVINGS CEILING: Remove POWERPLAY puck door (-5g), copper coil (-5.5g), and swap steel wheel for G903 aluminum wheel (-9g). Saves ~19.5g total.",
+        "PINKY REST MOD: Mold Sugru or Bostik Blu-Tack along the lower right edge to eliminate pinky drag on mousepads.",
+        "CHARGING PORT MOD: Install aftermarket G502 Wireless Type-C daughterboard or 540° magnetic charging tip.",
+        "ACOUSTIC TUNING: Line lower chassis floor with 0.5mm Rogers PORON foam to eliminate plastic echo."
+      ],
 
       softwareSetup: {
         agentRequirement: "G HUB background agent (lghub_agent.exe) must run at startup for multi-step sequence macros (Hold Alt + Tab).",
@@ -199,9 +196,6 @@ window.DESK_DATA = {
       ]
     },
 
-    /* ==========================================================================
-       2. LOGITECH MX MASTER 3S
-       ========================================================================== */
     {
       id: "mx-master-3s",
       category: "mice",
@@ -242,9 +236,11 @@ window.DESK_DATA = {
         "Fragile FFC ribbon cable and easily lifted PCB solder pads during desoldering"
       ],
 
-      setupNotes: `- TRACE REPAIR BLUEPRINT: If a solder pad is lifted during desoldering, scrape copper mask on the trace, apply Rosin Flux, and bridge a 0.1mm enamel jumper wire directly to the switch pin.
-- PRE-TRAVEL SHIM TUNING: Stock switches are 7.45mm tall. Standard 7.30mm switches (Zippy / Huano) leave a 0.15mm gap. Stick a 0.1mm micro-square of aluminum foil tape onto button plungers to eliminate pre-travel slop.
-- EMERGENCY CONTACT FIX: Flushing failing switches with 91%+ Isopropyl Alcohol (IPA) temporarily dissolves contact oxidation before full soldering repair.`,
+      setupNotes: [
+        "TRACE REPAIR BLUEPRINT: If a solder pad is lifted during desoldering, scrape copper mask on the trace, apply Rosin Flux, and bridge a 0.1mm enamel jumper wire directly to the switch pin.",
+        "PRE-TRAVEL SHIM TUNING: Stock switches are 7.45mm tall. Standard 7.30mm switches (Zippy / Huano) leave a 0.15mm gap. Stick a 0.1mm micro-square of aluminum foil tape onto button plungers to eliminate pre-travel slop.",
+        "EMERGENCY CONTACT FIX: Flushing failing switches with 91%+ Isopropyl Alcohol (IPA) temporarily dissolves contact oxidation before full soldering repair."
+      ],
 
       buttonSwitchMapping: [
         {
@@ -280,9 +276,6 @@ window.DESK_DATA = {
       ]
     },
 
-    /* ==========================================================================
-       3. LOGITECH SIGNATURE M650
-       ========================================================================== */
     {
       id: "signature-m650",
       category: "mice",
@@ -322,8 +315,10 @@ window.DESK_DATA = {
         "125Hz polling rate limit"
       ],
 
-      setupNotes: `- TEARDOWN SEQUENCE: Remove AA battery, peel 3 bottom PTFE skates using mild hairdryer heat, remove 3 Phillips screws, and gently unclip SmartWheel carriage.
-- BURNER MODDING: Excellent practice board for through-hole soldering before attempting complex G502 or MX Master 3S repairs.`,
+      setupNotes: [
+        "TEARDOWN SEQUENCE: Remove AA battery, peel 3 bottom PTFE skates using mild hairdryer heat, remove 3 Phillips screws, and gently unclip SmartWheel carriage.",
+        "BURNER MODDING: Excellent practice board for through-hole soldering before attempting complex G502 or MX Master 3S repairs."
+      ],
 
       buttonSwitchMapping: [
         {
@@ -344,9 +339,6 @@ window.DESK_DATA = {
       ]
     },
 
-    /* ==========================================================================
-       4. RAZER BASILISK V3 X HYPERSPEED
-       ========================================================================== */
     {
       id: "basilisk-v3-x",
       category: "mice",
@@ -386,8 +378,10 @@ window.DESK_DATA = {
         "Side buttons require specialized 90° pre-bent pin switches"
       ],
 
-      setupNotes: `- DEFECT DIAGNOSIS: Returned unit to Amazon due to hardware-level solder micro-fracture / thermal failure in 2.4GHz HyperSpeed USB receiver chip.
-- CAVITY ACOUSTIC DAMPENING: If retained, line inner AA battery cavity walls with 0.5mm self-adhesive Rogers PORON foam to stop click resonance.`,
+      setupNotes: [
+        "DEFECT DIAGNOSIS: Returned unit to Amazon due to hardware-level solder micro-fracture / thermal failure in 2.4GHz HyperSpeed USB receiver chip.",
+        "CAVITY ACOUSTIC DAMPENING: If retained, line inner AA battery cavity walls with 0.5mm self-adhesive Rogers PORON foam to stop click resonance."
+      ],
 
       buttonSwitchMapping: [
         {
