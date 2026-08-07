@@ -1,3 +1,6 @@
+// Copy and paste this complete, upgraded database file directly into your data.js file.
+// It includes the 4 original mice PLUS 3 top-tier candidates (Keychron M6, Logitech G502 X LIGHTSPEED, ASUS ROG Chakram X Origin).
+
 window.DESK_DATA = {
   categories: [
     { id: "mice", label: "Mice & Input", icon: "mouse" },
@@ -41,7 +44,7 @@ window.DESK_DATA = {
       force: "60g - 65g",
       lifespan: "30 Million Clicks",
       feel: "Near-silent (~35 dB) muted actuation with a cushioned rubber bottom-out and solid 5.0mm vertical fit.",
-      bestFor: "Office Middle Mouse Clicks & Gesture Wing Buttons (MX Master 3S, M650)"
+      bestFor: "Office Middle Mouse Clicks & Gesture Wing Buttons (MX Master 3S, M650, Keychron M6)"
     },
     "huano-silent-yellow-73mm": {
       name: "Huano Silent Square Yellow Dot 2-Pin (6x6x7.3mm)",
@@ -63,10 +66,20 @@ window.DESK_DATA = {
       lifespan: "10 Million Clicks",
       feel: "Ultra-smooth tactile depression, gold alloy contacts, rich metallic tone.",
       bestFor: "Custom Heavy Productivity / Light Click Enthusiasts"
+    },
+    "rog-microswitch-70m": {
+      name: "ASUS ROG Push-Fit Micro Switch (70M)",
+      force: "65g",
+      lifespan: "70 Million Clicks",
+      feel: "Gold-plated electro-junction, crisp actuation feel, zero solder required (Hot-swappable).",
+      bestFor: "ASUS Push-Fit Switch Socket II (M1/M2)"
     }
   },
 
   products: [
+    /* ==========================================================================
+       1. LOGITECH G502 LIGHTSPEED WIRELESS
+       ========================================================================== */
     {
       id: "g502-lightspeed",
       category: "mice",
@@ -153,44 +166,19 @@ window.DESK_DATA = {
       ],
 
       buttonSwitchMapping: [
-        {
-          buttonGroup: "Main Left & Right Click (M1 / M2)",
-          recommendedSwitchId: "huano-btspd-80m",
-          reason: "Eliminates double-clicking, delivers deep 'thock' tone (~49–51 dB), and offers max 80M click durability."
-        },
-        {
-          buttonGroup: "Side Forward & Back (G4 / G5)",
-          recommendedSwitchId: "huano-bspd-80m",
-          reason: "Solid housing creates 80M durability with complete tactile and acoustic uniformity."
-        },
-        {
-          buttonGroup: "Thumb Sniper / G-Shift Clutch",
-          recommendedSwitchId: "huano-bspd-80m",
-          reason: "Crisp 70g actuation prevents accidental sniper triggers during twitch movements."
-        },
-        {
-          buttonGroup: "Middle Scroll Wheel Click (G3)",
-          recommendedSwitchId: "kailh-5mm-tactile",
-          reason: "50M click rated 5.0mm Kailh tactile switch. Max durability footprint under scroll cradle."
-        },
-        {
-          buttonGroup: "Index Finger DPI Up & Down (G7 / G8)",
-          recommendedSwitchId: "kailh-5mm-tactile",
-          reason: "50M click rated 5.0mm Kailh square tactile switch clearing upper shell plastics."
-        },
-        {
-          buttonGroup: "Top Profile Switch Button (G9)",
-          recommendedSwitchId: "kailh-5mm-tactile",
-          reason: "Replaces weak stock membrane button with 50M click durable 2-pin tactile switch."
-        },
-        {
-          buttonGroup: "Scroll Wheel Tilt Left & Right",
-          recommendedSwitchId: "kailh-5mm-tactile",
-          reason: "High durability 50M rating for heavy horizontal scrolling tasks."
-        }
+        { buttonGroup: "Main Left & Right Click (M1 / M2)", recommendedSwitchId: "huano-btspd-80m", reason: "Eliminates double-clicking, delivers deep 'thock' tone (~49–51 dB), and offers max 80M click durability." },
+        { buttonGroup: "Side Forward & Back (G4 / G5)", recommendedSwitchId: "huano-bspd-80m", reason: "Solid housing creates 80M durability with complete tactile and acoustic uniformity." },
+        { buttonGroup: "Thumb Sniper / G-Shift Clutch", recommendedSwitchId: "huano-bspd-80m", reason: "Crisp 70g actuation prevents accidental sniper triggers during twitch movements." },
+        { buttonGroup: "Middle Scroll Wheel Click (G3)", recommendedSwitchId: "kailh-5mm-tactile", reason: "50M click rated 5.0mm Kailh tactile switch. Max durability footprint under scroll cradle." },
+        { buttonGroup: "Index Finger DPI Up & Down (G7 / G8)", recommendedSwitchId: "kailh-5mm-tactile", reason: "50M click rated 5.0mm Kailh square tactile switch clearing upper shell plastics." },
+        { buttonGroup: "Top Profile Switch Button (G9)", recommendedSwitchId: "kailh-5mm-tactile", reason: "Replaces weak stock membrane button with 50M click durable 2-pin tactile switch." },
+        { buttonGroup: "Scroll Wheel Tilt Left & Right", recommendedSwitchId: "kailh-5mm-tactile", reason: "High durability 50M rating for heavy horizontal scrolling tasks." }
       ]
     },
 
+    /* ==========================================================================
+       2. LOGITECH MX MASTER 3S
+       ========================================================================== */
     {
       id: "mx-master-3s",
       category: "mice",
@@ -267,34 +255,263 @@ window.DESK_DATA = {
       ],
 
       buttonSwitchMapping: [
-        {
-          buttonGroup: "Main Left & Right Click (Option A - Silent)",
-          recommendedSwitchId: "huano-silent-yellow-73mm",
-          reason: "Matches stock silent acoustic profile (~35–38 dB) while providing snappier tactile feel and 30M click lifespan."
-        },
-        {
-          buttonGroup: "Main Left & Right Click (Option B - Durability)",
-          recommendedSwitchId: "zippy-df3-p1",
-          reason: "Clipped Pin 3 mechanical mod. Eliminates squishy rubber feel, increases tactile feedback (~46 dB), and ensures 60M click durability."
-        },
-        {
-          buttonGroup: "Middle Scroll Wheel Click (G3)",
-          recommendedSwitchId: "kailh-silent-5mm",
-          reason: "30M click rated 5.0mm Kailh Mute Silent switch. Fits under MagSpeed wheel cage maintaining ~35 dB silent operation."
-        },
-        {
-          buttonGroup: "Thumb Gesture Wing Button",
-          recommendedSwitchId: "kailh-silent-5mm",
-          reason: "30M click 5.0mm Kailh Mute switch. Replaces delicate stock tactile pad under rubber thumb ledge."
-        },
-        {
-          buttonGroup: "Side Wheel Forward & Back Buttons",
-          recommendedSwitchId: "huano-silent-yellow-73mm",
-          reason: "30M click silent 7.3mm switch keeping side thumb navigation completely silent."
-        }
+        { buttonGroup: "Main Left & Right Click (Option A - Silent)", recommendedSwitchId: "huano-silent-yellow-73mm", reason: "Matches stock silent acoustic profile (~35–38 dB) while providing snappier tactile feel and 30M click lifespan." },
+        { buttonGroup: "Main Left & Right Click (Option B - Durability)", recommendedSwitchId: "zippy-df3-p1", reason: "Clipped Pin 3 mechanical mod. Eliminates squishy rubber feel, increases tactile feedback (~46 dB), and ensures 60M click durability." },
+        { buttonGroup: "Middle Scroll Wheel Click (G3)", recommendedSwitchId: "kailh-silent-5mm", reason: "30M click rated 5.0mm Kailh Mute Silent switch. Fits under MagSpeed wheel cage maintaining ~35 dB silent operation." },
+        { buttonGroup: "Thumb Gesture Wing Button", recommendedSwitchId: "kailh-silent-5mm", reason: "30M click 5.0mm Kailh Mute switch. Replaces delicate stock tactile pad under rubber thumb ledge." },
+        { buttonGroup: "Side Wheel Forward & Back Buttons", recommendedSwitchId: "huano-silent-yellow-73mm", reason: "30M click silent 7.3mm switch keeping side thumb navigation completely silent." }
       ]
     },
 
+    /* ==========================================================================
+       3. KEYCHRON M6 WIRELESS (RECOMMENDED FUTURE PURCHASES)
+       ========================================================================== */
+    {
+      id: "keychron-m6",
+      category: "mice",
+      name: "Keychron M6 Wireless",
+      brand: "Keychron",
+      status: "Wishlist",
+      isTopPick: true,
+      topPickBadge: "Best High-Refresh Productivity Mouse (MX Master Killer)",
+      price: "$49 - $59",
+      purchaseUrl: "https://www.keychron.com/products/keychron-m6-wireless-mouse",
+      tags: ["Productivity", "1000Hz Polling", "Dual-Wheel", "78g Ultra-Light", "PixArt 3395", "USB-C"],
+
+      summary: "The ultimate productivity alternative to the MX Master 3S. Solves the MX Master's biggest flaw by providing a 1000Hz gaming-grade polling rate (zero cursor jitter on 144Hz+ monitors), a 78g lightweight body, dual scroll wheels, and 100% solderable mechanical microswitches for $49.",
+
+      properties: {
+        "Ergonomic Rating": "9.6 / 10",
+        "Grip Style Match": "Palm / Claw",
+        "Wrist Strain Index": "Low (Sculpted Ergonomic Slope)",
+        "Pinky Support": "Flared Right Side",
+        "Weight Profile": "78g Ultra-Light Productivity",
+        "Sensor & Speed": "PixArt 3395 (26,000 DPI) | 1000Hz Polling",
+        "Battery Specs": "800mAh Native USB-C (Up to 80 Hours)",
+        "Switch Mounting": "100% Standard 3-Pin Through-Hole Mechanical"
+      },
+
+      lifespanEstimates: {
+        chassisLife: "6 - 9 Years (PixArt 3395 flagship sensor & solid lightweight shell)",
+        stockSwitchesLife: "3 - 5 Years (80 Million Clicks via stock Huano Micro Switches)",
+        moddedSwitchesLife: "5 - 8+ Years (80M Clicks via Huano BTSPD or Silent Square)",
+        limitingFactor: "Mechanical dual-mode scroll wheel spring tension over long term."
+      },
+
+      stockSwitchesList: [
+        { buttonGroup: "Main Left & Right (M1/M2)", switchModel: "Huano 80M Micro Switch", lifespan: "80M Clicks", sound: "48 - 50 dB (Crisp snap)" },
+        { buttonGroup: "Side Forward & Back (M4/M5)", switchModel: "Huano 10M Micro Switch", lifespan: "10M Clicks", sound: "46 - 48 dB" },
+        { buttonGroup: "Middle Scroll Click (G3)", switchModel: "Kailh / Huano 5.0mm Tactile", lifespan: "10M Clicks", sound: "48 dB" },
+        { buttonGroup: "Thumb Side Scroll Wheel", switchModel: "Encoder Wheel + Tactile Switch", lifespan: "10M Clicks", sound: "45 dB" }
+      ],
+
+      modsAndAddons: [
+        { name: "Huano Silent Yellow Dot 7.3mm Switch Swap", difficulty: "Easy", impact: "Converts noisy stock mechanical main clicks into a silent ~35 dB office profile." },
+        { name: "0.5mm Rogers PORON Foam Lining", difficulty: "Easy", impact: "Dampens internal resonance inside the 78g hollow chassis." },
+        { name: "PTFE Glass Feet / Tiger Ice Skates", difficulty: "Easy", impact: "Creates effortless friction-free gliding across desk mats." }
+      ],
+
+      ergonomicDetails: {
+        scoreReason: "Scored 9.6/10 because it combines the ergonomic palm support and thumb wing of the MX Master 3S with a 78g lightweight body and 1000Hz polling rate. Completely eliminates wrist fatigue caused by heavy 141g office mice.",
+        specificShapeContour: "121.5mm length x 75.4mm width x 40.5mm height. Features a steep right-hand ergonomic slope, wide thumb rest ledge, side thumb wheel, and a dual-mode infinite scroll wheel.",
+        comparisonVsCloseCompetitors: "Vs MX Master 3S: Keychron M6 is drastically better for high-refresh displays (1000Hz vs 125Hz limit) and almost half the weight (78g vs 141g), while costing half the price ($49 vs $99). Vs G502: M6 is 23.5g lighter and features a dedicated side thumb wheel for horizontal scrolling.",
+        gripCompatibility: "Ideal for Medium-to-Large hands using Palm or Claw grip.",
+        wristAndPosture: "Neutral ergonomic tilt and low weight eliminate wrist drag and forearm strain."
+      },
+
+      pros: [
+        "1000Hz polling rate completely fixes the MX Master 3S cursor lag on 144Hz+ monitors",
+        "Extremely lightweight at 78g (45% lighter than MX Master 3S)",
+        "Features both a top dual-mode infinite scroll wheel AND a side thumb wheel",
+        "100% standard mechanical through-hole switches (easily solder-replaceable)",
+        "Includes both Type-C and Type-A 2.4GHz wireless receivers in the box"
+      ],
+
+      cons: [
+        "Stock mechanical clicks are noticeable (~48 dB) and require silent switch soldering for quiet office use",
+        "Lacks electromagnetic MagSpeed wheel auto-shifting (requires manual top button push for infinite spin)"
+      ],
+
+      setupNotes: [
+        "RECOMMENDED SILENT OFFICE MOD: Desolder stock Huano 80M mechanical switches and solder Huano Silent Square 2-Pin (7.3mm) switches on M1/M2 for an ultra-quiet 1000Hz productivity mouse.",
+        "DUAL RECEIVER FEATURE: Includes both USB-C and USB-A 2.4GHz dongles for seamless laptop/desktop switching."
+      ],
+
+      buttonSwitchMapping: [
+        { buttonGroup: "Main Left & Right Click (Office Mod)", recommendedSwitchId: "huano-silent-yellow-73mm", reason: "Converts the 1000Hz M6 into an ultra-quiet (~35 dB) office mouse with 30M click durability." },
+        { buttonGroup: "Main Left & Right Click (Gaming Mod)", recommendedSwitchId: "huano-btspd-80m", reason: "Delivers deep 'thock' tactile clicks with max 80M click durability for FPS/MOBAs." },
+        { buttonGroup: "Side Forward & Back (M4 / M5)", recommendedSwitchId: "huano-bspd-80m", reason: "80M durability upgrade for side navigation." },
+        { buttonGroup: "Middle Scroll Click (G3)", recommendedSwitchId: "kailh-silent-5mm", reason: "30M click 5.0mm Kailh Mute switch fitting beneath the dual-mode scroll carriage." }
+      ]
+    },
+
+    /* ==========================================================================
+       4. ASUS ROG CHAKRAM X ORIGIN (SOLDER-FREE HOT-SWAP ENTHUSIAST)
+       ========================================================================== */
+    {
+      id: "rog-chakram-x",
+      category: "mice",
+      name: "ASUS ROG Chakram X Origin",
+      brand: "ASUS",
+      status: "Wishlist",
+      isTopPick: true,
+      topPickBadge: "Best Solder-Free Hot-Swap Microswitch Mouse",
+      price: "$139 - $159",
+      purchaseUrl: "https://rog.asus.com/mice-mouse-pads/mice/ergonomic-right-handed/rog-chakram-x-origin-model/",
+      tags: ["Hot-Swap Sockets", "8000Hz Polling", "Joystick", "Qi Wireless", "AimPoint 36K"],
+
+      summary: "The ultimate enthusiast mouse for microswitch experimentation. Features Push-Fit Switch Sockets II allowing 3-pin mechanical AND 5-pin optical microswitches to be hot-swapped in 10 seconds with ZERO soldering required. Includes a programmable analog thumb joystick and 8000Hz polling rate.",
+
+      properties: {
+        "Ergonomic Rating": "9.4 / 10",
+        "Grip Style Match": "Palm / Hybrid Claw",
+        "Wrist Strain Index": "Low (Sculpted Ergonomic Palm)",
+        "Pinky Support": "Flared Right Contour",
+        "Weight Profile": "123g Heavy Modular",
+        "Sensor & Speed": "ROG AimPoint (36,000 DPI) | 8000Hz Wired / 1000Hz 2.4G",
+        "Battery Specs": "Native USB-C + Qi Wireless Charging (114h Runtime)",
+        "Switch Mounting": "Push-Fit Socket II (100% Hot-Swappable / Zero Solder)"
+      },
+
+      lifespanEstimates: {
+        chassisLife: "8 - 12+ Years (Push-Fit switch sockets eliminate PCB trace wear)",
+        stockSwitchesLife: "3 - 5 Years (70 Million Clicks via stock ROG Micro Switches)",
+        moddedSwitchesLife: "Infinite (Switches swap in 10 seconds without soldering)",
+        limitingFactor: "Internal Li-Po battery decay after 5+ years (replaceable via screwless magnetic shell)."
+      },
+
+      stockSwitchesList: [
+        { buttonGroup: "Main Left & Right (M1/M2)", switchModel: "ROG Micro Switch (70M) in Hot-Swap Socket", lifespan: "70M Clicks (Hot-Swappable)", sound: "50 - 52 dB" },
+        { buttonGroup: "Side Forward & Back (M4/M5)", switchModel: "Standard 3-Pin Mechanical", lifespan: "20M Clicks", sound: "48 - 50 dB" },
+        { buttonGroup: "Programmable Thumb Joystick", switchModel: "Analog / Digital 4-Way Stick", lifespan: "10M Actuations", sound: "45 dB" },
+        { buttonGroup: "Middle Scroll Click (G3)", switchModel: "Tactile DIP 2-Pin Switch", lifespan: "10M Clicks", sound: "48 dB" }
+      ],
+
+      modsAndAddons: [
+        { name: "Solder-Free Microswitch Hot-Swapping", difficulty: "Zero (Toolless)", impact: "Instantly plug in Huano BTSPD, Omron Japanese D2F, or Kailh switches in 10 seconds." },
+        { name: "Analog / Digital Thumb Joystick Customization", difficulty: "Easy", impact: "Swap long/short joystick shafts or cover with flush cap." },
+        { name: "Qi Wireless Charging Pad Integration", difficulty: "Easy", impact: "Charge mouse wirelessly by resting on any Qi desk pad." },
+        { name: "Custom 3D-Printed Logo Badge", difficulty: "Easy", impact: "Replace magnetic logo plate under palm shell with custom graphics." }
+      ],
+
+      ergonomicDetails: {
+        scoreReason: "Scored 9.4/10 due to its toolless screwless magnetic shell, comfortable right-hand palm arch, and integrated thumb joystick. Provides exceptional hand comfort for MOBAs and Flight/Space Sims.",
+        specificShapeContour: "132.7mm length x 76.6mm width x 42.8mm height. Sculpted right-hand palm arch with magnetic top cover and magnetic button keycaps. Left thumb rest incorporates an analog/digital thumb joystick.",
+        comparisonVsCloseCompetitors: "Vs G502: Chakram X allows instant solder-free switch hot-swapping (G502 requires full soldering desoldering) and includes an analog thumb joystick. Vs MX Master 3S: Chakram X features 8000Hz polling rate and AimPoint 36K sensor for elite gaming performance.",
+        gripCompatibility: "Optimal for Medium-to-Large hands using Palm or Hybrid Claw grip.",
+        wristAndPosture: "Sculpted right-hand incline relieves forearm strain."
+      },
+
+      pros: [
+        "Push-Fit Switch Sockets II allow instant 10-second hot-swapping of 3-pin mechanical & 5-pin optical microswitches with ZERO soldering",
+        "Programmable thumb joystick functions as analog stick or 4-way macro pad",
+        "8000Hz polling rate in wired mode / 1000Hz in 2.4GHz wireless mode",
+        "Magnetic screwless top shell and magnetic buttons for effortless maintenance",
+        "Supports both USB-C fast charging and Qi Wireless charging"
+      ],
+
+      cons: [
+        "Premium price tag ($139 - $159)",
+        "Relatively heavy at 123g"
+      ],
+
+      setupNotes: [
+        "SOLDER-FREE SWITCH SWAPPING: Lift top magnetic buttons, pull old switch with included tweezer, and push in Huano BTSPD or Japanese Omron D2F-01F switches.",
+        "JOYSTICK MODES: Toggle between Analog mode (for flight/racing games) and Digital 4-way directional macro mode in Armoury Crate."
+      ],
+
+      buttonSwitchMapping: [
+        { buttonGroup: "Main Left & Right Click (Hot-Swap)", recommendedSwitchId: "huano-btspd-80m", reason: "Pushes directly into Push-Fit sockets in 10 seconds. Delivers deep 'thock' tone and 80M durability." },
+        { buttonGroup: "Main Left & Right Click (Japanese Omron)", recommendedSwitchId: "omron-d2f-01f", reason: "Ultra-smooth tactile depression with gold-alloy contacts, installed without soldering." },
+        { buttonGroup: "Side Navigation Buttons (M4 / M5)", recommendedSwitchId: "huano-bspd-80m", reason: "Solid 80M click rating for side thumb commands." }
+      ]
+    },
+
+    /* ==========================================================================
+       5. LOGITECH G502 X LIGHTSPEED (NEXT-GEN G502 SUCCESSOR)
+       ========================================================================== */
+    {
+      id: "g502-x-lightspeed",
+      category: "mice",
+      name: "G502 X LIGHTSPEED Wireless",
+      brand: "Logitech",
+      status: "Alternative",
+      isTopPick: false,
+      topPickBadge: "Next-Gen Optical G502",
+      price: "$119 - $139",
+      purchaseUrl: "https://www.logitechg.com/en-us/products/gaming-mice/g502-x-lightspeed-wireless-gaming-mouse.910-006178.html",
+      tags: ["Wireless", "13 Buttons", "LIGHTFORCE", "HERO 25K", "99g Lightweight", "USB-C"],
+
+      summary: "The direct modern successor to the original G502 LIGHTSPEED. Reduces stock weight to 99g, adds native USB-C charging, and introduces LIGHTFORCE hybrid optical-mechanical switches to eliminate double-clicking permanently.",
+
+      properties: {
+        "Ergonomic Rating": "9.4 / 10",
+        "Grip Style Match": "Palm / Hybrid Claw",
+        "Wrist Strain Index": "Low (Thumb Rest Ledge)",
+        "Pinky Support": "Flared Right Side",
+        "Weight Profile": "99g Stock Lightweight",
+        "Sensor & Speed": "HERO 25K | 1000Hz Polling",
+        "Battery Specs": "Native USB-C (140 Hours Runtime)",
+        "Switch Mounting": "LIGHTFORCE Hybrid Optical (Main M1/M2)"
+      },
+
+      lifespanEstimates: {
+        chassisLife: "7 - 10 Years (HERO 25K Sensor & USB-C native port)",
+        stockSwitchesLife: "5 - 8+ Years (LIGHTFORCE optical beam eliminates mechanical contact wear)",
+        moddedSwitchesLife: "N/A (Main optical switches are surface-mounted opto-couplers)",
+        limitingFactor: "Optical switch actuation feel preference or internal Li-Po battery chemical age."
+      },
+
+      stockSwitchesList: [
+        { buttonGroup: "Main Left & Right (M1/M2)", switchModel: "LIGHTFORCE Hybrid Optical-Mechanical", lifespan: "100M+ Clicks (Zero double-click risk)", sound: "55 - 58 dB (Loud crisp snap)" },
+        { buttonGroup: "Side Forward & Back (G4/G5)", switchModel: "Standard 3-Pin Mechanical", lifespan: "20M Clicks", sound: "50 dB" },
+        { buttonGroup: "Reversible Sniper Clutch", switchModel: "Mechanical Tactile Switch", lifespan: "20M Clicks", sound: "50 dB" },
+        { buttonGroup: "Middle Scroll Click (G3)", switchModel: "2-Pin Tactile DIP Switch", lifespan: "10M Clicks", sound: "48 dB" }
+      ],
+
+      modsAndAddons: [
+        { name: "Reversible / Removable DPI Sniper Button", difficulty: "Easy (Toolless)", impact: "Reverse trigger closer to thumb or install flat cover button." },
+        { name: "Lightweight Thin-Wall Scroll Wheel", difficulty: "Stock Integrated", impact: "Saves 7g compared to older heavy steel G502 scroll wheel." },
+        { name: "Tiger Ice / Corepad PTFE Skates", difficulty: "Easy", impact: "Upgrades glide speed on large PTFE bottom pads." }
+      ],
+
+      ergonomicDetails: {
+        scoreReason: "Scored 9.4/10. Refines the classic G502 ergonomic shell with a lower 99g weight and a reversible/removable thumb sniper button that accommodates different hand sizes.",
+        specificShapeContour: "131.4mm length x 79.2mm width x 41.1mm height. Redesigned lower profile thumb rest ledge and flattened right side contour.",
+        comparisonVs CloseCompetitors: "Vs Original G502 LIGHTSPEED: G502 X is 15g lighter (99g vs 114g), features native USB-C, and uses LIGHTFORCE optical switches that never double-click. However, main switches CANNOT be soldered with traditional 3-pin mechanical switches like Huano BTSPD.",
+        gripCompatibility: "Optimal for Medium-to-Large hands using Palm or Hybrid Claw grip.",
+        wristAndPosture: "Thumb ledge eliminates pad drag and 99g weight reduces wrist inertia."
+      },
+
+      pros: [
+        "LIGHTFORCE hybrid optical-mechanical main switches permanently eliminate double-clicking",
+        "Lighter stock weight at 99g (15g lighter than original G502 LIGHTSPEED)",
+        "Native USB-C fast charging port (no Micro-USB adapters needed)",
+        "Reversible and completely removable DPI sniper clutch button",
+        "Redesigned lighter dual-mode scroll wheel"
+      ],
+
+      cons: [
+        "Main M1/M2 optical switches CANNOT be desoldered/replaced with custom 3-pin mechanical switches",
+        "LIGHTFORCE optical switches have a distinctly loud, metallic click acoustic (~56 dB)",
+        "Higher purchase price ($119 - $139)"
+      ],
+
+      setupNotes: [
+        "OPTICAL SWITCH WARNING: The main M1/M2 clicks use surface-mounted optical sensors. Do NOT attempt to solder traditional 3-pin mechanical microswitches on M1/M2.",
+        "SNIPER CLUTCH CUSTOMIZATION: The thumb sniper button is magnetic. You can flip it around to bring it closer to your thumb or swap it with the included blank cover."
+      ],
+
+      buttonSwitchMapping: [
+        { buttonGroup: "Main Left & Right Click", recommendedSwitchId: "huano-btspd-80m", reason: "Stock LIGHTFORCE optical switches are integrated. (Secondary side/scroll switches remain moddable)." },
+        { buttonGroup: "Side Forward & Back (G4 / G5)", recommendedSwitchId: "huano-bspd-80m", reason: "80M durability upgrade for mechanical side thumb buttons." },
+        { buttonGroup: "Middle Scroll Wheel Click (G3)", recommendedSwitchId: "kailh-5mm-tactile", reason: "50M click rated 5.0mm Kailh tactile switch clearing redesigned scroll cradle." }
+      ]
+    },
+
+    /* ==========================================================================
+       6. LOGITECH SIGNATURE M650
+       ========================================================================== */
     {
       id: "signature-m650",
       category: "mice",
@@ -367,24 +584,15 @@ window.DESK_DATA = {
       ],
 
       buttonSwitchMapping: [
-        {
-          buttonGroup: "Main Left & Right Click",
-          recommendedSwitchId: "huano-silent-yellow-73mm",
-          reason: "Direct replacement for stock silent 2-pin switches. Delivers 30M click lifespan with crisp silent actuation (~35 dB)."
-        },
-        {
-          buttonGroup: "Middle Mouse Click (G3)",
-          recommendedSwitchId: "kailh-silent-5mm",
-          reason: "30M click 5.0mm Kailh Mute switch. Fits under SmartWheel carriage delivering quiet (~35 dB) tactile response."
-        },
-        {
-          buttonGroup: "Side Navigation Buttons (M4 / M5)",
-          recommendedSwitchId: "huano-silent-yellow-73mm",
-          reason: "Maintains silent acoustic profile (~35 dB) across side thumb buttons."
-        }
+        { buttonGroup: "Main Left & Right Click", recommendedSwitchId: "huano-silent-yellow-73mm", reason: "Direct replacement for stock silent 2-pin switches. Delivers 30M click lifespan with crisp silent actuation (~35 dB)." },
+        { buttonGroup: "Middle Mouse Click (G3)", recommendedSwitchId: "kailh-silent-5mm", reason: "30M click 5.0mm Kailh Mute switch. Fits under SmartWheel carriage delivering quiet (~35 dB) tactile response." },
+        { buttonGroup: "Side Navigation Buttons (M4 / M5)", recommendedSwitchId: "huano-silent-yellow-73mm", reason: "Maintains silent acoustic profile (~35 dB) across side thumb buttons." }
       ]
     },
 
+    /* ==========================================================================
+       7. RAZER BASILISK V3 X HYPERSPEED
+       ========================================================================== */
     {
       id: "basilisk-v3-x",
       category: "mice",
@@ -457,21 +665,9 @@ window.DESK_DATA = {
       ],
 
       buttonSwitchMapping: [
-        {
-          buttonGroup: "Main Left & Right Click",
-          recommendedSwitchId: "huano-btspd-80m",
-          reason: "Replaces stiff stock Razer Gen-2 switches. Lowers click force, increases tactile snap, and dampens high-pitched clack (~49-51 dB)."
-        },
-        {
-          buttonGroup: "Side Navigation Buttons (M4 / M5)",
-          recommendedSwitchId: "huano-bspd-90deg",
-          reason: "80M click rated 90° right-angle pre-bent pins to mate with vertical side PCB contact pads."
-        },
-        {
-          buttonGroup: "Middle Scroll Click & DPI Cycle",
-          recommendedSwitchId: "kailh-5mm-tactile",
-          reason: "50M click rated 5.0mm Kailh square tactile switch clearing scroll wheel cradle."
-        }
+        { buttonGroup: "Main Left & Right Click", recommendedSwitchId: "huano-btspd-80m", reason: "Replaces stiff stock Razer Gen-2 switches. Lowers click force, increases tactile snap, and dampens high-pitched clack (~49-51 dB)." },
+        { buttonGroup: "Side Navigation Buttons (M4 / M5)", recommendedSwitchId: "huano-bspd-90deg", reason: "80M click rated 90° right-angle pre-bent pins to mate with vertical side PCB contact pads." },
+        { buttonGroup: "Middle Scroll Click & DPI Cycle", recommendedSwitchId: "kailh-5mm-tactile", reason: "50M click rated 5.0mm Kailh square tactile switch clearing scroll wheel cradle." }
       ]
     }
   ]
