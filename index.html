@@ -27,10 +27,10 @@
       --badge-alt-bg: rgba(239, 68, 68, 0.15);
       --badge-alt: #f87171;
       --radius: 10px;
+      --compare-bg: #0d1317;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       background-color: var(--bg);
@@ -41,7 +41,6 @@
       font-size: 14px;
       line-height: 1.5;
     }
-
     #app { display: flex; width: 100%; height: 100%; }
 
     sidebar {
@@ -52,150 +51,69 @@
       flex-direction: column;
       flex-shrink: 0;
     }
-
-    .brand {
-      padding: 18px 20px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-icon {
-      width: 26px;
-      height: 26px;
-      background: var(--primary);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-    }
-
+    .brand { padding: 18px 20px; font-size: 1.1rem; font-weight: 700; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+    .brand-icon { width: 26px; height: 26px; background: var(--primary); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 13px; }
     .nav-list { list-style: none; padding: 12px 8px; overflow-y: auto; flex-grow: 1; }
-
     .nav-item {
-      padding: 10px 12px;
-      margin-bottom: 4px;
-      border-radius: var(--radius);
-      cursor: pointer;
-      color: var(--text-muted);
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: all 0.15s ease;
+      padding: 10px 12px; margin-bottom: 4px; border-radius: var(--radius); cursor: pointer;
+      color: var(--text-muted); font-weight: 500; display: flex; align-items: center;
+      justify-content: space-between; transition: all 0.15s ease;
     }
-
     .nav-item:hover { background-color: rgba(255, 255, 255, 0.05); color: var(--text); }
     .nav-item.active { background-color: var(--primary-light); color: var(--primary); font-weight: 600; }
-
-    .counter-badge {
-      background: rgba(255, 255, 255, 0.08);
-      padding: 2px 8px;
-      border-radius: 12px;
-      font-size: 11px;
-      color: var(--text-muted);
-    }
+    .counter-badge { background: rgba(255, 255, 255, 0.08); padding: 2px 8px; border-radius: 12px; font-size: 11px; color: var(--text-muted); }
 
     main { flex-grow: 1; display: flex; flex-direction: column; overflow: hidden; }
-
     header {
-      padding: 14px 24px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
+      padding: 14px 24px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
       background: var(--sidebar-bg);
     }
-
     .search-box { position: relative; width: 340px; }
-
     .search-box input {
-      width: 100%;
-      padding: 8px 12px 8px 36px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      color: var(--text);
-      outline: none;
-      font-size: 13px;
+      width: 100%; padding: 8px 12px 8px 36px; background: var(--bg);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      color: var(--text); outline: none; font-size: 13px;
     }
-
     .search-box input:focus { border-color: var(--primary); }
-    .search-box::before {
-      content: '🔍';
-      position: absolute;
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 12px;
-      opacity: 0.5;
-    }
-
+    .search-box::before { content: '🔍'; position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 12px; opacity: 0.5; }
     .controls-group { display: flex; align-items: center; gap: 10px; }
-
     .btn-action {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 6px 12px;
-      border-radius: var(--radius);
-      cursor: pointer;
-      font-size: 12px;
-      font-weight: 500;
+      background: rgba(255, 255, 255, 0.06); border: 1px solid var(--border);
+      color: var(--text-muted); padding: 6px 12px; border-radius: var(--radius);
+      cursor: pointer; font-size: 12px; font-weight: 500;
     }
-
     .btn-action:hover { background: rgba(255, 255, 255, 0.12); color: var(--text); }
 
-    .meta-bar {
-      display: flex; flex-direction: column; gap: 6px;
-      padding: 2px 2px 18px; border-bottom: 1px solid var(--border); margin-bottom: 18px;
+    .compare-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 8px 24px; background: var(--compare-bg); border-bottom: 1px solid var(--border);
+      font-size: 13px;
     }
-    .meta-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
-    .meta-stats { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; font-size: 12px; color: var(--text-muted); }
-    .meta-stats strong { color: var(--text); }
-    .meta-divider { color: var(--text-faint); opacity: 0.4; }
-    .invested-value { color: var(--primary); font-weight: 600; }
-    .filter-chips { display: flex; gap: 6px; }
-    .chip {
-      all: unset; cursor: pointer;
-      font-size: 11px; padding: 5px 11px; border-radius: 20px;
-      border: 1px solid var(--border); color: var(--text-muted);
-      transition: all .15s ease;
+    .compare-bar .selected { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .compare-chip {
+      background: var(--primary-light); border: 1px solid var(--primary);
+      padding: 4px 10px; border-radius: 20px; font-size: 12px; display: flex;
+      align-items: center; gap: 8px; color: var(--text); font-weight: 500;
     }
-    .chip:hover { border-color: var(--primary); color: var(--text); }
-    .chip.active { background: var(--primary); border-color: var(--primary); color: #fff; font-weight: 600; }
+    .compare-chip .remove { cursor: pointer; font-weight: bold; color: var(--primary); }
+    .compare-btn {
+      background: var(--primary); color: #fff; border: none; padding: 6px 14px;
+      border-radius: 20px; font-weight: 600; cursor: pointer; font-size: 12px;
+    }
+    .compare-btn:disabled { background: var(--border); color: var(--text-muted); cursor: default; }
 
     .content-viewport { padding: 20px; overflow-y: auto; flex-grow: 1; scroll-behavior: smooth; }
-
-    .comparison-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
-      gap: 20px;
-      align-items: start;
-    }
-
+    .comparison-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(460px, 1fr)); gap: 20px; align-items: start; }
     @media (max-width: 1080px) { .comparison-grid { grid-template-columns: 1fr; } }
 
     .card {
-      position: relative;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      display: flex;
-      flex-direction: column;
+      position: relative; background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius); display: flex; flex-direction: column;
       transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
     }
     .card:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,.35); }
-    .card.expanded {
-      background: var(--card-expanded-bg);
-      border-color: var(--border-accent);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    }
+    .card.expanded { background: var(--card-expanded-bg); border-color: var(--border-accent); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
 
     .card::before, .card::after {
       content: ''; position: absolute; width: 12px; height: 12px; pointer-events: none; opacity: 0.4;
@@ -204,140 +122,48 @@
     .card::after { bottom: -1px; right: -1px; border-bottom: 2px solid var(--primary); border-right: 2px solid var(--primary); }
     .card:hover::before, .card:hover::after, .card.expanded::before, .card.expanded::after { opacity: 1; }
 
-    .card-header {
-      padding: 16px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      background: rgba(0, 0, 0, 0.2);
-    }
-
+    .card-header { padding: 16px; border-bottom: 1px solid var(--border); display: flex; flex-direction: column; gap: 8px; background: rgba(0, 0, 0, 0.2); }
     .card-title-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
     .product-brand { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
     .product-name { font-size: 1.15rem; font-weight: 700; color: var(--text); }
 
-    .status-badge {
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
+    .status-badge { padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
     .status-owned { background: var(--badge-owned-bg); color: var(--badge-owned); }
     .status-wishlist { background: var(--badge-wishlist-bg); color: var(--badge-wishlist); }
     .status-alternative { background: var(--badge-alt-bg); color: var(--badge-alt); }
 
-    .top-pick-tag {
-      background: var(--primary-light);
-      color: var(--primary);
-      border: 1px solid var(--primary);
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 600;
-      display: inline-block;
-    }
-
+    .top-pick-tag { background: var(--primary-light); color: var(--primary); border: 1px solid var(--primary); padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; display: inline-block; }
     .card-summary { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
 
-    .quick-specs-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
-      padding: 12px 16px;
-      background: rgba(0, 0, 0, 0.15);
-      border-bottom: 1px solid var(--border);
+    .compare-select {
+      position: absolute; top: 12px; right: 12px; z-index: 2;
+      width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--border);
+      background: var(--card-bg); cursor: pointer; display: flex; align-items: center;
+      justify-content: center; font-size: 16px; color: var(--text-muted);
+      transition: all .15s ease;
     }
+    .compare-select:hover { border-color: var(--primary); color: var(--primary); }
+    .compare-select.selected { background: var(--primary); border-color: var(--primary); color: #fff; }
 
-    .spec-pill-interactive {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 8px 10px;
-      border-radius: 6px;
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-
-    .spec-pill-interactive:hover {
-      background: var(--primary-light);
-      border-color: var(--primary);
-    }
-
+    .quick-specs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; padding: 12px 16px; background: rgba(0, 0, 0, 0.15); border-bottom: 1px solid var(--border); }
+    .spec-pill-interactive { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); padding: 8px 10px; border-radius: 6px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.15s ease; }
+    .spec-pill-interactive:hover { background: var(--primary-light); border-color: var(--primary); }
     .spec-key { font-size: 10px; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
     .spec-val { font-size: 12px; font-weight: 600; color: var(--text); margin-top: 2px; }
 
-    .card-expand-bar {
-      padding: 12px 16px;
-      background: rgba(255, 255, 255, 0.02);
-      border-top: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-      user-select: none;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--primary);
-    }
-
+    .card-expand-bar { padding: 12px 16px; background: rgba(255, 255, 255, 0.02); border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; cursor: pointer; user-select: none; font-size: 12px; font-weight: 600; color: var(--primary); }
     .card-expand-bar:hover { background: rgba(99, 102, 241, 0.08); }
 
-    .card-scroll-body {
-      display: none;
-      padding: 16px;
-      flex-direction: column;
-      gap: 12px;
-      border-top: 1px solid var(--border);
-    }
-
+    .card-scroll-body { display: none; padding: 16px; flex-direction: column; gap: 12px; border-top: 1px solid var(--border); }
     .card.expanded .card-scroll-body { display: flex; }
 
-    .sub-accordion {
-      background: rgba(0, 0, 0, 0.25);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      scroll-margin-top: 80px;
-    }
-
-    .sub-accordion-header {
-      padding: 12px 14px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-      user-select: none;
-      background: rgba(255, 255, 255, 0.02);
-      transition: background 0.15s ease;
-    }
-
+    .sub-accordion { background: rgba(0, 0, 0, 0.25); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; scroll-margin-top: 80px; }
+    .sub-accordion-header { padding: 12px 14px; font-size: 0.85rem; font-weight: 700; color: var(--text); display: flex; align-items: center; justify-content: space-between; cursor: pointer; user-select: none; background: rgba(255, 255, 255, 0.02); transition: background 0.15s ease; }
     .sub-accordion-header:hover { background: rgba(255, 255, 255, 0.06); }
     .sub-accordion-title { display: flex; align-items: center; gap: 8px; color: var(--primary); }
-
-    .sub-accordion-arrow {
-      font-size: 10px;
-      color: var(--text-muted);
-      transition: transform 0.2s ease;
-    }
-
+    .sub-accordion-arrow { font-size: 10px; color: var(--text-muted); transition: transform 0.2s ease; }
     .sub-accordion.active .sub-accordion-arrow { transform: rotate(180deg); color: var(--primary); }
-
-    .sub-accordion-body {
-      display: none;
-      padding: 14px;
-      border-top: 1px solid var(--border);
-      flex-direction: column;
-      gap: 12px;
-      background: rgba(0, 0, 0, 0.15);
-    }
-
+    .sub-accordion-body { display: none; padding: 14px; border-top: 1px solid var(--border); flex-direction: column; gap: 12px; background: rgba(0, 0, 0, 0.15); }
     .sub-accordion.active .sub-accordion-body { display: flex; }
 
     .pro-con-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -346,73 +172,17 @@
     .con-item { background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.2); color: #fee2e2; }
 
     .bullet-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-    .bullet-list li {
-      position: relative;
-      padding-left: 16px;
-      font-size: 12px;
-      color: #d1d5db;
-      line-height: 1.4;
-    }
+    .bullet-list li { position: relative; padding-left: 16px; font-size: 12px; color: #d1d5db; line-height: 1.4; }
+    .bullet-list li::before { content: '•'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
 
-    .bullet-list li::before {
-      content: '•';
-      position: absolute;
-      left: 0;
-      color: var(--primary);
-      font-weight: bold;
-    }
+    .comparison-box { background: rgba(99, 102, 241, 0.05); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 6px; padding: 10px 12px; font-size: 12px; color: #e2e8f0; line-height: 1.4; }
 
-    .comparison-box {
-      background: rgba(99, 102, 241, 0.05);
-      border: 1px solid rgba(99, 102, 241, 0.2);
-      border-radius: 6px;
-      padding: 10px 12px;
-      font-size: 12px;
-      color: #e2e8f0;
-      line-height: 1.4;
-    }
+    .lifespan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; }
+    .lifespan-pill { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); padding: 8px 10px; border-radius: 6px; }
 
-    .lifespan-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 8px;
-    }
-
-    .lifespan-pill {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 8px 10px;
-      border-radius: 6px;
-    }
-
-    .copy-item-card {
-      background: rgba(0, 0, 0, 0.25);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 8px 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    .btn-copy {
-      background: var(--primary-light);
-      border: 1px solid var(--primary);
-      color: var(--primary);
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.15s ease;
-      white-space: nowrap;
-    }
-
-    .btn-copy:hover {
-      background: var(--primary);
-      color: #fff;
-    }
+    .copy-item-card { background: rgba(0, 0, 0, 0.25); border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .btn-copy { background: var(--primary-light); border: 1px solid var(--primary); color: var(--primary); padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 600; cursor: pointer; transition: all 0.15s ease; white-space: nowrap; }
+    .btn-copy:hover { background: var(--primary); color: #fff; }
 
     .switch-table { width: 100%; border-collapse: collapse; font-size: 12px; }
     .switch-table th, .switch-table td { padding: 6px 8px; text-align: left; border-bottom: 1px solid var(--border); }
@@ -421,16 +191,36 @@
     .empty-state { text-align: center; padding: 60px 20px; color: var(--text-muted); }
     .buy-link { color: var(--primary); text-decoration: none; font-weight: 600; font-size: 12px; }
     .buy-link:hover { text-decoration: underline; }
+
+    /* ---------- COMPARISON OVERLAY ---------- */
+    .compare-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 100;
+      display: flex; flex-direction: column; padding: 20px; overflow-y: auto;
+    }
+    .compare-overlay.hidden { display: none; }
+    .compare-overlay-header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-bottom: 16px; border-bottom: 1px solid var(--border);
+    }
+    .compare-overlay-header h2 { font-size: 1.4rem; }
+    .close-overlay {
+      background: var(--primary); border: none; color: #fff; font-size: 1.2rem;
+      padding: 6px 14px; border-radius: 8px; cursor: pointer;
+    }
+    .compare-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 20px; }
+    .compare-col { background: var(--card-bg); border-radius: var(--radius); padding: 20px; border: 1px solid var(--border); }
+    .compare-col h3 { font-size: 1.1rem; margin-bottom: 12px; }
+    .compare-spec-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+    .compare-spec-row .label { color: var(--text-muted); }
+    .compare-spec-row .value { font-weight: 600; }
+    .compare-pro-con { margin-top: 12px; }
+    .compare-pro-con strong { color: var(--text-muted); font-size: 11px; text-transform: uppercase; }
   </style>
 </head>
 <body>
-
   <div id="app">
     <sidebar>
-      <div class="brand">
-        <div class="brand-icon">⚡</div>
-        <span>Desk Directory</span>
-      </div>
+      <div class="brand"><div class="brand-icon">⚡</div><span>Desk Directory</span></div>
       <ul class="nav-list" id="categoryNav"></ul>
     </sidebar>
 
@@ -445,6 +235,11 @@
         </div>
       </header>
 
+      <div class="compare-bar" id="compareBar">
+        <div class="selected" id="compareSelected"><span style="color:var(--text-muted);">No items selected for comparison</span></div>
+        <button class="compare-btn" id="compareBtn" disabled>Compare (0/2)</button>
+      </div>
+
       <div class="content-viewport" id="viewport">
         <div class="meta-bar" id="metaBar"></div>
         <div class="comparison-grid" id="productList"></div>
@@ -452,79 +247,72 @@
     </main>
   </div>
 
-  <!-- Data files (modular) -->
+  <!-- COMPARE OVERLAY -->
+  <div class="compare-overlay hidden" id="compareOverlay">
+    <div class="compare-overlay-header">
+      <h2>Side‑by‑side Comparison</h2>
+      <button class="close-overlay" id="closeOverlay">✕ Close</button>
+    </div>
+    <div class="compare-columns" id="compareColumns"></div>
+  </div>
+
   <script src="data-core.js"></script>
   <script src="data-mice.js"></script>
   <script src="data-monitors.js"></script>
-  <!-- Future data files will be added here, e.g.:
-       <script src="data-keyboards.js"></script>
-       <script src="data-chairs.js"></script>
-       <script src="data-desks.js"></script>
-  -->
+  <script src="data-keyboards.js"></script>
+  <script src="data-chairs.js"></script>
+  <script src="data-desks.js"></script>
+  <script src="data-gadgets.js"></script>
   <script src="data-assemble.js"></script>
 
-  <!-- Application logic -->
   <script>
     (function () {
       const productList = document.getElementById('productList');
-
       if (!window.DESK_DATA) {
-        productList.innerHTML = `
-          <div class="empty-state">
-            <h2>Data failed to load</h2>
-            <p style="margin-top:8px">Ensure the <code>data-*.js</code> files and <code>index.html</code> are in the same folder.</p>
-          </div>`;
+        productList.innerHTML = `<div class="empty-state"><h2>Data failed to load</h2><p>Ensure all data-*.js files are present.</p></div>`;
         return;
       }
 
       const { categories = [], products = [], microswitches = {} } = window.DESK_DATA;
-
       let activeCategory = categories[0]?.id || 'mice';
       let searchQuery = '';
       let statusFilter = 'all';
       let expandedCardIds = new Set();
       let activeSubSections = new Set();
+      let compareList = new Set();
 
       const categoryNav = document.getElementById('categoryNav');
       const searchInput = document.getElementById('searchInput');
       const btnExpandAll = document.getElementById('btnExpandAll');
       const btnCollapseAll = document.getElementById('btnCollapseAll');
+      const compareBar = document.getElementById('compareBar');
+      const compareSelectedEl = document.getElementById('compareSelected');
+      const compareBtn = document.getElementById('compareBtn');
+      const compareOverlay = document.getElementById('compareOverlay');
+      const compareColumns = document.getElementById('compareColumns');
+      const closeOverlay = document.getElementById('closeOverlay');
 
       function init() {
-        renderNav();
-        setupEventListeners();
-        handleHashRoute();
-        renderMetaBar();
-        renderProducts();
+        renderNav(); setupEventListeners(); handleHashRoute(); renderMetaBar(); renderProducts(); updateCompareBar();
       }
 
       function handleHashRoute() {
         const hash = location.hash.replace('#', '');
         if (hash) {
-          const matchedCategory = categories.find(c => c.id === hash);
-          if (matchedCategory) activeCategory = matchedCategory.id;
+          const matched = categories.find(c => c.id === hash);
+          if (matched) activeCategory = matched.id;
         }
       }
 
       function renderNav() {
         categoryNav.innerHTML = categories.map(cat => {
           const count = products.filter(p => p && p.category === cat.id).length;
-          return `
-            <li class="nav-item ${cat.id === activeCategory ? 'active' : ''}" data-cat="${cat.id}">
-              <span>${cat.label}</span>
-              <span class="counter-badge">${count}</span>
-            </li>
-          `;
+          return `<li class="nav-item ${cat.id === activeCategory ? 'active' : ''}" data-cat="${cat.id}">
+            <span>${cat.label}</span><span class="counter-badge">${count}</span></li>`;
         }).join('');
       }
 
-      function parsePrice(str) {
-        if (!str) return NaN;
-        const nums = String(str).match(/[\d,]+(?:\.\d+)?/g);
-        if (!nums || !nums.length) return NaN;
-        const vals = nums.map(n => parseFloat(n.replace(/,/g, '')));
-        return vals.reduce((a, b) => a + b, 0) / vals.length;
-      }
+      function parsePrice(str) { if (!str) return NaN; const nums = String(str).match(/[\d,]+(?:\.\d+)?/g); if (!nums || !nums.length) return NaN; const vals = nums.map(n => parseFloat(n.replace(/,/g, ''))); return vals.reduce((a,b)=>a+b,0)/vals.length; }
 
       function getFilteredProducts() {
         return products.filter(p => {
@@ -532,660 +320,150 @@
           const matchesCategory = p.category === activeCategory;
           if (statusFilter !== 'all' && p.status !== statusFilter) return false;
           const query = searchQuery.toLowerCase();
-          return matchesCategory && (!query ||
-            (p.name && p.name.toLowerCase().includes(query)) ||
-            (p.brand && p.brand.toLowerCase().includes(query)) ||
-            (p.tags && Array.isArray(p.tags) && p.tags.some(t => String(t).toLowerCase().includes(query))) ||
-            (p.summary && p.summary.toLowerCase().includes(query))
-          );
+          return matchesCategory && (!query || (p.name&&p.name.toLowerCase().includes(query))||(p.brand&&p.brand.toLowerCase().includes(query))||(p.tags&&Array.isArray(p.tags)&&p.tags.some(t=>String(t).toLowerCase().includes(query)))||(p.summary&&p.summary.toLowerCase().includes(query)));
         });
       }
 
       function renderMetaBar() {
-        const catItems = products.filter(p => p && p.category === activeCategory);
+        const catItems = products.filter(p=>p&&p.category===activeCategory);
         const filtered = getFilteredProducts();
-        const ownedCount = catItems.filter(p => p.status === 'Owned').length;
-        const wishCount = catItems.filter(p => p.status === 'Wishlist').length;
-        const altCount = catItems.filter(p => p.status === 'Alternative').length;
-        const invested = catItems.filter(p => p.status === 'Owned').reduce((sum, p) => sum + (parsePrice(p.price) || 0), 0);
+        const owned = catItems.filter(p=>p.status==='Owned').length;
+        const wish = catItems.filter(p=>p.status==='Wishlist').length;
+        const alt = catItems.filter(p=>p.status==='Alternative').length;
+        const invested = catItems.filter(p=>p.status==='Owned').reduce((s,p)=>s+(parsePrice(p.price)||0),0);
         const metaBarEl = document.getElementById('metaBar');
-        if (!metaBarEl) return;
-        metaBarEl.innerHTML = `
-          <div class="meta-row">
-            <div class="meta-stats">
-              <span><strong>${filtered.length}</strong> shown</span><span class="meta-divider">/</span>
-              <span><strong>${catItems.length}</strong> logged</span>
-              ${catItems.length ? `
-                <span class="meta-divider">·</span>
-                <span style="color:var(--badge-owned);">${ownedCount} owned</span>
-                <span style="color:var(--badge-wishlist);">${wishCount} wishlist</span>
-                <span style="color:var(--badge-alt);">${altCount} alt</span>
-                <span class="meta-divider">·</span>
-                <span class="invested-value">$${invested.toFixed(0)} invested</span>
-              ` : ''}
-            </div>
-            <div class="filter-chips">
-              ${['all', 'Owned', 'Wishlist', 'Alternative'].map(s => `
-                <button class="chip ${statusFilter === s ? 'active' : ''}" data-status="${s}">${s === 'all' ? 'All' : s}</button>
-              `).join('')}
-            </div>
-          </div>`;
+        if(!metaBarEl) return;
+        metaBarEl.innerHTML = `<div class="meta-row"><div class="meta-stats">
+          <span><strong>${filtered.length}</strong> shown</span><span class="meta-divider">/</span>
+          <span><strong>${catItems.length}</strong> logged</span>
+          ${catItems.length ? `<span class="meta-divider">·</span><span style="color:var(--badge-owned);">${owned} owned</span><span style="color:var(--badge-wishlist);">${wish} wishlist</span><span style="color:var(--badge-alt);">${alt} alt</span><span class="meta-divider">·</span><span class="invested-value">$${invested.toFixed(0)} invested</span>` : ''}
+        </div><div class="filter-chips">${['all','Owned','Wishlist','Alternative'].map(s=>`<button class="chip ${statusFilter===s?'active':''}" data-status="${s}">${s==='all'?'All':s}</button>`).join('')}</div></div>`;
       }
 
       function getQuickSpecPills(item) {
-        const props = (item.properties && typeof item.properties === 'object') ? item.properties : {};
-        const ergo = (item.ergonomicDetails && typeof item.ergonomicDetails === 'object') ? item.ergonomicDetails : null;
-        const procList = Array.isArray(item.procurement) ? item.procurement : [];
-        const repair = (item.repairability && typeof item.repairability === 'object') ? item.repairability : null;
-        const lifespan = (item.lifespanEstimates && typeof item.lifespanEstimates === 'object') ? item.lifespanEstimates : null;
-        const panelInfo = (item.panelDetails && typeof item.panelDetails === 'object') ? item.panelDetails : null;
-
-        if (activeCategory === 'monitors') {
-          return `
-            <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'ergonomics')">
-              <span class="spec-key">Screen Size ↗</span>
-              <span class="spec-val">${props["Screen Size"] || 'N/A'}</span>
-            </div>
-            <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'properties')">
-              <span class="spec-key">Refresh Rate ↗</span>
-              <span class="spec-val">${props["Refresh Rate"] || 'N/A'}</span>
-            </div>
-            <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'panel')">
-              <span class="spec-key">Panel Tech ↗</span>
-              <span class="spec-val">${panelInfo ? panelInfo.panelTech : 'N/A'}</span>
-            </div>
-            <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'panel')">
-              <span class="spec-key">Color Accuracy ↗</span>
-              <span class="spec-val">${panelInfo ? panelInfo.colorGamut : 'N/A'}</span>
-            </div>
-          `;
+        const props = (item.properties&&typeof item.properties==='object')?item.properties:{};
+        const lifespan = (item.lifespanEstimates&&typeof item.lifespanEstimates==='object')?item.lifespanEstimates:null;
+        const panelInfo = (item.panelDetails&&typeof item.panelDetails==='object')?item.panelDetails:null;
+        if (activeCategory==='monitors') {
+          return `<div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}','ergonomics')"><span class="spec-key">Screen Size ↗</span><span class="spec-val">${props["Screen Size"]||'N/A'}</span></div>
+            <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}','properties')"><span class="spec-key">Refresh Rate ↗</span><span class="spec-val">${props["Refresh Rate"]||'N/A'}</span></div>
+            <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}','panel')"><span class="spec-key">Panel Tech ↗</span><span class="spec-val">${panelInfo?panelInfo.panelTech:'N/A'}</span></div>
+            <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}','panel')"><span class="spec-key">Color Accuracy ↗</span><span class="spec-val">${panelInfo?panelInfo.colorGamut:'N/A'}</span></div>`;
         }
-
-        return `
-          <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'ergonomics')">
-            <span class="spec-key">Ergonomic Score ↗</span>
-            <span class="spec-val">${props["Ergonomic Rating"] || 'N/A'}</span>
-          </div>
-          <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'lifespan')">
-            <span class="spec-key">Modded Life ↗</span>
-            <span class="spec-val">${lifespan ? lifespan.moddedSwitchesLife : 'N/A'}</span>
-          </div>
-          <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'procurement')">
-            <span class="spec-key">Taobao Parts Copy ↗</span>
-            <span class="spec-val">${procList.length} Items</span>
-          </div>
-          <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'repairability')">
-            <span class="spec-key">Repair Risk Score ↗</span>
-            <span class="spec-val">${repair ? repair.score : 'N/A'}</span>
-          </div>
-        `;
+        if (activeCategory==='keyboards') {
+          return `<div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}','ergonomics')"><span class="spec-key">Layout ↗</span><span class="spec-val">${props["Layout"]||'N/A'}</span></div>
+            <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}','switches')"><span class="spec-key">Switch Type ↗</span><span class="spec-val">${props["Switch Type"]||'N/A'}</span></div>
+            <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}','switches')"><span class="spec-key">Hot‑Swappable ↗</span><span class="spec-val">${props["Hot‑Swappable"]||'N/A'}</span></div>
+            <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}','switches')"><span class="spec-key">Connectivity ↗</span><span class="spec-val">${props["Connectivity"]||'N/A'}</span></div>`;
+        }
+        return `<div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}','ergonomics')"><span class="spec-key">Ergonomic Score ↗</span><span class="spec-val">${props["Ergonomic Rating"]||'N/A'}</span></div>
+          <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}','lifespan')"><span class="spec-key">Modded Life ↗</span><span class="spec-val">${lifespan?lifespan.moddedSwitchesLife:'N/A'}</span></div>
+          <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}','procurement')"><span class="spec-key">Taobao Parts Copy ↗</span><span class="spec-val">${Array.isArray(item.procurement)?item.procurement.length+' Items':'0'}</span></div>
+          <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}','repairability')"><span class="spec-key">Repair Risk Score ↗</span><span class="spec-val">${item.repairability?item.repairability.score:'N/A'}</span></div>`;
       }
+
+      function toggleCompare(id) {
+        if (compareList.has(id)) { compareList.delete(id); }
+        else if (compareList.size < 2) { compareList.add(id); }
+        updateCompareBar();
+        renderProducts();
+      }
+
+      function updateCompareBar() {
+        const ids = [...compareList];
+        const chips = ids.map(id => {
+          const item = products.find(p=>p.id===id);
+          return `<span class="compare-chip">${item?item.name:id} <span class="remove" onclick="window.deskApp.toggleCompare('${id}')">✕</span></span>`;
+        }).join('');
+        compareSelectedEl.innerHTML = chips || '<span style="color:var(--text-muted);">No items selected for comparison</span>';
+        compareBtn.textContent = `Compare (${compareList.size}/2)`;
+        compareBtn.disabled = compareList.size !== 2;
+      }
+
+      function showCompare() {
+        if (compareList.size !== 2) return;
+        const [id1, id2] = [...compareList];
+        const item1 = products.find(p=>p.id===id1);
+        const item2 = products.find(p=>p.id===id2);
+        if (!item1 || !item2) return;
+        const specKeys = [...new Set([...Object.keys(item1.properties||{}), ...Object.keys(item2.properties||{})])];
+        let rows = specKeys.map(k => `<div class="compare-spec-row"><span class="label">${k}</span><span class="value">${item1.properties[k]||'—'}</span><span class="value">${item2.properties[k]||'—'}</span></div>`).join('');
+        compareColumns.innerHTML = `
+          <div class="compare-col"><h3>${item1.name}</h3><div>${rows}</div><div class="compare-pro-con"><strong>Pros:</strong><ul class="bullet-list">${(item1.pros||[]).map(p=>'<li>'+p+'</li>').join('')}</ul></div><div class="compare-pro-con"><strong>Cons:</strong><ul class="bullet-list">${(item1.cons||[]).map(c=>'<li>'+c+'</li>').join('')}</ul></div></div>
+          <div class="compare-col"><h3>${item2.name}</h3><div>${rows}</div><div class="compare-pro-con"><strong>Pros:</strong><ul class="bullet-list">${(item2.pros||[]).map(p=>'<li>'+p+'</li>').join('')}</ul></div><div class="compare-pro-con"><strong>Cons:</strong><ul class="bullet-list">${(item2.cons||[]).map(c=>'<li>'+c+'</li>').join('')}</ul></div></div>`;
+        compareOverlay.classList.remove('hidden');
+      }
+
+      function hideCompare() { compareOverlay.classList.add('hidden'); }
 
       function renderProducts() {
         try {
           const filtered = getFilteredProducts();
-
-          if (filtered.length === 0) {
-            productList.innerHTML = `
-              <div class="empty-state">
-                <h3>No items match your search</h3>
-                <p style="margin-top: 6px;">Try clearing search filters or selecting another category.</p>
-              </div>`;
+          if (filtered.length===0) {
+            productList.innerHTML = `<div class="empty-state"><h3>No items match your search</h3><p>Try clearing filters or switching category.</p></div>`;
             return;
           }
-
           productList.innerHTML = filtered.map(item => {
             const isExpanded = expandedCardIds.has(item.id);
-            const statusClass = item.status === 'Owned' ? 'status-owned' : (item.status === 'Alternative' ? 'status-alternative' : 'status-wishlist');
+            const statusClass = item.status==='Owned'?'status-owned':(item.status==='Alternative'?'status-alternative':'status-wishlist');
+            const props = (item.properties&&typeof item.properties==='object')?item.properties:{};
+            const ergo = (item.ergonomicDetails&&typeof item.ergonomicDetails==='object')?item.ergonomicDetails:null;
+            const panelInfo = (item.panelDetails&&typeof item.panelDetails==='object')?item.panelDetails:null;
+            const pros = Array.isArray(item.pros)?item.pros:[];
+            const cons = Array.isArray(item.cons)?item.cons:[];
+            const setupNotes = Array.isArray(item.setupNotes)?item.setupNotes:(item.setupNotes?[String(item.setupNotes)]:[]);
+            const switchMappings = Array.isArray(item.buttonSwitchMapping)?item.buttonSwitchMapping:[];
+            const procList = Array.isArray(item.procurement)?item.procurement:[];
+            const repair = (item.repairability&&typeof item.repairability==='object')?item.repairability:null;
+            const balance = (item.weightBalance&&typeof item.weightBalance==='object')?item.weightBalance:null;
+            const software = (item.softwareConfig&&typeof item.softwareConfig==='object')?item.softwareConfig:null;
+            const glides = (item.glidesAndPad&&typeof item.glidesAndPad==='object')?item.glidesAndPad:null;
+            const lifespan = (item.lifespanEstimates&&typeof item.lifespanEstimates==='object')?item.lifespanEstimates:null;
+            const stockList = Array.isArray(item.stockSwitchesList)?item.stockSwitchesList:[];
 
-            const props = (item.properties && typeof item.properties === 'object') ? item.properties : {};
-            const ergo = (item.ergonomicDetails && typeof item.ergonomicDetails === 'object') ? item.ergonomicDetails : null;
-            const stockList = Array.isArray(item.stockSwitchesList) ? item.stockSwitchesList : [];
-            const modsList = Array.isArray(item.modsAndAddons) ? item.modsAndAddons : [];
-            const procList = Array.isArray(item.procurement) ? item.procurement : [];
-            const repair = (item.repairability && typeof item.repairability === 'object') ? item.repairability : null;
-            const balance = (item.weightBalance && typeof item.weightBalance === 'object') ? item.weightBalance : null;
-            const software = (item.softwareConfig && typeof item.softwareConfig === 'object') ? item.softwareConfig : null;
-            const glides = (item.glidesAndPad && typeof item.glidesAndPad === 'object') ? item.glidesAndPad : null;
-            const lifespan = (item.lifespanEstimates && typeof item.lifespanEstimates === 'object') ? item.lifespanEstimates : null;
-            const pros = Array.isArray(item.pros) ? item.pros : [];
-            const cons = Array.isArray(item.cons) ? item.cons : [];
-            const setupNotes = Array.isArray(item.setupNotes) ? item.setupNotes : (item.setupNotes ? [String(item.setupNotes)] : []);
-            const switchMappings = Array.isArray(item.buttonSwitchMapping) ? item.buttonSwitchMapping : [];
-            const panelInfo = (item.panelDetails && typeof item.panelDetails === 'object') ? item.panelDetails : null;
-
-            return `
-              <div class="card ${isExpanded ? 'expanded' : ''}" id="card-${item.id}">
-
-                <!-- Header -->
-                <div class="card-header">
-                  <div class="card-title-row">
-                    <div>
-                      <span class="product-brand">${item.brand || 'Generic'}</span>
-                      <div class="product-name">${item.name || 'Product'}</div>
-                    </div>
-                    <span class="status-badge ${statusClass}">${item.status || 'Wishlist'}</span>
-                  </div>
-
-                  ${item.isTopPick ? `<div><span class="top-pick-tag">★ ${item.topPickBadge || 'Top Pick'}</span></div>` : ''}
-
-                  <div class="card-summary">${item.summary || ''}</div>
-                </div>
-
-                <!-- Quick Specs Pills (category-aware) -->
-                <div class="quick-specs-grid">
-                  ${getQuickSpecPills(item)}
-                </div>
-
-                <!-- Expanded Content Body -->
-                <div class="card-scroll-body">
-
-                  <!-- Monitor-specific: Panel & Color Details -->
-                  ${activeCategory === 'monitors' && panelInfo ? `
-                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:panel`) ? 'active' : ''}" id="sub-${item.id}-panel">
-                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'panel')">
-                        <span class="sub-accordion-title">📺 Panel, Color & OSD Calibration</span>
-                        <span class="sub-accordion-arrow">▼</span>
-                      </div>
-                      <div class="sub-accordion-body">
-                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
-                          <div class="lifespan-pill">
-                            <div class="spec-key">Panel Technology</div>
-                            <div class="spec-val">${panelInfo.panelTech}</div>
-                          </div>
-                          <div class="lifespan-pill">
-                            <div class="spec-key">Color Gamut</div>
-                            <div class="spec-val">${panelInfo.colorGamut}</div>
-                          </div>
-                          <div class="lifespan-pill">
-                            <div class="spec-key">Delta E (sRGB)</div>
-                            <div class="spec-val">${panelInfo.deltaE}</div>
-                          </div>
-                          <div class="lifespan-pill">
-                            <div class="spec-key">Response Time (GtG)</div>
-                            <div class="spec-val">${props["Response Time"] || 'N/A'}</div>
-                          </div>
-                        </div>
-                        <div class="comparison-box" style="margin-top:6px;">
-                          <strong>🎯 Recommended OSD Calibration Preset:</strong>
-                          <p style="margin-top:4px; font-size:11px;">${panelInfo.osdPreset}</p>
-                        </div>
-                        ${panelInfo.iccProfile ? `
-                        <div class="comparison-box" style="margin-top:4px;">
-                          <strong>📁 ICC Profile Download / Calibration Notes:</strong>
-                          <p style="margin-top:4px; font-size:11px;">${panelInfo.iccProfile}</p>
-                        </div>
-                        ` : ''}
-                      </div>
-                    </div>
-                  ` : ''}
-
-                  <!-- 1. PROCUREMENT BOX -->
-                  ${procList.length > 0 ? `
-                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:procurement`) ? 'active' : ''}" id="sub-${item.id}-procurement">
-                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'procurement')">
-                        <span class="sub-accordion-title">🛒 1-Click Taobao / Procurement Search String Copy Box</span>
-                        <span class="sub-accordion-arrow">▼</span>
-                      </div>
-                      <div class="sub-accordion-body">
-                        <div style="display:flex; flex-direction:column; gap:6px;">
-                          ${procList.map(p => `
-                            <div class="copy-item-card">
-                              <div>
-                                <strong style="font-size:12px;">${p.label}</strong>
-                                <div style="font-size:11px; color:#fde047;">${p.cnTerm}</div>
-                              </div>
-                              <button class="btn-copy" onclick="window.deskApp.copyText('${p.cnTerm}', this)">Copy CN Term</button>
-                            </div>
-                          `).join('')}
-                        </div>
-                      </div>
-                    </div>
-                  ` : ''}
-
-                  <!-- 2. REPAIRABILITY (mice only, but shown if exists) -->
-                  ${repair ? `
-                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:repairability`) ? 'active' : ''}" id="sub-${item.id}-repairability">
-                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'repairability')">
-                        <span class="sub-accordion-title">🔬 Teardown & Repairability Scorecard</span>
-                        <span class="sub-accordion-arrow">▼</span>
-                      </div>
-                      <div class="sub-accordion-body">
-                        <div class="lifespan-grid">
-                          <div class="lifespan-pill">
-                            <div class="spec-key">Solder / Teardown Risk</div>
-                            <div class="spec-val" style="color:var(--primary);">${repair.score}</div>
-                          </div>
-                          <div class="lifespan-pill">
-                            <div class="spec-key">Screw Count & Type</div>
-                            <div class="spec-val">${repair.screwCount}</div>
-                          </div>
-                          <div class="lifespan-pill">
-                            <div class="spec-key">Recommended Iron Temp</div>
-                            <div class="spec-val" style="color:#4ade80;">${repair.recommendedIronTemp}</div>
-                          </div>
-                        </div>
-                        ${Array.isArray(repair.fragilePoints) && repair.fragilePoints.length > 0 ? `
-                          <div class="comparison-box" style="margin-top:4px;">
-                            <strong>⚠️ High-Damage Risk Points During Disassembly:</strong>
-                            <ul class="bullet-list" style="margin-top:4px;">
-                              ${repair.fragilePoints.map(f => `<li>${f}</li>`).join('')}
-                            </ul>
-                          </div>
-                        ` : ''}
-                      </div>
-                    </div>
-                  ` : ''}
-
-                  <!-- 3. WEIGHT BALANCE (mice only, shown if exists) -->
-                  ${balance ? `
-                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:weight`) ? 'active' : ''}" id="sub-${item.id}-weight">
-                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'weight')">
-                        <span class="sub-accordion-title">⚖️ Center of Gravity (CoG) & Weight Balance Index</span>
-                        <span class="sub-accordion-arrow">▼</span>
-                      </div>
-                      <div class="sub-accordion-body">
-                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-                          <div class="lifespan-pill">
-                            <div class="spec-key">Stock Mass Distribution</div>
-                            <div class="spec-val" style="color:#f87171;">${balance.stockBalance}</div>
-                          </div>
-                          <div class="lifespan-pill">
-                            <div class="spec-key">Modded Mass Distribution</div>
-                            <div class="spec-val" style="color:#4ade80;">${balance.moddedBalance}</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ` : ''}
-
-                  <!-- 4. SOFTWARE CONFIG -->
-                  ${software ? `
-                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:software`) ? 'active' : ''}" id="sub-${item.id}-software">
-                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'software')">
-                        <span class="sub-accordion-title">🎛 ${activeCategory === 'monitors' ? 'OSD, Custom Profiles & Gaming Modes' : 'Software, Macro & G-Shift Configuration'}</span>
-                        <span class="sub-accordion-arrow">▼</span>
-                      </div>
-                      <div class="sub-accordion-body">
-                        <div style="font-size:12px;">
-                          <div><strong>Utility Software:</strong> ${software.utility}</div>
-                          <div style="margin-top:2px; color:var(--text-muted);"><strong>Background Process Requirement:</strong> ${software.runtimeDependency}</div>
-                        </div>
-                        ${software.baseLayer ? `<div class="comparison-box"><strong>Base Keybind Layer:</strong><p style="margin-top:2px;">${software.baseLayer}</p></div>` : ''}
-                        ${software.gShiftLayer ? `<div class="comparison-box"><strong>G-Shift / Modifier Layer:</strong><p style="margin-top:2px;">${software.gShiftLayer}</p></div>` : ''}
-                      </div>
-                    </div>
-                  ` : ''}
-
-                  <!-- 5. GLIDES & PAD (mice) / MONITOR ARM & DESK MOUNT (monitors) -->
-                  ${glides ? `
-                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:glides`) ? 'active' : ''}" id="sub-${item.id}-glides">
-                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'glides')">
-                        <span class="sub-accordion-title">${activeCategory === 'monitors' ? '🦾 VESA Mount & Desk Arm Compatibility' : ' Skating Glides & Mousepad Surface Match'}</span>
-                        <span class="sub-accordion-arrow">▼</span>
-                      </div>
-                      <div class="sub-accordion-body">
-                        <div style="display:flex; flex-direction:column; gap:4px; font-size:12px;">
-                          <div><strong>Stock Skates:</strong> ${glides.stockSkates}</div>
-                          <div><strong>Recommended Aftermarket Skates:</strong> ${glides.recommendedSkates}</div>
-                          <div><strong>Recommended Pad Surface:</strong> ${glides.recommendedPadType}</div>
-                        </div>
-                      </div>
-                    </div>
-                  ` : ''}
-
-                  <!-- 6. LIFESPAN -->
-                  ${lifespan ? `
-                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:lifespan`) ? 'active' : ''}" id="sub-${item.id}-lifespan">
-                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'lifespan')">
-                        <span class="sub-accordion-title">⏳ Mouse & Switch Lifespan Matrix</span>
-                        <span class="sub-accordion-arrow">▼</span>
-                      </div>
-                      <div class="sub-accordion-body">
-                        <div class="lifespan-grid">
-                          <div class="lifespan-pill">
-                            <div class="spec-key">Mouse Chassis & Sensor Life</div>
-                            <div class="spec-val" style="color:var(--primary);">${lifespan.chassisLife}</div>
-                          </div>
-                          <div class="lifespan-pill">
-                            <div class="spec-key">Stock Switches (Before Swap)</div>
-                            <div class="spec-val" style="color:#f87171;">${lifespan.stockSwitchesLife}</div>
-                          </div>
-                          <div class="lifespan-pill">
-                            <div class="spec-key">Custom Switches (After Swap)</div>
-                            <div class="spec-val" style="color:#4ade80;">${lifespan.moddedSwitchesLife}</div>
-                          </div>
-                        </div>
-                        <div class="comparison-box" style="margin-top:4px;">
-                          <strong>⚠️ Primary Hardware Limiting Factor:</strong>
-                          <div style="margin-top:2px;">${lifespan.limitingFactor}</div>
-                        </div>
-                      </div>
-                    </div>
-                  ` : ''}
-
-                  <!-- 7. STOCK SWITCHES (mice only) -->
-                  ${stockList.length > 0 ? `
-                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:stock`) ? 'active' : ''}" id="sub-${item.id}-stock">
-                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'stock')">
-                        <span class="sub-accordion-title">🏭 Stock Switches by Individual Button</span>
-                        <span class="sub-accordion-arrow">▼</span>
-                      </div>
-                      <div class="sub-accordion-body">
-                        <table class="switch-table">
-                          <thead>
-                            <tr>
-                              <th>Button Group</th>
-                              <th>Stock Switch Model</th>
-                              <th>Factory Lifespan</th>
-                              <th>Sound Level</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            ${stockList.map(s => `
-                              <tr>
-                                <td><strong>${s.buttonGroup}</strong></td>
-                                <td>${s.switchModel}</td>
-                                <td><span style="color:#f87171; font-weight:600;">${s.lifespan}</span></td>
-                                <td>${s.sound}</td>
-                              </tr>
-                            `).join('')}
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  ` : ''}
-
-                  <!-- 8. MODS & ADD-ONS -->
-                  ${modsList.length > 0 ? `
-                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:mods`) ? 'active' : ''}" id="sub-${item.id}-mods">
-                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'mods')">
-                        <span class="sub-accordion-title">🛠 Mods & Add-ons Library (${modsList.length})</span>
-                        <span class="sub-accordion-arrow">▼</span>
-                      </div>
-                      <div class="sub-accordion-body">
-                        <div style="display:flex; flex-direction:column; gap:6px;">
-                          ${modsList.map(m => `
-                            <div style="background:rgba(0,0,0,0.2); border:1px solid var(--border); border-radius:6px; padding:8px 12px;">
-                              <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <strong>${m.name}</strong>
-                                <span class="top-pick-tag" style="font-size:10px;">${m.difficulty || 'Mod'}</span>
-                              </div>
-                              <div style="font-size:11px; color:var(--text-muted); margin-top:2px;">${m.impact}</div>
-                            </div>
-                          `).join('')}
-                        </div>
-                      </div>
-                    </div>
-                  ` : ''}
-
-                  <!-- 9. ERGONOMICS -->
-                  ${ergo ? `
-                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:ergonomics`) ? 'active' : ''}" id="sub-${item.id}-ergonomics">
-                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'ergonomics')">
-                        <span class="sub-accordion-title">📐 Deep Ergonomic Shape & Contour Analysis</span>
-                        <span class="sub-accordion-arrow">▼</span>
-                      </div>
-                      <div class="sub-accordion-body">
-                        <div>
-                          <strong>Why this Ergonomic Score (${props["Ergonomic Rating"] || ''}):</strong>
-                          <p style="font-size:12px; color:var(--text-muted); margin-top:2px;">${ergo.scoreReason}</p>
-                        </div>
-
-                        ${ergo.specificShapeContour ? `
-                          <div>
-                            <strong>Shell Contour, Curves & Ledges:</strong>
-                            <p style="font-size:12px; color:#d1d5db; margin-top:2px; line-height:1.4;">${ergo.specificShapeContour}</p>
-                          </div>
-                        ` : ''}
-
-                        ${ergo.comparisonVsCloseCompetitors ? `
-                          <div class="comparison-box">
-                            <strong>⚔️ Comparison Against Close Competitors:</strong>
-                            <p style="margin-top:4px;">${ergo.comparisonVsCloseCompetitors}</p>
-                          </div>
-                        ` : ''}
-
-                        <div style="font-size:12px;">
-                          ${ergo.gripCompatibility ? `<div><strong>Hand Size & Grip Match:</strong> ${ergo.gripCompatibility}</div>` : ''}
-                          ${ergo.wristAndPosture ? `<div style="margin-top:4px;"><strong>Wrist & Forearm Posture:</strong> ${ergo.wristAndPosture}</div>` : ''}
-                        </div>
-                      </div>
-                    </div>
-                  ` : ''}
-
-                  <!-- 10. PROPERTIES -->
-                  ${Object.keys(props).length > 0 ? `
-                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:properties`) ? 'active' : ''}" id="sub-${item.id}-properties">
-                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'properties')">
-                        <span class="sub-accordion-title">⚡ Performance, Sensor & Battery Specs</span>
-                        <span class="sub-accordion-arrow">▼</span>
-                      </div>
-                      <div class="sub-accordion-body">
-                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px;">
-                          ${Object.entries(props).map(([k, v]) => `
-                            <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:4px; font-size:11px;">
-                              <div style="color:var(--text-muted); text-transform:uppercase; font-size:9px;">${k}</div>
-                              <div style="font-weight:600; margin-top:2px;">${v}</div>
-                            </div>
-                          `).join('')}
-                        </div>
-                      </div>
-                    </div>
-                  ` : ''}
-
-                  <!-- 11. PROS & CONS -->
-                  ${(pros.length > 0 || cons.length > 0) ? `
-                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:proscons`) ? 'active' : ''}" id="sub-${item.id}-proscons">
-                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'proscons')">
-                        <span class="sub-accordion-title">⚖️ Advantages & Disadvantages</span>
-                        <span class="sub-accordion-arrow">▼</span>
-                      </div>
-                      <div class="sub-accordion-body">
-                        <div class="pro-con-grid">
-                          <div style="display:flex; flex-direction:column; gap:6px;">
-                            ${pros.map(p => `<div class="pro-con-item pro-item">✓ ${p}</div>`).join('')}
-                          </div>
-                          <div style="display:flex; flex-direction:column; gap:6px;">
-                            ${cons.map(c => `<div class="pro-con-item con-item">✕ ${c}</div>`).join('')}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ` : ''}
-
-                  <!-- 12. SWITCH MAPPINGS (mice) -->
-                  ${switchMappings.length > 0 ? `
-                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:switches`) ? 'active' : ''}" id="sub-${item.id}-switches">
-                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'switches')">
-                        <span class="sub-accordion-title">🔌 Per-Button Custom Microswitch Recommendations</span>
-                        <span class="sub-accordion-arrow">▼</span>
-                      </div>
-                      <div class="sub-accordion-body">
-                        <table class="switch-table">
-                          <thead>
-                            <tr>
-                              <th>Button Zone</th>
-                              <th>Recommended Switch</th>
-                              <th>Tactile, Durability & Acoustic Reason</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            ${switchMappings.map(m => {
-                              const sw = (microswitches && microswitches[m.recommendedSwitchId]) ? microswitches[m.recommendedSwitchId] : {};
-                              return `
-                                <tr>
-                                  <td><strong>${m.buttonGroup || 'Button'}</strong></td>
-                                  <td>
-                                    <div><strong>${sw.name || m.recommendedSwitchId || 'Switch'}</strong></div>
-                                    <div style="color:var(--text-muted); font-size:10px;">${sw.force || ''} | ${sw.lifespan || ''}</div>
-                                  </td>
-                                  <td style="color:var(--text-muted); font-size:11px;">${m.reason || sw.feel || ''}</td>
-                                </tr>
-                              `;
-                            }).join('')}
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  ` : ''}
-
-                  <!-- 13. SETUP NOTES -->
-                  ${setupNotes.length > 0 ? `
-                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:notes`) ? 'active' : ''}" id="sub-${item.id}-notes">
-                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'notes')">
-                        <span class="sub-accordion-title">🔧 Step-by-Step Modding & Wiring Bullet Notes</span>
-                        <span class="sub-accordion-arrow">▼</span>
-                      </div>
-                      <div class="sub-accordion-body">
-                        <ul class="bullet-list">
-                          ${setupNotes.map(n => `<li>${n}</li>`).join('')}
-                        </ul>
-                      </div>
-                    </div>
-                  ` : ''}
-
-                  ${item.purchaseUrl ? `
-                    <div style="display:flex; justify-content:flex-end; padding-top:4px;">
-                      <a href="${item.purchaseUrl}" target="_blank" class="buy-link">Official Buy Page ↗</a>
-                    </div>
-                  ` : ''}
-
-                </div>
-
-                <!-- Card Expand Footer Bar -->
-                <div class="card-expand-bar" onclick="window.deskApp.toggleCard('${item.id}')">
-                  <span>${isExpanded ? '▲ Close Card Sections' : '▼ Expand Sub-Sections'}</span>
-                  <span>${item.price || ''}</span>
-                </div>
-
+            return `<div class="card ${isExpanded?'expanded':''}" id="card-${item.id}">
+              <div class="compare-select ${compareList.has(item.id)?'selected':''}" onclick="window.deskApp.toggleCompare('${item.id}')">★</div>
+              <div class="card-header">
+                <div class="card-title-row"><div><span class="product-brand">${item.brand||'Generic'}</span><div class="product-name">${item.name||'Product'}</div></div><span class="status-badge ${statusClass}">${item.status||'Wishlist'}</span></div>
+                ${item.isTopPick?`<div><span class="top-pick-tag">★ ${item.topPickBadge||'Top Pick'}</span></div>`:''}
+                <div class="card-summary">${item.summary||''}</div>
               </div>
-            `;
+              <div class="quick-specs-grid">${getQuickSpecPills(item)}</div>
+              <div class="card-scroll-body">
+                ${activeCategory==='monitors'&&panelInfo? `<div class="sub-accordion ${activeSubSections.has(`${item.id}:panel`)?'active':''}" id="sub-${item.id}-panel"><div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}','panel')"><span class="sub-accordion-title">📺 Panel, Color & OSD Calibration</span><span class="sub-accordion-arrow">▼</span></div><div class="sub-accordion-body"><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;"><div class="lifespan-pill"><div class="spec-key">Panel Technology</div><div class="spec-val">${panelInfo.panelTech}</div></div><div class="lifespan-pill"><div class="spec-key">Color Gamut</div><div class="spec-val">${panelInfo.colorGamut}</div></div><div class="lifespan-pill"><div class="spec-key">Delta E (sRGB)</div><div class="spec-val">${panelInfo.deltaE}</div></div><div class="lifespan-pill"><div class="spec-key">Response Time (GtG)</div><div class="spec-val">${props["Response Time"]||'N/A'}</div></div></div><div class="comparison-box"><strong>🎯 Recommended OSD Calibration Preset:</strong><p>${panelInfo.osdPreset}</p></div>${panelInfo.iccProfile?`<div class="comparison-box"><strong>📁 ICC Profile Download / Calibration Notes:</strong><p>${panelInfo.iccProfile}</p></div>`:''}</div></div>`:''}
+                ${activeCategory==='keyboards'&&item.switchDetails? `<div class="sub-accordion ${activeSubSections.has(`${item.id}:switches`)?'active':''}" id="sub-${item.id}-switches"><div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}','switches')"><span class="sub-accordion-title">🔌 Switch Details & Typing Feel</span><span class="sub-accordion-arrow">▼</span></div><div class="sub-accordion-body"><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;"><div class="lifespan-pill"><div class="spec-key">Stock Switches</div><div class="spec-val">${item.switchDetails.stockSwitches}</div></div><div class="lifespan-pill"><div class="spec-key">Actuation Force</div><div class="spec-val">${item.switchDetails.actuationForce}</div></div></div><div class="comparison-box"><strong>Typing Feel:</strong><p>${item.switchDetails.typingFeel}</p></div><div class="comparison-box"><strong>🛠 Mod Potential:</strong><p>${item.switchDetails.modPotential}</p></div></div></div>`:''}
+                ${procList.length>0? `<div class="sub-accordion ${activeSubSections.has(`${item.id}:procurement`)?'active':''}" id="sub-${item.id}-procurement"><div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}','procurement')"><span class="sub-accordion-title">🛒 1-Click Taobao / Procurement Search String Copy Box</span><span class="sub-accordion-arrow">▼</span></div><div class="sub-accordion-body">${procList.map(p=>`<div class="copy-item-card"><div><strong>${p.label}</strong><div style="color:#fde047;">${p.cnTerm}</div></div><button class="btn-copy" onclick="window.deskApp.copyText('${p.cnTerm}',this)">Copy CN Term</button></div>`).join('')}</div></div>`:''}
+                ${ergo? `<div class="sub-accordion ${activeSubSections.has(`${item.id}:ergonomics`)?'active':''}" id="sub-${item.id}-ergonomics"><div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}','ergonomics')"><span class="sub-accordion-title">📐 Ergonomic Analysis</span><span class="sub-accordion-arrow">▼</span></div><div class="sub-accordion-body"><p>${ergo.scoreReason}</p></div></div>`:''}
+                ${(pros.length||cons.length)? `<div class="sub-accordion ${activeSubSections.has(`${item.id}:proscons`)?'active':''}" id="sub-${item.id}-proscons"><div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}','proscons')"><span class="sub-accordion-title">⚖️ Advantages & Disadvantages</span><span class="sub-accordion-arrow">▼</span></div><div class="sub-accordion-body"><div class="pro-con-grid"><div class="pro-con-col">${pros.map(p=>`<div class="pro-con-item pro-item">✓ ${p}</div>`).join('')}</div><div class="pro-con-col">${cons.map(c=>`<div class="pro-con-item con-item">✕ ${c}</div>`).join('')}</div></div></div></div>`:''}
+                ${setupNotes.length? `<div class="sub-accordion ${activeSubSections.has(`${item.id}:notes`)?'active':''}" id="sub-${item.id}-notes"><div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}','notes')"><span class="sub-accordion-title">🔧 Setup Notes</span><span class="sub-accordion-arrow">▼</span></div><div class="sub-accordion-body"><ul class="bullet-list">${setupNotes.map(n=>`<li>${n}</li>`).join('')}</ul></div></div>`:''}
+                ${item.purchaseUrl?`<div style="display:flex;justify-content:flex-end;padding-top:4px;"><a href="${item.purchaseUrl}" target="_blank" class="buy-link">Official Buy Page ↗</a></div>`:''}
+              </div>
+              <div class="card-expand-bar" onclick="window.deskApp.toggleCard('${item.id}')"><span>${isExpanded?'▲ Close Card Sections':'▼ Expand Sub-Sections'}</span><span>${item.price||''}</span></div>
+            </div>`;
           }).join('');
         } catch (err) {
-          productList.innerHTML = `
-            <div class="empty-state">
-              <h3>Error rendering directory</h3>
-              <p style="color:#f87171; margin-top:6px;">${err.message}</p>
-            </div>`;
+          productList.innerHTML = `<div class="empty-state"><h3>Error rendering directory</h3><p style="color:#f87171;">${err.message}</p></div>`;
         }
       }
 
-      function toggleCard(id) {
-        if (expandedCardIds.has(id)) {
-          expandedCardIds.delete(id);
-        } else {
-          expandedCardIds.add(id);
-        }
-        renderProducts();
-      }
-
-      function toggleSub(cardId, subSectionKey) {
-        const key = `${cardId}:${subSectionKey}`;
-        if (activeSubSections.has(key)) {
-          activeSubSections.delete(key);
-        } else {
-          activeSubSections.add(key);
-        }
-        renderProducts();
-      }
-
-      function openAndJump(cardId, subSectionKey) {
-        expandedCardIds.add(cardId);
-        activeSubSections.add(`${cardId}:${subSectionKey}`);
-        renderProducts();
-
-        setTimeout(() => {
-          const targetEl = document.getElementById(`sub-${cardId}-${subSectionKey}`);
-          if (targetEl) {
-            targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          } else {
-            const cardEl = document.getElementById(`card-${cardId}`);
-            if (cardEl) cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }
-        }, 60);
-      }
-
-      function copyText(str, btnEl) {
-        navigator.clipboard.writeText(str).then(() => {
-          const orig = btnEl.innerText;
-          btnEl.innerText = 'Copied! ✓';
-          btnEl.style.background = '#22c55e';
-          btnEl.style.color = '#fff';
-          setTimeout(() => {
-            btnEl.innerText = orig;
-            btnEl.style.background = '';
-            btnEl.style.color = '';
-          }, 1500);
-        }).catch(() => {
-          alert('Copy failed: ' + str);
-        });
-      }
+      function toggleCard(id) { if(expandedCardIds.has(id)) expandedCardIds.delete(id); else expandedCardIds.add(id); renderProducts(); }
+      function toggleSub(cardId,subKey) { const key=`${cardId}:${subKey}`; if(activeSubSections.has(key)) activeSubSections.delete(key); else activeSubSections.add(key); renderProducts(); }
+      function openAndJump(cardId,subKey) { expandedCardIds.add(cardId); activeSubSections.add(`${cardId}:${subKey}`); renderProducts(); setTimeout(()=>{ const el=document.getElementById(`sub-${cardId}-${subKey}`); if(el) el.scrollIntoView({behavior:'smooth',block:'center'}); else document.getElementById(`card-${cardId}`)?.scrollIntoView({behavior:'smooth',block:'center'}); },60); }
+      function copyText(str,btn) { navigator.clipboard.writeText(str).then(()=>{ const orig=btn.innerText; btn.innerText='Copied! ✓'; btn.style.background='#22c55e'; btn.style.color='#fff'; setTimeout(()=>{ btn.innerText=orig; btn.style.background=''; btn.style.color=''; },1500); }).catch(()=>alert('Copy failed: '+str)); }
 
       function setupEventListeners() {
-        // Meta bar chip clicks
         const metaBar = document.getElementById('metaBar');
-        if (metaBar) {
-          metaBar.addEventListener('click', (e) => {
-            const chip = e.target.closest('.chip');
-            if (!chip) return;
-            statusFilter = chip.dataset.status;
-            renderMetaBar();
-            renderProducts();
-          });
-        }
-
-        categoryNav.addEventListener('click', (e) => {
-          const navItem = e.target.closest('.nav-item');
-          if (!navItem) return;
-          activeCategory = navItem.dataset.cat;
-          statusFilter = 'all';
-          location.hash = activeCategory;
-          expandedCardIds.clear();
-          activeSubSections.clear();
-          renderNav();
-          renderMetaBar();
-          renderProducts();
-        });
-
-        searchInput.addEventListener('input', (e) => {
-          searchQuery = e.target.value;
-          renderProducts();
-        });
-
-        btnExpandAll.addEventListener('click', () => {
-          const filtered = getFilteredProducts();
-          filtered.forEach(p => {
-            expandedCardIds.add(p.id);
-            activeSubSections.add(`${p.id}:procurement`);
-            activeSubSections.add(`${p.id}:repairability`);
-            activeSubSections.add(`${p.id}:weight`);
-            activeSubSections.add(`${p.id}:software`);
-            activeSubSections.add(`${p.id}:glides`);
-            activeSubSections.add(`${p.id}:lifespan`);
-            activeSubSections.add(`${p.id}:stock`);
-            activeSubSections.add(`${p.id}:mods`);
-            activeSubSections.add(`${p.id}:ergonomics`);
-            activeSubSections.add(`${p.id}:properties`);
-            activeSubSections.add(`${p.id}:switches`);
-            activeSubSections.add(`${p.id}:proscons`);
-            activeSubSections.add(`${p.id}:notes`);
-            if (activeCategory === 'monitors') {
-              activeSubSections.add(`${p.id}:panel`);
-            }
-          });
-          renderProducts();
-        });
-
-        btnCollapseAll.addEventListener('click', () => {
-          expandedCardIds.clear();
-          activeSubSections.clear();
-          renderProducts();
-        });
+        if(metaBar) metaBar.addEventListener('click', e => { const chip = e.target.closest('.chip'); if(!chip) return; statusFilter = chip.dataset.status; renderMetaBar(); renderProducts(); });
+        categoryNav.addEventListener('click', e => { const nav = e.target.closest('.nav-item'); if(!nav) return; activeCategory = nav.dataset.cat; statusFilter='all'; location.hash=activeCategory; expandedCardIds.clear(); activeSubSections.clear(); renderNav(); renderMetaBar(); renderProducts(); });
+        searchInput.addEventListener('input', e => { searchQuery = e.target.value; renderProducts(); });
+        btnExpandAll.addEventListener('click', () => { getFilteredProducts().forEach(p => { expandedCardIds.add(p.id); ['procurement','repairability','weight','software','glides','lifespan','stock','mods','ergonomics','properties','switches','proscons','notes'].forEach(k=>activeSubSections.add(`${p.id}:${k}`)); if(activeCategory==='monitors') activeSubSections.add(`${p.id}:panel`); if(activeCategory==='keyboards') activeSubSections.add(`${p.id}:switches`); }); renderProducts(); });
+        btnCollapseAll.addEventListener('click', () => { expandedCardIds.clear(); activeSubSections.clear(); renderProducts(); });
+        compareBtn.addEventListener('click', showCompare);
+        closeOverlay.addEventListener('click', hideCompare);
+        window.addEventListener('keydown', e => { if(e.key==='Escape') hideCompare(); });
       }
 
-      window.deskApp = { toggleCard, toggleSub, openAndJump, copyText };
-
+      window.deskApp = { toggleCard, toggleSub, openAndJump, copyText, toggleCompare, showCompare };
       init();
     })();
   </script>
