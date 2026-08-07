@@ -105,7 +105,7 @@ window.DESK_MONITORS = [
     pros: ["Affordable entry into 4K USB-C productivity ($269-$309)", "USB-C 65W PD charges most laptops with single cable", "Sharp 163 PPI for crisp text and UI elements", "Decent factory color calibration (99% sRGB, ΔE ~2)", "Built-in dual 3W speakers (basic but functional)"],
     cons: ["60Hz only — not suitable for gaming beyond casual play", "Limited to sRGB gamut (no DCI-P3 for creative work)", "Tilt-only stand out of box (no swivel/pivot)", "Contrast typical of IPS (~1000:1), blacks not deep", "Response time 'Extreme' mode introduces ghosting — stick to Normal"],
     setupNotes: ["SINGLE CABLE SETUP: USB-C cable carries 4K video + 65W power to laptop. Connect keyboard/mouse to monitor USB-A ports for a clean docking experience.", "RESPONSE TIME: Set to 'Normal' in OSD. 'Extreme' causes severe inverse ghosting and is not recommended.", "BRIGHTNESS: Reduce to 50-60% for comfortable SDR office use (~120 nits). Monitor can reach ~350 nits max.", "COLOR ACCURACY: For non-critical work, factory calibration is sufficient. No wide-gamut clamping needed (sRGB native).", "ARM MOUNT: Lightweight at 5kg, any budget gas-spring arm will handle it easily."]
-  }
+  },
     // --- additional monitors – excellent price‑to‑value ---
   {
     id: "aoc-24g2", category: "monitors", name: "24G2", brand: "AOC", status: "Wishlist",
