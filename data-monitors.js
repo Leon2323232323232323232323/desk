@@ -1,287 +1,363 @@
-window.DESK_KEYBOARDS = [
+window.DESK_MONITORS = [
   {
-    id: "rk-r65", category: "keyboards", name: "RK R65", brand: "Royal Kludge", status: "Wishlist", isTopPick: true,
-    topPickBadge: "Best Budget 65% – Incredible Value", price: "$49",
-    purchaseUrl: "https://www.amazon.com/RK-ROYAL-KLUDGE-Mechanical-Hot-swappable/dp/B0CJY5LQBX",
-    tags: ["65%", "Hot‑Swap", "Wireless", "Gasket Mount", "Volume Knob", "Budget"],
-    summary: "The absolute bang‑for‑buck champion. For $49 you get a 65% layout, 2.4 GHz wireless + Bluetooth, hot‑swap PCB, gasket mount, PBT keycaps, and a handy volume knob. Typing feel and sound are shockingly good out of the box. The perfect entry point into custom keyboards without breaking the bank.",
+    id: "asus-pg279qm", category: "monitors", name: "ROG Swift PG279QM", brand: "ASUS", status: "Owned", isTopPick: true,
+    topPickBadge: "Best Overall High-Refresh Gaming Monitor (1440p 240Hz)", price: "$799",
+    purchaseUrl: "https://rog.asus.com/monitors/27-to-31-5-inches/rog-swift-pg279qm-model/",
+    tags: ["1440p", "240Hz", "IPS", "G-Sync", "Fast-IPS", "sRGB 160%"],
+    summary: "Primary high-refresh gaming monitor. 27-inch 1440p Fast-IPS with a true 240Hz overclockable panel, NVIDIA Reflex Latency Analyzer, and exceptional color accuracy for both competitive LoL/CS2 and color-critical work.",
     properties: {
-      "Layout": "65% (67 keys)", "Switch Type": "RK Red / Brown / Silver (linear/tactile)", "Hot‑Swappable": "Yes (3‑pin & 5‑pin)",
-      "Connectivity": "2.4 GHz, Bluetooth 5.0, USB‑C", "Keycap Profile": "Cherry‑profile PBT", "Weight": "~0.9 kg",
-      "Lighting": "Per‑key RGB (north‑facing)"
+      "Screen Size": "27-inch Flat", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "240Hz (Native) / 270Hz OC via DP",
+      "Response Time": "1ms (GtG)", "Panel Technology": "Fast-IPS (AHVA)", "Color Gamut": "160% sRGB / 98% DCI-P3",
+      "HDR Support": "VESA DisplayHDR 400", "VESA Mount": "100 x 100 mm",
+      "Connectivity": "DisplayPort 1.4 (DSC), HDMI 2.0 x2, USB 3.2 Hub", "Weight with Stand": "7.6 kg (16.8 lbs)"
     },
-    switchDetails: {
-      stockSwitches: "RK Red (45g linear), RK Brown (55g tactile), RK Silver (45g linear, shorter travel)",
-      actuationForce: "45g – 55g",
-      typingFeel: "Gasket mount with PC plate provides a soft, bouncy typing experience. The factory‑lubed switches sound surprisingly deep and marbly, even without mods.",
-      modPotential: "3‑pin & 5‑pin hot‑swap supports almost every aftermarket switch. Easy to add foam, swap keycaps, or lube stabilisers."
+    panelDetails: {
+      panelTech: "AUO M270DAN08.0 Fast-IPS (AHVA)", colorGamut: "98% DCI-P3 / 160% sRGB", deltaE: "< 2 (Factory Calibrated)",
+      osdPreset: "Racing Mode → Color Temp: User (R97 G98 B100), Overdrive: Normal, Dark Boost: Off. For desktop: sRGB Emulation Mode (clamps wide gamut)",
+      iccProfile: "Download ASUS PG279QM ICC from RTINGS.com for sRGB clamp; alternatively use Windows Color Management to load sRGB IEC61966-2.1 profile."
     },
     procurement: [
-      { label: "Budget linear switches (Akko CS Jelly Pink)", cnTerm: "Akko CS 果冻粉轴" },
-      { label: "PBT keycaps (Milk cover set)", cnTerm: "PBT 键帽 牛奶白 透光" },
-      { label: "Stabiliser lube (205g0)", cnTerm: "键盘润滑脂 205g0" }
+      { label: "Monitor Arm (Heavy Duty)", cnTerm: "桌面显示器支架 承重10公斤 气压弹簧" },
+      { label: "DisplayPort 1.4 DSC Cable", cnTerm: "DP1.4 视频线 8K 240Hz DSC" },
+      { label: "Monitor Light Bar", cnTerm: "屏幕挂灯 非对称光源 智能调光" },
+      { label: "Color Calibrator", cnTerm: "Datacolor SpyderX Pro 校色仪" },
+      { label: "VESA Adapter Plate (if needed)", cnTerm: "VESA 100x100 转换支架" }
     ],
-    softwareConfig: { utility: "RK Driver (Windows)", runtimeDependency: "None (hardware macros)", baseLayer: "Fn layer for arrows, media, and RGB control" },
-    lifespanEstimates: { chassisLife: "5+ years (plastic, solid build)", stockSwitchesLife: "50 million keystrokes", limitingFactor: "Battery degradation after 3‑4 years (easily replaced)" },
-    ergonomicDetails: {
-      scoreReason: "Compact 65% frees desk space for mouse movement. Gasket mount reduces finger fatigue. No wrist rest needed.",
-      specificShapeContour: "Flat profile with slight angle built into the case. Volume knob on the right side is within easy reach.",
-      comparisonVsCloseCompetitors: "Vs Keychron V1 (wired): RK R65 adds wireless for the same price and includes a volume knob. Vs GMK67 (barebones): RK R65 is fully assembled, ready to use."
-    },
-    pros: [
-      "Unbeatable $49 price for a fully assembled wireless mechanical keyboard",
-      "Gasket mount + PBT keycaps out of the box",
-      "Hot‑swap 3‑pin / 5‑pin PCB – endless customisation",
-      "Volume knob is genuinely useful",
-      "Deep, pleasant typing sound stock"
-    ],
-    cons: [
-      "North‑facing LEDs can cause interference with Cherry‑profile keycaps (fixable with long‑pole switches)",
-      "Software is basic, no QMK/VIA",
-      "Battery life with RGB on is average (~20h)",
-      "Plastic case may feel less premium to enthusiasts"
-    ],
-    setupNotes: [
-      "SWITCH UPGRADE: Akko Jelly Pink or Gateron Milky Yellow are great budget upgrades.",
-      "KEYCAPS: Stock PBT caps are excellent – no need to swap unless you want a different colour.",
-      "STABILISERS: Lightly lube the stock stabilisers with 205g0 to remove any rattle.",
-      "WIRELESS: Use 2.4 GHz for gaming (lower latency), Bluetooth for office productivity."
-    ]
+    softwareConfig: { utility: "ASUS DisplayWidget Center / NVIDIA Control Panel", runtimeDependency: "None (Hardware OSD + GPU driver)", baseLayer: "G-Sync On (Fullscreen & Windowed), 240Hz, 10-bit color (via DSC)", gShiftLayer: "N/A" },
+    glidesAndPad: { stockSkates: "VESA 100x100 Mount & Sturdy Ergonomic Stand", recommendedSkates: "Amazon Basics Premium Single Monitor Stand (Lift Engine) or Ergotron LX", recommendedPadType: "Desk Clamp Grommet Mount (clean look, no base on desk)" },
+    lifespanEstimates: { chassisLife: "6 – 8 years (IPS panel aging is gradual, backlight LEDs rated 30,000+ hrs)", stockSwitchesLife: "N/A", moddedSwitchesLife: "N/A", limitingFactor: "IPS glow permanence, potential G-Sync module capacitor degradation, or firmware bugs if not updated." },
+    ergonomicDetails: { scoreReason: "9.8/10 – Fully adjustable stand: 130mm height, tilt (-5°/+20°), swivel (±25°), pivot (90°). 27″ 1440p pixel density (109 PPI) ideal for 50-80 cm viewing distance without scaling.", specificShapeContour: "Ultra-thin 3-sided frameless design with minimal lower bezel. Anti-glare 3H matte coating diffuses direct overhead light. 27-inch flat panel fills central FOV perfectly.", comparisonVsCloseCompetitors: "Vs Alienware AW2721D: PG279QM has better sRGB clamp emulation, slightly faster actual GtG, and dedicated NVIDIA Reflex Analyzer. Vs LG 27GP850 (Nano IPS): ASUS offers true G-Sync module (wider VRR range) and higher build quality. Vs OLED 27GR95QE: PG279QM lacks infinite contrast but has higher full-screen brightness and no burn-in risk." },
+    pros: ["True 240Hz (270Hz OC) with negligible overshoot and G-Sync ultimate", "Factory-calibrated wide gamut (98% DCI-P3) with sRGB clamp mode", "NVIDIA Reflex built-in latency analyzer", "Excellent build quality and fully adjustable ergonomic stand", "USB 3.2 hub for desk peripherals"],
+    cons: ["No HDMI 2.1 (limited to 144Hz over HDMI)", "HDR 400 is mediocre, edge-lit local dimming", "Pricey at $799, competitive but not budget-friendly", "IPS glow visible in dark scenes (inherent to technology)"],
+    setupNotes: ["DESK MOUNT: Replace bulky stock stand with Ergotron LX or Amazon Basics arm. Frees up huge desk real estate. Use VESA 100x100mm holes.", "CABLE MANAGEMENT: Route DP 1.4 cable through arm channel. Use 90° right-angle adapter for cleaner look against wall.", "OSD CALIBRATION: For competitive gaming, set Overdrive to 'Normal' (fastest without inverse ghosting). For photo work, enable sRGB Emulation Mode to lock gamut.", "NVIDIA G-SYNC SETUP: Enable in NVIDIA Control Panel for both fullscreen and windowed. Turn V-Sync ON in NVCP and OFF in-game for optimal tear-free motion.", "REFRESH RATE CHECK: Ensure DisplayPort is used; Windows Display Settings → Advanced → 240Hz (or 270Hz OC in monitor OSD)."]
   },
   {
-    id: "keychron-v1", category: "keyboards", name: "V1 (barebones)", brand: "Keychron", status: "Wishlist",
-    topPickBadge: "Best Entry into Custom 75% – Great Value", price: "$74 (barebones) / $94 (assembled)",
-    purchaseUrl: "https://www.keychron.com/products/keychron-v1-qmk-custom-mechanical-keyboard",
-    tags: ["75%", "Hot‑Swap", "QMK/VIA", "Gasket Mount", "Wired", "Custom"],
-    summary: "The go‑to platform for anyone wanting to build their own keyboard. QMK/VIA support means true key remapping, the gasket mount feels premium, and the barebones version lets you choose your own switches and keycaps. At $74 it’s the best starting point for the custom keyboard rabbit hole.",
+    id: "dell-u2723qe", category: "monitors", name: "UltraSharp U2723QE", brand: "Dell", status: "Owned", isTopPick: true,
+    topPickBadge: "Best 4K Productivity & USB-C Hub Monitor", price: "$619",
+    purchaseUrl: "https://www.dell.com/en-us/shop/dell-ultrasharp-27-4k-usb-c-hub-monitor-u2723qe/apd/210-bdpf/monitors-monitor-accessories",
+    tags: ["4K", "IPS Black", "USB-C 90W", "Daisy Chain", "KVM", "sRGB 100%"],
+    summary: "Secondary productivity monitor with innovative IPS Black panel delivering 2000:1 contrast ratio. Built-in USB-C hub with 90W power delivery, RJ45 Ethernet, and KVM switch makes it a complete docking station for work laptops.",
     properties: {
-      "Layout": "75% (82 keys)", "Switch Type": "Barebones (choose your own) / Keychron K Pro", "Hot‑Swappable": "Yes (3‑pin & 5‑pin)",
-      "Connectivity": "USB‑C (wired only)", "Keycap Profile": "OSA (if assembled)", "Weight": "1.1 kg",
-      "Lighting": "Per‑key RGB (south‑facing)"
+      "Screen Size": "27-inch Flat", "Resolution": "3840 x 2160 (4K UHD)", "Refresh Rate": "60Hz", "Response Time": "5ms (GtG, Fast Mode)",
+      "Panel Technology": "IPS Black (LGD AH-IPS)", "Color Gamut": "100% sRGB / 98% DCI-P3 / DisplayHDR 400",
+      "HDR Support": "VESA DisplayHDR 400 (edge-lit)", "VESA Mount": "100 x 100 mm",
+      "Connectivity": "USB-C 90W PD, USB-C 15W, DP 1.4, HDMI, 4x USB-A, USB-C Hub, RJ45", "Weight with Stand": "6.6 kg (14.6 lbs)"
     },
-    switchDetails: {
-      stockSwitches: "Barebones (no switches) or Keychron K Pro Red (45g linear) / Brown (55g tactile) / Blue (60g clicky)",
-      actuationForce: "45g – 60g (depending on switches chosen)",
-      typingFeel: "Gasket mount with PC plate offers a soft, flexy typing feel. South‑facing LEDs eliminate interference with all keycap profiles, making it switch‑friendly.",
-      modPotential: "Fantastic modding platform. Add PE foam, tape mod, force‑break mod, and screw‑in stabilisers to achieve a premium sound profile."
+    panelDetails: {
+      panelTech: "IPS Black (LGD LM270WR8-SSA1)", colorGamut: "100% sRGB, 98% DCI-P3", deltaE: "< 2 (Factory Calibrated sRGB/Rec709)",
+      osdPreset: "Standard Mode → Color Temp: 6500K; Smart HDR: Off. For sRGB work: Color Space → sRGB mode (clamps gamut). For movies: Movie HDR mode with local dimming (edge-lit).",
+      iccProfile: "Pre-installed Dell ICC profile. Use Dell Display Manager for auto-profile switching."
     },
     procurement: [
-      { label: "Switches (Gateron Milky Yellow Pro)", cnTerm: "佳达隆 Milky Yellow Pro 润滑轴" },
-      { label: "Keycaps (PBTFans / NicePBT)", cnTerm: "PBTFans 键帽 双色" },
-      { label: "Stabilisers (Durock V2 screw‑in)", cnTerm: "Durock V2 螺丝卫星轴" }
+      { label: "VESA Gas Spring Arm", cnTerm: "显示器支架 气压弹簧 承重 8公斤" },
+      { label: "USB-C 3.2 Gen 2 Cable (1m)", cnTerm: "USB-C 3.2 Gen2 100W 10Gbps 数据线" },
+      { label: "Monitor Light Bar", cnTerm: "明基 ScreenBar 屏幕挂灯" },
+      { label: "Color Calibrator (SpyderX)", cnTerm: "Datacolor SpyderX Pro 校色仪" }
     ],
-    softwareConfig: { utility: "VIA / QMK Configurator", runtimeDependency: "None (web‑based)", baseLayer: "Fully programmable with up to 4 layers" },
-    lifespanEstimates: { chassisLife: "7+ years (plastic but well‑built)", stockSwitchesLife: "50–80 million keystrokes", limitingFactor: "USB‑C port wear if frequently disconnected" },
-    ergonomicDetails: {
-      scoreReason: "75% layout retains function row and arrows – productive without being bulky. Adjustable feet offer two typing angles.",
-      specificShapeContour: "Flat tray‑mount style with slight angle. Optional screw‑in feet provide 6° or 9° tilt.",
-      comparisonVsCloseCompetitors: "Vs Q1: V1 is plastic vs aluminium, but otherwise nearly identical layout and modding potential at 1/3 the price. Vs RK R65: V1 is wired only but adds QMK/VIA and a larger 75% layout."
-    },
-    pros: [
-      "QMK/VIA compatibility for total key remapping",
-      "Gasket mount at a budget price",
-      "South‑facing RGB eliminates keycap interference",
-      "Barebones option saves money – choose your own switches and keycaps",
-      "Excellent modding potential"
-    ],
-    cons: [
-      "Wired only (no Bluetooth / 2.4 GHz)",
-      "Plastic case can feel hollow without mods",
-      "Stock stabilisers benefit from upgrading to Durock V2"
-    ],
-    setupNotes: [
-      "FORCE‑BREAK MOD: Add small pieces of electrical tape between top and bottom case to eliminate case ping.",
-      "TAPE MOD: Apply 2‑3 layers of masking tape to the PCB back for a deeper, poppier sound.",
-      "SWITCHES: Gateron Milky Yellow Pro (pre‑lubed) offer incredible smoothness for the price.",
-      "STABILISERS: Replace with Durock V2 screw‑in stabs, lubed with 205g0."
-    ]
+    softwareConfig: { utility: "Dell Display Manager 2.0 / Dell Power Button Sync", runtimeDependency: "DDM.exe runs in background for Easy Arrange layouts", baseLayer: "Easy Arrange grid (12 layouts), PIP/PBP dual source mode", gShiftLayer: "N/A" },
+    glidesAndPad: { stockSkates: "Fully Adjustable Stand (Height, Tilt, Swivel, Pivot)", recommendedSkates: "Single gas spring monitor arm (e.g., Ergotron LX or Amazon Basics)", recommendedPadType: "Desk grommet mount for clean cable routing" },
+    lifespanEstimates: { chassisLife: "8 – 10 years (IPS Black panel, USB-C hub electronics robust)", stockSwitchesLife: "N/A", moddedSwitchesLife: "N/A", limitingFactor: "LED backlight aging or USB-C hub controller failure from power surges." },
+    ergonomicDetails: { scoreReason: "9.5/10 – Perfect 4K 27″ clarity (163 PPI) for text and UI, eliminates scaling artifacts. IPS Black panel reduces eye strain with deeper blacks and high contrast. USB-C single cable connectivity reduces desk clutter.", specificShapeContour: "Thin bezel InfinityEdge design, anti-glare 3H coating. Minimal stand footprint with cable management hole in neck.", comparisonVsCloseCompetitors: "Vs Apple Studio Display: U2723QE is half the price, offers more ports and better ergo stand (height/pivot), but lacks 5K resolution and built-in speakers. Vs ASUS ProArt PA279CV: Dell has much better contrast (2000:1 vs 1000:1) and USB-C hub with Ethernet. Vs LG 27UP850: Dell’s IPS Black delivers superior black levels and more I/O." },
+    pros: ["Revolutionary IPS Black panel – 2000:1 contrast ratio with deep blacks and no IPS glow", "Comprehensive USB-C hub with 90W charging, Ethernet, and KVM switch", "Excellent factory color calibration (Delta E < 2) for sRGB and DCI-P3", "Daisy chain support (MST) for a second 4K monitor via DP-Out", "4-sided virtually borderless design – perfect for multi-monitor setups"],
+    cons: ["60Hz refresh rate unsuitable for high-refresh gaming", "HDR performance limited to edge-lit local dimming (mediocre for movies)", "No built-in speakers (requires external audio solution)", "Plastic construction feels less premium than metal Apple Studio Display"],
+    setupNotes: ["USB-C DOCKING: Use the USB-C upstream port (90W PD). Connect laptop → monitor with single cable. Attach keyboard/mouse to monitor’s USB-A ports; KVM auto-switches between USB-C and DP inputs.", "DAISY CHAIN: Enable MST in OSD. Connect DP-out to a second monitor (e.g., another U2723QE) for dual 4K@60Hz over one cable from laptop.", "CALIBRATION: Use sRGB mode for web design. Switch to DCI-P3 for video editing. Recalibrate with SpyderX Pro every 3-6 months for critical work.", "ARM MOUNT: Remove stand (quick release button). Attach VESA 100x100 plate. Use a heavy-duty arm rated for 8kg+."]
   },
   {
-    id: "akko-5075s", category: "keyboards", name: "5075S VIA", brand: "Akko", status: "Wishlist",
-    topPickBadge: "Best 75% with VIA Under $100", price: "$89",
-    purchaseUrl: "https://en.akkogear.com/product/5075s-via-mechanical-keyboard/",
-    tags: ["75%", "Hot‑Swap", "VIA", "Gasket Mount", "PBT", "Colorful"],
-    summary: "Akko’s answer to the Keychron V1, but with a more vibrant aesthetic and included switches and keycaps. VIA support, gasket mount, and PBT ASA‑profile keycaps make this a fantastic out‑of‑the‑box experience at a very competitive price.",
+    id: "lg-27gr95qe", category: "monitors", name: "UltraGear 27GR95QE-B", brand: "LG", status: "Wishlist", isTopPick: false,
+    topPickBadge: "OLED Upgrade Candidate", price: "$799 - $999",
+    purchaseUrl: "https://www.lg.com/us/monitors/lg-27gr95qe-b-gaming-monitor",
+    tags: ["OLED", "240Hz", "0.03ms", "1440p", "G-Sync", "HDMI 2.1"],
+    summary: "Future upgrade target: 27-inch 1440p OLED gaming monitor with true 0.03ms response time, per-pixel dimming, and HDMI 2.1 for console support. Offers infinite contrast ratio and stunning motion clarity.",
     properties: {
-      "Layout": "75% (82 keys)", "Switch Type": "Akko CS (Jelly Pink / Rose Red / Lavender Purple)", "Hot‑Swappable": "Yes (3‑pin & 5‑pin)",
-      "Connectivity": "USB‑C (wired only)", "Keycap Profile": "ASA‑profile PBT double‑shot", "Weight": "1.2 kg",
-      "Lighting": "Per‑key RGB (south‑facing)"
+      "Screen Size": "27-inch Flat", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "240Hz (Native)", "Response Time": "0.03ms (GtG OLED)",
+      "Panel Technology": "OLED (WOLED MLA+)", "Color Gamut": "98.5% DCI-P3", "HDR Support": "VESA DisplayHDR True Black 400",
+      "VESA Mount": "100 x 100 mm", "Connectivity": "HDMI 2.1 x2, DisplayPort 1.4, USB 3.0 Hub", "Weight with Stand": "7.9 kg (17.4 lbs)"
     },
-    switchDetails: {
-      stockSwitches: "Akko CS Jelly Pink (40g light linear), Rose Red (43g linear), Lavender Purple (50g tactile)",
-      actuationForce: "40g – 50g",
-      typingFeel: "ASA‑profile keycaps give a sculpted, comfortable typing experience. Gasket mount provides a slight flex, and the stock switches are pre‑lubed for smoothness.",
-      modPotential: "Standard 3‑pin/5‑pin hot‑swap. Tape mod, PE foam, and force‑break all work well."
+    panelDetails: {
+      panelTech: "LG WOLED with MLA+ (Micro Lens Array)", colorGamut: "98.5% DCI-P3", deltaE: "< 1 (Factory Calibrated Gamer 1 mode)",
+      osdPreset: "Gamer 1 → Black Stabilizer: 50, Response Time: Fast, OLED Care features ON. Brightness: 100 nits SDR (100% white window limited due to ABL).",
+      iccProfile: "Use LG Calibration Studio or Windows HDR Calibration app for HDR profiling."
     },
     procurement: [
-      { label: "Switches (Akko CS Wine Red)", cnTerm: "Akko CS 红酒轴 线性" },
-      { label: "Keycaps (ASA profile PBT)", cnTerm: "ASA 键帽 PBT 双色" }
+      { label: "OLED Cleaning Kit", cnTerm: "OLED屏幕清洁剂 无酒精" },
+      { label: "HDMI 2.1 Cable (2m)", cnTerm: "HDMI 2.1 超高速48Gbps 线材" },
+      { label: "Monitor Arm (Heavy)", cnTerm: "桌面支架 承重10公斤" },
+      { label: "BIAS Lighting Strip", cnTerm: "屏幕背光 氛围灯 USB供电 5V" }
     ],
-    softwareConfig: { utility: "VIA (web)", runtimeDependency: "None", baseLayer: "4 layers, fully customisable" },
-    lifespanEstimates: { chassisLife: "6+ years", stockSwitchesLife: "50 million keystrokes", limitingFactor: "USB port or stabiliser rattle" },
-    ergonomicDetails: {
-      scoreReason: "ASA profile keycaps are ergonomically sculpted for long typing sessions. 75% layout retains essential keys.",
-      specificShapeContour: "Sculpted ASA keycap rows, adjustable feet for angle.",
-      comparisonVsCloseCompetitors: "Vs Keychron V1 assembled: Similar price, but Akko includes ASA keycaps and has a more colourful design. Vs V1 barebones: Akko is fully built for slightly more."
-    },
-    pros: [
-      "VIA support out of the box",
-      "Beautiful ASA‑profile PBT keycaps included",
-      "Pre‑lubed switches – smooth and quiet",
-      "South‑facing RGB, no interference",
-      "Gasket mount at a sub‑$100 price"
-    ],
-    cons: [
-      "Wired only (no wireless option)",
-      "ASA keycaps may take time to adjust to if coming from OEM/Cherry",
-      "Plastic case – some may prefer aluminium at this price"
-    ],
-    setupNotes: [
-      "VIA: Open usevia.app, load the JSON definition from Akko’s site, and remap instantly.",
-      "MODS: Tape mod and PE foam improve sound significantly. Force‑break reduces case ping.",
-      "STABS: Lightly lube stock stabs with 205g0 for immediate improvement."
-    ]
+    softwareConfig: { utility: "LG OnScreen Control / LG Calibration Studio", runtimeDependency: "None (OSD only for most features)", baseLayer: "240Hz, G-Sync Compatible, 10-bit, SDR/HDR Auto Switch", gShiftLayer: "N/A" },
+    glidesAndPad: { stockSkates: "VESA 100x100 Mount + Sturdy Stand (Height/Swivel/Tilt/Pivot)", recommendedSkates: "Ergotron HX (heavy-duty) or Amazon Basics Heavy Single Arm", recommendedPadType: "Desk clamp mount with steel reinforcement" },
+    lifespanEstimates: { chassisLife: "4 – 6 years (OLED burn-in risk mitigated by pixel refresh and screen move)", stockSwitchesLife: "N/A", moddedSwitchesLife: "N/A", limitingFactor: "OLED burn-in (static HUD elements in LoL, CS2 crosshair, Windows taskbar). Requires active OLED care habits." },
+    ergonomicDetails: { scoreReason: "9.2/10 – Superb motion clarity and infinite contrast, but ABL (Auto Brightness Limiter) may cause brightness shifts in productivity apps. Ergonomic stand adjustable, but glossy panel can reflect light.", specificShapeContour: "Slim flat panel with almost no bezel, anti-glare coating is less aggressive (semi-glossy). Stand has a large footprint, requiring deeper desk.", comparisonVsCloseCompetitors: "Vs ASUS PG27AQDM (same panel): LG has better OSD calibration and lower price. Vs Corsair Xeneon 27QHD240: LG uses newer MLA+ tech for higher brightness. Vs IPS 240Hz: OLED offers true 0.03ms response and perfect blacks, but risks burn-in." },
+    pros: ["True OLED per-pixel illumination – infinite contrast and zero blooming", "Phenomenal motion clarity (0.03ms GtG) – CRT-like smoothness", "240Hz refresh rate perfect for competitive LoL/CS2", "HDMI 2.1 for 4K 120Hz console gaming (downscaled to 1440p)", "G-Sync Compatible and FreeSync Premium Pro"],
+    cons: ["Burn-in risk with static desktop elements – requires active care", "SDR full-screen brightness limited (~200 nits) due to ABL", "Aggressive matte coating (semi-glossy) can cause light reflections", "No built-in speakers, no USB-C video input", "Higher price than top-tier IPS 240Hz"],
+    setupNotes: ["OLED CARE: Enable Screen Move (pixel shift) & Screen Saver (auto dim after 2 min). Run Pixel Cleaning every 4 hours of use.", "TASKBAR MANAGEMENT: Auto-hide taskbar in Windows. Use TranslucentTB for transparency. Black wallpaper, no desktop icons.", "GAMING HUD: In LoL, adjust HUD scale to move minimap slightly, or use dynamic HUD mods. In CS2, slightly reduce crosshair static alpha.", "BRIGHTNESS CALIBRATION: In SDR, set brightness to 120 nits (OLED Light ~30). Use Windows HDR Calibration for peak brightness mapping.", "ARM MOUNT: Use heavy-duty arm; the monitor is front-heavy. Cable management in arm’s channel is essential."]
   },
   {
-    id: "nuphy-air75", category: "keyboards", name: "Air75 v2", brand: "NuPhy", status: "Wishlist",
-    topPickBadge: "Best Low‑Profile Wireless for Travel & Office", price: "$129",
-    purchaseUrl: "https://nuphy.com/products/air75-v2",
-    tags: ["75%", "Low‑Profile", "Wireless", "Hot‑Swap", "PBT", "Slim"],
-    summary: "The ultimate travel keyboard. Ultra‑slim, lightweight, and packed with features: 2.4 GHz wireless, Bluetooth 5.0, hot‑swap low‑profile switches, and excellent PBT keycaps. Perfect for a clean desk setup or working on the go.",
+    id: "gigabyte-m27q", category: "monitors", name: "M27Q (Rev 2.0)", brand: "Gigabyte", status: "Wishlist", isTopPick: true,
+    topPickBadge: "Best Value 1440p 170Hz Gaming Monitor", price: "$269 - $299",
+    purchaseUrl: "https://www.gigabyte.com/Monitor/M27Q-rev-20",
+    tags: ["1440p", "170Hz", "IPS", "KVM", "USB-C", "Budget"],
+    summary: "Excellent value 27-inch 1440p IPS gaming monitor with 170Hz refresh rate, built-in KVM switch, and USB-C connectivity. Covers 95% DCI-P3 for vibrant colors at a budget price.",
     properties: {
-      "Layout": "75% (84 keys)", "Switch Type": "Gateron Low‑Profile Red (55g linear) / Brown (55g tactile) / Blue (60g clicky)", "Hot‑Swappable": "Yes (Gateron low‑profile sockets)",
-      "Connectivity": "2.4 GHz, Bluetooth 5.0, USB‑C", "Keycap Profile": "DA (spherical low‑profile PBT)", "Weight": "0.6 kg",
-      "Lighting": "Per‑key RGB"
+      "Screen Size": "27-inch Flat", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "170Hz (OC)", "Response Time": "1ms (MPRT) / 4ms (GtG)",
+      "Panel Technology": "IPS (SS IPS)", "Color Gamut": "95% DCI-P3 / 140% sRGB", "HDR Support": "VESA DisplayHDR 400",
+      "VESA Mount": "100 x 100 mm", "Connectivity": "USB-C 18W, DisplayPort 1.4, HDMI 2.0 x2, USB 3.0 Hub", "Weight with Stand": "5.5 kg (12.1 lbs)"
     },
-    switchDetails: {
-      stockSwitches: "Gateron Low‑Profile Red (55g linear), Brown (55g tactile), Blue (60g clicky)",
-      actuationForce: "55g – 60g",
-      typingFeel: "Short 2.5mm travel gives a snappy, responsive typing experience. Quieter than standard mechanical switches, and the PBT keycaps feel premium.",
-      modPotential: "Limited – only Gateron low‑profile switches fit. Keycaps are proprietary but of high quality. Can lube switches for smoothness."
+    panelDetails: {
+      panelTech: "Sharp IGZO SS IPS", colorGamut: "95% DCI-P3 / 140% sRGB", deltaE: "~2.5 (Pre-calibrated, acceptable for gaming)",
+      osdPreset: "Picture Mode: Standard, Overdrive: Balanced (middle), Black Equalizer: 10, Color Temp: User",
+      iccProfile: "RTINGS ICC profile available. Use sRGB mode in OSD for color-accurate work (clamps gamut)."
     },
     procurement: [
-      { label: "Low‑Profile Switches (Gateron Red)", cnTerm: "佳达隆矮红轴 线性" },
-      { label: "Wrist Rest (NuPhy)", cnTerm: "NuPhy 木质手托" }
+      { label: "Monitor Arm", cnTerm: "显示器支架 气压弹簧 5公斤" },
+      { label: "USB-C Cable", cnTerm: "USB-C 3.2 Gen2 10Gbps 视频线" }
     ],
-    softwareConfig: { utility: "NuPhy Console (web)", runtimeDependency: "None", baseLayer: "Fn layers for media, navigation, and backlight" },
-    lifespanEstimates: { chassisLife: "6+ years", stockSwitchesLife: "50 million keystrokes", limitingFactor: "Battery degradation or proprietary keycap wear" },
-    ergonomicDetails: {
-      scoreReason: "Low‑profile design reduces wrist extension; wireless keeps desk clutter‑free. Ideal for long coding sessions and travel.",
-      specificShapeContour: "Ultra‑thin aluminium body, 3° typing angle built in. Compatible with NuPhy’s wooden wrist rest.",
-      comparisonVsCloseCompetitors: "Vs Keychron K3 Pro: Air75 has better keycaps (PBT vs ABS), longer battery life, and a more premium feel. Vs Logitech MX Mechanical Mini: Air75 is hot‑swappable and cheaper."
-    },
-    pros: [
-      "Ultra‑slim and lightweight – fits in a laptop bag",
-      "Excellent 2.4 GHz + Bluetooth wireless",
-      "Hot‑swap low‑profile switches",
-      "High‑quality PBT keycaps stock",
-      "Great battery life (up to 240h without RGB)"
-    ],
-    cons: [
-      "Proprietary switch socket limits upgrade options",
-      "No QMK/VIA support",
-      "Keycaps not easily replaceable (proprietary)",
-      "Low‑profile typing feel may not satisfy enthusiasts"
-    ],
-    setupNotes: [
-      "WIRELESS: Use 2.4 GHz dongle for gaming, Bluetooth for office.",
-      "SWITCHES: Red linear is best for quiet office use.",
-      "LUBE: Apply a light coat of 205g0 to the switch rails for extra smoothness.",
-      "WRIST REST: NuPhy’s wooden wrist rest pairs perfectly for ergonomics."
-    ]
+    softwareConfig: { utility: "Gigabyte OSD Sidekick", runtimeDependency: "OSD_Sidekick.exe (Windows only)", baseLayer: "170Hz OC, G-Sync Compatible, sRGB mode for work", gShiftLayer: "N/A" },
+    glidesAndPad: { stockSkates: "VESA 100x100 + Sturdy Stand (Height/Tilt/Pivot)", recommendedSkates: "Single gas spring monitor arm", recommendedPadType: "Desk clamp mount" },
+    lifespanEstimates: { chassisLife: "5 – 7 years (SS IPS panel, solid build)", stockSwitchesLife: "N/A", moddedSwitchesLife: "N/A", limitingFactor: "KVM USB controller chip or backlight LED aging." },
+    ergonomicDetails: { scoreReason: "8.5/10 – Good height/tilt/pivot adjustment, 27″ 1440p is ideal at desk distance. No swivel on stock stand. Lightweight for arm mounting.", specificShapeContour: "Thin 3-sided bezel-less design, subtle matte anti-glare coating. Minimal gaming aesthetic fits office environments.", comparisonVsCloseCompetitors: "Vs Dell S2722DGM (VA): M27Q has better colors and viewing angles (IPS vs VA). Vs LG 27GP850: M27Q is $150 cheaper with built-in KVM and USB-C, though slightly slower response times. Vs ASUS PG279QM: M27Q lacks true G-Sync module and 240Hz but costs 60% less." },
+    pros: ["Outstanding value at ~$280 for 1440p 170Hz IPS", "Built-in KVM switch with USB-C video input", "Good color coverage (95% DCI-P3) for media and light creative work", "G-Sync Compatible and FreeSync Premium", "Lightweight and easy to arm-mount"],
+    cons: ["Response times slightly behind premium competitors", "Factory calibration is adequate but not professional-grade", "No HDMI 2.1, USB-C only 18W (no laptop charging)", "OSD joystick can be fiddly"],
+    setupNotes: ["KVM SETUP: Connect keyboard/mouse to monitor USB-A ports, USB-C to laptop. Switch between DP (desktop) and USB-C (laptop) in OSD.", "OVERDRIVE: Set to 'Balanced' for best motion clarity without overshoot. 'Speed' introduces ghosting.", "COLOR MODE: Use sRGB mode for web work to clamp wide gamut. Standard mode for gaming vibrancy.", "REFRESH RATE: Enable 170Hz OC in monitor OSD, then set in Windows Display Settings."]
   },
   {
-    id: "wooting-60he", category: "keyboards", name: "60HE", brand: "Wooting", status: "Wishlist",
-    topPickBadge: "Best Gaming Keyboard (Magnetic Switches)", price: "$175",
-    purchaseUrl: "https://next.wooting.io/wooting-60he",
-    tags: ["60%", "Hall Effect", "Rapid Trigger", "Hot‑Swap", "Analog Input", "Gaming"],
-    summary: "The ultimate gaming keyboard. Lekker Hall Effect switches allow analogue input, adjustable actuation points, and Rapid Trigger – every press resets instantly for unrivalled speed in competitive games. If performance matters more than price, this is it.",
+    id: "dell-s2722qc", category: "monitors", name: "S2722QC", brand: "Dell", status: "Wishlist", isTopPick: true,
+    topPickBadge: "Best Budget 4K USB-C Productivity Monitor", price: "$269 - $309",
+    purchaseUrl: "https://www.dell.com/en-us/shop/dell-27-4k-uhd-usb-c-monitor-s2722qc/apd/210-bccp/monitors-monitor-accessories",
+    tags: ["4K", "USB-C 65W", "IPS", "Budget", "VESA", "Productivity"],
+    summary: "Affordable 27-inch 4K IPS monitor with USB-C 65W power delivery, AMD FreeSync, and built-in speakers. Perfect budget 4K productivity display for work-from-home and casual media consumption.",
     properties: {
-      "Layout": "60% (61 keys)", "Switch Type": "Wooting Lekker (Hall Effect Magnetic)", "Hot‑Swappable": "Yes (magnetic switch sockets)",
-      "Connectivity": "USB‑C (wired only)", "Keycap Profile": "OEM", "Weight": "0.9 kg",
-      "Lighting": "Per‑key RGB"
+      "Screen Size": "27-inch Flat", "Resolution": "3840 x 2160 (4K UHD)", "Refresh Rate": "60Hz", "Response Time": "4ms (GtG Extreme)",
+      "Panel Technology": "IPS", "Color Gamut": "99% sRGB", "HDR Support": "HDR10 (software)", "VESA Mount": "100 x 100 mm",
+      "Connectivity": "USB-C 65W PD, HDMI 2.0 x2, USB 3.2 Gen1 x2", "Weight with Stand": "5.0 kg (11.0 lbs)"
     },
-    switchDetails: {
-      stockSwitches: "Wooting Lekker 60 (linear) – magnetically sensed, no physical contacts",
-      actuationForce: "Adjustable 0.1 mm – 4.0 mm actuation point, ~60g bottom‑out",
-      typingFeel: "Smooth linear feel with zero debounce. Rapid Trigger allows instant reset for repeated key presses, giving a competitive edge.",
-      modPotential: "Can lube switches (no films needed), swap keycaps, and adjust everything via software."
+    panelDetails: {
+      panelTech: "IPS (LG Display LM270WR4-SSC1 variant)", colorGamut: "99% sRGB", deltaE: "~2.0 (Pre-calibrated, decent out of box)",
+      osdPreset: "Standard mode, Brightness: 75%, Contrast: 75%, Response Time: Normal (not Extreme – avoids ghosting).",
+      iccProfile: "Dell factory ICC loaded. For sRGB work, no additional calibration needed for most users."
     },
     procurement: [
-      { label: "Aftermarket Keycaps (PBT)", cnTerm: "PBT 60% 键帽 透光" },
-      { label: "Switch Lube", cnTerm: "键盘润滑脂 Krytox 205g0" }
+      { label: "Monitor Arm (Light)", cnTerm: "显示器支架 承重5公斤 气压弹簧" },
+      { label: "USB-C Cable (included)", cnTerm: "USB-C 3.2 Gen1 65W 数据线" }
     ],
-    softwareConfig: { utility: "Wootility (Web/Desktop)", runtimeDependency: "None (settings saved onboard)", baseLayer: "Custom actuation points per key, Rapid Trigger, Mod‑Tap, analog gamepad mode" },
-    lifespanEstimates: { chassisLife: "8+ years", stockSwitchesLife: "Virtually unlimited (magnetic, no contact wear)", limitingFactor: "USB‑C port or PCB degradation" },
-    ergonomicDetails: {
-      scoreReason: "Compact 60% frees desk space. Adjustable actuation reduces finger strain.",
-      specificShapeContour: "Standard 60% layout with flat profile. OEM keycaps are comfortable but easily swapped.",
-      comparisonVsCloseCompetitors: "Vs SteelSeries Apex Pro Mini: Wooting has better software, hot‑swap, and a slightly lower price. Vs Razer Huntsman Mini Analog: Wooting is more customisable and uses magnetic vs optical."
-    },
-    pros: [
-      "Rapid Trigger + adjustable actuation = instant response",
-      "Zero double‑click issues (magnetic)",
-      "Hot‑swap with Lekker switches",
-      "Excellent software (Wootility) – web and desktop",
-      "Great for competitive gaming"
-    ],
-    cons: [
-      "No dedicated arrow keys (use FN layer)",
-      "Wired only",
-      "Typing experience is just okay (not as refined as high‑end mechanical)",
-      "Price premium over non‑magnetic keyboards"
-    ],
-    setupNotes: [
-      "RAPID TRIGGER: Set actuation to 1.0 mm for fast taps; 0.5 mm for extreme speed.",
-      "LUBE: Lightly lube switches to reduce scratchiness.",
-      "KEYCAPS: Swapping to PBT caps improves feel and sound."
-    ]
+    softwareConfig: { utility: "Dell Display Manager", runtimeDependency: "DDM.exe (optional, for Easy Arrange layouts)", baseLayer: "Easy Arrange grid, Auto-input switching", gShiftLayer: "N/A" },
+    glidesAndPad: { stockSkates: "VESA 100x100 + Tilt-Adjustable Stand", recommendedSkates: "Light single monitor arm", recommendedPadType: "Desk clamp mount" },
+    lifespanEstimates: { chassisLife: "6 – 8 years (IPS panel, simple electronics)", stockSwitchesLife: "N/A", moddedSwitchesLife: "N/A", limitingFactor: "USB-C port wear or backlight LED aging. Power delivery circuit may degrade after 5+ years." },
+    ergonomicDetails: { scoreReason: "7.5/10 – Height-adjustable and tilt-capable, but lacks swivel and pivot on stock stand. 27″ 4K at 163 PPI delivers razor-sharp text for coding and documents.", specificShapeContour: "Slim 3-sided bezel, subtle textured plastic back. Clean, professional look for office or home desk.", comparisonVsCloseCompetitors: "Vs Apple Studio Display: 1/5th the price, but no 5K, no metal build, no speakers quality. Vs LG 27UP600: Dell includes USB-C 65W PD and better stand. Vs Gigabyte M28U: M28U is 144Hz gaming-focused and $200 more." },
+    pros: ["Affordable entry into 4K USB-C productivity ($269-$309)", "USB-C 65W PD charges most laptops with single cable", "Sharp 163 PPI for crisp text and UI elements", "Decent factory color calibration (99% sRGB, ΔE ~2)", "Built-in dual 3W speakers (basic but functional)"],
+    cons: ["60Hz only — not suitable for gaming beyond casual play", "Limited to sRGB gamut (no DCI-P3 for creative work)", "Tilt-only stand out of box (no swivel/pivot)", "Contrast typical of IPS (~1000:1), blacks not deep", "Response time 'Extreme' mode introduces ghosting — stick to Normal"],
+    setupNotes: ["SINGLE CABLE SETUP: USB-C cable carries 4K video + 65W power to laptop. Connect keyboard/mouse to monitor USB-A ports for a clean docking experience.", "RESPONSE TIME: Set to 'Normal' in OSD. 'Extreme' causes severe inverse ghosting and is not recommended.", "BRIGHTNESS: Reduce to 50-60% for comfortable SDR office use (~120 nits). Monitor can reach ~350 nits max.", "COLOR ACCURACY: For non-critical work, factory calibration is sufficient. No wide-gamut clamping needed (sRGB native).", "ARM MOUNT: Lightweight at 5kg, any budget gas-spring arm will handle it easily."]
   },
   {
-    id: "keychron-q10", category: "keyboards", name: "Q10 Alice", brand: "Keychron", status: "Wishlist",
-    topPickBadge: "Best Ergonomic Mechanical Keyboard", price: "$189 (barebones) / $209 (assembled)",
-    purchaseUrl: "https://www.keychron.com/products/keychron-q10-alice-layout-qmk-custom-mechanical-keyboard",
-    tags: ["Alice", "Ergonomic", "75%", "Hot‑Swap", "QMK/VIA", "Aluminium"],
-    summary: "Full aluminium 75% Alice layout keyboard with gasket mount, hot‑swap, and QMK/VIA. The split design promotes a natural wrist and shoulder posture, reducing strain. The premium build quality makes it a long‑term investment for your health and desk aesthetics.",
+    id: "aoc-24g2", category: "monitors", name: "24G2", brand: "AOC", status: "Wishlist",
+    topPickBadge: "Best Budget 144Hz 1080p Gaming", price: "$179",
+    purchaseUrl: "https://aoc.com/us/gaming/products/monitors/24g2",
+    tags: ["1080p", "144Hz", "IPS", "Budget", "FreeSync", "1ms"],
+    summary: "The entry‑level 144Hz king. 24‑inch IPS panel with 1ms MPRT, FreeSync Premium, and surprisingly good color accuracy for under $180. Ideal for competitive gaming on a tight budget.",
     properties: {
-      "Layout": "Alice 75% (72 keys)", "Switch Type": "Gateron G Pro (Red/Blue/Brown) or Keychron K Pro", "Hot‑Swappable": "Yes (3‑pin & 5‑pin)",
-      "Connectivity": "USB‑C (wired only)", "Keycap Profile": "OSA", "Weight": "1.8 kg",
-      "Lighting": "Per‑key RGB (south‑facing)"
+      "Screen Size": "23.8‑inch Flat", "Resolution": "1920 x 1080 (FHD)", "Refresh Rate": "144Hz", "Response Time": "1ms (MPRT)",
+      "Panel Technology": "IPS", "Color Gamut": "126% sRGB", "VESA Mount": "100 x 100 mm",
+      "Connectivity": "DisplayPort 1.2, HDMI 1.4 x2, VGA", "Weight with Stand": "4.2 kg"
     },
-    switchDetails: {
-      stockSwitches: "Gateron G Pro Red / Blue / Brown or Keychron K Pro Red / Brown / Banana",
-      actuationForce: "45g – 60g",
-      typingFeel: "Soft gasket mount with curved key layout encourages a more natural hand angle, reducing wrist pronation. The aluminium case gives a solid, thocky sound.",
-      modPotential: "Same as Q1 – full aluminium, easy to mod with foam, lube, and stabilisers."
+    panelDetails: {
+      panelTech: "IPS (Panda LC238LF1F)", colorGamut: "126% sRGB / 96% DCI‑P3", deltaE: "~2.5 (decent)",
+      osdPreset: "Game Mode: FPS, Overdrive: Medium, Shadow Control: 50", iccProfile: "RTINGS ICC available. Out‑of‑box decent for gaming."
     },
-    procurement: [
-      { label: "Tactile switches (Boba U4T)", cnTerm: "Boba U4T 触觉轴 62g" },
-      { label: "Alice‑style wrist rest", cnTerm: "Alice 键盘手托 木质 双区" }
-    ],
-    softwareConfig: { utility: "VIA / QMK Configurator", runtimeDependency: "None" },
-    lifespanEstimates: { chassisLife: "10+ years (full aluminium)", stockSwitchesLife: "50–80 million keystrokes", limitingFactor: "USB‑C port" },
-    ergonomicDetails: {
-      scoreReason: "Alice layout reduces ulnar deviation and wrist pronation. Combined with a split tented position, it’s one of the most ergonomic pre‑built keyboards available.",
-      specificShapeContour: "Curved key rows separate the two halves of the keyboard. The aluminium case is heavy and stays firmly planted.",
-      comparisonVsCloseCompetitors: "Vs Kinesis Advantage2: Q10 is more affordable, hot‑swappable, and uses standard keycaps. Vs Dygma Raise: Q10 is fixed‑angle but much cheaper."
+    softwareConfig: { utility: "AOC G‑Menu", runtimeDependency: "None (standalone .exe)" },
+    glidesAndPad: { stockSkates: "Tilt‑only stand (can VESA mount)", recommendedSkates: "Single gas spring arm", recommendedPadType: "Desk clamp" },
+    lifespanEstimates: { chassisLife: "4 – 6 years", limitingFactor: "LED backlight or capacitors" },
+    ergonomicDetails: { scoreReason: "7/10 – Tilt only, but VESA mount solves that. Size is perfect for competitive esports.", comparisonVsCloseCompetitors: "Vs ASUS VG249Q: AOC has slightly better colors. Vs BenQ XL2411K: AOC is IPS (better viewing angles) and cheaper." },
+    pros: ["144Hz IPS at a crazy $179", "Great response times", "Decent colors", "FreeSync Premium"],
+    cons: ["Stand is tilt‑only", "No built‑in speakers", "Contrast ratio typical IPS (1000:1)"],
+    setupNotes: ["OVERDRIVE: Set to 'Medium' for best motion clarity without overshoot.", "MOUNT: VESA mount highly recommended to replace the basic stand."]
+  },
+  {
+    id: "lg-27gp850", category: "monitors", name: "27GP850‑B", brand: "LG", status: "Wishlist",
+    topPickBadge: "Best 1440p High‑Refresh Value (Nano IPS)", price: "$349",
+    purchaseUrl: "https://www.lg.com/us/monitors/lg-27gp850-b-gaming-monitor",
+    tags: ["1440p", "180Hz", "Nano IPS", "1ms", "G‑Sync Compatible"],
+    summary: "Incredible 27‑inch Nano IPS with 180Hz overclock, 1ms GtG, and 98% DCI‑P3 coverage. The ideal middle ground between speed and color at a great price.",
+    properties: {
+      "Screen Size": "27‑inch Flat", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "165Hz (180Hz OC)", "Response Time": "1ms (GtG)",
+      "Panel Technology": "Nano IPS", "Color Gamut": "98% DCI‑P3 / 135% sRGB", "VESA Mount": "100 x 100 mm",
+      "Connectivity": "DisplayPort 1.4, HDMI 2.0 x2, USB 3.0 Hub", "Weight with Stand": "6.3 kg"
     },
-    pros: [
-      "Ergonomic Alice layout reduces strain",
-      "Full aluminium, premium build",
-      "Hot‑swap + QMK/VIA",
-      "Gasket mount for comfortable typing",
-      "Stunning aesthetics"
-    ],
-    cons: [
-      "Takes 1–2 weeks to adapt to Alice layout",
-      "No wireless option",
-      "Premium price (but justifiable for long‑term ergonomics)"
-    ],
-    setupNotes: [
-      "ADAPTATION: Spend 1–2 weeks typing slowly to get comfortable with the layout.",
-      "SWITCHES: Tactile switches like Boba U4T complement the ergonomic typing experience.",
-      "WRIST REST: A dedicated Alice wrist rest significantly improves comfort.",
-      "MODS: Add force‑break mod and PE foam to enhance the already great sound."
-    ]
+    panelDetails: {
+      panelTech: "LG Nano IPS (LM270WQA‑SSA1)", colorGamut: "98% DCI‑P3 / 135% sRGB", deltaE: "~2.0 (factory calibrated)",
+      osdPreset: "Gamer 1, Black Stabilizer: 50, Response Time: Fast, Overdrive: Normal",
+      iccProfile: "RTINGS ICC available; sRGB mode locks gamut for accurate work."
+    },
+    softwareConfig: { utility: "LG OnScreen Control", runtimeDependency: "None (OSD)" },
+    glidesAndPad: { stockSkates: "Height/Tilt/Pivot stand + VESA", recommendedSkates: "Ergotron LX arm", recommendedPadType: "Desk clamp" },
+    lifespanEstimates: { chassisLife: "5 – 7 years", limitingFactor: "Backlight LED aging or USB hub controller" },
+    ergonomicDetails: { scoreReason: "8.5/10 – Good ergonomics with pivot, height adjust. 27″ 1440p is the sweet spot for desktop and gaming.", comparisonVsCloseCompetitors: "Vs Dell S2721DGF: LG has better colors and faster response. Vs Gigabyte M27Q: similar price, LG edges out in motion clarity." },
+    pros: ["Nano IPS delivers vibrant, accurate colors", "180Hz overclock with fast response", "G‑Sync Compatible + FreeSync Premium", "Excellent ergonomic stand"],
+    cons: ["Contrast ratio is typical IPS (~800‑1000:1)", "No HDMI 2.1", "HDR 400 is mediocre"],
+    setupNotes: ["OVERDRIVE: Set to 'Normal' for best balance. 'Fast' introduces minor overshoot.", "COLOR: Use sRGB mode for design work; Gamer 1 for gaming.", "MOUNT: Standard VESA, the included stand is great but an arm saves desk space."]
+  },
+  {
+    id: "samsung-odyssey-g5-27", category: "monitors", name: "Odyssey G5 27\" (G50A)", brand: "Samsung", status: "Wishlist",
+    topPickBadge: "Best budget 1440p 165Hz", price: "$249",
+    purchaseUrl: "https://www.samsung.com/us/computing/monitors/gaming/27--odyssey-g5-g50a-gaming-monitor-ls27ag500pnxza/",
+    tags: ["1440p", "165Hz", "IPS", "FreeSync Premium", "Budget"],
+    summary: "Solid 27‑inch 1440p IPS panel with 165Hz, FreeSync Premium, and low input lag at a very attractive price. Great entry into 1440p high refresh.",
+    properties: {
+      "Screen Size": "27‑inch Flat", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "165Hz", "Response Time": "1ms (MPRT)",
+      "Panel Technology": "IPS", "Color Gamut": "99% sRGB", "VESA Mount": "100 x 100 mm",
+      "Connectivity": "DisplayPort 1.2, HDMI 2.0", "Weight with Stand": "5.5 kg"
+    },
+    panelDetails: {
+      panelTech: "IPS (BOE MV270QHM‑NX1)", colorGamut: "99% sRGB", deltaE: "~3.0 (average)",
+      osdPreset: "Custom (FPS) mode, Response Time: Faster, Black Equalizer: 13",
+      iccProfile: "RTINGS ICC available. Calibration recommended."
+    },
+    softwareConfig: { utility: "Samsung Monitor Software", runtimeDependency: "None" },
+    glidesAndPad: { stockSkates: "Tilt + height adjustable stand", recommendedSkates: "Monitor arm", recommendedPadType: "Desk clamp" },
+    lifespanEstimates: { chassisLife: "4 – 6 years", limitingFactor: "Backlight or power board" },
+    ergonomicDetails: { scoreReason: "7.5/10 – Height and tilt adjustable, but no swivel or pivot. 27″ 1440p is comfortable.", comparisonVsCloseCompetitors: "Vs Acer Nitro XV272U: Samsung has better build. Vs Gigabyte G27Q: similar specs, Samsung has slightly better response times." },
+    pros: ["165Hz 1440p IPS at ~$249", "FreeSync Premium", "Decent response times", "VESA mountable"],
+    cons: ["sRGB only (no wide gamut)", "Stand lacks swivel/pivot", "Calibration needed for accurate colors"],
+    setupNotes: ["OVERDRIVE: Set to 'Faster' for gaming; 'Fastest' causes overshoot.", "COLOR: Custom mode with reduced red can improve accuracy out of box."]
+  },
+  {
+    id: "dell-s2721qs", category: "monitors", name: "S2721QS", brand: "Dell", status: "Wishlist",
+    topPickBadge: "Best budget 4K home office", price: "$279",
+    purchaseUrl: "https://www.dell.com/en-us/shop/dell-27-4k-uhd-monitor-s2721qs/apd/210-axsw/monitors-monitor-accessories",
+    tags: ["4K", "IPS", "Budget", "VESA", "Productivity"],
+    summary: "Affordable 27‑inch 4K IPS monitor with AMD FreeSync, dual HDMI, and a clean design. Perfect for productivity, coding, and media consumption.",
+    properties: {
+      "Screen Size": "27‑inch Flat", "Resolution": "3840 x 2160 (4K UHD)", "Refresh Rate": "60Hz", "Response Time": "4ms (GtG)",
+      "Panel Technology": "IPS", "Color Gamut": "99% sRGB", "VESA Mount": "100 x 100 mm",
+      "Connectivity": "HDMI 2.0 x2, DisplayPort 1.2", "Weight with Stand": "5.6 kg"
+    },
+    panelDetails: {
+      panelTech: "IPS (LG Display LM270WR3‑SSC1)", colorGamut: "99% sRGB", deltaE: "~2.5",
+      osdPreset: "Standard mode, Brightness: 75%, Contrast: 75%", iccProfile: "Factory calibrated, decent out of box."
+    },
+    softwareConfig: { utility: "Dell Display Manager", runtimeDependency: "DDM.exe (optional)" },
+    glidesAndPad: { stockSkates: "Tilt + height + swivel stand", recommendedSkates: "Monitor arm (optional)", recommendedPadType: "Desk clamp" },
+    lifespanEstimates: { chassisLife: "5 – 7 years", limitingFactor: "Backlight LED aging" },
+    ergonomicDetails: { scoreReason: "8/10 – Good stand with height, tilt, swivel. No pivot though. 163 PPI is crisp for text.", comparisonVsCloseCompetitors: "Vs LG 27UP600: Dell has a better stand and more connectivity. Vs S2722QC (USB‑C): cheaper but no USB‑C or built‑in speakers." },
+    pros: ["Sharp 4K at a low price", "Good ergonomic stand", "99% sRGB, decent color", "Dell build quality"],
+    cons: ["No USB‑C", "No built‑in speakers", "60Hz only", "Contrast typical IPS"],
+    setupNotes: ["BRIGHTNESS: ~65% for comfortable SDR (~120 nits).", "COLOR: Standard mode is fine for most work; no wide‑gamut."]
+  },
+  {
+    id: "gigabyte-m28u", category: "monitors", name: "M28U", brand: "Gigabyte", status: "Wishlist",
+    topPickBadge: "Best value 4K 144Hz gaming", price: "$499",
+    purchaseUrl: "https://www.gigabyte.com/Monitor/M28U",
+    tags: ["4K", "144Hz", "IPS", "HDMI 2.1", "KVM", "USB‑C"],
+    summary: "The sweet spot for 4K gaming: 28‑inch IPS, 144Hz, HDMI 2.1 for consoles, and a built‑in KVM. Under $500 it’s a steal.",
+    properties: {
+      "Screen Size": "28‑inch Flat", "Resolution": "3840 x 2160 (4K UHD)", "Refresh Rate": "144Hz (120Hz console)", "Response Time": "1ms (MPRT) / 4ms (GtG)",
+      "Panel Technology": "IPS (SS IPS)", "Color Gamut": "94% DCI‑P3 / 120% sRGB", "VESA Mount": "100 x 100 mm",
+      "Connectivity": "HDMI 2.1 x2, DisplayPort 1.4, USB‑C 18W, USB 3.0 Hub", "Weight with Stand": "6.9 kg"
+    },
+    panelDetails: {
+      panelTech: "Innolux M280DCA‑E7B IPS", colorGamut: "94% DCI‑P3 / 120% sRGB", deltaE: "~2.5",
+      osdPreset: "Picture Mode: Standard, Overdrive: Balanced, Black Equalizer: 10",
+      iccProfile: "RTINGS ICC available. sRGB mode for color‑critical work."
+    },
+    softwareConfig: { utility: "Gigabyte OSD Sidekick", runtimeDependency: "OSD_Sidekick.exe" },
+    glidesAndPad: { stockSkates: "Height/Tilt/Swivel stand + VESA", recommendedSkates: "Monitor arm", recommendedPadType: "Desk clamp" },
+    lifespanEstimates: { chassisLife: "5 – 7 years", limitingFactor: "KVM USB controller or backlight" },
+    ergonomicDetails: { scoreReason: "8/10 – Good ergonomic adjustments, but stand footprint is large. 28″ 4K (157 PPI) extremely sharp.", comparisonVsCloseCompetitors: "Vs LG 27GN950: cheaper, with KVM and HDMI 2.1. Vs ASUS TUF VG28UQL1A: similar price, Gigabyte has better out‑of‑box color." },
+    pros: ["4K 144Hz at a competitive price", "HDMI 2.1 for PS5/Xbox", "KVM switch + USB‑C", "Good color coverage"],
+    cons: ["Contrast ratio typical IPS", "Response times slightly behind Nano IPS", "No swivel on stand", "USB‑C only 18W"],
+    setupNotes: ["OVERDRIVE: 'Balanced' best for 144Hz. 'Speed' can overshoot.", "CONSOLE: Use HDMI 2.1 for 4K 120Hz. Enable VRR in console settings.", "KVM: USB‑C to laptop, USB‑A for keyboard/mouse."]
+  },
+  {
+    id: "asus-vg259qm", category: "monitors", name: "TUF VG259QM", brand: "ASUS", status: "Wishlist",
+    topPickBadge: "Best 280Hz 1080p esports monitor", price: "$249",
+    purchaseUrl: "https://www.asus.com/displays-desktops/monitors/tuf-gaming/tuf-gaming-vg259qm/",
+    tags: ["1080p", "280Hz", "IPS", "ELMB SYNC", "Esports"],
+    summary: "A true esports weapon: 24.5‑inch 1080p IPS, overclockable to 280Hz, with ELMB SYNC (motion blur reduction while adaptive sync is active). Unbeatable for competitive shooters.",
+    properties: {
+      "Screen Size": "24.5‑inch Flat", "Resolution": "1920 x 1080 (FHD)", "Refresh Rate": "240Hz (280Hz OC)", "Response Time": "1ms (GtG)",
+      "Panel Technology": "IPS", "Color Gamut": "100% sRGB", "VESA Mount": "100 x 100 mm",
+      "Connectivity": "DisplayPort 1.2, HDMI 2.0 x2", "Weight with Stand": "5.1 kg"
+    },
+    panelDetails: {
+      panelTech: "AUO M250HAN01.6 IPS", colorGamut: "100% sRGB", deltaE: "~2.5",
+      osdPreset: "Racing Mode, Overdrive: 80, ELMB SYNC: On (for motion clarity)", iccProfile: "RTINGS ICC available."
+    },
+    softwareConfig: { utility: "ASUS DisplayWidget", runtimeDependency: "None" },
+    glidesAndPad: { stockSkates: "Height/Tilt/Swivel/Pivot stand", recommendedSkates: "Arm (optional)", recommendedPadType: "Desk clamp" },
+    lifespanEstimates: { chassisLife: "4 – 6 years", limitingFactor: "Backlight or capacitor aging" },
+    ergonomicDetails: { scoreReason: "8/10 – Fully adjustable stand. 24.5″ size ideal for competitive play and small desks.", comparisonVsCloseCompetitors: "Vs BenQ XL2546K: IPS with better colors, same speed. Vs Acer Nitro XV252Q: similar but ASUS has ELMB SYNC." },
+    pros: ["Insane 280Hz motion clarity", "ELMB SYNC = blur reduction + adaptive sync", "Great ergonomic stand", "Affordable for 280Hz"],
+    cons: ["1080p resolution (not ideal for productivity)", "Average contrast ratio", "HDR400 is basic"],
+    setupNotes: ["OVERDRIVE: Set to 80 for best motion clarity. ELMB SYNC works with G‑Sync/FreeSync.", "CONSOLE: HDMI 2.0 limits you to 144Hz. Use DisplayPort for PC."]
+  },
+
+  // ——— NEW: extra budget/value champions ———
+  {
+    id: "acer-xv252q", category: "monitors", name: "Nitro XV252Q F", brand: "Acer", status: "Wishlist",
+    topPickBadge: "Best Budget 240Hz 1080p for Competitive Esports", price: "$199",
+    purchaseUrl: "https://www.acer.com/us-en/predator/monitors/nitro-xv2/pdp/UM.KX2AA.F01",
+    tags: ["1080p", "240Hz", "IPS", "FreeSync Premium", "Budget"],
+    summary: "One of the cheapest 240Hz IPS monitors on the market. 24.5‑inch with 1ms response, FreeSync Premium, and a fully ergonomic stand. Perfect for competitive players who need high refresh without the premium price tag.",
+    properties: {
+      "Screen Size": "24.5‑inch Flat", "Resolution": "1920 x 1080 (FHD)", "Refresh Rate": "240Hz", "Response Time": "1ms (GtG)",
+      "Panel Technology": "IPS", "Color Gamut": "99% sRGB", "VESA Mount": "100 x 100 mm",
+      "Connectivity": "DisplayPort 1.2, HDMI 2.0 x2", "Weight with Stand": "4.8 kg"
+    },
+    panelDetails: {
+      panelTech: "IPS (AUO M250HAN01.C)", colorGamut: "99% sRGB", deltaE: "~2.8",
+      osdPreset: "Action mode, Overdrive: Normal, Black Boost: 5", iccProfile: "RTINGS ICC available."
+    },
+    softwareConfig: { utility: "Acer Display Widget", runtimeDependency: "None" },
+    glidesAndPad: { stockSkates: "Height/Tilt/Swivel/Pivot stand", recommendedSkates: "Monitor arm", recommendedPadType: "Desk clamp" },
+    lifespanEstimates: { chassisLife: "4 – 6 years", limitingFactor: "Backlight or capacitor aging" },
+    ergonomicDetails: { scoreReason: "8/10 – Fully adjustable stand. 240Hz IPS for under $200 is unheard of.", comparisonVsCloseCompetitors: "Vs ASUS VG259QM: similar price but Acer edges out with pure 240Hz native (no overclock needed). Vs AOC 24G2: Acer is 240Hz vs 144Hz for only $20 more." },
+    pros: ["240Hz IPS at an incredible $199", "Fully ergonomic stand (height/tilt/swivel/pivot)", "FreeSync Premium", "Low input lag"],
+    cons: ["sRGB only, no wide gamut", "HDR400 is basic", "Contrast typical IPS"],
+    setupNotes: ["OVERDRIVE: Set to 'Normal' – 'Extreme' overshoots.", "BRIGHTNESS: 65% for ~120 nits SDR."]
+  },
+  {
+    id: "gigabyte-g34wqc", category: "monitors", name: "G34WQC", brand: "Gigabyte", status: "Wishlist",
+    topPickBadge: "Best Value Ultrawide 1440p 144Hz", price: "$349",
+    purchaseUrl: "https://www.gigabyte.com/Monitor/G34WQC",
+    tags: ["Ultrawide", "1440p", "144Hz", "VA", "FreeSync Premium", "Budget"],
+    summary: "The most affordable 34‑inch ultrawide 1440p 144Hz on the market. Immersive 1500R curve, deep VA contrast, and FreeSync Premium make it perfect for sim racing, RPGs, and productivity (side‑by‑side windows).",
+    properties: {
+      "Screen Size": "34‑inch Curved (1500R)", "Resolution": "3440 x 1440 (UWQHD)", "Refresh Rate": "144Hz", "Response Time": "1ms (MPRT)",
+      "Panel Technology": "VA", "Color Gamut": "90% DCI‑P3 / 120% sRGB", "VESA Mount": "100 x 100 mm",
+      "Connectivity": "DisplayPort 1.4, HDMI 2.0 x2", "Weight with Stand": "8.2 kg"
+    },
+    panelDetails: {
+      panelTech: "VA (Samsung SVA)", colorGamut: "90% DCI‑P3 / 120% sRGB", deltaE: "~3.0",
+      osdPreset: "FPS mode, Overdrive: Balanced, Black Equalizer: 10", iccProfile: "RTINGS ICC available."
+    },
+    softwareConfig: { utility: "Gigabyte OSD Sidekick", runtimeDependency: "OSD_Sidekick.exe" },
+    glidesAndPad: { stockSkates: "Tilt + height adjustable stand", recommendedSkates: "Monitor arm (heavy‑duty)", recommendedPadType: "Desk clamp" },
+    lifespanEstimates: { chassisLife: "5 – 7 years", limitingFactor: "Backlight or VA panel black smearing" },
+    ergonomicDetails: { scoreReason: "8/10 – 1500R curve is immersive. Height and tilt adjustable. Large desk required.", comparisonVsCloseCompetitors: "Vs AOC CU34G2X: Gigabyte has better response times and colour. Vs Samsung Odyssey G5 34\": similar price, Gigabyte has higher brightness and better stand." },
+    pros: ["3440x1440 ultrawide immersion at a bargain price", "144Hz, FreeSync Premium", "VA panel delivers deep blacks and good contrast", "Height/tilt adjustable stand"],
+    cons: ["VA panel has slight black smearing", "No USB‑C or KVM", "Stand footprint is large"],
+    setupNotes: ["OVERDRIVE: Set to 'Balanced' – 'Speed' introduces overshoot.", "COLOR: Use sRGB mode for accurate work; FPS mode for gaming.", "MOUNT: Monitor is heavy (8.2 kg) – use a heavy‑duty arm."]
+  },
+  {
+    id: "dell-s2722dgm", category: "monitors", name: "S2722DGM", brand: "Dell", status: "Wishlist",
+    topPickBadge: "Best Budget 1440p Gaming with Deep Blacks", price: "$249",
+    purchaseUrl: "https://www.dell.com/en-us/shop/dell-27-curved-gaming-monitor-s2722dgm/apd/210-ayml/monitors-monitor-accessories",
+    tags: ["1440p", "165Hz", "VA", "FreeSync Premium", "Curved"],
+    summary: "A strong budget 1440p gaming monitor with a curved VA panel, 165Hz, and excellent contrast (deeper blacks than IPS). Great for cinematic games and dark‑room gaming.",
+    properties: {
+      "Screen Size": "27‑inch Curved (1500R)", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "165Hz", "Response Time": "1ms (MPRT)",
+      "Panel Technology": "VA", "Color Gamut": "99% sRGB", "VESA Mount": "100 x 100 mm",
+      "Connectivity": "DisplayPort 1.4, HDMI 2.0 x2", "Weight with Stand": "5.8 kg"
+    },
+    panelDetails: {
+      panelTech: "VA (Samsung SVA)", colorGamut: "99% sRGB", deltaE: "~2.5",
+      osdPreset: "Game mode: FPS, Response Time: Super Fast, Dark Stabilizer: 0", iccProfile: "RTINGS ICC available."
+    },
+    softwareConfig: { utility: "Dell Display Manager", runtimeDependency: "DDM.exe (optional)" },
+    glidesAndPad: { stockSkates: "Height/Tilt adjustable stand", recommendedSkates: "Monitor arm", recommendedPadType: "Desk clamp" },
+    lifespanEstimates: { chassisLife: "4 – 6 years", limitingFactor: "Backlight or panel wear" },
+    ergonomicDetails: { scoreReason: "7.5/10 – Curved 1500R adds immersion. Height and tilt adjustable but no swivel or pivot.", comparisonVsCloseCompetitors: "Vs Samsung Odyssey G5 (IPS): Dell has far better contrast (VA) and similar price. Vs Gigabyte M27Q (IPS): Dell trades slightly worse viewing angles and response times for much deeper blacks and a $20 lower price." },
+    pros: ["Excellent VA contrast (3000:1) for deep blacks", "165Hz, FreeSync Premium", "Immersive 1500R curve", "Dell build quality and stand"],
+    cons: ["VA panel can exhibit black smearing at high refresh", "No wide gamut (sRGB only)", "No USB‑C", "Stand lacks swivel/pivot"],
+    setupNotes: ["OVERDRIVE: Set to 'Super Fast' – 'Extreme' causes overshoot.", "DARK STABILIZER: Set to 0 for natural blacks; increase for competitive visibility.", "MOUNT: VESA mount compatible."]
   }
 ];
