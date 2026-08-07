@@ -1,7 +1,7 @@
 window.DESK_CHAIRS = [
   {
     id: "t3-rush", category: "chairs", name: "T3 Rush", brand: "Corsair", status: "Wishlist", isTopPick: true,
-    topPickBadge: "Best Budget Gaming Chair with Lumbar Support", price: "$249 - $299",
+    topPickBadge: "Best Budget Gaming Chair with Lumbar Support", price: "$249 - $299", suggestRating: 8.5,
     purchaseUrl: "https://www.corsair.com/us/en/p/gaming-chairs/cf-9010052-ww/t3-rush-gaming-chair-gray-charcoal-cf-9010052-ww",
     tags: ["Gaming", "Fabric", "4D Armrests", "Lumbar", "Recline", "Budget"],
     summary: "A rare budget gaming chair that actually prioritises ergonomics. Breathable fabric, adjustable lumbar support, 4D armrests, and a solid steel frame. Far better value than most 'racing' chairs at this price.",
@@ -43,7 +43,7 @@ window.DESK_CHAIRS = [
   },
   {
     id: "hyken-mesh", category: "chairs", name: "Hyken Mesh", brand: "Staples", status: "Wishlist",
-    topPickBadge: "Best Budget Ergonomic Mesh Chair (Under $200)", price: "$149 - $199",
+    topPickBadge: "Best Budget Ergonomic Mesh Chair (Under $200)", price: "$149 - $199", suggestRating: 8.2,
     purchaseUrl: "https://www.staples.com/staples-hyken-technical-mesh-task-chair-black/product_24392779",
     tags: ["Mesh", "Ergonomic", "Headrest", "Lumbar", "Budget", "Office"],
     summary: "The undisputed budget champion for an ergonomic mesh chair. Fully adjustable headrest, lumbar support, and armrests, plus a breathable mesh back. Ideal for long work‑from‑home days without sweating or breaking the bank.",
@@ -85,7 +85,7 @@ window.DESK_CHAIRS = [
   },
   {
     id: "autonomous-ergochair-pro", category: "chairs", name: "ErgoChair Pro", brand: "Autonomous", status: "Wishlist",
-    topPickBadge: "Best Mid‑Range Ergonomic Chair with All Adjustments", price: "$499",
+    topPickBadge: "Best Mid‑Range Ergonomic Chair with All Adjustments", price: "$499", suggestRating: 9.0,
     purchaseUrl: "https://www.autonomous.ai/office-chairs/ergonomic-chair",
     tags: ["Ergonomic", "Mesh", "Adjustable", "Lumbar", "Headrest", "Mid‑Range"],
     summary: "The sweet spot for a fully‑loaded ergonomic chair. Every adjustment imaginable: seat depth, tilt tension, lumbar height & depth, 4D armrests, and an adjustable headrest. Mesh back and firm cushion strike a great balance between comfort and support for 8+ hour days.",
@@ -128,7 +128,7 @@ window.DESK_CHAIRS = [
   },
   {
     id: "steelcase-leap-v2-refurb", category: "chairs", name: "Leap v2 (Refurbished)", brand: "Steelcase", status: "Wishlist",
-    topPickBadge: "Best High‑End Ergonomic Chair for the Price (Refurbished)", price: "$599 - $799 (refurbished)",
+    topPickBadge: "Best High‑End Ergonomic Chair for the Price (Refurbished)", price: "$599 - $799 (refurbished)", suggestRating: 9.5,
     purchaseUrl: "https://www.crandalloffice.com/shop/chairs/steelcase/steelcase-leap-v2-remade/",
     tags: ["Ergonomic", "Refurbished", "Premium", "Adjustable", "Lumbar", "No Headrest"],
     summary: "A true high‑end ergonomic chair at a fraction of the new price. The Leap v2 is legendary for its 'LiveBack' technology that mimics spinal movement. Buying refurbished from a reputable dealer gives you a chair that will last 10+ years, with all the premium adjustments you need.",
