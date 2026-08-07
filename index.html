@@ -316,6 +316,12 @@
         <div class="search-box">
           <input type="text" id="searchInput" placeholder="Search across all hardware...">
         </div>
+        <div class="price-filter">
+          <label style="color:var(--text-muted); font-size:12px; margin-right:4px;">$</label>
+          <input type="number" id="priceMin" placeholder="Min" style="width:80px; padding:6px 8px; background:var(--bg); border:1px solid var(--border); border-radius:var(--radius); color:var(--text); font-size:12px;">
+          <span style="color:var(--text-faint); margin:0 4px;">–</span>
+          <input type="number" id="priceMax" placeholder="Max" style="width:80px; padding:6px 8px; background:var(--bg); border:1px solid var(--border); border-radius:var(--radius); color:var(--text); font-size:12px;">
+        </div>
         <div class="controls-group">
           <button class="btn-action" id="btnExpandAll">Expand All Cards</button>
           <button class="btn-action" id="btnCollapseAll">Collapse All</button>
