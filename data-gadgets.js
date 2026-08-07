@@ -1,80 +1,117 @@
 window.DESK_GADGETS = [
   {
-    id: "benq-screenbar", category: "gadgets", name: "ScreenBar", brand: "BenQ", status: "Wishlist",
-    topPickBadge: "Best Monitor Light Bar", price: "$99",
-    purchaseUrl: "https://www.benq.com/en-us/lighting/monitor-light/screenbar.html",
-    tags: ["Lighting", "Monitor", "USB", "Eye Care"],
-    summary: "The gold‑standard monitor light bar. Clips onto any monitor, illuminates only the desk (no screen glare), auto‑dims, and has adjustable colour temperature. Saves desk space and reduces eye strain.",
+    id: "stream-deck-mk2", category: "gadgets", name: "Stream Deck MK.2", brand: "Elgato", status: "Wishlist",
+    topPickBadge: "Best Macro Pad for Productivity & Streaming", price: "$149",
+    purchaseUrl: "https://www.elgato.com/en/stream-deck-mk2",
+    tags: ["Macro Pad", "Streaming", "Productivity", "Customisable"],
+    summary: "15 customisable LCD keys that launch apps, control OBS, adjust volume, or trigger shortcuts. A game‑changer for streamers and power users alike. The best macro pad you can buy.",
     properties: {
-      "Type": "Monitor Light Bar", "Power": "USB‑A (5V/5W)", "Brightness": "Adjustable (auto‑dimming)", "Colour Temp": "2700K – 6500K"
+      "Type": "Macro Pad", "Keys": "15 LCD buttons", "Software": "Stream Deck app (profiles, plugins)"
     }
   },
   {
-    id: "xiaomi-screenbar", category: "gadgets", name: "Mi Computer Monitor Light Bar", brand: "Xiaomi", status: "Wishlist",
-    topPickBadge: "Best Budget Monitor Light Bar", price: "$49",
-    purchaseUrl: "https://www.mi.com/global/product/mi-computer-monitor-light-bar/",
-    tags: ["Lighting", "Monitor", "USB", "Budget"],
-    summary: "A BenQ ScreenBar alternative at half the price. Same clip‑on design, adjustable brightness and colour temperature, wireless remote puck. Slightly less premium build but unbeatable value.",
+    id: "diy-macro-pad", category: "gadgets", name: "DIY Macro Pad Kit", brand: "Pikatea", status: "Wishlist",
+    topPickBadge: "Best Customisable 5‑Key Macro Pad", price: "$39 (kit)",
+    purchaseUrl: "https://pikatea.com/products/pikatea-macropad-gb1",
+    tags: ["DIY", "Macro Pad", "QMK", "Hot‑Swap", "Modding"],
+    summary: "A small 5‑key macro pad kit with a rotary encoder. QMK firmware, hot‑swap sockets, and fully customisable. Perfect for soldering practice and adding dedicated shortcuts to your desk.",
     properties: {
-      "Type": "Monitor Light Bar", "Power": "USB‑C (5V/5W)", "Brightness": "Adjustable", "Colour Temp": "2700K – 6500K"
+      "Type": "DIY Macro Pad", "Keys": "5 keys + 1 rotary encoder", "Firmware": "QMK", "Hot‑Swappable": "Yes"
     }
   },
   {
-    id: "anker-usb-c-hub", category: "gadgets", name: "PowerExpand 8‑in‑1 USB‑C Hub", brand: "Anker", status: "Wishlist",
-    topPickBadge: "Best USB‑C Hub for Laptops", price: "$49",
-    purchaseUrl: "https://www.anker.com/products/a8346-powerexpand-8-in-1-usb-c-hub",
-    tags: ["USB Hub", "USB‑C", "HDMI", "Ethernet", "Laptop"],
-    summary: "Compact 8‑in‑1 hub with 4K HDMI, 1 Gbps Ethernet, 100W PD pass‑through, SD card reader, and USB‑A ports. Perfect for turning a laptop into a full desktop setup with a single cable.",
+    id: "arduino-stream-deck", category: "gadgets", name: "DIY Arduino Stream Deck", brand: "DIY (ESP32)", status: "Wishlist",
+    topPickBadge: "Cheapest Custom Stream Deck Alternative", price: "~$25 (parts)",
+    tags: ["DIY", "Macro Pad", "Arduino", "ESP32", "Streaming"],
+    summary: "Build your own 8‑key macro pad using an ESP32, some key switches, and a 3D‑printed case. Perfect open‑source alternative to an Elgato Stream Deck at a fraction of the price. Tons of tutorials available.",
     properties: {
-      "Type": "USB‑C Hub", "Ports": "HDMI 4K, Ethernet, 2×USB‑A, SD, USB‑C PD 100W", "Weight": "85g"
+      "Type": "DIY Macro Pad", "Keys": "8–12 keys (customisable)", "Controller": "ESP32 / Arduino Pro Micro", "Software": "DeckMaster / BLE HID"
     }
   },
   {
-    id: "caldigit-ts4", category: "gadgets", name: "TS4 Thunderbolt 4 Dock", brand: "CalDigit", status: "Wishlist",
-    topPickBadge: "Ultimate Thunderbolt Dock", price: "$399",
-    purchaseUrl: "https://www.caldigit.com/thunderbolt-station-4/",
-    tags: ["Dock", "Thunderbolt", "Multi‑Monitor", "Pro"],
-    summary: "The most powerful Thunderbolt 4 dock. Supports dual 4K 60Hz or single 8K, 98W charging, 2.5 GbE Ethernet, and 18 ports total. For power users who need everything connected.",
+    id: "portable-monitor-15", category: "gadgets", name: "15.6\" Portable Monitor", brand: "Arzopa", status: "Wishlist",
+    topPickBadge: "Best Budget Portable Second Screen", price: "$129",
+    purchaseUrl: "https://www.amazon.com/ARZOPA-Portable-Monitor-1920x1080-Speakers/dp/B0BXKFC6KR",
+    tags: ["Monitor", "Portable", "USB‑C", "Second Screen"],
+    summary: "A slim, lightweight 1080p portable monitor powered by a single USB‑C cable. Perfect as a secondary screen for laptops during travel, a compact teleprompter display, or a small stat monitor for your gaming rig.",
     properties: {
-      "Type": "Thunderbolt 4 Dock", "Ports": "18 (dual 4K, 8K, USB‑A/C, Ethernet, audio)", "Power Delivery": "98W"
+      "Type": "Portable Monitor", "Resolution": "1920x1080 IPS", "Size": "15.6\"", "Connectivity": "USB‑C (power+video), mini HDMI"
     }
   },
   {
-    id: "cable-tray-under-desk", category: "gadgets", name: "Under‑Desk Cable Management Tray", brand: "Vivo", status: "Wishlist",
-    topPickBadge: "Essential Cable Management", price: "$25",
-    purchaseUrl: "https://www.vivo-us.com/products/desk-ac06-cable-management-tray",
-    tags: ["Cable Management", "Under Desk", "Steel", "Clamp"],
-    summary: "Clamp‑on steel cable tray that hides power strips and cable clutter under the desk. The simplest upgrade for a clean setup.",
+    id: "usb-switch-2pc", category: "gadgets", name: "USB 3.0 Switch for 2 PCs", brand: "UGREEN", status: "Wishlist",
+    price: "$25",
+    tags: ["USB Switch", "KVM", "Sharing", "2 PCs"],
+    summary: "Share a keyboard, mouse, or other USB device between two computers with the press of a button. Cheaper than a full KVM switch. A must if you run a dual‑PC streaming setup.",
     properties: {
-      "Type": "Cable Management Tray", "Material": "Steel", "Mount": "C‑clamp"
+      "Type": "USB Switch", "Ports": "2‑in, 4‑out USB 3.0", "Button": "Physical switcher"
     }
   },
   {
-    id: "cable-raceway", category: "gadgets", name: "Adhesive Cable Raceway Kit", brand: "D‑Line", status: "Wishlist",
-    price: "$15",
-    tags: ["Cable Management", "Adhesive", "Paintable"],
-    summary: "Stick‑on cable channels that hide wires along walls or under desks. Paintable to match your wall colour. A must for eliminating visible cables.",
+    id: "soldering-helping-hands", category: "gadgets", name: "Magnetic Helping Hands Soldering Stand", brand: "KOTTO", status: "Wishlist",
+    topPickBadge: "Best Soldering Aid for Mouse Modding", price: "$25",
+    purchaseUrl: "https://www.amazon.com/KOTTO-Helping-Hands-Soldering-Magnetic/dp/B07MDPLBKK",
+    tags: ["Soldering", "DIY", "Modding", "Tool"],
+    summary: "A flexible helping hands tool with four magnetic arms and a sturdy base. Essential for holding PCBs and wires steady while soldering switch replacements on mice.",
     properties: {
-      "Type": "Cable Raceway", "Material": "PVC", "Sizes": "Various"
+      "Type": "Soldering Aid", "Arms": "4 magnetic flexible arms", "Base": "Heavy steel with magnetic pads"
     }
   },
   {
-    id: "woody-wrist-rest", category: "gadgets", name: "Wooden Wrist Rest", brand: "Glorious", status: "Wishlist",
-    topPickBadge: "Best Wrist Rest for Mechanical Keyboards", price: "$29",
-    purchaseUrl: "https://www.gloriousgaming.com/products/glorious-wooden-wrist-rest",
-    tags: ["Wrist Rest", "Wood", "Mechanical Keyboard", "Ergonomic"],
-    summary: "A smooth, solid wood wrist rest that looks beautiful and supports your wrists during long typing sessions. Available in multiple sizes for 60% to full‑size keyboards.",
-    properties: {
-      "Type": "Wrist Rest", "Material": "Wood (various finishes)", "Sizes": "60%, TKL, Full‑Size"
-    }
-  },
-  {
-    id: "gel-wrist-rest", category: "gadgets", name: "Gel Wrist Rest", brand: "HyperX", status: "Wishlist",
+    id: "magnifier-visor", category: "gadgets", name: "LED Magnifying Visor", brand: "Yoctosun", status: "Wishlist",
     price: "$19",
-    tags: ["Wrist Rest", "Gel", "Cooling", "Mouse + Keyboard"],
-    summary: "A cooling gel wrist rest set (keyboard + mouse). Memory foam core with a gel‑infused top layer stays cool and provides cushioned support.",
+    tags: ["Soldering", "DIY", "Magnifier", "Headset"],
+    summary: "A head‑mounted magnifier with built‑in LED lights. Makes tiny solder joints and switch pins clearly visible without taking up desk space.",
     properties: {
-      "Type": "Wrist Rest Set", "Material": "Gel + memory foam", "Includes": "Keyboard + mouse wrist rest"
+      "Type": "Headset Magnifier", "Lenses": "Interchangeable (1.5X–3.5X)", "Light": "LED"
+    }
+  },
+  {
+    id: "fume-extractor", category: "gadgets", name: "Mini Soldering Fume Extractor", brand: "KOTTO", status: "Wishlist",
+    price: "$29",
+    tags: ["Soldering", "Safety", "DIY", "Fan"],
+    summary: "A small, USB‑powered fume extractor with activated carbon filter. Sucks away solder fumes while you work, keeping your lungs safe during modding sessions.",
+    properties: {
+      "Type": "Fume Extractor", "Power": "USB", "Filter": "Activated carbon"
+    }
+  },
+  {
+    id: "desk-shelf-monitor-riser", category: "gadgets", name: "Wooden Monitor Stand Riser", brand: "Aothia", status: "Wishlist",
+    topPickBadge: "Best Budget Desk Shelf", price: "$35",
+    purchaseUrl: "https://www.amazon.com/Aothia-Monitor-Stand-Riser-Desktop/dp/B08D6L2PCR",
+    tags: ["Desk Shelf", "Monitor Riser", "Wood", "Organisation"],
+    summary: "A simple wooden monitor riser that lifts your screen to eye level and creates storage space underneath for your keyboard, mouse, or a small gadget. A clean, affordable ergonomic upgrade.",
+    properties: {
+      "Type": "Monitor Riser", "Material": "Bamboo", "Dimensions": "42 cm × 24 cm × 9 cm"
+    }
+  },
+  {
+    id: "desk-clamp-power-strip", category: "gadgets", name: "Clamp‑On Desk Power Strip", brand: "Anker", status: "Wishlist",
+    topPickBadge: "Best Under‑Desk Power Solution", price: "$29",
+    purchaseUrl: "https://www.anker.com/products/a9135-power-strip",
+    tags: ["Power Strip", "Clamp", "USB‑C", "Cable Management"],
+    summary: "A compact desktop power strip with a clamp that attaches to the edge of your desk. 3 AC outlets, 2 USB‑A, and 1 USB‑C (20W PD). Surge protection and a flat plug that fits behind furniture.",
+    properties: {
+      "Type": "Clamp‑On Power Strip", "Outlets": "3 AC + 2 USB‑A + 1 USB‑C", "USB‑C Power": "20W PD"
+    }
+  },
+  {
+    id: "usb-c-magnetic-adapter", category: "gadgets", name: "USB‑C Magnetic Adapter (40Gbps)", brand: "Satechi", status: "Wishlist",
+    topPickBadge: "Best Magnetic Charging Adapter for Modded Mice", price: "$29",
+    purchaseUrl: "https://www.satechi.net/products/usb-c-magnetic-adapter",
+    tags: ["Magnetic", "USB‑C", "Charging", "Mouse Modding"],
+    summary: "A magnetic USB‑C adapter that lets you quickly connect/disconnect your mouse for charging. Ideal for modded G502s or any device with a fragile USB‑C port. Supports data, video, and 100W charging.",
+    properties: {
+      "Type": "Magnetic Adapter", "Speed": "40 Gbps (Thunderbolt 3)", "Power": "100W PD"
+    }
+  },
+  {
+    id: "under-desk-headphone-hanger", category: "gadgets", name: "Under‑Desk Headphone Hanger", brand: "Elevation Lab", status: "Wishlist",
+    price: "$15",
+    tags: ["Headphone Hanger", "Under Desk", "Adhesive"],
+    summary: "A clamp‑on or adhesive hanger that sticks under your desk, holding your headphones out of sight but instantly accessible. Frees up desk space.",
+    properties: {
+      "Type": "Headphone Hanger", "Mount": "Clamp / Adhesive"
     }
   },
   {
@@ -84,112 +121,43 @@ window.DESK_GADGETS = [
     tags: ["Desk Mat", "Felt", "Cable Management", "Minimalist"],
     summary: "A beautiful wool felt desk mat with a hidden cable management rail and a magnetic document hideaway. Protects your desk while keeping it clutter‑free.",
     properties: {
-      "Type": "Desk Mat", "Material": "Wool felt", "Sizes": "Medium, Large", "Features": "Cable rail, document hideaway"
+      "Type": "Desk Mat", "Material": "Wool felt", "Features": "Cable rail, document hideaway"
     }
   },
   {
     id: "rgb-desk-mat", category: "gadgets", name: "RGB Extended Mouse Pad", brand: "Razer", status: "Wishlist",
     price: "$59",
     tags: ["Desk Mat", "RGB", "Large", "Gaming"],
-    summary: "A massive extended mouse mat with edge‑lit RGB. Covers your entire desk area and syncs with Razer Chroma. Great for a cohesive gaming aesthetic.",
+    summary: "A massive extended mouse mat with edge‑lit RGB. Covers your entire desk area and syncs with Razer Chroma.",
     properties: {
       "Type": "Extended Mouse Pad", "Material": "Micro‑textured cloth", "Lighting": "Edge RGB (Chroma)"
     }
   },
   {
-    id: "headphone-stand-wood", category: "gadgets", name: "Wooden Headphone Stand", brand: "Avantree", status: "Wishlist",
-    price: "$19",
-    tags: ["Headphone Stand", "Wood", "Desk Accessory"],
-    summary: "A simple, elegant wooden headphone stand that keeps your headphones within reach and off the desk. No assembly needed.",
+    id: "cable-tray-under-desk", category: "gadgets", name: "Under‑Desk Cable Management Tray", brand: "Vivo", status: "Wishlist",
+    price: "$25",
+    tags: ["Cable Management", "Under Desk", "Steel"],
+    summary: "Clamp‑on steel cable tray that hides power strips and cable clutter under the desk.",
     properties: {
-      "Type": "Headphone Stand", "Material": "Wood", "Style": "Desktop"
+      "Type": "Cable Management Tray", "Material": "Steel", "Mount": "C‑clamp"
     }
   },
   {
-    id: "headphone-hanger-under-desk", category: "gadgets", name: "Under‑Desk Headphone Hanger", brand: "Elevation Lab", status: "Wishlist",
+    id: "cable-raceway", category: "gadgets", name: "Adhesive Cable Raceway Kit", brand: "D‑Line", status: "Wishlist",
     price: "$15",
-    tags: ["Headphone Hanger", "Under Desk", "Adhesive", "Clamp"],
-    summary: "A clamp‑on or adhesive hanger that sticks under your desk, holding your headphones out of sight but instantly accessible.",
+    tags: ["Cable Management", "Adhesive", "Paintable"],
+    summary: "Stick‑on cable channels that hide wires along walls or under desks. Paintable to match your wall colour.",
     properties: {
-      "Type": "Headphone Hanger", "Mount": "Clamp / Adhesive", "Compatibility": "Most desk thicknesses"
-    }
-  },
-  {
-    id: "logitech-c920", category: "gadgets", name: "C920 HD Pro Webcam", brand: "Logitech", status: "Wishlist",
-    topPickBadge: "Best Budget Webcam", price: "$69",
-    purchaseUrl: "https://www.logitech.com/en-us/products/webcams/c920-pro-hd-webcam.960-001261.html",
-    tags: ["Webcam", "1080p", "USB", "Streaming"],
-    summary: "The tried‑and‑true 1080p webcam. Sharp image, decent low‑light performance, and a built‑in privacy shutter. Still the best webcam under $80.",
-    properties: {
-      "Type": "Webcam", "Resolution": "1080p 30fps", "Field of View": "78°", "Microphone": "Dual stereo"
-    }
-  },
-  {
-    id: "elgato-facecam", category: "gadgets", name: "Facecam", brand: "Elgato", status: "Wishlist",
-    topPickBadge: "Best Streaming Webcam", price: "$149",
-    purchaseUrl: "https://www.elgato.com/en/facecam",
-    tags: ["Webcam", "1080p60", "Streaming", "Prime Lens"],
-    summary: "A true streaming webcam with a prime lens, 1080p 60fps, and uncompressed video. Excellent image quality and full manual control via software.",
-    properties: {
-      "Type": "Webcam", "Resolution": "1080p 60fps", "Sensor": "Sony STARVIS", "Software": "Camera Hub"
-    }
-  },
-  {
-    id: "blue-yeti-nano", category: "gadgets", name: "Yeti Nano", brand: "Blue", status: "Wishlist",
-    topPickBadge: "Best USB Mic for Video Calls", price: "$99",
-    purchaseUrl: "https://www.bluemic.com/en-us/products/yeti-nano/",
-    tags: ["Microphone", "USB", "Condenser", "Streaming"],
-    summary: "Compact USB condenser microphone with cardioid and omni patterns. Plug‑and‑play, great for Zoom calls, streaming, and podcasting.",
-    properties: {
-      "Type": "USB Microphone", "Polar Patterns": "Cardioid, Omni", "Sample Rate": "24‑bit/48kHz"
-    }
-  },
-  {
-    id: "presonus-eris-3.5", category: "gadgets", name: "Eris 3.5 Studio Monitors", brand: "PreSonus", status: "Wishlist",
-    topPickBadge: "Best Budget Desk Speakers", price: "$99/pair",
-    purchaseUrl: "https://www.presonus.com/products/Eris-E3.5",
-    tags: ["Speakers", "Studio Monitor", "Budget", "Wired"],
-    summary: "Compact studio monitors with surprisingly rich sound for the price. Front‑facing headphone jack and aux input. Perfect for a small desk.",
-    properties: {
-      "Type": "Bookshelf Speakers", "Power": "50W (25W/side)", "Inputs": "TRS, RCA, Aux"
-    }
-  },
-  {
-    id: "creative-pebble", category: "gadgets", name: "Pebble v3", brand: "Creative", status: "Wishlist",
-    topPickBadge: "Ultra‑Budget Desktop Speakers", price: "$34",
-    purchaseUrl: "https://us.creative.com/p/speakers/creative-pebble-v3",
-    tags: ["Speakers", "USB‑C", "Bluetooth", "Budget"],
-    summary: "Tiny, spherical speakers that cost almost nothing but sound decent. USB‑C powered, Bluetooth 5.0, and a clean look. Perfect for minimalists.",
-    properties: {
-      "Type": "Compact Speakers", "Power": "USB‑C", "Connectivity": "Bluetooth 5.0, aux"
-    }
-  },
-  {
-    id: "ugreen-cable-clips", category: "gadgets", name: "Adhesive Cable Clips", brand: "UGREEN", status: "Wishlist",
-    price: "$8 (pack of 20)",
-    tags: ["Cable Management", "Adhesive", "Organiser"],
-    summary: "Small, self‑adhesive cable clips that stick to the back of your desk or wall to route cables neatly. A cheap, transformative upgrade.",
-    properties: {
-      "Type": "Cable Clips", "Quantity": "20‑pack", "Material": "Silicone"
+      "Type": "Cable Raceway", "Material": "PVC"
     }
   },
   {
     id: "velcro-cable-ties", category: "gadgets", name: "Reusable Velcro Cable Ties", brand: "Amazon Basics", status: "Wishlist",
     price: "$7 (50 pack)",
     tags: ["Cable Management", "Reusable", "Velcro"],
-    summary: "The backbone of any clean setup. Reusable Velcro ties bundle cables together and can be repositioned. A must‑have.",
+    summary: "The backbone of any clean setup. Reusable Velcro ties bundle cables together and can be repositioned endlessly.",
     properties: {
-      "Type": "Cable Ties", "Quantity": "50‑pack", "Material": "Nylon Velcro"
-    }
-  },
-  {
-    id: "anker-power-strip", category: "gadgets", name: "Power Strip with USB‑C", brand: "Anker", status: "Wishlist",
-    topPickBadge: "Best Desktop Power Strip", price: "$29",
-    purchaseUrl: "https://www.anker.com/products/a9135-power-strip",
-    tags: ["Power Strip", "USB‑C", "Surge Protection", "Desktop"],
-    summary: "A compact desktop power strip with 3 AC outlets, 2 USB‑A, and 1 USB‑C (20W PD). Surge protection and a flat plug that fits behind furniture.",
-    properties: {
-      "Type": "Power Strip", "Outlets": "3 AC + 2 USB‑A + 1 USB‑C", "USB‑C Power": "20W PD", "Cord Length": "1.5m"
+      "Type": "Cable Ties", "Quantity": "50‑pack"
     }
   },
   {
@@ -198,45 +166,45 @@ window.DESK_GADGETS = [
     tags: ["Smart Plug", "Wi‑Fi", "Voice Control", "Energy Monitoring"],
     summary: "Wi‑Fi smart plugs with energy monitoring. Turn your desk peripherals on/off with your phone, schedule lights, or monitor power usage.",
     properties: {
-      "Type": "Smart Plug", "Connectivity": "Wi‑Fi 2.4 GHz", "Features": "Voice control, scheduling, energy monitor"
+      "Type": "Smart Plug", "Connectivity": "Wi‑Fi 2.4 GHz", "Features": "Voice control, scheduling"
+    }
+  },
+  {
+    id: "woody-wrist-rest", category: "gadgets", name: "Wooden Wrist Rest", brand: "Glorious", status: "Wishlist",
+    price: "$29",
+    tags: ["Wrist Rest", "Wood", "Mechanical Keyboard"],
+    summary: "A smooth, solid wood wrist rest that looks beautiful and supports your wrists during long typing sessions. Available for 60% to full‑size keyboards.",
+    properties: {
+      "Type": "Wrist Rest", "Material": "Wood", "Sizes": "60%, TKL, Full‑Size"
+    }
+  },
+  {
+    id: "benq-screenbar", category: "gadgets", name: "ScreenBar", brand: "BenQ", status: "Wishlist",
+    topPickBadge: "Best Monitor Light Bar", price: "$99",
+    purchaseUrl: "https://www.benq.com/en-us/lighting/monitor-light/screenbar.html",
+    tags: ["Lighting", "Monitor", "USB", "Eye Care"],
+    summary: "The gold‑standard monitor light bar. Clips onto any monitor, illuminates only the desk (no screen glare), auto‑dims, and has adjustable colour temperature.",
+    properties: {
+      "Type": "Monitor Light Bar", "Power": "USB", "Colour Temp": "2700K – 6500K"
     }
   },
   {
     id: "chair-mat-carpet", category: "gadgets", name: "Carpet Chair Mat", brand: "Lorell", status: "Wishlist",
     price: "$45",
-    tags: ["Chair Mat", "Carpet", "Office", "Floor Protection"],
-    summary: "Protects carpet from chair casters while allowing smooth rolling. Essential if your desk sits on carpet. Polycarbonate, clear, with a lip for under the desk.",
+    tags: ["Chair Mat", "Carpet", "Floor Protection"],
+    summary: "Protects carpet from chair casters while allowing smooth rolling. Essential if your desk sits on carpet.",
     properties: {
-      "Type": "Chair Mat", "Material": "Polycarbonate", "Compatibility": "Low‑ to medium‑pile carpet"
+      "Type": "Chair Mat", "Material": "Polycarbonate"
     }
   },
   {
-    id: "stream-deck-mk2", category: "gadgets", name: "Stream Deck MK.2", brand: "Elgato", status: "Wishlist",
-    topPickBadge: "Best Macro Pad for Productivity & Streaming", price: "$149",
-    purchaseUrl: "https://www.elgato.com/en/stream-deck-mk2",
-    tags: ["Macro Pad", "Streaming", "Productivity", "Customisable"],
-    summary: "15 customisable LCD keys that launch apps, control OBS, adjust volume, or trigger shortcuts. A game‑changer for streamers and power users alike.",
+    id: "stream-deck-xl", category: "gadgets", name: "Stream Deck XL", brand: "Elgato", status: "Wishlist",
+    topPickBadge: "Larger Macro Pad with 32 Keys", price: "$249",
+    purchaseUrl: "https://www.elgato.com/en/stream-deck-xl",
+    tags: ["Macro Pad", "Streaming", "Productivity"],
+    summary: "The big brother of the MK.2 with 32 LCD keys. Ideal for power users who want dedicated shortcuts for everything from OBS scenes to home automation.",
     properties: {
-      "Type": "Macro Pad", "Keys": "15 LCD buttons", "Software": "Stream Deck app (profiles, plugins)"
-    }
-  },
-  {
-    id: "usb-switch-2pc", category: "gadgets", name: "USB 3.0 Switch for 2 PCs", brand: "UGREEN", status: "Wishlist",
-    price: "$25",
-    tags: ["USB Switch", "KVM", "Sharing", "2 PCs"],
-    summary: "Share a keyboard, mouse, or other USB device between two computers with the press of a button. Cheaper than a full KVM switch.",
-    properties: {
-      "Type": "USB Switch", "Ports": "2‑in, 4‑out USB 3.0", "Button": "Physical switcher"
-    }
-  },
-  {
-    id: "portable-monitor-15", category: "gadgets", name: "15.6\" Portable Monitor", brand: "Arzopa", status: "Wishlist",
-    topPickBadge: "Best Budget Portable Second Screen", price: "$129",
-    purchaseUrl: "https://www.amazon.com/ARZOPA-Portable-Monitor-1920x1080-Speakers/dp/B0BXKFC6KR",
-    tags: ["Monitor", "Portable", "USB‑C", "Second Screen"],
-    summary: "A slim, lightweight 1080p portable monitor powered by a single USB‑C cable. Perfect as a secondary screen for laptops during travel or as a compact secondary desk monitor.",
-    properties: {
-      "Type": "Portable Monitor", "Resolution": "1920x1080 IPS", "Size": "15.6\"", "Connectivity": "USB‑C (power+video), mini HDMI"
+      "Type": "Macro Pad", "Keys": "32 LCD buttons"
     }
   }
 ];
