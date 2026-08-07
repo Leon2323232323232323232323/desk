@@ -70,6 +70,13 @@ window.DESK_DATA = {
       lifespan: "70 Million Clicks",
       feel: "Gold-plated electro-junction, crisp actuation feel, zero solder required (Hot-swappable).",
       bestFor: "ASUS Push-Fit Switch Socket II (M1/M2)"
+    },
+    "huano-yellow-5mm": {
+      name: "Huano Brown Shell Yellow Dot (6x6x5.0mm Square)",
+      force: "65g - 70g",
+      lifespan: "30 Million Clicks",
+      feel: "Near-silent (~35 dB), heavy tactile bump, compact 5.0mm vertical footprint.",
+      bestFor: "Middle Click (G3), DPI & Profile Buttons"
     }
   },
 
@@ -311,23 +318,23 @@ window.DESK_DATA = {
     {
       id: "keychron-m6",
       category: "mice",
-      name: "Keychron M6 Wireless",
+      name: "M6 Wireless",
       brand: "Keychron",
       status: "Wishlist",
       isTopPick: true,
       topPickBadge: "Best High-Refresh Productivity Mouse (MX Master Killer)",
       price: "$49 - $59",
       purchaseUrl: "https://www.keychron.com/products/keychron-m6-wireless-mouse",
-      tags: ["Productivity", "1000Hz Polling", "Dual-Wheel", "78g Ultra-Light", "PixArt 3395", "USB-C"],
-      summary: "The ultimate productivity alternative to the MX Master 3S. Solves the MX Master's biggest flaw by providing a 1000Hz gaming-grade polling rate (zero cursor jitter on 144Hz+ monitors), a 78g lightweight body, dual scroll wheels, and 100% solderable mechanical microswitches for $49.",
+      tags: ["Productivity", "1000Hz", "Dual-Wheel", "78g", "PixArt 3395"],
+      summary: "Lightweight 78g productivity mouse with 1000Hz polling, dual scroll wheels, and 100% mechanical switches. Solves the MX Master 3S's 125Hz cursor jitter on high-refresh displays.",
       properties: {
         "Ergonomic Rating": "9.6 / 10",
         "Grip Style Match": "Palm / Claw",
         "Wrist Strain Index": "Low (Sculpted Ergonomic Slope)",
         "Pinky Support": "Flared Right Side",
-        "Weight Profile": "78g Ultra-Light Productivity",
-        "Sensor & Speed": "PixArt 3395 (26,000 DPI) | 1000Hz Polling",
-        "Battery Specs": "800mAh Native USB-C (Up to 80 Hours)",
+        "Weight Profile": "78g Ultra-Light",
+        "Sensor & Speed": "PixArt 3395 (26K DPI) | 1000Hz Polling",
+        "Battery Specs": "800mAh USB-C (80 Hours)",
         "Switch Mounting": "100% Standard 3-Pin Through-Hole Mechanical"
       },
       procurement: [
@@ -373,10 +380,10 @@ window.DESK_DATA = {
         { name: "PTFE Glass Feet / Tiger Ice Skates", difficulty: "Easy", impact: "Creates effortless friction-free gliding across desk mats." }
       ],
       ergonomicDetails: {
-        scoreReason: "Scored 9.6/10 because it combines the ergonomic palm support and thumb wing of the MX Master 3S with a 78g lightweight body and 1000Hz polling rate. Completely eliminates wrist fatigue caused by heavy 141g office mice.",
+        scoreReason: "Combines MX Master 3S ergonomic palm support with 78g body and 1000Hz polling. Zero cursor lag on 144Hz+ monitors at half the weight and price.",
         specificShapeContour: "121.5mm length x 75.4mm width x 40.5mm height. Features a steep right-hand ergonomic slope, wide thumb rest ledge, side thumb wheel, and a dual-mode infinite scroll wheel.",
         comparisonVsCloseCompetitors: "Vs MX Master 3S: Keychron M6 is drastically better for high-refresh displays (1000Hz vs 125Hz limit) and almost half the weight (78g vs 141g), while costing half the price ($49 vs $99). Vs G502: M6 is 23.5g lighter and features a dedicated side thumb wheel for horizontal scrolling.",
-        gripCompatibility: "Ideal for Medium-to-Large hands using Palm or Claw grip.",
+        gripCompatibility: "Medium-to-Large hands, Palm or Claw grip.",
         wristAndPosture: "Neutral ergonomic tilt and low weight eliminate wrist drag and forearm strain."
       },
       pros: [
@@ -391,14 +398,14 @@ window.DESK_DATA = {
         "Lacks electromagnetic MagSpeed wheel auto-shifting (requires manual top button push for infinite spin)"
       ],
       setupNotes: [
-        "RECOMMENDED SILENT OFFICE MOD: Desolder stock Huano 80M mechanical switches and solder Huano Silent Square 2-Pin (7.3mm) switches on M1/M2 for an ultra-quiet 1000Hz productivity mouse.",
+        "SILENT MOD: Desolder stock Huano 80M mechanical switches and solder Huano Silent Square 2-Pin (7.3mm) switches on M1/M2 for an ultra-quiet 1000Hz productivity mouse.",
         "DUAL RECEIVER FEATURE: Includes both USB-C and USB-A 2.4GHz dongles for seamless laptop/desktop switching."
       ],
       buttonSwitchMapping: [
-        { buttonGroup: "Main Left & Right Click (Office Mod)", recommendedSwitchId: "huano-silent-yellow-73mm", reason: "Converts the 1000Hz M6 into an ultra-quiet (~35 dB) office mouse with 30M click durability." },
-        { buttonGroup: "Main Left & Right Click (Gaming Mod)", recommendedSwitchId: "huano-btspd-80m", reason: "Delivers deep 'thock' tactile clicks with max 80M click durability for FPS/MOBAs." },
-        { buttonGroup: "Side Forward & Back (M4 / M5)", recommendedSwitchId: "huano-bspd-80m", reason: "80M durability upgrade for side navigation." },
-        { buttonGroup: "Middle Scroll Click (G3)", recommendedSwitchId: "kailh-silent-5mm", reason: "30M click 5.0mm Kailh Mute switch fitting beneath the dual-mode scroll carriage." }
+        { buttonGroup: "Main Clicks (Office)", recommendedSwitchId: "huano-silent-yellow-73mm", reason: "Silent 30M, ~35 dB office-appropriate clicking." },
+        { buttonGroup: "Main Clicks (Gaming)", recommendedSwitchId: "huano-btspd-80m", reason: "Deep 'thock' with 80M durability for MOBAs/FPS." },
+        { buttonGroup: "Side Buttons", recommendedSwitchId: "huano-bspd-80m", reason: "80M side navigation upgrade." },
+        { buttonGroup: "Middle Click", recommendedSwitchId: "huano-yellow-5mm", reason: "5.0mm square switch under top scroll carriage." }
       ]
     },
 
@@ -1047,6 +1054,18 @@ window.DESK_DATA = {
         "BRIGHTNESS CALIBRATION: In SDR, set brightness to 120 nits (OLED Light ~30). Use Windows HDR Calibration for peak brightness mapping.",
         "ARM MOUNT: Use heavy-duty arm; the monitor is front-heavy. Cable management in arm’s channel is essential."
       ]
-    }
-  ]
-};
+    },
+
+    /* New Budget Monitors */
+    {
+      id: "gigabyte-m27q",
+      category: "monitors",
+      name: "M27Q (Rev 2.0)",
+      brand: "Gigabyte",
+      status: "Wishlist",
+      isTopPick: true,
+      topPickBadge: "Best Value 1440p 170Hz Gaming Monitor",
+      price: "$269 - $299",
+      purchaseUrl: "https://www.gigabyte.com/Monitor/M27Q-rev-20",
+      tags: ["1440p", "170Hz", "IPS", "KVM", "USB-C", "Budget"],
+      summary: "Excellent value 27-inch 1440p IPS gaming monitor with 170
