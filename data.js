@@ -7,6 +7,7 @@ window.DESK_DATA = {
     { id: "desks", label: "Desks & Standing Frames", icon: "table" }
   ],
 
+  // Central Procurement Lookup Dictionary for Taobao / AliExpress
   taobaoDictionary: {
     "G502_MAIN_SWITCH": "华诺 透明蓝壳粉点 8000万次",
     "G502_SIDE_SWITCH": "华诺 蓝壳粉点 8000万次",
@@ -26,6 +27,7 @@ window.DESK_DATA = {
     "FOIL_TAPE": "铝箔胶带 0.1mm"
   },
 
+  // Expanded Microswitch Reference Library
   microswitches: {
     "huano-btspd-80m": {
       name: "Huano Transparent Blue Shell Pink Dot (BTSPD)",
@@ -45,8 +47,29 @@ window.DESK_DATA = {
       name: "Huano Blue Shell Pink Dot 80M (90° Bent Pins)",
       force: "70g",
       lifespan: "80 Million Clicks",
-      feel: "Crisp tactile snap engineered for right-angle side PCB contact pads.",
+      feel: "Crisp tactile snap engineered specifically for right-angle side PCB contact pads.",
       bestFor: "Razer Basilisk M4/M5 Side Buttons"
+    },
+    "ttc-gold-80m": {
+      name: "TTC Dustproof Gold 80M",
+      force: "60g - 65g",
+      lifespan: "80 Million Clicks",
+      feel: "Crisp, bouncy actuation, high-frequency sound, dustproof wall enclosure.",
+      bestFor: "Main Clicks / Fast MOBAs & Shooters"
+    },
+    "kailh-gm8-blackmamba": {
+      name: "Kailh GM 8.0 Black Mamba",
+      force: "65g",
+      lifespan: "80 Million Clicks",
+      feel: "Very crisp, light actuation, sharp rebound feel.",
+      bestFor: "Main Clicks / High-Precision FPS"
+    },
+    "omron-d2f-01f": {
+      name: "Japanese Omron D2F-01F",
+      force: "50g - 60g",
+      lifespan: "10 Million Clicks",
+      feel: "Ultra-smooth tactile depression, gold alloy contacts, rich metallic tone.",
+      bestFor: "Custom Heavy Productivity / Light Click Enthusiasts"
     },
     "huano-yellow-5mm": {
       name: "Huano Brown Shell Yellow Dot (6x6x5.0mm Square)",
@@ -62,6 +85,13 @@ window.DESK_DATA = {
       feel: "Near-silent (~35–38 dB), firm tactile return without squishy rubber bottom-out.",
       bestFor: "Office Main Clicks (MX Master 3S, M650)"
     },
+    "huano-white-silent-73mm": {
+      name: "Huano Brown Shell White Dot Silent (6x6x7.3mm)",
+      force: "50g - 55g",
+      lifespan: "10 Million Clicks",
+      feel: "Ultra-soft, dampened click feel, whisper-quiet (~32 dB).",
+      bestFor: "Stealth Office / Silent Travel Mice"
+    },
     "zippy-df3-p1": {
       name: "Zippy DF3-P1 (3-Pin Mechanical)",
       force: "60g",
@@ -72,6 +102,9 @@ window.DESK_DATA = {
   },
 
   products: [
+    /* ==========================================================================
+       1. LOGITECH G502 LIGHTSPEED WIRELESS
+       ========================================================================== */
     {
       id: "g502-lightspeed",
       category: "mice",
@@ -87,15 +120,15 @@ window.DESK_DATA = {
       summary: "Primary daily workhorse for MOBAs, FPS, and high-DPI productivity. Features 11 fully programmable mechanical buttons, dual-mode hyper-fast scroll wheel, and complete switch moddability.",
       
       properties: {
-        "Weight": "114g Stock → 101.5g Modded",
-        "Sensor": "HERO 25K (100 - 25,600 DPI)",
-        "Polling Rate": "1000 Hz / 1ms",
-        "Stock Battery": "240mAh Li-Po (~48-60 hrs)",
-        "Modded Battery": "500mAh Li-Po (~120-130+ hrs runtime)",
-        "Acoustic Profile": "48–51 dB (Deep 'thock' with 0.5mm PORON foam lining)",
-        "Charging Port": "Micro-USB (Moddable to USB-C or 540° Magnetic Tip)",
-        "Switch Mounting": "100% Through-Hole Mechanical (All 11 Buttons)",
-        "Modding Difficulty": "Moderate (22 body screws, modular PCBs)"
+        "Ergonomic Rating": "9.5 / 10 (S-Tier Ergonomic Palm/Claw)",
+        "Grip Style Match": "Palm / Hybrid Claw (Medium to Large hands: 17.5 - 20.5 cm)",
+        "Wrist Strain Index": "Low (Deep thumb rest wing reduces pad friction)",
+        "Pinky Support": "Needs Sugru / Blu-Tack wing mod to eliminate right-side desk drag",
+        "Weight Profile": "114g Stock → 101.5g Modded (Weight-Neutral Battery Upgrade)",
+        "Sensor & Speed": "HERO 25K (100-25,600 DPI) | 1000Hz / 1ms Polling",
+        "Battery Specs": "240mAh Stock (48h) → 500mAh Modded (120h+ Runtime)",
+        "Acoustic Level": "48–51 dB (Deep 'thock' with 0.5mm PORON internal foam)",
+        "Switch Mounting": "100% Through-Hole Mechanical across all 11 buttons"
       },
 
       pros: [
@@ -104,7 +137,7 @@ window.DESK_DATA = {
         "G-Shift functionality enables up to 22 executable commands across 2 software layers",
         "Weight-neutral double battery capacity mod (upgrades to 500mAh while reducing net weight by 1.5g)",
         "High weight-reduction ceiling (induction coil, battery tray, & wheel swap saves ~18g total)",
-        "Ergonomic thumb rest with dedicated sniper clutch button"
+        "Sculpted thumb rest with dedicated sniper clutch button"
       ],
 
       cons: [
@@ -114,27 +147,61 @@ window.DESK_DATA = {
         "Complex disassembly requiring tracking 22 internal screws"
       ],
 
-      setupNotes: "CRITICAL BATTERY SAFETY WARNING: Standard aftermarket 3.7V Li-Po batteries often reverse Black (GND) and White (NTC) wires on JST 1.25mm 3-pin connectors. Logitech pinout is strictly Pin 1: Red (+), Pin 2: White (NTC/Temp), Pin 3: Black (-). Always depress plastic retention barbs and swap Black/White wires if needed before plugging into the PCB, or the charging IC will burn out.\n\nWEIGHT REDUCTION & BATTERY MATH:\n- Stock: 240mAh Cell (5.5g) + Plastic Mounting Cage (5.5g) = 11.0g\n- Modded: 500mAh Cell (9.0g) + Double-sided Tape (0.5g) = 9.5g\n- Net Weight Delta: -1.5g | Capacity Delta: +260mAh (+108% runtime).\n- Additional Weight Savings: Removed POWERPLAY bottom puck door (-5g), POWERPLAY copper induction coil (-5.5g), and swapped 14.5g steel wheel for 5.5g G903 aluminum wheel (-9g).\n\nNON-SWITCH HARDWARE MODS:\n1. Pinky Rest Mod: Molded Sugru / Bostik Blu-Tack along the lower right shell edge to eliminate pinky drag.\n2. USB-C Mod: Installed aftermarket G502 Wireless Type-C daughterboard (or 540° magnetic adapter).\n3. Acoustic Dampening: Lined lower plastic shell floor with 0.5mm self-adhesive Rogers PORON foam.",
+      setupNotes: `- CRITICAL BATTERY PINOUT SAFETY: Standard aftermarket 3.7V Li-Po batteries reverse GND (Black) and NTC (White) wires. Logitech pinout is strictly Pin 1: Red (+), Pin 2: White (NTC), Pin 3: Black (-). Swap wires on JST 1.25mm plug before connection.
+- BATTERY & WEIGHT MATH: Stock 240mAh cell (5.5g) + bracket (5.5g) = 11.0g. Upgraded 500mAh cell (9.0g) + tape (0.5g) = 9.5g. Delta: -1.5g net weight with +108% battery runtime.
+- WEIGHT SAVINGS CEILING: Remove POWERPLAY puck door (-5g), copper coil (-5.5g), and swap steel wheel for G903 aluminum wheel (-9g). Saves ~19.5g total.
+- PINKY REST MOD: Mold Sugru or Bostik Blu-Tack along the lower right edge to eliminate pinky drag on mousepads.
+- CHARGING PORT MOD: Install aftermarket G502 Wireless Type-C daughterboard or 540° magnetic charging tip.
+- ACOUSTIC TUNING: Line lower chassis floor with 0.5mm Rogers PORON foam to eliminate plastic echo.`,
+
+      softwareSetup: {
+        agentRequirement: "G HUB background agent (lghub_agent.exe) must run at startup for multi-step sequence macros (Hold Alt + Tab).",
+        baseLayer: "M1: Left Click | M2: Right Click (GestureSign) | M3: Middle Click | G4: M Alt-Tab Hold | G5: G-Shift Modifier | G7: Task View | G8: Play/Pause | Tilts: Scroll L/R",
+        gShiftLayer: "M1: Task View | M2: Minimize All | M3: Enter | G4: Screenshot | G5: Battery Check | G7: Brightness | Tilts: Desktop Swipe L/R"
+      },
 
       buttonSwitchMapping: [
         {
           buttonGroup: "Main Left & Right Click (M1 / M2)",
           recommendedSwitchId: "huano-btspd-80m",
-          reason: "Eliminates double-clicking, delivers deep 'thock' tone (~49–51 dB), and offers 80M click durability."
+          reason: "Eliminates double-clicking, delivers deep 'thock' tone (~49–51 dB), and offers 80M click durability. (Alt: TTC Dustproof Gold 80M)."
         },
         {
-          buttonGroup: "Side Buttons (G4 / G5) & Sniper Clutch",
+          buttonGroup: "Side Forward & Back (G4 / G5)",
           recommendedSwitchId: "huano-bspd-80m",
-          reason: "Solid housing creates complete tactile and acoustic uniformity across all thumb controls."
+          reason: "Solid housing creates complete tactile and acoustic uniformity with main clicks."
         },
         {
-          buttonGroup: "Middle Click (G3), DPI (G7 / G8), Profile (G9)",
+          buttonGroup: "Thumb Sniper / G-Shift Clutch",
+          recommendedSwitchId: "huano-bspd-80m",
+          reason: "Crisp 70g actuation prevents accidental sniper triggers during twitch mouse movements."
+        },
+        {
+          buttonGroup: "Middle Scroll Wheel Click (G3)",
           recommendedSwitchId: "huano-yellow-5mm",
-          reason: "5.0mm vertical height fits underneath scroll wheel cradle and DPI sub-assemblies."
+          reason: "5.0mm vertical footprint fits underneath scroll wheel cradle with heavy tactile feedback."
+        },
+        {
+          buttonGroup: "Index Finger DPI Up & Down (G7 / G8)",
+          recommendedSwitchId: "huano-yellow-5mm",
+          reason: "Compact 5.0mm square switch clears upper shell plastics."
+        },
+        {
+          buttonGroup: "Top Profile Switch Button (G9)",
+          recommendedSwitchId: "huano-yellow-5mm",
+          reason: "Durable 30M click square tactile switch replacing weak stock membrane button."
+        },
+        {
+          buttonGroup: "Scroll Wheel Tilt Left & Right",
+          recommendedSwitchId: "huano-yellow-5mm",
+          reason: "Ensures crisp horizontal scrolling response on scroll cradle assembly."
         }
       ]
     },
 
+    /* ==========================================================================
+       2. LOGITECH MX MASTER 3S
+       ========================================================================== */
     {
       id: "mx-master-3s",
       category: "mice",
@@ -150,14 +217,14 @@ window.DESK_DATA = {
       summary: "Dedicated stationary office productivity mouse featuring electromagnetic MagSpeed scrolling, side thumb wheel, gesture button, and ultra-quiet stock clicking.",
 
       properties: {
-        "Weight": "141g",
-        "Sensor": "Darkfield High Precision (8,000 DPI)",
-        "Polling Rate": "125 Hz",
-        "Battery Life": "Up to 70 days (500mAh Li-Po)",
-        "Charging Port": "USB-C Native",
-        "Stock Switch Height": "7.45mm (2-Pin Silent Square)",
-        "Modded Switch Height": "7.30mm (Requires 0.1mm plunger shim tape)",
-        "Modding Difficulty": "High (Fragile FFC ribbon cables & delicate PCB pads)"
+        "Ergonomic Rating": "9.8 / 10 (Gold Standard for Office Palm Grip)",
+        "Grip Style Match": "Strict Palm Grip (Fills palm fully, reduces forearm pronation)",
+        "Wrist Strain Index": "Ultra-Low (57° angled posture minimizes carpal tunnel pressure)",
+        "Pinky Support": "Full sculpted thumb wing; right side flared for ring/pinky rest",
+        "Weight Profile": "141g Heavy Stationary (High inertia, unsuitable for gaming)",
+        "Sensor & Speed": "Darkfield 8,000 DPI (Tracks on Glass) | 125Hz Polling Limit",
+        "Battery Specs": "500mAh Native USB-C (Up to 70 Days per charge)",
+        "Switch Mounting": "2-Pin Silent Square (7.45mm height stock)"
       },
 
       pros: [
@@ -172,25 +239,50 @@ window.DESK_DATA = {
         "Low 125Hz polling rate causes cursor jitter on high refresh rate displays (144Hz+)",
         "Heavy 141g weight causes wrist fatigue during fast mouse movements or gaming",
         "Stock silent switches prone to internal contact oxidation and rubber dampener fatigue",
-        "Fragile FFC ribbon cable and easily lifted PCB solder pads during manual desoldering"
+        "Fragile FFC ribbon cable and easily lifted PCB solder pads during desoldering"
       ],
 
-      setupNotes: "REPAIR & MODDING BLUEPRINT:\n- Lifted PCB Pad / Trace Repair: If a solder pad is torn during desoldering, scrape copper mask on the trace, apply Rosin Flux, and bridge a 0.1mm enamel jumper wire directly from the trace to the switch pin.\n- Pre-Travel Shim Tuning: Stock switches are 7.45mm high. Installing standard 7.30mm switches (e.g., Zippy DF3-P1 or Huano Silent) leaves a 0.15mm gap. Stick a 0.1mm micro-square of aluminum foil tape or electrical tape onto the underside of the upper shell button plungers to eliminate pre-travel slop.\n- Emergency Temporary Fix: Flushing failing switch housing with 91%+ Isopropyl Alcohol (IPA) temporarily dissolves contact oxidation before full soldering repair.",
+      setupNotes: `- TRACE REPAIR BLUEPRINT: If a solder pad is lifted during desoldering, scrape copper mask on the trace, apply Rosin Flux, and bridge a 0.1mm enamel jumper wire directly to the switch pin.
+- PRE-TRAVEL SHIM TUNING: Stock switches are 7.45mm tall. Standard 7.30mm switches (Zippy / Huano) leave a 0.15mm gap. Stick a 0.1mm micro-square of aluminum foil tape onto button plungers to eliminate pre-travel slop.
+- EMERGENCY CONTACT FIX: Flushing failing switches with 91%+ Isopropyl Alcohol (IPA) temporarily dissolves contact oxidation before full soldering repair.`,
 
       buttonSwitchMapping: [
         {
-          buttonGroup: "Main Left / Right (Option A - Silent)",
+          buttonGroup: "Main Left & Right Click (Option A - Silent)",
           recommendedSwitchId: "huano-silent-yellow-73mm",
           reason: "Matches stock silent acoustic profile (~35–38 dB) while providing a snappier tactile feel and 30M click lifespan."
         },
         {
-          buttonGroup: "Main Left / Right (Option B - Durability)",
+          buttonGroup: "Main Left & Right Click (Option B - Durability)",
           recommendedSwitchId: "zippy-df3-p1",
           reason: "Clipped Pin 3 mechanical mod. Eliminates squishy rubber feel, increases tactile feedback (~46 dB), and ensures 60M click durability."
+        },
+        {
+          buttonGroup: "Main Left & Right Click (Option C - Premium Feel)",
+          recommendedSwitchId: "omron-d2f-01f",
+          reason: "Japanese Omron mechanical switch. Delivers ultra-crisp tactile feel for heavy desktop productivity."
+        },
+        {
+          buttonGroup: "Middle Scroll Wheel Click (G3)",
+          recommendedSwitchId: "huano-yellow-5mm",
+          reason: "5.0mm square switch fits beneath electromagnetic MagSpeed wheel cage."
+        },
+        {
+          buttonGroup: "Thumb Gesture Wing Button",
+          recommendedSwitchId: "huano-yellow-5mm",
+          reason: "Replaces delicate stock tactile pad under the rubber thumb ledge."
+        },
+        {
+          buttonGroup: "Side Wheel Forward & Back Buttons",
+          recommendedSwitchId: "huano-silent-yellow-73mm",
+          reason: "Keeps side thumb navigation completely silent."
         }
       ]
     },
 
+    /* ==========================================================================
+       3. LOGITECH SIGNATURE M650
+       ========================================================================== */
     {
       id: "signature-m650",
       category: "mice",
@@ -206,13 +298,14 @@ window.DESK_DATA = {
       summary: "Compact, long-battery-life portable office mouse featuring SmartWheel adaptive scrolling, silent switch dampers, and simple dual-side button navigation.",
 
       properties: {
-        "Weight": "101g (including AA battery)",
-        "Sensor": "Logitech Advanced Optical (400 - 4000 DPI)",
-        "Polling Rate": "125 Hz",
-        "Battery Life": "Up to 24 months (1x AA Alkaline)",
-        "Connection": "Logi Bolt USB Receiver + Bluetooth LE",
+        "Ergonomic Rating": "7.5 / 10 (Compact Portable Ergonomics)",
+        "Grip Style Match": "Fingertip / Claw Grip (Small to Medium hands)",
+        "Wrist Strain Index": "Moderate (Lacks thumb wing support)",
+        "Weight Profile": "101g (Including 1x AA Alkaline Battery)",
+        "Sensor & Speed": "Logitech Optical (400-4000 DPI) | 125Hz Polling",
+        "Battery Specs": "1x AA Battery (Up to 24 Months Runtime)",
         "Switch Mounting": "2-Pin Through-Hole (Main: 7.3mm, Middle: 5.0mm)",
-        "Modding Difficulty": "Low (Simple 3-screw teardown)"
+        "Teardown Repairability": "10 / 10 (Simple 3-screw chassis tear-down)"
       },
 
       pros: [
@@ -229,22 +322,31 @@ window.DESK_DATA = {
         "125Hz polling rate limit"
       ],
 
-      setupNotes: "Assigned as a portable travel burner mouse or secondary backup unit. Teardown requires removing AA battery, peeling 3 bottom PTFE skates to expose 3 Phillips screws, and unclipping the SmartWheel plastic carriage.",
+      setupNotes: `- TEARDOWN SEQUENCE: Remove AA battery, peel 3 bottom PTFE skates using mild hairdryer heat, remove 3 Phillips screws, and gently unclip SmartWheel carriage.
+- BURNER MODDING: Excellent practice board for through-hole soldering before attempting complex G502 or MX Master 3S repairs.`,
 
       buttonSwitchMapping: [
         {
           buttonGroup: "Main Left & Right Click",
           recommendedSwitchId: "huano-silent-yellow-73mm",
-          reason: "Direct replacement for stock silent 2-pin switches. Provides 30M click lifespan with crisp tactile actuation."
+          reason: "Direct replacement for stock silent 2-pin switches. Delivers 30M click lifespan with crisp tactile actuation. (Alt: Huano White Dot Silent)."
         },
         {
           buttonGroup: "Middle Mouse Click (G3)",
           recommendedSwitchId: "huano-yellow-5mm",
           reason: "5.0mm height fits beneath SmartWheel carriage. Delivers heavy tactile bump and quiet operation."
+        },
+        {
+          buttonGroup: "Side Navigation Buttons (M4 / M5)",
+          recommendedSwitchId: "huano-silent-yellow-73mm",
+          reason: "Maintains silent acoustic profile across side thumb buttons."
         }
       ]
     },
 
+    /* ==========================================================================
+       4. RAZER BASILISK V3 X HYPERSPEED
+       ========================================================================== */
     {
       id: "basilisk-v3-x",
       category: "mice",
@@ -260,50 +362,8 @@ window.DESK_DATA = {
       summary: "Ergonomic wireless gaming mouse with thumb rest support, Razer 5G 18K optical sensor, and dual-mode wireless connectivity.",
 
       properties: {
-        "Weight": "110g (with AA battery)",
-        "Sensor": "Razer 5G Advanced 18,000 DPI",
-        "Polling Rate": "1000 Hz",
-        "Stock Acoustics": "57–60 dB (Loud hollow cavity echo)",
-        "Modded Acoustics": "49–52 dB (Dampened with 0.5mm PORON foam)",
-        "Battery Life": "Up to 235 hrs (2.4GHz) / 535 hrs (Bluetooth)",
-        "Power Source": "1x AA Battery",
-        "Switch Mounting": "3-Pin Mechanical (Main: Standard, Sides: 90° Bent Pin)",
-        "Modding Difficulty": "Moderate"
-      },
-
-      pros: [
-        "Ergonomic shell contour with comfortable thumb rest wing",
-        "Dual connectivity (2.4GHz HyperSpeed low-latency + Bluetooth LE)",
-        "Standard 3-pin mechanical main switch sockets allow custom switch soldering",
-        "Long battery life on single AA cells"
-      ],
-
-      cons: [
-        "High defect rate on 2.4GHz HyperSpeed USB dongle IC ('Device Descriptor Request Failed' thermal failure)",
-        "Hollow interior AA battery cavity creates loud acoustic echo chamber (~57–60 dB click volume)",
-        "Stiff 70g stock main switch springs cause finger fatigue",
-        "Side buttons require specialized 90° pre-bent pin switches"
-      ],
-
-      setupNotes: "Unit returned to Amazon Prime due to hardware-level solder micro-fracture / thermal failure in the 2.4GHz HyperSpeed USB receiver chip. If retained, internal plastic battery cavity walls must be lined with 0.5mm self-adhesive Rogers PORON foam to reduce click resonance from 60 dB down to 50 dB.",
-
-      buttonSwitchMapping: [
-        {
-          buttonGroup: "Main Left & Right Click",
-          recommendedSwitchId: "huano-btspd-80m",
-          reason: "Replaces stiff stock Razer Gen-2 switches. Lowers click force, increases tactile snap, and dampens high-pitched clack."
-        },
-        {
-          buttonGroup: "Side Buttons & Sniper Trigger",
-          recommendedSwitchId: "huano-bspd-90deg",
-          reason: "Requires 90° right-angle pre-bent pins to mate with vertical side PCB contacts."
-        },
-        {
-          buttonGroup: "Middle Click & DPI Cycle",
-          recommendedSwitchId: "huano-yellow-5mm",
-          reason: "5.0mm square switch clears scroll wheel cradle."
-        }
-      ]
-    }
-  ]
-};
+        "Ergonomic Rating": "9.0 / 10 (Ergonomic Right-Hand Sculpted)",
+        "Grip Style Match": "Palm / Claw Grip (Medium to Large hands)",
+        "Wrist Strain Index": "Low (Comfortable thumb ledge)",
+        "Weight Profile": "110g (With AA battery)",
+        "Sens
