@@ -131,4 +131,60 @@ window.DESK_MICE = [
       { buttonGroup: "Middle Click", recommendedSwitchId: "huano-yellow-5mm", reason: "5.0mm square switch under top scroll carriage." }
     ]
   }
+    // --- additional mice – excellent price‑to‑value ---
+  {
+    id: "razer-da-v3", category: "mice", name: "DeathAdder V3", brand: "Razer", status: "Wishlist",
+    topPickBadge: "Best light‑ergo wireless mouse", price: "$149",
+    purchaseUrl: "https://www.razer.com/gaming-mice/razer-deathadder-v3",
+    tags: ["Wireless", "63g", "Focus Pro 30K", "Ergonomic", "Lightweight"],
+    summary: "Ultra‑light 63g wireless ergonomic mouse with the flawless Focus Pro 30K sensor, optical switches, and up to 90h battery. Ideal for high‑DPI FPS/MOBA.",
+    properties: { "Ergonomic Rating": "9.2 / 10", "Grip Style Match": "Palm / Claw", "Weight Profile": "63g", "Sensor & Speed": "Focus Pro 30K | 1000Hz (4000Hz with dongle)", "Battery Specs": "90h (dongle) | USB‑C", "Switch Mounting": "Optical (main clicks), non‑solderable" },
+    pros: ["63g ultra‑lightweight", "Flawless sensor", "Comfortable large ergo shape", "USB‑C charging"],
+    cons: ["Optical clicks can't be swapped", "No Bluetooth", "Price premium for wireless"],
+    ergonomicDetails: { scoreReason: "Large, comfortable right‑hand shape with subtle finger grooves. Perfect for palm grip.", comparisonVsCloseCompetitors: "Vs G502 X: Lighter and more focused on competitive play. Vs Basilisk V3: cleaner shape, lower weight.", gripCompatibility: "Medium‑to‑Large hands, Palm/Claw" }
+  },
+  {
+    id: "logi-gpro-x-superlight", category: "mice", name: "G Pro X Superlight", brand: "Logitech", status: "Wishlist",
+    topPickBadge: "Best symmetrical wireless mouse", price: "$159",
+    purchaseUrl: "https://www.logitechg.com/en-us/products/gaming-mice/pro-x-superlight-wireless-mouse.html",
+    tags: ["Wireless", "63g", "HERO 25K", "Ambidextrous", "Pro"],
+    summary: "The esports staple. Only 63g, superb HERO sensor, and over 70h battery. Used by countless pros for its reliability and shape.",
+    properties: { "Ergonomic Rating": "8.8 / 10", "Grip Style Match": "Claw / Fingertip / Palm", "Weight Profile": "63g", "Sensor & Speed": "HERO 25K | 1000Hz", "Battery Specs": "70h | USB‑C (with included adapter)", "Switch Mounting": "Mechanical (3‑pin, but difficult to disassemble)" },
+    pros: ["Industry standard pro mouse", "Extremely light 63g", "Flawless wireless", "Long battery life"],
+    cons: ["Basic shape, no RGB", "Difficult to mod (switches)", "No USB‑C directly on mouse (adapter)"],
+    ergonomicDetails: { scoreReason: "Safe symmetrical shape works for most grip styles. Not as sculpted as ergo mice but extremely predictable.", comparisonVsCloseCompetitors: "Vs DeathAdder V3: symmetrical vs ergo, lighter clicks. Vs Lamzu Atlantis: similar weight, slightly different shape.", gripCompatibility: "Any hand size, all grip styles" }
+  },
+  {
+    id: "pulsar-x2", category: "mice", name: "X2 Wireless", brand: "Pulsar", status: "Wishlist",
+    topPickBadge: "Excellent value lightweight wireless", price: "$95",
+    purchaseUrl: "https://www.pulsar.gg/collections/x2-wireless",
+    tags: ["Wireless", "56g", "PAW3395", "Symmetrical", "Budget"],
+    summary: "Super light 56g wireless mouse with top‑tier PAW3395 sensor, crisp Huano switches, and flawless tracking at a great price.",
+    properties: { "Ergonomic Rating": "8.5 / 10", "Grip Style Match": "Claw / Fingertip", "Weight Profile": "56g", "Sensor & Speed": "PAW3395 | 1000Hz", "Battery Specs": "70h | USB‑C", "Switch Mounting": "Huano Blue Shell Pink Dot (mechanical, easily replaceable)" },
+    pros: ["Crazy light 56g", "Top sensor", "Good stock switches (Huano)", "Great value ~$95"],
+    cons: ["Shape might feel too flat for some", "Build quality occasionally has QC variance"],
+    ergonomicDetails: { scoreReason: "Low‑profile symmetrical shape, ideal for claw and fingertip. Very low weight reduces fatigue.", comparisonVsCloseCompetitors: "Vs Superlight: lighter, cheaper, but slightly different hump. Vs Lamzu Atlantis: similar price, different shape.", gripCompatibility: "Small‑to‑Medium hands, Claw/Fingertip" }
+  },
+  {
+    id: "lamzu-atlantis", category: "mice", name: "Atlantis", brand: "Lamzu", status: "Wishlist",
+    topPickBadge: "Best all‑rounder mid‑weight wireless", price: "$90",
+    purchaseUrl: "https://lamzu.com/products/lamzu-atlantis",
+    tags: ["Wireless", "55g", "PAW3395", "Symmetrical", "Colorways"],
+    summary: "Beautifully crafted 55g wireless mouse with the PAW3395 sensor, crisp mechanical switches, and multiple color options. A community favorite.",
+    properties: { "Ergonomic Rating": "9.0 / 10", "Grip Style Match": "Claw / Palm / Fingertip", "Weight Profile": "55g", "Sensor & Speed": "PAW3395 | 1000Hz", "Battery Specs": "70h | USB‑C", "Switch Mounting": "Mechanical (Kailh GM 8.0), replaceable" },
+    pros: ["Gorgeous design", "55g featherlight", "Excellent clicks", "Great value"],
+    cons: ["Less known brand support", "Side buttons may feel small for some"],
+    ergonomicDetails: { scoreReason: "Versatile medium‑hump symmetrical shape that accommodates many grips.", comparisonVsCloseCompetitors: "Vs Superlight: more pronounced hump, better clicks (Kailh GM 8.0). Vs X2: slightly more comfortable for palm.", gripCompatibility: "Medium‑to‑Large hands, all grip styles" }
+  },
+  {
+    id: "roccat-kone-pro-air", category: "mice", name: "Kone Pro Air", brand: "Roccat", status: "Wishlist",
+    topPickBadge: "Best ergo for large hands (value)", price: "$99",
+    purchaseUrl: "https://www.roccat.com/products/kone-pro-air",
+    tags: ["Wireless", "75g", "Owl‑Eye 19K", "Ergonomic", "RGB"],
+    summary: "Unique large ergonomic shape with a light 75g body, optical switches, and stunning RGB. Perfect for large hands seeking comfort.",
+    properties: { "Ergonomic Rating": "9.5 / 10", "Grip Style Match": "Palm / Claw", "Weight Profile": "75g", "Sensor & Speed": "Owl‑Eye 19K | 1000Hz", "Battery Specs": "100h | USB‑C", "Switch Mounting": "Optical (main clicks)" },
+    pros: ["Incredibly comfortable for large hands", "Long battery life", "Light for its size", "Beautiful RGB implementation"],
+    cons: ["Optical switches can't be modded", "Software (Swarm) can be finicky"],
+    ergonomicDetails: { scoreReason: "Deep thumb groove and high back hump fill the palm without forcing fingers. Exceptional for long work sessions.", comparisonVsCloseCompetitors: "Vs G502: Lighter, more pronounced ergo shape. Vs DeathAdder V3: larger, more relaxed palm support.", gripCompatibility: "Large hands, Palm/Claw" }
+  }
 ];
