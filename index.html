@@ -357,14 +357,33 @@
       border-radius: 6px;
     }
 
-    .mod-card {
-      background: rgba(0, 0, 0, 0.2);
+    .copy-item-card {
+      background: rgba(0, 0, 0, 0.25);
       border: 1px solid var(--border);
       border-radius: 6px;
       padding: 8px 12px;
       display: flex;
-      flex-direction: column;
-      gap: 2px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .btn-copy {
+      background: var(--primary-light);
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-copy:hover {
+      background: var(--primary);
+      color: #fff;
     }
 
     .switch-table { width: 100%; border-collapse: collapse; font-size: 12px; }
@@ -493,6 +512,11 @@
             const ergo = (item.ergonomicDetails && typeof item.ergonomicDetails === 'object') ? item.ergonomicDetails : null;
             const stockList = Array.isArray(item.stockSwitchesList) ? item.stockSwitchesList : [];
             const modsList = Array.isArray(item.modsAndAddons) ? item.modsAndAddons : [];
+            const procList = Array.isArray(item.procurement) ? item.procurement : [];
+            const repair = (item.repairability && typeof item.repairability === 'object') ? item.repairability : null;
+            const balance = (item.weightBalance && typeof item.weightBalance === 'object') ? item.weightBalance : null;
+            const software = (item.softwareConfig && typeof item.softwareConfig === 'object') ? item.softwareConfig : null;
+            const glides = (item.glidesAndPad && typeof item.glidesAndPad === 'object') ? item.glidesAndPad : null;
             const lifespan = (item.lifespanEstimates && typeof item.lifespanEstimates === 'object') ? item.lifespanEstimates : null;
             const pros = Array.isArray(item.pros) ? item.pros : [];
             const cons = Array.isArray(item.cons) ? item.cons : [];
@@ -502,7 +526,7 @@
             return `
               <div class="card ${isExpanded ? 'expanded' : ''}" id="card-${item.id}">
                 
-                <!-- Card Header -->
+                <!-- Header -->
                 <div class="card-header">
                   <div class="card-title-row">
                     <div>
@@ -517,7 +541,7 @@
                   <div class="card-summary">${item.summary || ''}</div>
                 </div>
 
-                <!-- Interactive Quick Spec Pills -->
+                <!-- Quick Specs Pills -->
                 <div class="quick-specs-grid">
                   <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'ergonomics')">
                     <span class="spec-key">Ergonomic Score ↗</span>
@@ -527,20 +551,134 @@
                     <span class="spec-key">Modded Life ↗</span>
                     <span class="spec-val">${lifespan ? lifespan.moddedSwitchesLife : 'N/A'}</span>
                   </div>
-                  <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'stock')">
-                    <span class="spec-key">Stock Buttons ↗</span>
-                    <span class="spec-val">${stockList.length} Button Types</span>
+                  <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'procurement')">
+                    <span class="spec-key">Taobao Parts Copy ↗</span>
+                    <span class="spec-val">${procList.length} Items</span>
                   </div>
-                  <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'mods')">
-                    <span class="spec-key">Mods & Add-ons ↗</span>
-                    <span class="spec-val">${modsList.length} Available</span>
+                  <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'repairability')">
+                    <span class="spec-key">Repair Risk Score ↗</span>
+                    <span class="spec-val">${repair ? repair.score : 'N/A'}</span>
                   </div>
                 </div>
 
                 <!-- Expanded Content Body -->
                 <div class="card-scroll-body">
                   
-                  <!-- 1. LIFESPAN ESTIMATION MATRIX -->
+                  <!-- 1. TAOBAO PROCUREMENT COPY BOX -->
+                  ${procList.length > 0 ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:procurement`) ? 'active' : ''}" id="sub-${item.id}-procurement">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'procurement')">
+                        <span class="sub-accordion-title">🛒 1-Click Taobao / Procurement Search String Copy Box</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <div style="display:flex; flex-direction:column; gap:6px;">
+                          ${procList.map(p => `
+                            <div class="copy-item-card">
+                              <div>
+                                <strong style="font-size:12px;">${p.label}</strong>
+                                <div style="font-size:11px; color:#fde047;">${p.cnTerm}</div>
+                              </div>
+                              <button class="btn-copy" onclick="window.deskApp.copyText('${p.cnTerm}', this)">Copy CN Term</button>
+                            </div>
+                          `).join('')}
+                        </div>
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 2. TEARDOWN & REPAIRABILITY SCORECARD -->
+                  ${repair ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:repairability`) ? 'active' : ''}" id="sub-${item.id}-repairability">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'repairability')">
+                        <span class="sub-accordion-title">🔬 Teardown & Repairability Scorecard</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <div class="lifespan-grid">
+                          <div class="lifespan-pill">
+                            <div class="spec-key">Solder / Teardown Risk</div>
+                            <div class="spec-val" style="color:var(--primary);">${repair.score}</div>
+                          </div>
+                          <div class="lifespan-pill">
+                            <div class="spec-key">Screw Count & Type</div>
+                            <div class="spec-val">${repair.screwCount}</div>
+                          </div>
+                          <div class="lifespan-pill">
+                            <div class="spec-key">Recommended Iron Temp</div>
+                            <div class="spec-val" style="color:#4ade80;">${repair.recommendedIronTemp}</div>
+                          </div>
+                        </div>
+                        ${Array.isArray(repair.fragilePoints) && repair.fragilePoints.length > 0 ? `
+                          <div class="comparison-box" style="margin-top:4px;">
+                            <strong>⚠️ High-Damage Risk Points During Disassembly:</strong>
+                            <ul class="bullet-list" style="margin-top:4px;">
+                              ${repair.fragilePoints.map(f => `<li>${f}</li>`).join('')}
+                            </ul>
+                          </div>
+                        ` : ''}
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 3. WEIGHT DISTRIBUTION & CENTER OF GRAVITY -->
+                  ${balance ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:weight`) ? 'active' : ''}" id="sub-${item.id}-weight">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'weight')">
+                        <span class="sub-accordion-title">⚖️ Center of Gravity (CoG) & Weight Balance Index</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+                          <div class="lifespan-pill">
+                            <div class="spec-key">Stock Mass Distribution</div>
+                            <div class="spec-val" style="color:#f87171;">${balance.stockBalance}</div>
+                          </div>
+                          <div class="lifespan-pill">
+                            <div class="spec-key">Modded Mass Distribution</div>
+                            <div class="spec-val" style="color:#4ade80;">${balance.moddedBalance}</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 4. SOFTWARE, MACROS & G-SHIFT MAPPING -->
+                  ${software ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:software`) ? 'active' : ''}" id="sub-${item.id}-software">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'software')">
+                        <span class="sub-accordion-title">🎛 Software, Macro & G-Shift Configuration</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <div style="font-size:12px;">
+                          <div><strong>Utility Software:</strong> ${software.utility}</div>
+                          <div style="margin-top:2px; color:var(--text-muted);"><strong>Background Process Requirement:</strong> ${software.runtimeDependency}</div>
+                        </div>
+                        ${software.baseLayer ? `<div class="comparison-box"><strong>Base Keybind Layer:</strong><p style="margin-top:2px;">${software.baseLayer}</p></div>` : ''}
+                        ${software.gShiftLayer ? `<div class="comparison-box"><strong>G-Shift / Modifier Layer:</strong><p style="margin-top:2px;">${software.gShiftLayer}</p></div>` : ''}
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 5. GLIDES, SKATES & MOUSEPAD FRICTION -->
+                  ${glides ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:glides`) ? 'active' : ''}" id="sub-${item.id}-glides">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'glides')">
+                        <span class="sub-accordion-title">⛸ Glides, Skates & Mousepad Surface Match</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <div style="display:flex; flex-direction:column; gap:4px; font-size:12px;">
+                          <div><strong>Stock Skates:</strong> ${glides.stockSkates}</div>
+                          <div><strong>Recommended Aftermarket Skates:</strong> ${glides.recommendedSkates}</div>
+                          <div><strong>Recommended Pad Surface:</strong> ${glides.recommendedPadType}</div>
+                        </div>
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 6. LIFESPAN ESTIMATION MATRIX -->
                   ${lifespan ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:lifespan`) ? 'active' : ''}" id="sub-${item.id}-lifespan">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'lifespan')">
@@ -570,7 +708,7 @@
                     </div>
                   ` : ''}
 
-                  <!-- 2. FACTORY STOCK SWITCHES PER BUTTON -->
+                  <!-- 7. FACTORY STOCK SWITCHES PER BUTTON -->
                   ${stockList.length > 0 ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:stock`) ? 'active' : ''}" id="sub-${item.id}-stock">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'stock')">
@@ -602,7 +740,7 @@
                     </div>
                   ` : ''}
 
-                  <!-- 3. MODS & ADD-ONS LIBRARY -->
+                  <!-- 8. MODS & ADD-ONS LIBRARY -->
                   ${modsList.length > 0 ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:mods`) ? 'active' : ''}" id="sub-${item.id}-mods">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'mods')">
@@ -612,7 +750,7 @@
                       <div class="sub-accordion-body">
                         <div style="display:flex; flex-direction:column; gap:6px;">
                           ${modsList.map(m => `
-                            <div class="mod-card">
+                            <div style="background:rgba(0,0,0,0.2); border:1px solid var(--border); border-radius:6px; padding:8px 12px;">
                               <div style="display:flex; justify-content:space-between; align-items:center;">
                                 <strong>${m.name}</strong>
                                 <span class="top-pick-tag" style="font-size:10px;">${m.difficulty || 'Mod'}</span>
@@ -625,7 +763,7 @@
                     </div>
                   ` : ''}
 
-                  <!-- 4. ERGONOMICS & DETAILED SHAPE COMPARISON -->
+                  <!-- 9. ERGONOMICS & SHAPE ANALYSIS -->
                   ${ergo ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:ergonomics`) ? 'active' : ''}" id="sub-${item.id}-ergonomics">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'ergonomics')">
@@ -660,7 +798,7 @@
                     </div>
                   ` : ''}
 
-                  <!-- 5. TECHNICAL SPECS -->
+                  <!-- 10. TECHNICAL SPECS -->
                   ${Object.keys(props).length > 0 ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:properties`) ? 'active' : ''}" id="sub-${item.id}-properties">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'properties')">
@@ -680,7 +818,7 @@
                     </div>
                   ` : ''}
 
-                  <!-- 6. PROS & CONS -->
+                  <!-- 11. PROS & CONS -->
                   ${(pros.length > 0 || cons.length > 0) ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:proscons`) ? 'active' : ''}" id="sub-${item.id}-proscons">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'proscons')">
@@ -700,7 +838,7 @@
                     </div>
                   ` : ''}
 
-                  <!-- 7. CUSTOM MICROSWITCH RECOMMENDATIONS -->
+                  <!-- 12. CUSTOM MICROSWITCH RECOMMENDATIONS -->
                   ${switchMappings.length > 0 ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:switches`) ? 'active' : ''}" id="sub-${item.id}-switches">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'switches')">
@@ -736,7 +874,7 @@
                     </div>
                   ` : ''}
 
-                  <!-- 8. MODDING & REPAIR BULLET NOTES -->
+                  <!-- 13. MODDING & REPAIR BULLET NOTES -->
                   ${setupNotes.length > 0 ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:notes`) ? 'active' : ''}" id="sub-${item.id}-notes">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'notes')">
@@ -761,7 +899,7 @@
 
                 <!-- Card Expand Footer Bar -->
                 <div class="card-expand-bar" onclick="window.deskApp.toggleCard('${item.id}')">
-                  <span>${isExpanded ? '▲ Close Card Sections' : '▼ Expand Sub-Sections (Stock Buttons, Mods, Lifespan, Ergonomics)'}</span>
+                  <span>${isExpanded ? '▲ Close Card Sections' : '▼ Expand Sub-Sections (Taobao Box, Repair, Specs, Mods)'}</span>
                   <span>${item.price || ''}</span>
                 </div>
 
@@ -812,6 +950,22 @@
         }, 60);
       }
 
+      function copyText(str, btnEl) {
+        navigator.clipboard.writeText(str).then(() => {
+          const orig = btnEl.innerText;
+          btnEl.innerText = 'Copied! ✓';
+          btnEl.style.background = '#22c55e';
+          btnEl.style.color = '#fff';
+          setTimeout(() => {
+            btnEl.innerText = orig;
+            btnEl.style.background = '';
+            btnEl.style.color = '';
+          }, 1500);
+        }).catch(() => {
+          alert('Copy failed: ' + str);
+        });
+      }
+
       function setupEventListeners() {
         categoryNav.addEventListener('click', (e) => {
           const navItem = e.target.closest('.nav-item');
@@ -833,6 +987,11 @@
           const filtered = getFilteredProducts();
           filtered.forEach(p => {
             expandedCardIds.add(p.id);
+            activeSubSections.add(`${p.id}:procurement`);
+            activeSubSections.add(`${p.id}:repairability`);
+            activeSubSections.add(`${p.id}:weight`);
+            activeSubSections.add(`${p.id}:software`);
+            activeSubSections.add(`${p.id}:glides`);
             activeSubSections.add(`${p.id}:lifespan`);
             activeSubSections.add(`${p.id}:stock`);
             activeSubSections.add(`${p.id}:mods`);
@@ -852,7 +1011,7 @@
         });
       }
 
-      window.deskApp = { toggleCard, toggleSub, openAndJump };
+      window.deskApp = { toggleCard, toggleSub, openAndJump, copyText };
 
       init();
     })();
