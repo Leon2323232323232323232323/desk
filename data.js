@@ -1,6 +1,3 @@
-// Copy and paste this complete, upgraded database file directly into your data.js file.
-// It includes the 4 original mice PLUS 3 top-tier candidates (Keychron M6, Logitech G502 X LIGHTSPEED, ASUS ROG Chakram X Origin).
-
 window.DESK_DATA = {
   categories: [
     { id: "mice", label: "Mice & Input", icon: "mouse" },
@@ -105,6 +102,44 @@ window.DESK_DATA = {
         "Switch Mounting": "100% Through-Hole Mechanical (All 11)"
       },
 
+      procurement: [
+        { label: "Main Switches (M1/M2)", cnTerm: "华诺 透明蓝壳粉点 8000万次" },
+        { label: "Side Switches (G4/G5/Sniper)", cnTerm: "华诺 蓝壳粉点 8000万次" },
+        { label: "Square 5mm Switches (G3/G7/G8/G9)", cnTerm: "6x6x5mm 微动 开关 5000万次" },
+        { label: "Type-C Daughterboard", cnTerm: "G502无线 Type-C 改装小板" },
+        { label: "Light Scroll Wheel", cnTerm: "G903 铝合金滚轮" },
+        { label: "500mAh Battery (3.7V)", cnTerm: "3.7V 500mAh 1.25 3P 锂电池" },
+        { label: "PTFE Skates", cnTerm: "G502 LIGHTSPEED 脚贴 虎符冰符" }
+      ],
+
+      repairability: {
+        score: "6.5 / 10 (Moderate Risk)",
+        screwCount: "22 Screws (Phillips #0)",
+        fragilePoints: [
+          "G4/G5 side-button vertical PCB ribbon cable ZIF latch",
+          "Factory lead-free solder on mainboard requires ~350°C to melt"
+        ],
+        recommendedIronTemp: "340°C - 350°C (Use flux paste)"
+      },
+
+      weightBalance: {
+        stockBalance: "Front-Heavy (14.5g steel scroll wheel tilts nose down)",
+        moddedBalance: "Perfect Center (G903 aluminum wheel swap shifts mass to mid-shell)"
+      },
+
+      softwareConfig: {
+        utility: "Logitech G HUB + Onboard Memory Manager (OMM.exe)",
+        runtimeDependency: "lghub_agent.exe required for Alt+Tab sequence hold macros",
+        baseLayer: "M1: Left | M2: Right (GestureSign) | M3: Middle | G4: Alt-Tab Hold | G5: G-Shift | G7: Task View | G8: Play/Pause | Tilts: Scroll L/R",
+        gShiftLayer: "M1: Task View | M2: Minimize All | M3: Enter | G4: Screenshot | G5: Battery Check | Tilts: Desktop Swipe L/R"
+      },
+
+      glidesAndPad: {
+        stockSkates: "Factory Black PTFE (High friction / scratchy on raw wood)",
+        recommendedSkates: "Tiger Ice v2 / Corepad Pro Pure White PTFE",
+        recommendedPadType: "4mm/5mm Cloth Desk Mat (Dampens acoustic vibration and absorbs heavy mouse impacts)"
+      },
+
       lifespanEstimates: {
         chassisLife: "7 - 10 Years (HERO 25K Sensor & main PCB durability)",
         stockSwitchesLife: "6 - 12 Months (~5M - 10M Clicks before low-voltage double-clicking)",
@@ -204,6 +239,43 @@ window.DESK_DATA = {
         "Switch Mounting": "2-Pin Silent Square (7.45mm height)"
       },
 
+      procurement: [
+        { label: "Silent Switches (Option A)", cnTerm: "华诺 棕壳黄点 静音方型微动 6x6x7.3" },
+        { label: "Mechanical Switches (Option B)", cnTerm: "ZIPPY DF3-P1 6000万次" },
+        { label: "0.1mm Enamel Wire", cnTerm: "漆包线 飞线 0.1mm" },
+        { label: "Rosin Flux Paste", cnTerm: "机械师 助焊膏" },
+        { label: "Plunger Shim Tape", cnTerm: "铝箔胶带 0.1mm" },
+        { label: "PTFE Skates", cnTerm: "MX Master 3S 脚贴 虎符冰符" }
+      ],
+
+      repairability: {
+        score: "4.0 / 10 (High Risk)",
+        screwCount: "6 Screws (Torx T5/T6 + Phillips #0)",
+        fragilePoints: [
+          "Fragile white FFC ribbon cable connecting top gesture board to lower mainboard",
+          "PCB solder pads lift easily if desoldered above 360°C"
+        ],
+        recommendedIronTemp: "330°C - 340°C"
+      },
+
+      weightBalance: {
+        stockBalance: "Center-Rear Heavy (141g total mass with heavy Li-Po cell)",
+        moddedBalance: "Center-Rear Heavy"
+      },
+
+      softwareConfig: {
+        utility: "Logi Options+ / GestureSign",
+        runtimeDependency: "LogiOptionsPlus_Agent.exe",
+        baseLayer: "MagSpeed Auto-Shift Wheel | Side Wheel: Horizontal Scroll | Gesture Wing: Hold & Drag for Desktops",
+        gShiftLayer: "N/A (Managed via Logi Options+ Smart Actions)"
+      },
+
+      glidesAndPad: {
+        stockSkates: "Factory Thin Black PTFE",
+        recommendedSkates: "Corepad Skatez Replacement Glides",
+        recommendedPadType: "Works directly on Glass, Wood, or Leather Desk Pads (Darkfield 8K sensor)"
+      },
+
       lifespanEstimates: {
         chassisLife: "6 - 8 Years (Darkfield 8K sensor & MagSpeed electromagnetic wheel)",
         stockSwitchesLife: "8 - 18 Months (~3M - 8M Clicks before silent dampener collapse)",
@@ -264,7 +336,7 @@ window.DESK_DATA = {
     },
 
     /* ==========================================================================
-       3. KEYCHRON M6 WIRELESS (RECOMMENDED FUTURE PURCHASES)
+       3. KEYCHRON M6 WIRELESS
        ========================================================================== */
     {
       id: "keychron-m6",
@@ -289,6 +361,36 @@ window.DESK_DATA = {
         "Sensor & Speed": "PixArt 3395 (26,000 DPI) | 1000Hz Polling",
         "Battery Specs": "800mAh Native USB-C (Up to 80 Hours)",
         "Switch Mounting": "100% Standard 3-Pin Through-Hole Mechanical"
+      },
+
+      procurement: [
+        { label: "Main Silent Switches", cnTerm: "环诺 黄点 静音微动 2脚 7.3" },
+        { label: "PTFE Skates", cnTerm: "Keychron M6 脚贴" }
+      ],
+
+      repairability: {
+        score: "8.5 / 10 (Easy Risk)",
+        screwCount: "4 Screws (Phillips #0 under skates)",
+        fragilePoints: ["Top scroll wheel carriage spring tension during reassembly"],
+        recommendedIronTemp: "330°C - 350°C"
+      },
+
+      weightBalance: {
+        stockBalance: "Perfect Center (78g ultra-lightweight balanced frame)",
+        moddedBalance: "Perfect Center"
+      },
+
+      softwareConfig: {
+        utility: "Keychron Engine Web/Desktop App",
+        runtimeDependency: "None (Saves 100% directly to hardware onboard memory)",
+        baseLayer: "Dual Wheels (Top Infinite Spin + Side Thumb Wheel)",
+        gShiftLayer: "N/A"
+      },
+
+      glidesAndPad: {
+        stockSkates: "White Virgin Grade PTFE",
+        recommendedSkates: "Stock Virgin PTFE / Tiger Ice Dots",
+        recommendedPadType: "Speed Cloth Mat / Hybrid Synthetic Pad"
       },
 
       lifespanEstimates: {
@@ -346,7 +448,7 @@ window.DESK_DATA = {
     },
 
     /* ==========================================================================
-       4. ASUS ROG CHAKRAM X ORIGIN (SOLDER-FREE HOT-SWAP ENTHUSIAST)
+       4. ASUS ROG CHAKRAM X ORIGIN
        ========================================================================== */
     {
       id: "rog-chakram-x",
@@ -371,6 +473,36 @@ window.DESK_DATA = {
         "Sensor & Speed": "ROG AimPoint (36,000 DPI) | 8000Hz Wired / 1000Hz 2.4G",
         "Battery Specs": "Native USB-C + Qi Wireless Charging (114h Runtime)",
         "Switch Mounting": "Push-Fit Socket II (100% Hot-Swappable / Zero Solder)"
+      },
+
+      procurement: [
+        { label: "Main Switches (Hot-Swap)", cnTerm: "华诺 透明蓝壳粉点 8000万次" },
+        { label: "PTFE Skates", cnTerm: "ROG Chakram X 脚贴" }
+      ],
+
+      repairability: {
+        score: "10 / 10 (Zero Risk / Toolless Hot-Swap)",
+        screwCount: "0 Screws (Magnetic Top Cover & Button Shell)",
+        fragilePoints: ["None (Push-Fit Switch Sockets II require ZERO soldering)"],
+        recommendedIronTemp: "NO SOLDERING REQUIRED (Toolless Switch Puller)"
+      },
+
+      weightBalance: {
+        stockBalance: "Center Heavy (123g modular frame with magnetic shell)",
+        moddedBalance: "Center Heavy"
+      },
+
+      softwareConfig: {
+        utility: "ASUS Armoury Crate",
+        runtimeDependency: "ArmouryCrateUserSession.exe",
+        baseLayer: "Analog/Digital 4-Way Thumb Joystick + Top DPI Switch",
+        gShiftLayer: "Armoury Crate Profile Layers"
+      },
+
+      glidesAndPad: {
+        stockSkates: "100% PTFE Rounded-Edge Feet",
+        recommendedSkates: "Stock ROG 100% PTFE Glides",
+        recommendedPadType: "Hard Plastic or Hybrid Speed Pad"
       },
 
       lifespanEstimates: {
@@ -428,7 +560,7 @@ window.DESK_DATA = {
     },
 
     /* ==========================================================================
-       5. LOGITECH G502 X LIGHTSPEED (NEXT-GEN G502 SUCCESSOR)
+       5. LOGITECH G502 X LIGHTSPEED
        ========================================================================== */
     {
       id: "g502-x-lightspeed",
@@ -455,6 +587,36 @@ window.DESK_DATA = {
         "Switch Mounting": "LIGHTFORCE Hybrid Optical (Main M1/M2)"
       },
 
+      procurement: [
+        { label: "PTFE Skates", cnTerm: "G502 X LIGHTSPEED 虎符脚贴" },
+        { label: "Grip Tape", cnTerm: "G502 X 防滑贴" }
+      ],
+
+      repairability: {
+        score: "5.0 / 10 (Optical Switches SMT)",
+        screwCount: "18 Screws (Phillips #0)",
+        fragilePoints: ["Main M1/M2 switches are surface-mounted LIGHTFORCE opto-hybrid units (Cannot be desoldered)"],
+        recommendedIronTemp: "Do not attempt soldering main M1/M2 clicks"
+      },
+
+      weightBalance: {
+        stockBalance: "Slightly Front-Balanced (99g stock weight)",
+        moddedBalance: "Center Balanced"
+      },
+
+      softwareConfig: {
+        utility: "Logitech G HUB / Onboard Memory Manager (OMM)",
+        runtimeDependency: "lghub_agent.exe",
+        baseLayer: "M1: Left | M2: Right | Reversible Sniper Clutch | Tilts: Scroll L/R",
+        gShiftLayer: "Secondary Command Layer"
+      },
+
+      glidesAndPad: {
+        stockSkates: "Large White PTFE Glides",
+        recommendedSkates: "Tiger Ice v2 G502 X Skates",
+        recommendedPadType: "Cloth Pad / Desk Mat"
+      },
+
       lifespanEstimates: {
         chassisLife: "7 - 10 Years (HERO 25K Sensor & USB-C native port)",
         stockSwitchesLife: "5 - 8+ Years (LIGHTFORCE optical beam eliminates mechanical contact wear)",
@@ -478,7 +640,7 @@ window.DESK_DATA = {
       ergonomicDetails: {
         scoreReason: "Scored 9.4/10. Refines the classic G502 ergonomic shell with a lower 99g weight and a reversible/removable thumb sniper button that accommodates different hand sizes.",
         specificShapeContour: "131.4mm length x 79.2mm width x 41.1mm height. Redesigned lower profile thumb rest ledge and flattened right side contour.",
-        comparisonVs CloseCompetitors: "Vs Original G502 LIGHTSPEED: G502 X is 15g lighter (99g vs 114g), features native USB-C, and uses LIGHTFORCE optical switches that never double-click. However, main switches CANNOT be soldered with traditional 3-pin mechanical switches like Huano BTSPD.",
+        comparisonVsCloseCompetitors: "Vs Original G502 LIGHTSPEED: G502 X is 15g lighter (99g vs 114g), features native USB-C, and uses LIGHTFORCE optical switches that never double-click. However, main switches CANNOT be soldered with traditional 3-pin mechanical switches like Huano BTSPD.",
         gripCompatibility: "Optimal for Medium-to-Large hands using Palm or Hybrid Claw grip.",
         wristAndPosture: "Thumb ledge eliminates pad drag and 99g weight reduces wrist inertia."
       },
@@ -535,6 +697,37 @@ window.DESK_DATA = {
         "Battery Specs": "1x AA Battery (24 Months)",
         "Switch Mounting": "2-Pin Through-Hole (Main: 7.3mm, Middle: 5.0mm)",
         "Teardown Repairability": "10 / 10 (3-Screw Disassembly)"
+      },
+
+      procurement: [
+        { label: "Main Silent Switches", cnTerm: "华诺 棕壳黄点 静音方型微动 6x6x7.3" },
+        { label: "5mm Middle Switch", cnTerm: "6x6x5mm 2脚 静音微动" },
+        { label: "PTFE Skates", cnTerm: "Logitech M650 脚贴" }
+      ],
+
+      repairability: {
+        score: "10 / 10 (Simple Burner Teardown)",
+        screwCount: "3 Screws (Phillips #0 under bottom skates)",
+        fragilePoints: ["SmartWheel plastic carriage alignment spring"],
+        recommendedIronTemp: "330°C - 350°C"
+      },
+
+      weightBalance: {
+        stockBalance: "Rear-Heavy (101g with 1x AA Alkaline Battery)",
+        moddedBalance: "Slightly Rear-Heavy (Can use AAA battery adapter to drop 12g)"
+      },
+
+      softwareConfig: {
+        utility: "Logi Options+",
+        runtimeDependency: "LogiOptionsPlus_Agent.exe",
+        baseLayer: "SmartWheel Adaptive Scroll + 2 Side Navigation Buttons",
+        gShiftLayer: "N/A"
+      },
+
+      glidesAndPad: {
+        stockSkates: "Factory Black PTFE",
+        recommendedSkates: "Tiger Ice M650 Replacement Skates",
+        recommendedPadType: "Standard Cloth Mousepad"
       },
 
       lifespanEstimates: {
@@ -616,6 +809,41 @@ window.DESK_DATA = {
         "Acoustic Rating": "57-60 dB Stock → 50 dB Modded",
         "Power Source": "1x AA Battery (235h 2.4G / 535h BT)",
         "Switch Mounting": "3-Pin Mechanical (Main: Std, Sides: 90° Bent)"
+      },
+
+      procurement: [
+        { label: "Main Switches", cnTerm: "华诺 透明蓝壳粉点 8000万次" },
+        { label: "Side Switches (90° Bent)", cnTerm: "华诺 蓝壳粉点 弯脚" },
+        { label: "Acoustic Foam Sheet", cnTerm: "0.5mm PORON 泡棉板 带背胶" },
+        { label: "PTFE Skates", cnTerm: "Razer Basilisk V3 X 脚贴" }
+      ],
+
+      repairability: {
+        score: "6.0 / 10 (Moderate)",
+        screwCount: "5 Screws (Phillips #0 under skates)",
+        fragilePoints: [
+          "HyperSpeed 2.4GHz USB receiver dongle IC micro-fractures",
+          "Side buttons require 90° bent pin switches"
+        ],
+        recommendedIronTemp: "340°C - 350°C"
+      },
+
+      weightBalance: {
+        stockBalance: "Rear-Heavy (110g with AA battery in rear cavity)",
+        moddedBalance: "Slightly Rear-Heavy"
+      },
+
+      softwareConfig: {
+        utility: "Razer Synapse 3",
+        runtimeDependency: "Razer Synapse Service.exe",
+        baseLayer: "Razer Hypershift Modifier Layer + DPI Cycle",
+        gShiftLayer: "Razer Hypershift Commands"
+      },
+
+      glidesAndPad: {
+        stockSkates: "Virgin PTFE Skates",
+        recommendedSkates: "Tiger Ice Basilisk V3 Skates",
+        recommendedPadType: "PORON Foam Lined Mousepad"
       },
 
       lifespanEstimates: {
