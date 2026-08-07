@@ -437,7 +437,7 @@
     <main>
       <header>
         <div class="search-box">
-          <input type="text" id="searchInput" placeholder="Search mouse, switches, specs, mods...">
+          <input type="text" id="searchInput" placeholder="Search across all hardware...">
         </div>
         <div class="controls-group">
           <button class="btn-action" id="btnExpandAll">Expand All Cards</button>
@@ -452,191 +452,30 @@
     </main>
   </div>
 
-  <!-- ================== EMBEDDED DATA ================== -->
-  <script>
-    window.DESK_DATA = {
-      categories: [
-        { id: "mice", label: "Mice & Input", icon: "mouse" },
-        { id: "monitors", label: "Monitors", icon: "monitor" },
-        { id: "keyboards", label: "Keyboards", icon: "keyboard" },
-        { id: "chairs", label: "Chairs & Ergonomics", icon: "chair" },
-        { id: "desks", label: "Desks & Standing Frames", icon: "table" }
-      ],
+  <!-- Data files (modular) -->
+  <script src="data-core.js"></script>
+  <script src="data-mice.js"></script>
+  <script src="data-monitors.js"></script>
+  <!-- Future data files will be added here, e.g.:
+       <script src="data-keyboards.js"></script>
+       <script src="data-chairs.js"></script>
+       <script src="data-desks.js"></script>
+  -->
+  <script src="data-assemble.js"></script>
 
-      microswitches: {
-        "huano-btspd-80m": { name: "Huano Transparent Blue Shell Pink Dot (BTSPD)", force: "65g - 70g", lifespan: "80 Million Clicks", feel: "Deep 'thock' sound (~49–52 dB), extremely snappy return, zero pre-travel slop.", bestFor: "Main Left/Right Clicks (M1/M2)" },
-        "huano-bspd-80m": { name: "Huano Solid Blue Shell Pink Dot (BSPD)", force: "70g", lifespan: "80 Million Clicks", feel: "Ultra-crisp snap, sharp tactile bump, highly consistent actuation.", bestFor: "Side Thumb Buttons & Sniper Trigger" },
-        "huano-bspd-90deg": { name: "Huano Blue Shell Pink Dot 80M (90° Bent Pins)", force: "70g", lifespan: "80 Million Clicks", feel: "Crisp tactile snap engineered for right-angle side PCB contact pads.", bestFor: "Razer Basilisk M4/M5 Side Buttons" },
-        "kailh-5mm-tactile": { name: "Kailh 6x6x5.0mm High-Durability Tactile (50M)", force: "65g - 70g", lifespan: "50 Million Clicks", feel: "Maximum durability 2-pin 5.0mm square tactile switch. Ultra-crisp rebound, sharp tactile snap, built for heavy non-silent usage.", bestFor: "G502 Middle Click, DPI Up/Down & Profile Buttons" },
-        "kailh-silent-5mm": { name: "Kailh Mute 6x6x5.0mm Silent Square 2-Pin", force: "60g - 65g", lifespan: "30 Million Clicks", feel: "Near-silent (~35 dB) muted actuation with a cushioned rubber bottom-out and solid 5.0mm vertical fit.", bestFor: "Office Middle Mouse Clicks & Gesture Wing Buttons (MX Master 3S, M650, Keychron M6)" },
-        "huano-silent-yellow-73mm": { name: "Huano Silent Square Yellow Dot 2-Pin (6x6x7.3mm)", force: "60g - 65g", lifespan: "30 Million Clicks", feel: "Near-silent (~35–38 dB), firm tactile return without squishy rubber bottom-out.", bestFor: "Office Main Clicks (MX Master 3S, M650)" },
-        "zippy-df3-p1": { name: "Zippy DF3-P1 (3-Pin Mechanical)", force: "60g", lifespan: "60 Million Clicks", feel: "Tactile mechanical snap (~46 dB acoustic profile), gold-alloy oxidation resistant contacts.", bestFor: "MX Master 3S High-Durability Mod (Clipped Pin 3)" },
-        "omron-d2f-01f": { name: "Japanese Omron D2F-01F", force: "50g - 60g", lifespan: "10 Million Clicks", feel: "Ultra-smooth tactile depression, gold alloy contacts, rich metallic tone.", bestFor: "Custom Heavy Productivity / Light Click Enthusiasts" },
-        "rog-microswitch-70m": { name: "ASUS ROG Push-Fit Micro Switch (70M)", force: "65g", lifespan: "70 Million Clicks", feel: "Gold-plated electro-junction, crisp actuation feel, zero solder required (Hot-swappable).", bestFor: "ASUS Push-Fit Switch Socket II (M1/M2)" },
-        "huano-yellow-5mm": { name: "Huano Brown Shell Yellow Dot (6x6x5.0mm Square)", force: "65g - 70g", lifespan: "30 Million Clicks", feel: "Near-silent (~35 dB), heavy tactile bump, compact 5.0mm vertical footprint.", bestFor: "Middle Click (G3), DPI & Profile Buttons" }
-      },
-
-      products: [
-        // ------------------ MICE ------------------
-        {
-          id: "g502-lightspeed", category: "mice", name: "G502 LIGHTSPEED Wireless", brand: "Logitech", status: "Owned", isTopPick: true,
-          topPickBadge: "Best Overall Ergonomic & Moddable Gaming Mouse", price: "$79 - $110",
-          purchaseUrl: "https://www.logitechg.com/en-us/products/gaming-mice/g502-lightspeed-wireless-gaming-mouse.910-005565.html",
-          tags: ["Wireless", "11 Buttons", "HERO 25K", "100% Mechanical", "G-Shift", "Solder Moddable"],
-          summary: "Primary daily workhorse for MOBAs, FPS, and high-DPI productivity. Features 11 fully programmable mechanical buttons, dual-mode hyper-fast scroll wheel, and complete switch moddability.",
-          properties: { "Ergonomic Rating": "9.5 / 10", "Grip Style Match": "Palm / Hybrid Claw", "Wrist Strain Index": "Low (Thumb Rest Wing)", "Pinky Support": "Requires Sugru / Blu-Tack Mod", "Weight Profile": "114g Stock → 101.5g Modded", "Sensor & Speed": "HERO 25K | 1000Hz Polling", "Battery Specs": "240mAh Stock → 500mAh Modded (120h+)", "Switch Mounting": "100% Through-Hole Mechanical (All 11)" },
-          procurement: [ { label: "Main Switches (M1/M2)", cnTerm: "华诺 透明蓝壳粉点 8000万次" }, { label: "Side Switches (G4/G5/Sniper)", cnTerm: "华诺 蓝壳粉点 8000万次" }, { label: "Square 5mm Switches (G3/G7/G8/G9)", cnTerm: "6x6x5mm 微动 开关 5000万次" }, { label: "Type-C Daughterboard", cnTerm: "G502无线 Type-C 改装小板" }, { label: "Light Scroll Wheel", cnTerm: "G903 铝合金滚轮" }, { label: "500mAh Battery (3.7V)", cnTerm: "3.7V 500mAh 1.25 3P 锂电池" }, { label: "PTFE Skates", cnTerm: "G502 LIGHTSPEED 脚贴 虎符冰符" } ],
-          repairability: { score: "6.5 / 10 (Moderate Risk)", screwCount: "22 Screws (Phillips #0)", fragilePoints: ["G4/G5 side-button vertical PCB ribbon cable ZIF latch", "Factory lead-free solder on mainboard requires ~350°C to melt"], recommendedIronTemp: "340°C - 350°C (Use flux paste)" },
-          weightBalance: { stockBalance: "Front-Heavy (14.5g steel scroll wheel tilts nose down)", moddedBalance: "Perfect Center (G903 aluminum wheel swap shifts mass to mid-shell)" },
-          softwareConfig: { utility: "Logitech G HUB + Onboard Memory Manager (OMM.exe)", runtimeDependency: "lghub_agent.exe required for Alt+Tab sequence hold macros", baseLayer: "M1: Left | M2: Right (GestureSign) | M3: Middle | G4: Alt-Tab Hold | G5: G-Shift | G7: Task View | G8: Play/Pause | Tilts: Scroll L/R", gShiftLayer: "M1: Task View | M2: Minimize All | M3: Enter | G4: Screenshot | G5: Battery Check | Tilts: Desktop Swipe L/R" },
-          glidesAndPad: { stockSkates: "Factory Black PTFE (High friction / scratchy on raw wood)", recommendedSkates: "Tiger Ice v2 / Corepad Pro Pure White PTFE", recommendedPadType: "4mm/5mm Cloth Desk Mat (Dampens acoustic vibration and absorbs heavy mouse impacts)" },
-          lifespanEstimates: { chassisLife: "7 - 10 Years (HERO 25K Sensor & main PCB durability)", stockSwitchesLife: "6 - 12 Months (~5M - 10M Clicks before low-voltage double-clicking)", moddedSwitchesLife: "5 - 8+ Years (80 Million Clicks via Huano BTSPD gold contacts)", limitingFactor: "Li-Po battery chemical capacity decay (~3-5 years) or main scroll wheel mechanical axle wear." },
-          stockSwitchesList: [ { buttonGroup: "Main Left & Right (M1/M2)", switchModel: "Omron D2FC-F-K (50M)", lifespan: "50M Rated (Fails ~5M-10M in wireless mode)", sound: "52 - 55 dB (High clack)" }, { buttonGroup: "Side Forward & Back (G4/G5)", switchModel: "Omron D2FC-F-7N (20M)", lifespan: "20M Clicks", sound: "50 - 52 dB" }, { buttonGroup: "Thumb Sniper Clutch", switchModel: "Omron D2FC-F-7N (20M)", lifespan: "20M Clicks", sound: "50 - 52 dB" }, { buttonGroup: "Middle Scroll Click (G3)", switchModel: "Standard 2-Pin Tactile DIP (5.0mm)", lifespan: "10M Clicks", sound: "48 - 50 dB" }, { buttonGroup: "Index Finger DPI Up/Down (G7/G8)", switchModel: "Standard 2-Pin Tactile DIP (5.0mm)", lifespan: "10M Clicks", sound: "48 - 50 dB" }, { buttonGroup: "Top Profile Switch (G9)", switchModel: "Standard 2-Pin Tactile DIP (5.0mm)", lifespan: "10M Clicks", sound: "48 - 50 dB" }, { buttonGroup: "Scroll Tilts (Left/Right)", switchModel: "Standard 2-Pin Tactile DIP (5.0mm)", lifespan: "10M Clicks", sound: "48 - 50 dB" } ],
-          modsAndAddons: [ { name: "USB-C Daughterboard Conversion Mod", difficulty: "Easy", impact: "Replaces recessed Micro-USB port with native USB-C charging." }, { name: "500mAh Double Battery Upgrade", difficulty: "Moderate", impact: "Doubles battery runtime from 48h to 120h+ with net 1.5g weight reduction." }, { name: "G903 Aluminum Scroll Wheel Swap", difficulty: "Moderate", impact: "Cuts 9g of front-heavy mass (14.5g steel wheel -> 5.5g aluminum wheel)." }, { name: "POWERPLAY Coil & Bottom Door Removal", difficulty: "Easy", impact: "Saves 10.5g of unnecessary bottom chassis weight." }, { name: "Sugru / Bostik Blu-Tack Pinky Rest Wing", difficulty: "Easy", impact: "Eliminates right-side pinky desk drag on mousepads." }, { name: "0.5mm Rogers PORON Acoustic Foam Lining", difficulty: "Easy", impact: "Lowers high-pitched plastic shell resonance by 3-4 dB." }, { name: "Corepad / Tiger Ice PTFE Skates", difficulty: "Easy", impact: "Upgrades glide speed and stops bottom drag." } ],
-          ergonomicDetails: { scoreReason: "Scored 9.5/10 for its asymmetrical right-hand contour, 14mm flared thumb rest wing, and double-beveled index DPI buttons.", specificShapeContour: "132mm length x 75mm width x 40mm arch height.", comparisonVsCloseCompetitors: "Vs Razer Basilisk V3: G502's thumb wing has a steeper grip angle. Vs MX Master 3S: G502 is 11mm lower in height, allowing fast twitch movements and 1000Hz gaming polling.", gripCompatibility: "Optimal for Medium-to-Large hands using Palm or Hybrid Claw grip.", wristAndPosture: "18° downward ergonomic slope reduces wrist pronation while thumb rest removes pad drag." },
-          pros: ["100% mechanical through-hole switches across all 11 buttons (fully solder-replaceable)", "Dual-mode scroll wheel", "G-Shift functionality", "Weight-neutral double battery capacity mod"],
-          cons: ["Stock Omron 50M switches prone to double-click", "Front-heavy stock weight", "Recessed Micro-USB port"],
-          setupNotes: ["BATTERY PINOUT: Pin 1 Red(+), Pin 2 White(NTC), Pin 3 Black(-)", "WEIGHT SAVINGS: Remove POWERPLAY puck door (-5g), copper coil (-5.5g), steel wheel swap (-9g) = ~19.5g saved"],
-          buttonSwitchMapping: [ { buttonGroup: "M1/M2", recommendedSwitchId: "huano-btspd-80m", reason: "Eliminates double-clicking, deep 'thock' tone." }, { buttonGroup: "G4/G5", recommendedSwitchId: "huano-bspd-80m", reason: "80M durability, tactile uniformity." }, { buttonGroup: "G3", recommendedSwitchId: "kailh-5mm-tactile", reason: "50M click rated 5.0mm Kailh tactile switch." } ]
-        },
-        {
-          id: "mx-master-3s", category: "mice", name: "MX Master 3S", brand: "Logitech", status: "Owned", isTopPick: true,
-          topPickBadge: "Best Dedicated Stationary Productivity Mouse", price: "$99",
-          purchaseUrl: "https://www.logitech.com/en-us/products/mice/mx-master-3s.910-006557.html",
-          tags: ["Productivity", "MagSpeed Wheel", "Darkfield 8K", "Silent Clicks", "USB-C"],
-          summary: "Dedicated stationary office productivity mouse with MagSpeed scrolling, side thumb wheel, gesture button, and ultra-quiet clicks.",
-          properties: { "Ergonomic Rating": "9.8 / 10", "Grip Style Match": "Strict Palm Grip", "Wrist Strain Index": "Ultra-Low (57° Tilt Angle)", "Weight Profile": "141g Heavy Stationary", "Sensor & Speed": "Darkfield 8K (Glass) | 125Hz Polling", "Battery Specs": "500mAh Native USB-C (70 Days)", "Switch Mounting": "2-Pin Silent Square (7.45mm height)" },
-          procurement: [ { label: "Silent Switches (Option A)", cnTerm: "华诺 棕壳黄点 静音方型微动 6x6x7.3" }, { label: "Mechanical Switches (Option B)", cnTerm: "ZIPPY DF3-P1 6000万次" } ],
-          repairability: { score: "4.0 / 10 (High Risk)", screwCount: "6 Screws (Torx T5/T6 + Phillips #0)", fragilePoints: ["Fragile white FFC ribbon cable", "Easily lifted solder pads"], recommendedIronTemp: "330°C - 340°C" },
-          weightBalance: { stockBalance: "Center-Rear Heavy (141g total mass)", moddedBalance: "Center-Rear Heavy" },
-          softwareConfig: { utility: "Logi Options+", runtimeDependency: "LogiOptionsPlus_Agent.exe", baseLayer: "MagSpeed Auto-Shift Wheel | Side Wheel: Horizontal Scroll | Gesture Wing" },
-          glidesAndPad: { stockSkates: "Factory Thin Black PTFE", recommendedSkates: "Corepad Skatez Replacement Glides", recommendedPadType: "Works on Glass, Wood, Leather (Darkfield 8K sensor)" },
-          lifespanEstimates: { chassisLife: "6 - 8 Years", stockSwitchesLife: "8 - 18 Months", moddedSwitchesLife: "5 - 7+ Years (60M via Zippy DF3-P1 or 30M Huano Silent)", limitingFactor: "Fragile FFC ribbon cables or rubber coating peeling." },
-          ergonomicDetails: { scoreReason: "Gold standard for office desk work.", specificShapeContour: "125mm x 84.3mm x 51mm. Steep 57° vertical incline.", comparisonVsCloseCompetitors: "Vs MX Anywhere 3S: Full palm fill. Vs G502: Better for office, not for gaming.", gripCompatibility: "Medium to Large hands, Palm Grip only.", wristAndPosture: "57° elevated ergonomic angle reduces forearm pronation." },
-          pros: ["Electromagnetic MagSpeed wheel", "Thumb gesture button & horizontal side wheel", "Darkfield 8K sensor", "Ultra-quiet stock clicks", "Native USB-C"],
-          cons: ["125Hz polling causes jitter on 144Hz+ displays", "Heavy 141g", "Silent switches prone to oxidation/dampener fatigue", "Fragile FFC ribbon cable"],
-          setupNotes: ["TRACE REPAIR: 0.1mm enamel jumper wire + Rosin Flux.", "PRE-TRAVEL SHIM: 0.1mm aluminum foil tape on plungers."],
-          buttonSwitchMapping: [ { buttonGroup: "M1/M2 (Silent)", recommendedSwitchId: "huano-silent-yellow-73mm", reason: "~35 dB, 30M clicks." }, { buttonGroup: "M1/M2 (Durability)", recommendedSwitchId: "zippy-df3-p1", reason: "60M click mechanical mod." } ]
-        },
-        {
-          id: "keychron-m6", category: "mice", name: "M6 Wireless", brand: "Keychron", status: "Wishlist", isTopPick: true,
-          topPickBadge: "Best High-Refresh Productivity Mouse (MX Master Killer)", price: "$49 - $59",
-          purchaseUrl: "https://www.keychron.com/products/keychron-m6-wireless-mouse",
-          tags: ["Productivity", "1000Hz", "Dual-Wheel", "78g", "PixArt 3395"],
-          summary: "Lightweight 78g productivity mouse with 1000Hz polling and dual scroll wheels.",
-          properties: { "Ergonomic Rating": "9.6 / 10", "Grip Style Match": "Palm / Claw", "Weight Profile": "78g Ultra-Light", "Sensor & Speed": "PixArt 3395 (26K DPI) | 1000Hz Polling", "Battery Specs": "800mAh USB-C (80 Hours)", "Switch Mounting": "100% Standard 3-Pin Through-Hole Mechanical" },
-          ergonomicDetails: { scoreReason: "Combines MX Master 3S ergonomics with 78g and 1000Hz.", comparisonVsCloseCompetitors: "Vs MX Master 3S: 1000Hz vs 125Hz, 78g vs 141g, $49 vs $99." },
-          pros: ["1000Hz polling", "78g ultra-lightweight", "Dual scroll wheels", "100% mechanical switches (solder-replaceable)"],
-          cons: ["Stock clicks ~48 dB", "No electromagnetic MagSpeed wheel"],
-          setupNotes: ["SILENT MOD: Swap to Huano Silent Yellow Dot 7.3mm."],
-          buttonSwitchMapping: [ { buttonGroup: "Main Clicks (Office)", recommendedSwitchId: "huano-silent-yellow-73mm", reason: "Silent 30M, ~35 dB." } ]
-        },
-        {
-          id: "signature-m650", category: "mice", name: "Signature M650", brand: "Logitech", status: "Owned",
-          topPickBadge: "Best Compact Burner / Portable Mouse", price: "$39",
-          tags: ["Portable", "AA Battery", "SmartWheel", "Silent Touch"],
-          summary: "Compact, long-battery-life portable office mouse with SmartWheel and silent switches.",
-          properties: { "Ergonomic Rating": "7.5 / 10", "Grip Style Match": "Fingertip / Claw", "Weight Profile": "101g (With 1x AA Battery)", "Sensor & Speed": "Logitech Optical | 125Hz Polling", "Switch Mounting": "2-Pin Through-Hole (Main: 7.3mm, Middle: 5.0mm)" },
-          ergonomicDetails: { scoreReason: "Small and flat, ideal for travel but not prolonged use for large hands." },
-          pros: ["24-month battery life", "SmartWheel", "Quiet silent-touch clicking", "Easy to disassemble and solder"],
-          cons: ["No onboard memory", "Basic optical sensor", "Stock middle-click fatigue"],
-          setupNotes: ["TEARDOWN: 3 screws under skates.", "BURNER MODDING: Great practice board."],
-          buttonSwitchMapping: [ { buttonGroup: "Main Clicks", recommendedSwitchId: "huano-silent-yellow-73mm", reason: "30M click lifespan." } ]
-        },
-        // ------------------ MONITORS ------------------
-        {
-          id: "asus-pg279qm", category: "monitors", name: "ROG Swift PG279QM", brand: "ASUS", status: "Owned", isTopPick: true,
-          topPickBadge: "Best Overall High-Refresh Gaming Monitor (1440p 240Hz)", price: "$799",
-          purchaseUrl: "https://rog.asus.com/monitors/27-to-31-5-inches/rog-swift-pg279qm-model/",
-          tags: ["1440p", "240Hz", "IPS", "G-Sync", "Fast-IPS"],
-          summary: "Primary high-refresh gaming monitor. 27-inch 1440p Fast-IPS with a true 240Hz overclockable panel, NVIDIA Reflex Latency Analyzer, and exceptional color accuracy.",
-          properties: { "Screen Size": "27-inch Flat", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "240Hz (Native) / 270Hz OC via DP", "Response Time": "1ms (GtG)", "Panel Technology": "Fast-IPS (AHVA)" },
-          panelDetails: { panelTech: "AUO M270DAN08.0 Fast-IPS (AHVA)", colorGamut: "98% DCI-P3 / 160% sRGB", deltaE: "< 2 (Factory Calibrated)", osdPreset: "Racing Mode → Color Temp: User (R97 G98 B100), Overdrive: Normal, Dark Boost: Off." },
-          procurement: [ { label: "Monitor Arm (Heavy Duty)", cnTerm: "桌面显示器支架 承重10公斤 气压弹簧" } ],
-          softwareConfig: { utility: "ASUS DisplayWidget Center / NVIDIA Control Panel", runtimeDependency: "None", baseLayer: "G-Sync On, 240Hz, 10-bit color (via DSC)" },
-          glidesAndPad: { stockSkates: "VESA 100x100 Mount & Sturdy Ergonomic Stand", recommendedSkates: "Amazon Basics Premium Single Monitor Stand or Ergotron LX", recommendedPadType: "Desk Clamp Grommet Mount" },
-          lifespanEstimates: { chassisLife: "6 – 8 years", limitingFactor: "IPS glow permanence or G-Sync module capacitor degradation." },
-          ergonomicDetails: { scoreReason: "9.8/10 – Fully adjustable stand, ideal 109 PPI at 50-80 cm.", specificShapeContour: "Ultra-thin 3-sided frameless design.", comparisonVsCloseCompetitors: "Vs Alienware AW2721D: Better sRGB clamp and NVIDIA Reflex." },
-          pros: ["True 240Hz (270Hz OC)", "Factory-calibrated wide gamut", "NVIDIA Reflex built-in", "Excellent stand"],
-          cons: ["No HDMI 2.1", "HDR 400 mediocre", "$799 pricey"],
-          setupNotes: ["DESK MOUNT: Ergotron LX arm.", "OSD CALIBRATION: Overdrive Normal for gaming, sRGB Emulation for photo work."]
-        },
-        {
-          id: "dell-u2723qe", category: "monitors", name: "UltraSharp U2723QE", brand: "Dell", status: "Owned", isTopPick: true,
-          topPickBadge: "Best 4K Productivity & USB-C Hub Monitor", price: "$619",
-          purchaseUrl: "https://www.dell.com/en-us/shop/dell-ultrasharp-27-4k-usb-c-hub-monitor-u2723qe/apd/210-bdpf/monitors-monitor-accessories",
-          tags: ["4K", "IPS Black", "USB-C 90W", "Daisy Chain", "KVM"],
-          summary: "Secondary productivity monitor with IPS Black panel (2000:1 contrast), USB-C hub with 90W PD, RJ45 Ethernet, and KVM.",
-          properties: { "Screen Size": "27-inch Flat", "Resolution": "3840 x 2160 (4K UHD)", "Refresh Rate": "60Hz", "Response Time": "5ms (GtG)", "Panel Technology": "IPS Black (LGD AH-IPS)" },
-          panelDetails: { panelTech: "IPS Black (LGD LM270WR8-SSA1)", colorGamut: "100% sRGB, 98% DCI-P3", deltaE: "< 2", osdPreset: "Standard Mode, Color Temp: 6500K; For sRGB: Color Space → sRGB mode." },
-          procurement: [ { label: "VESA Gas Spring Arm", cnTerm: "显示器支架 气压弹簧 承重 8公斤" } ],
-          softwareConfig: { utility: "Dell Display Manager 2.0", runtimeDependency: "DDM.exe", baseLayer: "Easy Arrange grid, PIP/PBP" },
-          glidesAndPad: { stockSkates: "Fully Adjustable Stand", recommendedSkates: "Single gas spring monitor arm", recommendedPadType: "Desk grommet mount" },
-          lifespanEstimates: { chassisLife: "8 – 10 years", limitingFactor: "LED backlight aging or USB-C hub controller failure." },
-          ergonomicDetails: { scoreReason: "9.5/10 – Perfect 4K 27″ clarity (163 PPI), USB-C single cable reduces clutter." },
-          pros: ["IPS Black panel – 2000:1 contrast", "Comprehensive USB-C hub with 90W charging, Ethernet, KVM", "Factory-calibrated (Delta E < 2)", "Daisy chain support"],
-          cons: ["60Hz only", "Edge-lit HDR mediocre", "No built-in speakers"],
-          setupNotes: ["USB-C DOCKING: Single cable to laptop, KVM auto-switches.", "DAISY CHAIN: Enable MST in OSD for dual 4K@60Hz."]
-        },
-        {
-          id: "lg-27gr95qe", category: "monitors", name: "UltraGear 27GR95QE-B", brand: "LG", status: "Wishlist",
-          topPickBadge: "OLED Upgrade Candidate", price: "$799 - $999",
-          purchaseUrl: "https://www.lg.com/us/monitors/lg-27gr95qe-b-gaming-monitor",
-          tags: ["OLED", "240Hz", "0.03ms", "1440p", "G-Sync", "HDMI 2.1"],
-          summary: "27-inch 1440p OLED gaming monitor with true 0.03ms response time, per-pixel dimming, and HDMI 2.1.",
-          properties: { "Screen Size": "27-inch Flat", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "240Hz (Native)", "Response Time": "0.03ms (GtG OLED)", "Panel Technology": "OLED (WOLED MLA+)" },
-          panelDetails: { panelTech: "LG WOLED with MLA+", colorGamut: "98.5% DCI-P3", deltaE: "< 1", osdPreset: "Gamer 1 → Black Stabilizer: 50, Response Time: Fast, OLED Care features ON." },
-          procurement: [ { label: "OLED Cleaning Kit", cnTerm: "OLED屏幕清洁剂 无酒精" } ],
-          softwareConfig: { utility: "LG OnScreen Control", runtimeDependency: "None" },
-          glidesAndPad: { stockSkates: "VESA 100x100 Mount + Sturdy Stand", recommendedSkates: "Ergotron HX heavy-duty arm", recommendedPadType: "Desk clamp mount with steel reinforcement" },
-          lifespanEstimates: { chassisLife: "4 – 6 years", limitingFactor: "OLED burn-in risk." },
-          ergonomicDetails: { scoreReason: "9.2/10 – Superb motion clarity and infinite contrast, but ABL can cause brightness shifts." },
-          pros: ["Infinite contrast, zero blooming", "Phenomenal motion clarity (0.03ms)", "240Hz refresh rate", "HDMI 2.1"],
-          cons: ["Burn-in risk", "SDR full-screen brightness limited (~200 nits)", "No USB-C video input"],
-          setupNotes: ["OLED CARE: Enable Screen Move, Screen Saver, run Pixel Cleaning every 4 hours.", "TASKBAR: Auto-hide taskbar, black wallpaper, no desktop icons."]
-        },
-        {
-          id: "gigabyte-m27q", category: "monitors", name: "M27Q (Rev 2.0)", brand: "Gigabyte", status: "Wishlist", isTopPick: true,
-          topPickBadge: "Best Value 1440p 170Hz Gaming Monitor", price: "$269 - $299",
-          purchaseUrl: "https://www.gigabyte.com/Monitor/M27Q-rev-20",
-          tags: ["1440p", "170Hz", "IPS", "KVM", "USB-C", "Budget"],
-          summary: "Excellent value 27-inch 1440p IPS gaming monitor with 170Hz, built-in KVM, and USB-C.",
-          properties: { "Screen Size": "27-inch Flat", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "170Hz (OC)", "Response Time": "1ms (MPRT) / 4ms (GtG)", "Panel Technology": "IPS (SS IPS)" },
-          panelDetails: { panelTech: "Sharp IGZO SS IPS", colorGamut: "95% DCI-P3", deltaE: "~2.5", osdPreset: "Overdrive: Balanced, Black Equalizer: 10." },
-          procurement: [ { label: "Monitor Arm", cnTerm: "显示器支架 气压弹簧 5公斤" } ],
-          softwareConfig: { utility: "Gigabyte OSD Sidekick", runtimeDependency: "OSD_Sidekick.exe" },
-          glidesAndPad: { stockSkates: "VESA 100x100 + Sturdy Stand", recommendedSkates: "Single gas spring monitor arm", recommendedPadType: "Desk clamp mount" },
-          lifespanEstimates: { chassisLife: "5 – 7 years", limitingFactor: "KVM USB controller chip or backlight LED aging." },
-          ergonomicDetails: { scoreReason: "8.5/10 – Good height/tilt/pivot adjustment, lightweight for arm mounting." },
-          pros: ["Outstanding value (~$280)", "Built-in KVM with USB-C", "95% DCI-P3", "G-Sync Compatible"],
-          cons: ["Response times slightly behind premium", "Factory calibration adequate but not pro-grade", "USB-C only 18W (no laptop charging)"],
-          setupNotes: ["KVM SETUP: Connect keyboard/mouse to USB-A ports, USB-C to laptop.", "OVERDRIVE: Set to 'Balanced'."]
-        },
-        {
-          id: "dell-s2722qc", category: "monitors", name: "S2722QC", brand: "Dell", status: "Wishlist", isTopPick: true,
-          topPickBadge: "Best Budget 4K USB-C Productivity Monitor", price: "$269 - $309",
-          purchaseUrl: "https://www.dell.com/en-us/shop/dell-27-4k-uhd-usb-c-monitor-s2722qc/apd/210-bccp/monitors-monitor-accessories",
-          tags: ["4K", "USB-C 65W", "IPS", "Budget", "VESA"],
-          summary: "Affordable 27-inch 4K IPS monitor with USB-C 65W power delivery, AMD FreeSync, and built-in speakers.",
-          properties: { "Screen Size": "27-inch Flat", "Resolution": "3840 x 2160 (4K UHD)", "Refresh Rate": "60Hz", "Response Time": "4ms (GtG)", "Panel Technology": "IPS" },
-          panelDetails: { panelTech: "IPS (LG Display LM270WR4-SSC1 variant)", colorGamut: "99% sRGB", deltaE: "~2.0", osdPreset: "Standard mode, Brightness: 75%, Response Time: Normal." },
-          procurement: [ { label: "Monitor Arm (Light)", cnTerm: "显示器支架 承重5公斤 气压弹簧" } ],
-          softwareConfig: { utility: "Dell Display Manager", runtimeDependency: "DDM.exe (optional)" },
-          glidesAndPad: { stockSkates: "VESA 100x100 + Tilt-Adjustable Stand", recommendedSkates: "Light single monitor arm", recommendedPadType: "Desk clamp mount" },
-          lifespanEstimates: { chassisLife: "6 – 8 years", limitingFactor: "USB-C port wear or backlight LED aging." },
-          ergonomicDetails: { scoreReason: "7.5/10 – Height-adjustable and tilt-capable, but lacks swivel and pivot. 163 PPI sharp." },
-          pros: ["Affordable 4K USB-C ($269-$309)", "USB-C 65W PD", "Sharp 163 PPI", "Decent factory calibration", "Built-in speakers"],
-          cons: ["60Hz only", "Limited to sRGB gamut", "Tilt-only stand", "Contrast typical of IPS (~1000:1)"],
-          setupNotes: ["SINGLE CABLE SETUP: USB-C carries 4K + 65W power.", "RESPONSE TIME: Set to 'Normal' to avoid ghosting."]
-        }
-      ]
-    };
-  </script>
-
-  <!-- ================== APPLICATION LOGIC ================== -->
+  <!-- Application logic -->
   <script>
     (function () {
       const productList = document.getElementById('productList');
+
+      if (!window.DESK_DATA) {
+        productList.innerHTML = `
+          <div class="empty-state">
+            <h2>Data failed to load</h2>
+            <p style="margin-top:8px">Ensure the <code>data-*.js</code> files and <code>index.html</code> are in the same folder.</p>
+          </div>`;
+        return;
+      }
 
       const { categories = [], products = [], microswitches = {} } = window.DESK_DATA;
 
@@ -798,6 +637,7 @@
           productList.innerHTML = filtered.map(item => {
             const isExpanded = expandedCardIds.has(item.id);
             const statusClass = item.status === 'Owned' ? 'status-owned' : (item.status === 'Alternative' ? 'status-alternative' : 'status-wishlist');
+
             const props = (item.properties && typeof item.properties === 'object') ? item.properties : {};
             const ergo = (item.ergonomicDetails && typeof item.ergonomicDetails === 'object') ? item.ergonomicDetails : null;
             const stockList = Array.isArray(item.stockSwitchesList) ? item.stockSwitchesList : [];
@@ -816,6 +656,8 @@
 
             return `
               <div class="card ${isExpanded ? 'expanded' : ''}" id="card-${item.id}">
+
+                <!-- Header -->
                 <div class="card-header">
                   <div class="card-title-row">
                     <div>
@@ -824,13 +666,21 @@
                     </div>
                     <span class="status-badge ${statusClass}">${item.status || 'Wishlist'}</span>
                   </div>
+
                   ${item.isTopPick ? `<div><span class="top-pick-tag">★ ${item.topPickBadge || 'Top Pick'}</span></div>` : ''}
+
                   <div class="card-summary">${item.summary || ''}</div>
                 </div>
+
+                <!-- Quick Specs Pills (category-aware) -->
                 <div class="quick-specs-grid">
                   ${getQuickSpecPills(item)}
                 </div>
+
+                <!-- Expanded Content Body -->
                 <div class="card-scroll-body">
+
+                  <!-- Monitor-specific: Panel & Color Details -->
                   ${activeCategory === 'monitors' && panelInfo ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:panel`) ? 'active' : ''}" id="sub-${item.id}-panel">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'panel')">
@@ -839,17 +689,38 @@
                       </div>
                       <div class="sub-accordion-body">
                         <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
-                          <div class="lifespan-pill"><div class="spec-key">Panel Technology</div><div class="spec-val">${panelInfo.panelTech}</div></div>
-                          <div class="lifespan-pill"><div class="spec-key">Color Gamut</div><div class="spec-val">${panelInfo.colorGamut}</div></div>
-                          <div class="lifespan-pill"><div class="spec-key">Delta E (sRGB)</div><div class="spec-val">${panelInfo.deltaE}</div></div>
-                          <div class="lifespan-pill"><div class="spec-key">Response Time (GtG)</div><div class="spec-val">${props["Response Time"] || 'N/A'}</div></div>
+                          <div class="lifespan-pill">
+                            <div class="spec-key">Panel Technology</div>
+                            <div class="spec-val">${panelInfo.panelTech}</div>
+                          </div>
+                          <div class="lifespan-pill">
+                            <div class="spec-key">Color Gamut</div>
+                            <div class="spec-val">${panelInfo.colorGamut}</div>
+                          </div>
+                          <div class="lifespan-pill">
+                            <div class="spec-key">Delta E (sRGB)</div>
+                            <div class="spec-val">${panelInfo.deltaE}</div>
+                          </div>
+                          <div class="lifespan-pill">
+                            <div class="spec-key">Response Time (GtG)</div>
+                            <div class="spec-val">${props["Response Time"] || 'N/A'}</div>
+                          </div>
                         </div>
-                        <div class="comparison-box"><strong>🎯 Recommended OSD Calibration Preset:</strong><p>${panelInfo.osdPreset}</p></div>
-                        ${panelInfo.iccProfile ? `<div class="comparison-box"><strong>📁 ICC Profile Download / Calibration Notes:</strong><p>${panelInfo.iccProfile}</p></div>` : ''}
+                        <div class="comparison-box" style="margin-top:6px;">
+                          <strong>🎯 Recommended OSD Calibration Preset:</strong>
+                          <p style="margin-top:4px; font-size:11px;">${panelInfo.osdPreset}</p>
+                        </div>
+                        ${panelInfo.iccProfile ? `
+                        <div class="comparison-box" style="margin-top:4px;">
+                          <strong>📁 ICC Profile Download / Calibration Notes:</strong>
+                          <p style="margin-top:4px; font-size:11px;">${panelInfo.iccProfile}</p>
+                        </div>
+                        ` : ''}
                       </div>
                     </div>
                   ` : ''}
 
+                  <!-- 1. PROCUREMENT BOX -->
                   ${procList.length > 0 ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:procurement`) ? 'active' : ''}" id="sub-${item.id}-procurement">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'procurement')">
@@ -857,16 +728,198 @@
                         <span class="sub-accordion-arrow">▼</span>
                       </div>
                       <div class="sub-accordion-body">
-                        ${procList.map(p => `
-                          <div class="copy-item-card">
-                            <div><strong>${p.label}</strong><div style="color:#fde047;">${p.cnTerm}</div></div>
-                            <button class="btn-copy" onclick="window.deskApp.copyText('${p.cnTerm}', this)">Copy CN Term</button>
-                          </div>
-                        `).join('')}
+                        <div style="display:flex; flex-direction:column; gap:6px;">
+                          ${procList.map(p => `
+                            <div class="copy-item-card">
+                              <div>
+                                <strong style="font-size:12px;">${p.label}</strong>
+                                <div style="font-size:11px; color:#fde047;">${p.cnTerm}</div>
+                              </div>
+                              <button class="btn-copy" onclick="window.deskApp.copyText('${p.cnTerm}', this)">Copy CN Term</button>
+                            </div>
+                          `).join('')}
+                        </div>
                       </div>
                     </div>
                   ` : ''}
 
+                  <!-- 2. REPAIRABILITY (mice only, but shown if exists) -->
+                  ${repair ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:repairability`) ? 'active' : ''}" id="sub-${item.id}-repairability">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'repairability')">
+                        <span class="sub-accordion-title">🔬 Teardown & Repairability Scorecard</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <div class="lifespan-grid">
+                          <div class="lifespan-pill">
+                            <div class="spec-key">Solder / Teardown Risk</div>
+                            <div class="spec-val" style="color:var(--primary);">${repair.score}</div>
+                          </div>
+                          <div class="lifespan-pill">
+                            <div class="spec-key">Screw Count & Type</div>
+                            <div class="spec-val">${repair.screwCount}</div>
+                          </div>
+                          <div class="lifespan-pill">
+                            <div class="spec-key">Recommended Iron Temp</div>
+                            <div class="spec-val" style="color:#4ade80;">${repair.recommendedIronTemp}</div>
+                          </div>
+                        </div>
+                        ${Array.isArray(repair.fragilePoints) && repair.fragilePoints.length > 0 ? `
+                          <div class="comparison-box" style="margin-top:4px;">
+                            <strong>⚠️ High-Damage Risk Points During Disassembly:</strong>
+                            <ul class="bullet-list" style="margin-top:4px;">
+                              ${repair.fragilePoints.map(f => `<li>${f}</li>`).join('')}
+                            </ul>
+                          </div>
+                        ` : ''}
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 3. WEIGHT BALANCE (mice only, shown if exists) -->
+                  ${balance ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:weight`) ? 'active' : ''}" id="sub-${item.id}-weight">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'weight')">
+                        <span class="sub-accordion-title">⚖️ Center of Gravity (CoG) & Weight Balance Index</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+                          <div class="lifespan-pill">
+                            <div class="spec-key">Stock Mass Distribution</div>
+                            <div class="spec-val" style="color:#f87171;">${balance.stockBalance}</div>
+                          </div>
+                          <div class="lifespan-pill">
+                            <div class="spec-key">Modded Mass Distribution</div>
+                            <div class="spec-val" style="color:#4ade80;">${balance.moddedBalance}</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 4. SOFTWARE CONFIG -->
+                  ${software ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:software`) ? 'active' : ''}" id="sub-${item.id}-software">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'software')">
+                        <span class="sub-accordion-title">🎛 ${activeCategory === 'monitors' ? 'OSD, Custom Profiles & Gaming Modes' : 'Software, Macro & G-Shift Configuration'}</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <div style="font-size:12px;">
+                          <div><strong>Utility Software:</strong> ${software.utility}</div>
+                          <div style="margin-top:2px; color:var(--text-muted);"><strong>Background Process Requirement:</strong> ${software.runtimeDependency}</div>
+                        </div>
+                        ${software.baseLayer ? `<div class="comparison-box"><strong>Base Keybind Layer:</strong><p style="margin-top:2px;">${software.baseLayer}</p></div>` : ''}
+                        ${software.gShiftLayer ? `<div class="comparison-box"><strong>G-Shift / Modifier Layer:</strong><p style="margin-top:2px;">${software.gShiftLayer}</p></div>` : ''}
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 5. GLIDES & PAD (mice) / MONITOR ARM & DESK MOUNT (monitors) -->
+                  ${glides ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:glides`) ? 'active' : ''}" id="sub-${item.id}-glides">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'glides')">
+                        <span class="sub-accordion-title">${activeCategory === 'monitors' ? '🦾 VESA Mount & Desk Arm Compatibility' : ' Skating Glides & Mousepad Surface Match'}</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <div style="display:flex; flex-direction:column; gap:4px; font-size:12px;">
+                          <div><strong>Stock Skates:</strong> ${glides.stockSkates}</div>
+                          <div><strong>Recommended Aftermarket Skates:</strong> ${glides.recommendedSkates}</div>
+                          <div><strong>Recommended Pad Surface:</strong> ${glides.recommendedPadType}</div>
+                        </div>
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 6. LIFESPAN -->
+                  ${lifespan ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:lifespan`) ? 'active' : ''}" id="sub-${item.id}-lifespan">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'lifespan')">
+                        <span class="sub-accordion-title">⏳ Mouse & Switch Lifespan Matrix</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <div class="lifespan-grid">
+                          <div class="lifespan-pill">
+                            <div class="spec-key">Mouse Chassis & Sensor Life</div>
+                            <div class="spec-val" style="color:var(--primary);">${lifespan.chassisLife}</div>
+                          </div>
+                          <div class="lifespan-pill">
+                            <div class="spec-key">Stock Switches (Before Swap)</div>
+                            <div class="spec-val" style="color:#f87171;">${lifespan.stockSwitchesLife}</div>
+                          </div>
+                          <div class="lifespan-pill">
+                            <div class="spec-key">Custom Switches (After Swap)</div>
+                            <div class="spec-val" style="color:#4ade80;">${lifespan.moddedSwitchesLife}</div>
+                          </div>
+                        </div>
+                        <div class="comparison-box" style="margin-top:4px;">
+                          <strong>⚠️ Primary Hardware Limiting Factor:</strong>
+                          <div style="margin-top:2px;">${lifespan.limitingFactor}</div>
+                        </div>
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 7. STOCK SWITCHES (mice only) -->
+                  ${stockList.length > 0 ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:stock`) ? 'active' : ''}" id="sub-${item.id}-stock">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'stock')">
+                        <span class="sub-accordion-title">🏭 Stock Switches by Individual Button</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <table class="switch-table">
+                          <thead>
+                            <tr>
+                              <th>Button Group</th>
+                              <th>Stock Switch Model</th>
+                              <th>Factory Lifespan</th>
+                              <th>Sound Level</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            ${stockList.map(s => `
+                              <tr>
+                                <td><strong>${s.buttonGroup}</strong></td>
+                                <td>${s.switchModel}</td>
+                                <td><span style="color:#f87171; font-weight:600;">${s.lifespan}</span></td>
+                                <td>${s.sound}</td>
+                              </tr>
+                            `).join('')}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 8. MODS & ADD-ONS -->
+                  ${modsList.length > 0 ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:mods`) ? 'active' : ''}" id="sub-${item.id}-mods">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'mods')">
+                        <span class="sub-accordion-title">🛠 Mods & Add-ons Library (${modsList.length})</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <div style="display:flex; flex-direction:column; gap:6px;">
+                          ${modsList.map(m => `
+                            <div style="background:rgba(0,0,0,0.2); border:1px solid var(--border); border-radius:6px; padding:8px 12px;">
+                              <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <strong>${m.name}</strong>
+                                <span class="top-pick-tag" style="font-size:10px;">${m.difficulty || 'Mod'}</span>
+                              </div>
+                              <div style="font-size:11px; color:var(--text-muted); margin-top:2px;">${m.impact}</div>
+                            </div>
+                          `).join('')}
+                        </div>
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 9. ERGONOMICS -->
                   ${ergo ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:ergonomics`) ? 'active' : ''}" id="sub-${item.id}-ergonomics">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'ergonomics')">
@@ -874,11 +927,54 @@
                         <span class="sub-accordion-arrow">▼</span>
                       </div>
                       <div class="sub-accordion-body">
-                        <p>${ergo.scoreReason}</p>
+                        <div>
+                          <strong>Why this Ergonomic Score (${props["Ergonomic Rating"] || ''}):</strong>
+                          <p style="font-size:12px; color:var(--text-muted); margin-top:2px;">${ergo.scoreReason}</p>
+                        </div>
+
+                        ${ergo.specificShapeContour ? `
+                          <div>
+                            <strong>Shell Contour, Curves & Ledges:</strong>
+                            <p style="font-size:12px; color:#d1d5db; margin-top:2px; line-height:1.4;">${ergo.specificShapeContour}</p>
+                          </div>
+                        ` : ''}
+
+                        ${ergo.comparisonVsCloseCompetitors ? `
+                          <div class="comparison-box">
+                            <strong>⚔️ Comparison Against Close Competitors:</strong>
+                            <p style="margin-top:4px;">${ergo.comparisonVsCloseCompetitors}</p>
+                          </div>
+                        ` : ''}
+
+                        <div style="font-size:12px;">
+                          ${ergo.gripCompatibility ? `<div><strong>Hand Size & Grip Match:</strong> ${ergo.gripCompatibility}</div>` : ''}
+                          ${ergo.wristAndPosture ? `<div style="margin-top:4px;"><strong>Wrist & Forearm Posture:</strong> ${ergo.wristAndPosture}</div>` : ''}
+                        </div>
                       </div>
                     </div>
                   ` : ''}
 
+                  <!-- 10. PROPERTIES -->
+                  ${Object.keys(props).length > 0 ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:properties`) ? 'active' : ''}" id="sub-${item.id}-properties">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'properties')">
+                        <span class="sub-accordion-title">⚡ Performance, Sensor & Battery Specs</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px;">
+                          ${Object.entries(props).map(([k, v]) => `
+                            <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:4px; font-size:11px;">
+                              <div style="color:var(--text-muted); text-transform:uppercase; font-size:9px;">${k}</div>
+                              <div style="font-weight:600; margin-top:2px;">${v}</div>
+                            </div>
+                          `).join('')}
+                        </div>
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 11. PROS & CONS -->
                   ${(pros.length > 0 || cons.length > 0) ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:proscons`) ? 'active' : ''}" id="sub-${item.id}-proscons">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'proscons')">
@@ -887,13 +983,54 @@
                       </div>
                       <div class="sub-accordion-body">
                         <div class="pro-con-grid">
-                          <div class="pro-con-col">${pros.map(p => `<div class="pro-con-item pro-item">✓ ${p}</div>`).join('')}</div>
-                          <div class="pro-con-col">${cons.map(c => `<div class="pro-con-item con-item">✕ ${c}</div>`).join('')}</div>
+                          <div style="display:flex; flex-direction:column; gap:6px;">
+                            ${pros.map(p => `<div class="pro-con-item pro-item">✓ ${p}</div>`).join('')}
+                          </div>
+                          <div style="display:flex; flex-direction:column; gap:6px;">
+                            ${cons.map(c => `<div class="pro-con-item con-item">✕ ${c}</div>`).join('')}
+                          </div>
                         </div>
                       </div>
                     </div>
                   ` : ''}
 
+                  <!-- 12. SWITCH MAPPINGS (mice) -->
+                  ${switchMappings.length > 0 ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:switches`) ? 'active' : ''}" id="sub-${item.id}-switches">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'switches')">
+                        <span class="sub-accordion-title">🔌 Per-Button Custom Microswitch Recommendations</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <table class="switch-table">
+                          <thead>
+                            <tr>
+                              <th>Button Zone</th>
+                              <th>Recommended Switch</th>
+                              <th>Tactile, Durability & Acoustic Reason</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            ${switchMappings.map(m => {
+                              const sw = (microswitches && microswitches[m.recommendedSwitchId]) ? microswitches[m.recommendedSwitchId] : {};
+                              return `
+                                <tr>
+                                  <td><strong>${m.buttonGroup || 'Button'}</strong></td>
+                                  <td>
+                                    <div><strong>${sw.name || m.recommendedSwitchId || 'Switch'}</strong></div>
+                                    <div style="color:var(--text-muted); font-size:10px;">${sw.force || ''} | ${sw.lifespan || ''}</div>
+                                  </td>
+                                  <td style="color:var(--text-muted); font-size:11px;">${m.reason || sw.feel || ''}</td>
+                                </tr>
+                              `;
+                            }).join('')}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 13. SETUP NOTES -->
                   ${setupNotes.length > 0 ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:notes`) ? 'active' : ''}" id="sub-${item.id}-notes">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'notes')">
@@ -901,35 +1038,55 @@
                         <span class="sub-accordion-arrow">▼</span>
                       </div>
                       <div class="sub-accordion-body">
-                        <ul class="bullet-list">${setupNotes.map(n => `<li>${n}</li>`).join('')}</ul>
+                        <ul class="bullet-list">
+                          ${setupNotes.map(n => `<li>${n}</li>`).join('')}
+                        </ul>
                       </div>
                     </div>
                   ` : ''}
 
-                  ${item.purchaseUrl ? `<div style="display:flex; justify-content:flex-end; padding-top:4px;"><a href="${item.purchaseUrl}" target="_blank" class="buy-link">Official Buy Page ↗</a></div>` : ''}
+                  ${item.purchaseUrl ? `
+                    <div style="display:flex; justify-content:flex-end; padding-top:4px;">
+                      <a href="${item.purchaseUrl}" target="_blank" class="buy-link">Official Buy Page ↗</a>
+                    </div>
+                  ` : ''}
+
                 </div>
+
+                <!-- Card Expand Footer Bar -->
                 <div class="card-expand-bar" onclick="window.deskApp.toggleCard('${item.id}')">
                   <span>${isExpanded ? '▲ Close Card Sections' : '▼ Expand Sub-Sections'}</span>
                   <span>${item.price || ''}</span>
                 </div>
+
               </div>
             `;
           }).join('');
         } catch (err) {
-          productList.innerHTML = `<div class="empty-state"><h3>Error rendering directory</h3><p style="color:#f87171;">${err.message}</p></div>`;
+          productList.innerHTML = `
+            <div class="empty-state">
+              <h3>Error rendering directory</h3>
+              <p style="color:#f87171; margin-top:6px;">${err.message}</p>
+            </div>`;
         }
       }
 
       function toggleCard(id) {
-        if (expandedCardIds.has(id)) expandedCardIds.delete(id);
-        else expandedCardIds.add(id);
+        if (expandedCardIds.has(id)) {
+          expandedCardIds.delete(id);
+        } else {
+          expandedCardIds.add(id);
+        }
         renderProducts();
       }
 
       function toggleSub(cardId, subSectionKey) {
         const key = `${cardId}:${subSectionKey}`;
-        if (activeSubSections.has(key)) activeSubSections.delete(key);
-        else activeSubSections.add(key);
+        if (activeSubSections.has(key)) {
+          activeSubSections.delete(key);
+        } else {
+          activeSubSections.add(key);
+        }
         renderProducts();
       }
 
@@ -937,10 +1094,12 @@
         expandedCardIds.add(cardId);
         activeSubSections.add(`${cardId}:${subSectionKey}`);
         renderProducts();
+
         setTimeout(() => {
           const targetEl = document.getElementById(`sub-${cardId}-${subSectionKey}`);
-          if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          else {
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
             const cardEl = document.getElementById(`card-${cardId}`);
             if (cardEl) cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
@@ -958,10 +1117,13 @@
             btnEl.style.background = '';
             btnEl.style.color = '';
           }, 1500);
-        }).catch(() => { alert('Copy failed: ' + str); });
+        }).catch(() => {
+          alert('Copy failed: ' + str);
+        });
       }
 
       function setupEventListeners() {
+        // Meta bar chip clicks
         const metaBar = document.getElementById('metaBar');
         if (metaBar) {
           metaBar.addEventListener('click', (e) => {
@@ -995,8 +1157,22 @@
           const filtered = getFilteredProducts();
           filtered.forEach(p => {
             expandedCardIds.add(p.id);
-            ['procurement','repairability','weight','software','glides','lifespan','stock','mods','ergonomics','properties','switches','proscons','notes'].forEach(k => activeSubSections.add(`${p.id}:${k}`));
-            if (activeCategory === 'monitors') activeSubSections.add(`${p.id}:panel`);
+            activeSubSections.add(`${p.id}:procurement`);
+            activeSubSections.add(`${p.id}:repairability`);
+            activeSubSections.add(`${p.id}:weight`);
+            activeSubSections.add(`${p.id}:software`);
+            activeSubSections.add(`${p.id}:glides`);
+            activeSubSections.add(`${p.id}:lifespan`);
+            activeSubSections.add(`${p.id}:stock`);
+            activeSubSections.add(`${p.id}:mods`);
+            activeSubSections.add(`${p.id}:ergonomics`);
+            activeSubSections.add(`${p.id}:properties`);
+            activeSubSections.add(`${p.id}:switches`);
+            activeSubSections.add(`${p.id}:proscons`);
+            activeSubSections.add(`${p.id}:notes`);
+            if (activeCategory === 'monitors') {
+              activeSubSections.add(`${p.id}:panel`);
+            }
           });
           renderProducts();
         });
@@ -1009,6 +1185,7 @@
       }
 
       window.deskApp = { toggleCard, toggleSub, openAndJump, copyText };
+
       init();
     })();
   </script>
