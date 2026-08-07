@@ -215,12 +215,49 @@
     .compare-spec-row .value { font-weight: 600; }
     .compare-pro-con { margin-top: 12px; }
     .compare-pro-con strong { color: var(--text-muted); font-size: 11px; text-transform: uppercase; }
+        /* Mobile responsive */
+    @media (max-width: 860px) {
+      body { height: auto; overflow-y: auto; }
+      #app { flex-direction: column; height: auto; min-height: 100vh; }
+      sidebar {
+        width: 100%; border-right: none; border-bottom: 1px solid var(--border);
+        flex-direction: row; flex-wrap: wrap; align-items: center;
+        padding: 8px 16px; gap: 8px;
+      }
+      .brand { border-bottom: none; padding: 0; }
+      .nav-list {
+        display: none; width: 100%; flex-direction: column; overflow-y: visible;
+        padding: 8px 0 0; order: 3;
+      }
+      .nav-list.open { display: flex; }
+      .nav-item { white-space: nowrap; }
+      .hamburger {
+        display: flex; flex-direction: column; gap: 4px; cursor: pointer;
+        background: none; border: none; padding: 4px; margin-left: auto;
+      }
+      .hamburger span { display: block; width: 20px; height: 2px; background: var(--text); border-radius: 2px; }
+      .comparison-grid { grid-template-columns: 1fr; }
+      .content-viewport { padding: 12px; }
+      header { flex-wrap: wrap; gap: 8px; }
+      .search-box { width: 100%; }
+      .compare-bar { flex-wrap: wrap; gap: 8px; }
+    }
+
+    @media (min-width: 861px) {
+      .hamburger { display: none; }
+    }
   </style>
 </head>
 <body>
   <div id="app">
     <sidebar>
-      <div class="brand"><div class="brand-icon">⚡</div><span>Desk Directory</span></div>
+      <div class="brand">
+        <div class="brand-icon">⚡</div>
+        <span>Desk Directory</span>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
       <ul class="nav-list" id="categoryNav"></ul>
     </sidebar>
 
@@ -464,6 +501,20 @@
       }
 
       window.deskApp = { toggleCard, toggleSub, openAndJump, copyText, toggleCompare, showCompare };
+            // Mobile hamburger toggle
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const navList = document.getElementById('categoryNav');
+      if (hamburgerBtn && navList) {
+        hamburgerBtn.addEventListener('click', () => {
+          navList.classList.toggle('open');
+        });
+        // Close menu when a category is clicked
+        navList.addEventListener('click', (e) => {
+          if (e.target.closest('.nav-item')) {
+            navList.classList.remove('open');
+          }
+        });
+      }
       init();
     })();
   </script>
