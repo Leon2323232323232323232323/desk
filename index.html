@@ -149,7 +149,37 @@
     }
 
     .btn-action:hover { background: rgba(255, 255, 255, 0.12); color: var(--text); }
+    /* ---- Meta bar improvements ---- */
+    .meta-bar {
+      display: flex; flex-direction: column; gap: 6px;
+      padding: 2px 2px 18px; border-bottom: 1px solid var(--border); margin-bottom: 18px;
+    }
+    .meta-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+    .meta-stats { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; font-size: 12px; color: var(--text-muted); }
+    .meta-stats strong { color: var(--text); }
+    .meta-divider { color: var(--text-faint); opacity: 0.4; }
+    .invested-value { color: var(--primary); font-weight: 600; }
+    .filter-chips { display: flex; gap: 6px; }
+    .chip {
+      all: unset; cursor: pointer;
+      font-size: 11px; padding: 5px 11px; border-radius: 20px;
+      border: 1px solid var(--border); color: var(--text-muted);
+      transition: all .15s ease;
+    }
+    .chip:hover { border-color: var(--primary); color: var(--text); }
+    .chip.active { background: var(--primary); border-color: var(--primary); color: #fff; font-weight: 600; }
 
+    /* ---- Better hover on cards ---- */
+    .card { transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,.35); }
+
+    /* ---- Card corner accents ---- */
+    .card::before, .card::after {
+      content: ''; position: absolute; width: 12px; height: 12px; pointer-events: none; opacity: 0.4;
+    }
+    .card::before { top: -1px; left: -1px; border-top: 2px solid var(--primary); border-left: 2px solid var(--primary); }
+    .card::after { bottom: -1px; right: -1px; border-bottom: 2px solid var(--primary); border-right: 2px solid var(--primary); }
+    .card:hover::before, .card:hover::after, .card.expanded::before, .card.expanded::after { opacity: 1; }
     .content-viewport { padding: 20px; overflow-y: auto; flex-grow: 1; scroll-behavior: smooth; }
 
     .comparison-grid {
@@ -418,6 +448,7 @@
       </header>
 
       <div class="content-viewport" id="viewport">
+        <div class="meta-bar" id="metaBar"></div>
         <div class="comparison-grid" id="productList"></div>
       </div>
     </main>
