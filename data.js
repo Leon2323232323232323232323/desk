@@ -366,4 +366,46 @@ window.DESK_DATA = {
         "Grip Style Match": "Palm / Claw Grip (Medium to Large hands)",
         "Wrist Strain Index": "Low (Comfortable thumb ledge)",
         "Weight Profile": "110g (With AA battery)",
-        "Sens
+        "Sensor & Speed": "Razer 5G 18,000 DPI | 1000Hz Polling",
+        "Acoustic Rating": "57-60 dB Stock (Hollow Cavity) → 50 dB Modded (PORON Foam)",
+        "Power Source": "1x AA Battery (235h 2.4G / 535h Bluetooth)",
+        "Switch Mounting": "3-Pin Mechanical (Main: Standard, Sides: 90° Bent Pins)"
+      },
+
+      pros: [
+        "Ergonomic shell contour with comfortable thumb rest wing",
+        "Dual connectivity (2.4GHz HyperSpeed low-latency + Bluetooth LE)",
+        "Standard 3-pin mechanical main switch sockets allow custom switch soldering",
+        "Long battery life on single AA cells"
+      ],
+
+      cons: [
+        "High defect rate on 2.4GHz HyperSpeed USB dongle IC ('Device Descriptor Request Failed' thermal failure)",
+        "Hollow interior AA battery cavity creates loud acoustic echo chamber (~57–60 dB click volume)",
+        "Stiff 70g stock main switch springs cause finger fatigue",
+        "Side buttons require specialized 90° pre-bent pin switches"
+      ],
+
+      setupNotes: `- DEFECT DIAGNOSIS: Returned unit to Amazon due to hardware-level solder micro-fracture / thermal failure in 2.4GHz HyperSpeed USB receiver chip.
+- CAVITY ACOUSTIC DAMPENING: If retained, line inner AA battery cavity walls with 0.5mm self-adhesive Rogers PORON foam to stop click resonance.`,
+
+      buttonSwitchMapping: [
+        {
+          buttonGroup: "Main Left & Right Click",
+          recommendedSwitchId: "huano-btspd-80m",
+          reason: "Replaces stiff stock Razer Gen-2 switches. Lowers click force, increases tactile snap, and dampens high-pitched clack. (Alt: Kailh GM 8.0)."
+        },
+        {
+          buttonGroup: "Side Navigation Buttons (M4 / M5)",
+          recommendedSwitchId: "huano-bspd-90deg",
+          reason: "Requires 90° right-angle pre-bent pins to mate with vertical side PCB contact pads."
+        },
+        {
+          buttonGroup: "Middle Scroll Click & DPI Cycle",
+          recommendedSwitchId: "huano-yellow-5mm",
+          reason: "5.0mm square switch clears scroll wheel cradle."
+        }
+      ]
+    }
+  ]
+};
