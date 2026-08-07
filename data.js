@@ -617,4 +617,605 @@ window.DESK_DATA = {
       price: "$39",
       purchaseUrl: "https://www.logitech.com/en-us/products/mice/m650-signature-wireless-mouse.html",
       tags: ["Portable", "AA Battery", "SmartWheel", "Silent Touch", "Logi Bolt"],
-      summary: "Compact, long-battery-life portable office mouse featuring SmartWheel adaptive scrolling, silent switch dampers, and simple
+      summary: "Compact, long-battery-life portable office mouse featuring SmartWheel adaptive scrolling, silent switch dampers, and simple dual-side button navigation.",
+      properties: {
+        "Ergonomic Rating": "7.5 / 10",
+        "Grip Style Match": "Fingertip / Claw",
+        "Wrist Strain Index": "Moderate (No Thumb Wing)",
+        "Weight Profile": "101g (With 1x AA Battery)",
+        "Sensor & Speed": "Logitech Optical | 125Hz Polling",
+        "Battery Specs": "1x AA Battery (24 Months)",
+        "Switch Mounting": "2-Pin Through-Hole (Main: 7.3mm, Middle: 5.0mm)",
+        "Teardown Repairability": "10 / 10 (3-Screw Disassembly)"
+      },
+      procurement: [
+        { label: "Main Silent Switches", cnTerm: "华诺 棕壳黄点 静音方型微动 6x6x7.3" },
+        { label: "5mm Middle Switch", cnTerm: "6x6x5mm 2脚 静音微动" },
+        { label: "PTFE Skates", cnTerm: "Logitech M650 脚贴" }
+      ],
+      repairability: {
+        score: "10 / 10 (Simple Burner Teardown)",
+        screwCount: "3 Screws (Phillips #0 under bottom skates)",
+        fragilePoints: ["SmartWheel plastic carriage alignment spring"],
+        recommendedIronTemp: "330°C - 350°C"
+      },
+      weightBalance: {
+        stockBalance: "Rear-Heavy (101g with 1x AA Alkaline Battery)",
+        moddedBalance: "Slightly Rear-Heavy (Can use AAA battery adapter to drop 12g)"
+      },
+      softwareConfig: {
+        utility: "Logi Options+",
+        runtimeDependency: "LogiOptionsPlus_Agent.exe",
+        baseLayer: "SmartWheel Adaptive Scroll + 2 Side Navigation Buttons",
+        gShiftLayer: "N/A"
+      },
+      glidesAndPad: {
+        stockSkates: "Factory Black PTFE",
+        recommendedSkates: "Tiger Ice M650 Replacement Skates",
+        recommendedPadType: "Standard Cloth Mousepad"
+      },
+      lifespanEstimates: {
+        chassisLife: "5 - 7 Years (Simple rugged PCB)",
+        stockSwitchesLife: "12 - 24 Months (~5M - 10M Clicks)",
+        moddedSwitchesLife: "4 - 6 Years (30 Million Clicks via Huano Silent Yellow Dot)",
+        limitingFactor: "Middle click wheel carriage plastic wear or AA battery terminal spring corrosion."
+      },
+      stockSwitchesList: [
+        { buttonGroup: "Main Left & Right (M1/M2)", switchModel: "Kailh / Logi Silent Square 2-Pin (7.3mm)", lifespan: "10M Clicks", sound: "34 - 36 dB (Near-silent)" },
+        { buttonGroup: "Middle Scroll Click (G3)", switchModel: "Standard 2-Pin Tactile DIP (5.0mm)", lifespan: "5M Clicks", sound: "46 - 48 dB" },
+        { buttonGroup: "Side Forward & Back (M4/M5)", switchModel: "Kailh Silent Square 2-Pin (7.3mm)", lifespan: "10M Clicks", sound: "35 dB" }
+      ],
+      modsAndAddons: [
+        { name: "Huano/Kailh Silent Yellow Dot 30M Switch Swap", difficulty: "Easy", impact: "Upgrades main silent clicks from 10M to 30M click lifespan." },
+        { name: "Kailh Mute 5.0mm Middle Click Swap", difficulty: "Easy", impact: "Fixes stock middle-click mechanical fatigue." },
+        { name: "Tiger Ice PTFE Skates", difficulty: "Easy", impact: "Smooths bottom glide." }
+      ],
+      ergonomicDetails: {
+        scoreReason: "Scored 7.5/10 due to its small, flat travel form factor. It lacks thumb wing support and palm arch height, which causes hand cramping during prolonged desktop use for larger hands.",
+        specificShapeContour: "107mm length x 61.8mm width x 37.8mm height. Symmetrical compact curvature with rubberized side grip panels. Lacks thumb ledge or high palm arch.",
+        comparisonVsCloseCompetitors: "Vs MX Anywhere 3S: M650 is half the price ($39 vs $79) with quieter clicks and a far simpler 3-screw repair chassis. Vs M650 L: Standard M650 is compact for travel, whereas M650 L adds 11mm length for larger hands.",
+        gripCompatibility: "Best for Small-to-Medium hands using Fingertip or Claw grip.",
+        wristAndPosture: "Flat posture requires more wrist movement over long periods."
+      },
+      pros: [
+        "Exceptional 24-month battery life on a single AA battery",
+        "SmartWheel automatically switches between precise ratchet and free-speed scrolling",
+        "Quiet silent-touch clicking out of the box (~35 dB)",
+        "Simple, highly durable chassis structure that is easy to disassemble and solder"
+      ],
+      cons: [
+        "Lacks onboard memory for custom complex keybinds",
+        "Basic optical sensor unsuitable for high-speed precision gaming",
+        "Stock middle-click switch suffers mechanical fatigue under heavy use",
+        "125Hz polling rate limit"
+      ],
+      setupNotes: [
+        "TEARDOWN SEQUENCE: Remove AA battery, peel 3 bottom PTFE skates using mild hairdryer heat, remove 3 Phillips screws, and gently unclip SmartWheel carriage.",
+        "BURNER MODDING: Excellent practice board for through-hole soldering before attempting complex G502 or MX Master 3S repairs."
+      ],
+      buttonSwitchMapping: [
+        { buttonGroup: "Main Left & Right Click", recommendedSwitchId: "huano-silent-yellow-73mm", reason: "Direct replacement for stock silent 2-pin switches. Delivers 30M click lifespan with crisp silent actuation (~35 dB)." },
+        { buttonGroup: "Middle Mouse Click (G3)", recommendedSwitchId: "kailh-silent-5mm", reason: "30M click 5.0mm Kailh Mute switch. Fits under SmartWheel carriage delivering quiet (~35 dB) tactile response." },
+        { buttonGroup: "Side Navigation Buttons (M4 / M5)", recommendedSwitchId: "huano-silent-yellow-73mm", reason: "Maintains silent acoustic profile (~35 dB) across side thumb buttons." }
+      ]
+    },
+
+    /* ==========================================================================
+       7. RAZER BASILISK V3 X HYPERSPEED
+       ========================================================================== */
+    {
+      id: "basilisk-v3-x",
+      category: "mice",
+      name: "Basilisk V3 X HyperSpeed",
+      brand: "Razer",
+      status: "Alternative",
+      isTopPick: false,
+      topPickBadge: "Evaluated & Returned",
+      price: "$39 - $59",
+      purchaseUrl: "https://www.razer.com/gaming-mice/razer-basilisk-v3-x-hyperspeed",
+      tags: ["Wireless", "Razer 18K", "Bluetooth/2.4G", "AA Battery", "Mechanical"],
+      summary: "Ergonomic wireless gaming mouse with thumb rest support, Razer 5G 18K optical sensor, and dual-mode wireless connectivity.",
+      properties: {
+        "Ergonomic Rating": "9.0 / 10",
+        "Grip Style Match": "Palm / Claw",
+        "Wrist Strain Index": "Low (Thumb Rest Ledge)",
+        "Weight Profile": "110g (With AA Battery)",
+        "Sensor & Speed": "Razer 5G 18,000 DPI | 1000Hz Polling",
+        "Acoustic Rating": "57-60 dB Stock → 50 dB Modded",
+        "Power Source": "1x AA Battery (235h 2.4G / 535h BT)",
+        "Switch Mounting": "3-Pin Mechanical (Main: Std, Sides: 90° Bent)"
+      },
+      procurement: [
+        { label: "Main Switches", cnTerm: "华诺 透明蓝壳粉点 8000万次" },
+        { label: "Side Switches (90° Bent)", cnTerm: "华诺 蓝壳粉点 弯脚" },
+        { label: "Acoustic Foam Sheet", cnTerm: "0.5mm PORON 泡棉板 带背胶" },
+        { label: "PTFE Skates", cnTerm: "Razer Basilisk V3 X 脚贴" }
+      ],
+      repairability: {
+        score: "6.0 / 10 (Moderate)",
+        screwCount: "5 Screws (Phillips #0 under skates)",
+        fragilePoints: [
+          "HyperSpeed 2.4GHz USB receiver dongle IC micro-fractures",
+          "Side buttons require 90° bent pin switches"
+        ],
+        recommendedIronTemp: "340°C - 350°C"
+      },
+      weightBalance: {
+        stockBalance: "Rear-Heavy (110g with AA battery in rear cavity)",
+        moddedBalance: "Slightly Rear-Heavy"
+      },
+      softwareConfig: {
+        utility: "Razer Synapse 3",
+        runtimeDependency: "Razer Synapse Service.exe",
+        baseLayer: "Razer Hypershift Modifier Layer + DPI Cycle",
+        gShiftLayer: "Razer Hypershift Commands"
+      },
+      glidesAndPad: {
+        stockSkates: "Virgin PTFE Skates",
+        recommendedSkates: "Tiger Ice Basilisk V3 Skates",
+        recommendedPadType: "PORON Foam Lined Mousepad"
+      },
+      lifespanEstimates: {
+        chassisLife: "1 - 3 Years (High risk of 2.4GHz HyperSpeed USB dongle chip failure)",
+        stockSwitchesLife: "18 - 36 Months (~15M - 25M Clicks)",
+        moddedSwitchesLife: "5 - 7 Years (80 Million Clicks via Huano BTSPD)",
+        limitingFactor: "Hardware dongle IC solder micro-fractures (Device Descriptor Request Failed)."
+      },
+      stockSwitchesList: [
+        { buttonGroup: "Main Left & Right (M1/M2)", switchModel: "Razer Gen-2 Mechanical (Kailh GM 4.0 variant)", lifespan: "60M Rated", sound: "57 - 60 dB (Loud clack)" },
+        { buttonGroup: "Side Forward & Back (M4/M5)", switchModel: "90° Bent Pin 3-Pin Mechanical", lifespan: "20M Clicks", sound: "55 dB" },
+        { buttonGroup: "Middle Scroll & DPI Buttons", switchModel: "Standard 2-Pin Tactile DIP (5.0mm)", lifespan: "10M Clicks", sound: "52 dB" }
+      ],
+      modsAndAddons: [
+        { name: "0.5mm Rogers PORON Battery Cavity Foam", difficulty: "Easy", impact: "Dampens loud hollow AA battery cavity echo from 60dB to 50dB." },
+        { name: "Huano BTSPD 80M Main Switch Swap", difficulty: "Moderate", impact: "Replaces stiff 70g stock springs with crisp 80M switches." },
+        { name: "90° Bent Pin Side Switch Upgrade", difficulty: "Moderate", impact: "Upgrades side buttons to Huano BSPD 80M." }
+      ],
+      ergonomicDetails: {
+        scoreReason: "Scored 9.0/10 for its comfortable right-hand ergonomic contour and wide thumb rest wing. Deducted 1.0 point due to rear-heavy AA battery balance and hollow click echo.",
+        specificShapeContour: "130mm length x 75mm width x 42mm height. Ergonomic right-hand swoop heavily inspired by G502, with a flared left thumb rest wing and rubberized side grip textures.",
+        comparisonVsCloseCompetitors: "Vs G502 LIGHTSPEED: Nearly identical outer shell shape, but Basilisk's internal AA battery cavity creates a rear-heavy weight balance and hollow acoustic resonance (~60 dB) compared to G502's balanced internal battery tray.",
+        gripCompatibility: "Ideal for Medium-to-Large hands using Palm or Claw grip.",
+        wristAndPosture: "Low wrist strain with comfortable thumb rest wing support."
+      },
+      pros: [
+        "Ergonomic shell contour with comfortable thumb rest wing",
+        "Dual connectivity (2.4GHz HyperSpeed low-latency + Bluetooth LE)",
+        "Standard 3-pin mechanical main switch sockets allow custom switch soldering",
+        "Long battery life on single AA cells"
+      ],
+      cons: [
+        "High defect rate on 2.4GHz HyperSpeed USB dongle IC ('Device Descriptor Request Failed' thermal failure)",
+        "Hollow interior AA battery cavity creates loud acoustic echo chamber (~57–60 dB click volume)",
+        "Stiff 70g stock main switch springs cause finger fatigue",
+        "Side buttons require specialized 90° pre-bent pin switches"
+      ],
+      setupNotes: [
+        "DEFECT DIAGNOSIS: Returned unit to Amazon due to hardware-level solder micro-fracture / thermal failure in 2.4GHz HyperSpeed USB receiver chip.",
+        "CAVITY ACOUSTIC DAMPENING: If retained, line inner AA battery cavity walls with 0.5mm self-adhesive Rogers PORON foam to stop click resonance."
+      ],
+      buttonSwitchMapping: [
+        { buttonGroup: "Main Left & Right Click", recommendedSwitchId: "huano-btspd-80m", reason: "Replaces stiff stock Razer Gen-2 switches. Lowers click force, increases tactile snap, and dampens high-pitched clack (~49-51 dB)." },
+        { buttonGroup: "Side Navigation Buttons (M4 / M5)", recommendedSwitchId: "huano-bspd-90deg", reason: "80M click rated 90° right-angle pre-bent pins to mate with vertical side PCB contact pads." },
+        { buttonGroup: "Middle Scroll Click & DPI Cycle", recommendedSwitchId: "kailh-5mm-tactile", reason: "50M click rated 5.0mm Kailh square tactile switch clearing scroll wheel cradle." }
+      ]
+    },
+
+    /* ==========================================================================
+       MONITORS CATEGORY
+       ========================================================================== */
+    {
+      id: "asus-pg279qm",
+      category: "monitors",
+      name: "ROG Swift PG279QM",
+      brand: "ASUS",
+      status: "Owned",
+      isTopPick: true,
+      topPickBadge: "Best Overall High-Refresh Gaming Monitor (1440p 240Hz)",
+      price: "$799",
+      purchaseUrl: "https://rog.asus.com/monitors/27-to-31-5-inches/rog-swift-pg279qm-model/",
+      tags: ["1440p", "240Hz", "IPS", "G-Sync", "Fast-IPS", "sRGB 160%"],
+      summary: "Primary high-refresh gaming monitor. 27-inch 1440p Fast-IPS with a true 240Hz overclockable panel, NVIDIA Reflex Latency Analyzer, and exceptional color accuracy for both competitive LoL/CS2 and color-critical work.",
+      properties: {
+        "Screen Size": "27-inch Flat",
+        "Resolution": "2560 x 1440 (QHD)",
+        "Refresh Rate": "240Hz (Native) / 270Hz OC via DP",
+        "Response Time": "1ms (GtG)",
+        "Panel Technology": "Fast-IPS (AHVA)",
+        "Color Gamut": "160% sRGB / 98% DCI-P3",
+        "HDR Support": "VESA DisplayHDR 400",
+        "VESA Mount": "100 x 100 mm",
+        "Connectivity": "DisplayPort 1.4 (DSC), HDMI 2.0 x2, USB 3.2 Hub",
+        "Weight with Stand": "7.6 kg (16.8 lbs)"
+      },
+      panelDetails: {
+        panelTech: "AUO M270DAN08.0 Fast-IPS (AHVA)",
+        colorGamut: "98% DCI-P3 / 160% sRGB",
+        deltaE: "< 2 (Factory Calibrated)",
+        osdPreset: "Racing Mode → Color Temp: User (R97 G98 B100), Overdrive: Normal, Dark Boost: Off. For desktop: sRGB Emulation Mode (clamps wide gamut)",
+        iccProfile: "Download ASUS PG279QM ICC from RTINGS.com for sRGB clamp; alternatively use Windows Color Management to load sRGB IEC61966-2.1 profile."
+      },
+      procurement: [
+        { label: "Monitor Arm (Heavy Duty)", cnTerm: "桌面显示器支架 承重10公斤 气压弹簧" },
+        { label: "DisplayPort 1.4 DSC Cable", cnTerm: "DP1.4 视频线 8K 240Hz DSC" },
+        { label: "Monitor Light Bar", cnTerm: "屏幕挂灯 非对称光源 智能调光" },
+        { label: "Color Calibrator", cnTerm: "Datacolor SpyderX Pro 校色仪" },
+        { label: "VESA Adapter Plate (if needed)", cnTerm: "VESA 100x100 转换支架" }
+      ],
+      softwareConfig: {
+        utility: "ASUS DisplayWidget Center / NVIDIA Control Panel",
+        runtimeDependency: "None (Hardware OSD + GPU driver)",
+        baseLayer: "G-Sync On (Fullscreen & Windowed), 240Hz, 10-bit color (via DSC)",
+        gShiftLayer: "N/A"
+      },
+      glidesAndPad: {
+        stockSkates: "VESA 100x100 Mount & Sturdy Ergonomic Stand",
+        recommendedSkates: "Amazon Basics Premium Single Monitor Stand (Lift Engine) or Ergotron LX",
+        recommendedPadType: "Desk Clamp Grommet Mount (clean look, no base on desk)"
+      },
+      lifespanEstimates: {
+        chassisLife: "6 – 8 years (IPS panel aging is gradual, backlight LEDs rated 30,000+ hrs)",
+        stockSwitchesLife: "N/A",
+        moddedSwitchesLife: "N/A",
+        limitingFactor: "IPS glow permanence, potential G-Sync module capacitor degradation, or firmware bugs if not updated."
+      },
+      ergonomicDetails: {
+        scoreReason: "9.8/10 – Fully adjustable stand: 130mm height, tilt (-5°/+20°), swivel (±25°), pivot (90°). 27″ 1440p pixel density (109 PPI) ideal for 50-80 cm viewing distance without scaling.",
+        specificShapeContour: "Ultra-thin 3-sided frameless design with minimal lower bezel. Anti-glare 3H matte coating diffuses direct overhead light. 27-inch flat panel fills central FOV perfectly.",
+        comparisonVsCloseCompetitors: "Vs Alienware AW2721D: PG279QM has better sRGB clamp emulation, slightly faster actual GtG, and dedicated NVIDIA Reflex Analyzer. Vs LG 27GP850 (Nano IPS): ASUS offers true G-Sync module (wider VRR range) and higher build quality. Vs OLED 27GR95QE: PG279QM lacks infinite contrast but has higher full-screen brightness and no burn-in risk.",
+        gripCompatibility: "N/A",
+        wristAndPosture: "Ergonomic lift stand allows eye-level alignment, reducing neck strain. Pivot mode ideal for long code/documents."
+      },
+      pros: [
+        "True 240Hz (270Hz OC) with negligible overshoot and G-Sync ultimate",
+        "Factory-calibrated wide gamut (98% DCI-P3) with sRGB clamp mode",
+        "NVIDIA Reflex built-in latency analyzer",
+        "Excellent build quality and fully adjustable ergonomic stand",
+        "USB 3.2 hub for desk peripherals"
+      ],
+      cons: [
+        "No HDMI 2.1 (limited to 144Hz over HDMI)",
+        "HDR 400 is mediocre, edge-lit local dimming",
+        "Pricey at $799, competitive but not budget-friendly",
+        "IPS glow visible in dark scenes (inherent to technology)"
+      ],
+      setupNotes: [
+        "DESK MOUNT: Replace bulky stock stand with Ergotron LX or Amazon Basics arm. Frees up huge desk real estate. Use VESA 100x100mm holes.",
+        "CABLE MANAGEMENT: Route DP 1.4 cable through arm channel. Use 90° right-angle adapter for cleaner look against wall.",
+        "OSD CALIBRATION: For competitive gaming, set Overdrive to 'Normal' (fastest without inverse ghosting). For photo work, enable sRGB Emulation Mode to lock gamut.",
+        "NVIDIA G-SYNC SETUP: Enable in NVIDIA Control Panel for both fullscreen and windowed. Turn V-Sync ON in NVCP and OFF in-game for optimal tear-free motion.",
+        "COLOR PROFILE: Install RTINGS ICC profile for sRGB accuracy; calibrate with SpyderX Pro every 6 months if color-critical work is needed.",
+        "REFRESH RATE CHECK: Ensure DisplayPort is used; Windows Display Settings → Advanced → 240Hz (or 270Hz OC in monitor OSD)."
+      ]
+    },
+
+    {
+      id: "dell-u2723qe",
+      category: "monitors",
+      name: "UltraSharp U2723QE",
+      brand: "Dell",
+      status: "Owned",
+      isTopPick: true,
+      topPickBadge: "Best 4K Productivity & USB-C Hub Monitor",
+      price: "$619",
+      purchaseUrl: "https://www.dell.com/en-us/shop/dell-ultrasharp-27-4k-usb-c-hub-monitor-u2723qe/apd/210-bdpf/monitors-monitor-accessories",
+      tags: ["4K", "IPS Black", "USB-C 90W", "Daisy Chain", "KVM", "sRGB 100%"],
+      summary: "Secondary productivity monitor with innovative IPS Black panel delivering 2000:1 contrast ratio. Built-in USB-C hub with 90W power delivery, RJ45 Ethernet, and KVM switch makes it a complete docking station for work laptops.",
+      properties: {
+        "Screen Size": "27-inch Flat",
+        "Resolution": "3840 x 2160 (4K UHD)",
+        "Refresh Rate": "60Hz",
+        "Response Time": "5ms (GtG, Fast Mode)",
+        "Panel Technology": "IPS Black (LGD AH-IPS)",
+        "Color Gamut": "100% sRGB / 98% DCI-P3 / DisplayHDR 400",
+        "HDR Support": "VESA DisplayHDR 400 (edge-lit)",
+        "VESA Mount": "100 x 100 mm",
+        "Connectivity": "USB-C 90W PD, USB-C 15W, DP 1.4, HDMI, 4x USB-A, USB-C Hub, RJ45",
+        "Weight with Stand": "6.6 kg (14.6 lbs)"
+      },
+      panelDetails: {
+        panelTech: "IPS Black (LGD LM270WR8-SSA1)",
+        colorGamut: "100% sRGB, 98% DCI-P3",
+        deltaE: "< 2 (Factory Calibrated sRGB/Rec709)",
+        osdPreset: "Standard Mode → Color Temp: 6500K; Smart HDR: Off. For sRGB work: Color Space → sRGB mode (clamps gamut). For movies: Movie HDR mode with local dimming (edge-lit).",
+        iccProfile: "Pre-installed Dell ICC profile. Use Dell Display Manager for auto-profile switching."
+      },
+      procurement: [
+        { label: "VESA Gas Spring Arm", cnTerm: "显示器支架 气压弹簧 承重 8公斤" },
+        { label: "USB-C 3.2 Gen 2 Cable (1m)", cnTerm: "USB-C 3.2 Gen2 100W 10Gbps 数据线" },
+        { label: "Monitor Light Bar", cnTerm: "明基 ScreenBar 屏幕挂灯" },
+        { label: "Color Calibrator (SpyderX)", cnTerm: "Datacolor SpyderX Pro 校色仪" }
+      ],
+      softwareConfig: {
+        utility: "Dell Display Manager 2.0 / Dell Power Button Sync",
+        runtimeDependency: "DDM.exe runs in background for Easy Arrange layouts",
+        baseLayer: "Easy Arrange grid (12 layouts), PIP/PBP dual source mode",
+        gShiftLayer: "N/A"
+      },
+      glidesAndPad: {
+        stockSkates: "Fully Adjustable Stand (Height, Tilt, Swivel, Pivot)",
+        recommendedSkates: "Single gas spring monitor arm (e.g., Ergotron LX or Amazon Basics)",
+        recommendedPadType: "Desk grommet mount for clean cable routing"
+      },
+      lifespanEstimates: {
+        chassisLife: "8 – 10 years (IPS Black panel, USB-C hub electronics robust)",
+        stockSwitchesLife: "N/A",
+        moddedSwitchesLife: "N/A",
+        limitingFactor: "LED backlight aging or USB-C hub controller failure from power surges."
+      },
+      ergonomicDetails: {
+        scoreReason: "9.5/10 – Perfect 4K 27″ clarity (163 PPI) for text and UI, eliminates scaling artifacts. IPS Black panel reduces eye strain with deeper blacks and high contrast. USB-C single cable connectivity reduces desk clutter.",
+        specificShapeContour: "Thin bezel InfinityEdge design, anti-glare 3H coating. Minimal stand footprint with cable management hole in neck.",
+        comparisonVsCloseCompetitors: "Vs Apple Studio Display: U2723QE is half the price, offers more ports and better ergo stand (height/pivot), but lacks 5K resolution and built-in speakers. Vs ASUS ProArt PA279CV: Dell has much better contrast (2000:1 vs 1000:1) and USB-C hub with Ethernet. Vs LG 27UP850: Dell’s IPS Black delivers superior black levels and more I/O.",
+        gripCompatibility: "N/A",
+        wristAndPosture: "Fully adjustable stand (150mm height, tilt/swivel/pivot). Pivot to portrait mode for coding."
+      },
+      pros: [
+        "Revolutionary IPS Black panel – 2000:1 contrast ratio with deep blacks and no IPS glow",
+        "Comprehensive USB-C hub with 90W charging, Ethernet, and KVM switch",
+        "Excellent factory color calibration (Delta E < 2) for sRGB and DCI-P3",
+        "Daisy chain support (MST) for a second 4K monitor via DP-Out",
+        "4-sided virtually borderless design – perfect for multi-monitor setups"
+      ],
+      cons: [
+        "60Hz refresh rate unsuitable for high-refresh gaming",
+        "HDR performance limited to edge-lit local dimming (mediocre for movies)",
+        "No built-in speakers (requires external audio solution)",
+        "Plastic construction feels less premium than metal Apple Studio Display"
+      ],
+      setupNotes: [
+        "USB-C DOCKING: Use the USB-C upstream port (90W PD). Connect laptop → monitor with single cable. Attach keyboard/mouse to monitor’s USB-A ports; KVM auto-switches between USB-C and DP inputs.",
+        "DAISY CHAIN: Enable MST in OSD. Connect DP-out to a second monitor (e.g., another U2723QE) for dual 4K@60Hz over one cable from laptop.",
+        "CALIBRATION: Use sRGB mode for web design. Switch to DCI-P3 for video editing. Recalibrate with SpyderX Pro every 3-6 months for critical work.",
+        "ARM MOUNT: Remove stand (quick release button). Attach VESA 100x100 plate. Use a heavy-duty arm rated for 8kg+.",
+        "CABLE MANAGEMENT: Bundle all cables in arm’s cable channels. Use a USB-C right-angle adapter for a sleek laptop connection."
+      ]
+    },
+
+    {
+      id: "lg-27gr95qe",
+      category: "monitors",
+      name: "UltraGear 27GR95QE-B",
+      brand: "LG",
+      status: "Wishlist",
+      isTopPick: false,
+      topPickBadge: "OLED Upgrade Candidate",
+      price: "$799 - $999",
+      purchaseUrl: "https://www.lg.com/us/monitors/lg-27gr95qe-b-gaming-monitor",
+      tags: ["OLED", "240Hz", "0.03ms", "1440p", "G-Sync", "HDMI 2.1"],
+      summary: "Future upgrade target: 27-inch 1440p OLED gaming monitor with true 0.03ms response time, per-pixel dimming, and HDMI 2.1 for console support. Offers infinite contrast ratio and stunning motion clarity.",
+      properties: {
+        "Screen Size": "27-inch Flat",
+        "Resolution": "2560 x 1440 (QHD)",
+        "Refresh Rate": "240Hz (Native)",
+        "Response Time": "0.03ms (GtG OLED)",
+        "Panel Technology": "OLED (WOLED MLA+)",
+        "Color Gamut": "98.5% DCI-P3",
+        "HDR Support": "VESA DisplayHDR True Black 400",
+        "VESA Mount": "100 x 100 mm",
+        "Connectivity": "HDMI 2.1 x2, DisplayPort 1.4, USB 3.0 Hub",
+        "Weight with Stand": "7.9 kg (17.4 lbs)"
+      },
+      panelDetails: {
+        panelTech: "LG WOLED with MLA+ (Micro Lens Array)",
+        colorGamut: "98.5% DCI-P3",
+        deltaE: "< 1 (Factory Calibrated Gamer 1 mode)",
+        osdPreset: "Gamer 1 → Black Stabilizer: 50, Response Time: Fast, OLED Care features ON. Brightness: 100 nits SDR (100% white window limited due to ABL).",
+        iccProfile: "Use LG Calibration Studio or Windows HDR Calibration app for HDR profiling."
+      },
+      procurement: [
+        { label: "OLED Cleaning Kit", cnTerm: "OLED屏幕清洁剂 无酒精" },
+        { label: "HDMI 2.1 Cable (2m)", cnTerm: "HDMI 2.1 超高速48Gbps 线材" },
+        { label: "Monitor Arm (Heavy)", cnTerm: "桌面支架 承重10公斤" },
+        { label: "BIAS Lighting Strip", cnTerm: "屏幕背光 氛围灯 USB供电 5V" }
+      ],
+      softwareConfig: {
+        utility: "LG OnScreen Control / LG Calibration Studio",
+        runtimeDependency: "None (OSD only for most features)",
+        baseLayer: "240Hz, G-Sync Compatible, 10-bit, SDR/HDR Auto Switch",
+        gShiftLayer: "N/A"
+      },
+      glidesAndPad: {
+        stockSkates: "VESA 100x100 Mount + Sturdy Stand (Height/Swivel/Tilt/Pivot)",
+        recommendedSkates: "Ergotron HX (heavy-duty) or Amazon Basics Heavy Single Arm",
+        recommendedPadType: "Desk clamp mount with steel reinforcement"
+      },
+      lifespanEstimates: {
+        chassisLife: "4 – 6 years (OLED burn-in risk mitigated by pixel refresh and screen move)",
+        stockSwitchesLife: "N/A",
+        moddedSwitchesLife: "N/A",
+        limitingFactor: "OLED burn-in (static HUD elements in LoL, CS2 crosshair, Windows taskbar). Requires active OLED care habits."
+      },
+      ergonomicDetails: {
+        scoreReason: "9.2/10 – Superb motion clarity and infinite contrast, but ABL (Auto Brightness Limiter) may cause brightness shifts in productivity apps. Ergonomic stand adjustable, but glossy panel can reflect light.",
+        specificShapeContour: "Slim flat panel with almost no bezel, anti-glare coating is less aggressive (semi-glossy). Stand has a large footprint, requiring deeper desk.",
+        comparisonVsCloseCompetitors: "Vs ASUS PG27AQDM (same panel): LG has better OSD calibration and lower price. Vs Corsair Xeneon 27QHD240: LG uses newer MLA+ tech for higher brightness. Vs IPS 240Hz: OLED offers true 0.03ms response and perfect blacks, but risks burn-in.",
+        gripCompatibility: "N/A",
+        wristAndPosture: "Height-adjustable stand with pivot; use monitor arm to bring panel closer and save desk depth."
+      },
+      pros: [
+        "True OLED per-pixel illumination – infinite contrast and zero blooming",
+        "Phenomenal motion clarity (0.03ms GtG) – CRT-like smoothness",
+        "240Hz refresh rate perfect for competitive LoL/CS2",
+        "HDMI 2.1 for 4K 120Hz console gaming (downscaled to 1440p)",
+        "G-Sync Compatible and FreeSync Premium Pro"
+      ],
+      cons: [
+        "Burn-in risk with static desktop elements – requires active care",
+        "SDR full-screen brightness limited (~200 nits) due to ABL",
+        "Aggressive matte coating (semi-glossy) can cause light reflections",
+        "No built-in speakers, no USB-C video input",
+        "Higher price than top-tier IPS 240Hz"
+      ],
+      setupNotes: [
+        "OLED CARE: Enable Screen Move (pixel shift) & Screen Saver (auto dim after 2 min). Run Pixel Cleaning every 4 hours of use.",
+        "TASKBAR MANAGEMENT: Auto-hide taskbar in Windows. Use TranslucentTB for transparency. Black wallpaper, no desktop icons.",
+        "GAMING HUD: In LoL, adjust HUD scale to move minimap slightly, or use dynamic HUD mods. In CS2, slightly reduce crosshair static alpha.",
+        "BRIGHTNESS CALIBRATION: In SDR, set brightness to 120 nits (OLED Light ~30). Use Windows HDR Calibration for peak brightness mapping.",
+        "ARM MOUNT: Use heavy-duty arm; the monitor is front-heavy. Cable management in arm’s channel is essential."
+      ]
+    },
+
+    {
+      id: "gigabyte-m27q",
+      category: "monitors",
+      name: "M27Q (Rev 2.0)",
+      brand: "Gigabyte",
+      status: "Wishlist",
+      isTopPick: true,
+      topPickBadge: "Best Value 1440p 170Hz Gaming Monitor",
+      price: "$269 - $299",
+      purchaseUrl: "https://www.gigabyte.com/Monitor/M27Q-rev-20",
+      tags: ["1440p", "170Hz", "IPS", "KVM", "USB-C", "Budget"],
+      summary: "Excellent value 27-inch 1440p IPS gaming monitor with 170Hz refresh rate, built-in KVM switch, and USB-C connectivity. Covers 95% DCI-P3 for vibrant colors at a budget price.",
+      properties: {
+        "Screen Size": "27-inch Flat",
+        "Resolution": "2560 x 1440 (QHD)",
+        "Refresh Rate": "170Hz (OC)",
+        "Response Time": "1ms (MPRT) / 4ms (GtG)",
+        "Panel Technology": "IPS (SS IPS)",
+        "Color Gamut": "95% DCI-P3 / 140% sRGB",
+        "HDR Support": "VESA DisplayHDR 400",
+        "VESA Mount": "100 x 100 mm",
+        "Connectivity": "USB-C 18W, DisplayPort 1.4, HDMI 2.0 x2, USB 3.0 Hub",
+        "Weight with Stand": "5.5 kg (12.1 lbs)"
+      },
+      panelDetails: {
+        panelTech: "Sharp IGZO SS IPS",
+        colorGamut: "95% DCI-P3 / 140% sRGB",
+        deltaE: "~2.5 (Pre-calibrated, acceptable for gaming)",
+        osdPreset: "Picture Mode: Standard, Overdrive: Balanced (middle), Black Equalizer: 10, Color Temp: User",
+        iccProfile: "RTINGS ICC profile available. Use sRGB mode in OSD for color-accurate work (clamps gamut)."
+      },
+      procurement: [
+        { label: "Monitor Arm", cnTerm: "显示器支架 气压弹簧 5公斤" },
+        { label: "USB-C Cable", cnTerm: "USB-C 3.2 Gen2 10Gbps 视频线" }
+      ],
+      softwareConfig: {
+        utility: "Gigabyte OSD Sidekick",
+        runtimeDependency: "OSD_Sidekick.exe (Windows only)",
+        baseLayer: "170Hz OC, G-Sync Compatible, sRGB mode for work",
+        gShiftLayer: "N/A"
+      },
+      glidesAndPad: {
+        stockSkates: "VESA 100x100 + Sturdy Stand (Height/Tilt/Pivot)",
+        recommendedSkates: "Single gas spring monitor arm",
+        recommendedPadType: "Desk clamp mount"
+      },
+      lifespanEstimates: {
+        chassisLife: "5 – 7 years (SS IPS panel, solid build)",
+        stockSwitchesLife: "N/A",
+        moddedSwitchesLife: "N/A",
+        limitingFactor: "KVM USB controller chip or backlight LED aging."
+      },
+      ergonomicDetails: {
+        scoreReason: "8.5/10 – Good height/tilt/pivot adjustment, 27″ 1440p is ideal at desk distance. No swivel on stock stand. Lightweight for arm mounting.",
+        specificShapeContour: "Thin 3-sided bezel-less design, subtle matte anti-glare coating. Minimal gaming aesthetic fits office environments.",
+        comparisonVsCloseCompetitors: "Vs Dell S2722DGM (VA): M27Q has better colors and viewing angles (IPS vs VA). Vs LG 27GP850: M27Q is $150 cheaper with built-in KVM and USB-C, though slightly slower response times. Vs ASUS PG279QM: M27Q lacks true G-Sync module and 240Hz but costs 60% less.",
+        gripCompatibility: "N/A",
+        wristAndPosture: "Height & tilt adjustable; use monitor arm for swivel and deeper desk placement."
+      },
+      pros: [
+        "Outstanding value at ~$280 for 1440p 170Hz IPS",
+        "Built-in KVM switch with USB-C video input",
+        "Good color coverage (95% DCI-P3) for media and light creative work",
+        "G-Sync Compatible and FreeSync Premium",
+        "Lightweight and easy to arm-mount"
+      ],
+      cons: [
+        "Response times slightly behind premium competitors",
+        "Factory calibration is adequate but not professional-grade",
+        "No HDMI 2.1, USB-C only 18W (no laptop charging)",
+        "OSD joystick can be fiddly"
+      ],
+      setupNotes: [
+        "KVM SETUP: Connect keyboard/mouse to monitor USB-A ports, USB-C to laptop. Switch between DP (desktop) and USB-C (laptop) in OSD.",
+        "OVERDRIVE: Set to 'Balanced' for best motion clarity without overshoot. 'Speed' introduces ghosting.",
+        "COLOR MODE: Use sRGB mode for web work to clamp wide gamut. Standard mode for gaming vibrancy.",
+        "REFRESH RATE: Enable 170Hz OC in monitor OSD, then set in Windows Display Settings."
+      ]
+    },
+
+    {
+      id: "dell-s2722qc",
+      category: "monitors",
+      name: "S2722QC",
+      brand: "Dell",
+      status: "Wishlist",
+      isTopPick: true,
+      topPickBadge: "Best Budget 4K USB-C Productivity Monitor",
+      price: "$269 - $309",
+      purchaseUrl: "https://www.dell.com/en-us/shop/dell-27-4k-uhd-usb-c-monitor-s2722qc/apd/210-bccp/monitors-monitor-accessories",
+      tags: ["4K", "USB-C 65W", "IPS", "Budget", "VESA", "Productivity"],
+      summary: "Affordable 27-inch 4K IPS monitor with USB-C 65W power delivery, AMD FreeSync, and built-in speakers. Perfect budget 4K productivity display for work-from-home and casual media consumption.",
+      properties: {
+        "Screen Size": "27-inch Flat",
+        "Resolution": "3840 x 2160 (4K UHD)",
+        "Refresh Rate": "60Hz",
+        "Response Time": "4ms (GtG Extreme)",
+        "Panel Technology": "IPS",
+        "Color Gamut": "99% sRGB",
+        "HDR Support": "HDR10 (software)",
+        "VESA Mount": "100 x 100 mm",
+        "Connectivity": "USB-C 65W PD, HDMI 2.0 x2, USB 3.2 Gen1 x2",
+        "Weight with Stand": "5.0 kg (11.0 lbs)"
+      },
+      panelDetails: {
+        panelTech: "IPS (LG Display LM270WR4-SSC1 variant)",
+        colorGamut: "99% sRGB",
+        deltaE: "~2.0 (Pre-calibrated, decent out of box)",
+        osdPreset: "Standard mode, Brightness: 75%, Contrast: 75%, Response Time: Normal (not Extreme – avoids ghosting).",
+        iccProfile: "Dell factory ICC loaded. For sRGB work, no additional calibration needed for most users."
+      },
+      procurement: [
+        { label: "Monitor Arm (Light)", cnTerm: "显示器支架 承重5公斤 气压弹簧" },
+        { label: "USB-C Cable (included)", cnTerm: "USB-C 3.2 Gen1 65W 数据线" }
+      ],
+      softwareConfig: {
+        utility: "Dell Display Manager",
+        runtimeDependency: "DDM.exe (optional, for Easy Arrange layouts)",
+        baseLayer: "Easy Arrange grid, Auto-input switching",
+        gShiftLayer: "N/A"
+      },
+      glidesAndPad: {
+        stockSkates: "VESA 100x100 + Tilt-Adjustable Stand",
+        recommendedSkates: "Light single monitor arm",
+        recommendedPadType: "Desk clamp mount"
+      },
+      lifespanEstimates: {
+        chassisLife: "6 – 8 years (IPS panel, simple electronics)",
+        stockSwitchesLife: "N/A",
+        moddedSwitchesLife: "N/A",
+        limitingFactor: "USB-C port wear or backlight LED aging. Power delivery circuit may degrade after 5+ years."
+      },
+      ergonomicDetails: {
+        scoreReason: "7.5/10 – Height-adjustable and tilt-capable, but lacks swivel and pivot on stock stand. 27″ 4K at 163 PPI delivers razor-sharp text for coding and documents.",
+        specificShapeContour: "Slim 3-sided bezel, subtle textured plastic back. Clean, professional look for office or home desk.",
+        comparisonVsCloseCompetitors: "Vs Apple Studio Display: 1/5th the price, but no 5K, no metal build, no speakers quality. Vs LG 27UP600: Dell includes USB-C 65W PD and better stand. Vs Gigabyte M28U: M28U is 144Hz gaming-focused and $200 more.",
+        gripCompatibility: "N/A",
+        wristAndPosture: "Height-adjustable stand supports ergonomic eye-level placement. Tilt-only, so use an arm for swivel."
+      },
+      pros: [
+        "Affordable entry into 4K USB-C productivity ($269-$309)",
+        "USB-C 65W PD charges most laptops with single cable",
+        "Sharp 163 PPI for crisp text and UI elements",
+        "Decent factory color calibration (99% sRGB, ΔE ~2)",
+        "Built-in dual 3W speakers (basic but functional)"
+      ],
+      cons: [
+        "60Hz only — not suitable for gaming beyond casual play",
+        "Limited to sRGB gamut (no DCI-P3 for creative work)",
+        "Tilt-only stand out of box (no swivel/pivot)",
+        "Contrast typical of IPS (~1000:1), blacks not deep",
+        "Response time 'Extreme' mode introduces ghosting — stick to Normal"
+      ],
+      setupNotes: [
+        "SINGLE CABLE SETUP: USB-C cable carries 4K video + 65W power to laptop. Connect keyboard/mouse to monitor USB-A ports for a clean docking experience.",
+        "RESPONSE TIME: Set to 'Normal' in OSD. 'Extreme' causes severe inverse ghosting and is not recommended.",
+        "BRIGHTNESS: Reduce to 50-60% for comfortable SDR office use (~120 nits). Monitor can reach ~350 nits max.",
+        "COLOR ACCURACY: For non-critical work, factory calibration is sufficient. No wide-gamut clamping needed (sRGB native).",
+        "ARM MOUNT: Lightweight at 5kg, any budget gas-spring arm will handle it easily."
+      ]
+    }
+  ]
+};
