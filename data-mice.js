@@ -186,5 +186,70 @@ window.DESK_MICE = [
     pros: ["Incredibly comfortable for large hands", "Long battery life", "Light for its size", "Beautiful RGB implementation"],
     cons: ["Optical switches can't be modded", "Software (Swarm) can be finicky"],
     ergonomicDetails: { scoreReason: "Deep thumb groove and high back hump fill the palm without forcing fingers. Exceptional for long work sessions.", comparisonVsCloseCompetitors: "Vs G502: Lighter, more pronounced ergo shape. Vs DeathAdder V3: larger, more relaxed palm support.", gripCompatibility: "Large hands, Palm/Claw" }
+  },
+  {
+    id: "signature-m650", category: "mice", name: "Signature M650", brand: "Logitech", status: "Owned",
+    topPickBadge: "Best Compact Burner / Portable Mouse", price: "$39",
+    purchaseUrl: "https://www.logitech.com/en-us/products/mice/m650-signature-wireless-mouse.html",
+    tags: ["Portable", "AA Battery", "SmartWheel", "Silent Touch", "Logi Bolt"],
+    summary: "Compact, long-battery-life portable office mouse featuring SmartWheel adaptive scrolling, silent switch dampers, and simple dual-side button navigation.",
+    properties: { "Ergonomic Rating": "7.5 / 10", "Grip Style Match": "Fingertip / Claw", "Wrist Strain Index": "Moderate (No Thumb Wing)", "Weight Profile": "101g (With 1x AA Battery)", "Sensor & Speed": "Logitech Optical | 125Hz Polling", "Battery Specs": "1x AA Battery (24 Months)", "Switch Mounting": "2-Pin Through-Hole (Main: 7.3mm, Middle: 5.0mm)" },
+    repairability: { score: "10 / 10 (Simple Burner Teardown)", screwCount: "3 Screws (Phillips #0 under bottom skates)", fragilePoints: ["SmartWheel plastic carriage alignment spring"], recommendedIronTemp: "330°C - 350°C" },
+    weightBalance: { stockBalance: "Rear-Heavy (101g with 1x AA Alkaline Battery)", moddedBalance: "Slightly Rear-Heavy (Can use AAA battery adapter to drop 12g)" },
+    softwareConfig: { utility: "Logi Options+", runtimeDependency: "LogiOptionsPlus_Agent.exe", baseLayer: "SmartWheel Adaptive Scroll + 2 Side Navigation Buttons", gShiftLayer: "N/A" },
+    glidesAndPad: { stockSkates: "Factory Black PTFE", recommendedSkates: "Tiger Ice M650 Replacement Skates", recommendedPadType: "Standard Cloth Mousepad" },
+    lifespanEstimates: { chassisLife: "5 - 7 Years (Simple rugged PCB)", stockSwitchesLife: "12 - 24 Months (~5M - 10M Clicks)", moddedSwitchesLife: "4 - 6 Years (30 Million Clicks via Huano Silent Yellow Dot)", limitingFactor: "Middle click wheel carriage plastic wear or AA battery terminal spring corrosion." },
+    stockSwitchesList: [
+      { buttonGroup: "Main Left & Right (M1/M2)", switchModel: "Kailh / Logi Silent Square 2-Pin (7.3mm)", lifespan: "10M Clicks", sound: "34 - 36 dB (Near-silent)" },
+      { buttonGroup: "Middle Scroll Click (G3)", switchModel: "Standard 2-Pin Tactile DIP (5.0mm)", lifespan: "5M Clicks", sound: "46 - 48 dB" },
+      { buttonGroup: "Side Forward & Back (M4/M5)", switchModel: "Kailh Silent Square 2-Pin (7.3mm)", lifespan: "10M Clicks", sound: "35 dB" }
+    ],
+    modsAndAddons: [
+      { name: "Huano/Kailh Silent Yellow Dot 30M Switch Swap", difficulty: "Easy", impact: "Upgrades main silent clicks from 10M to 30M click lifespan." },
+      { name: "Kailh Mute 5.0mm Middle Click Swap", difficulty: "Easy", impact: "Fixes stock middle-click mechanical fatigue." },
+      { name: "Tiger Ice PTFE Skates", difficulty: "Easy", impact: "Smooths bottom glide." }
+    ],
+    ergonomicDetails: { scoreReason: "Small and flat, ideal for travel but not prolonged use for large hands.", specificShapeContour: "107mm x 61.8mm x 37.8mm. No thumb wing.", comparisonVsCloseCompetitors: "Vs MX Anywhere 3S: Half the price, quieter clicks.", gripCompatibility: "Small-to-Medium hands, Fingertip/Claw", wristAndPosture: "Flat posture requires more wrist movement." },
+    pros: ["Exceptional 24-month battery life", "SmartWheel", "Quiet silent-touch clicking", "Easy to disassemble and solder"],
+    cons: ["No onboard memory for custom keybinds", "Basic optical sensor", "Stock middle-click fatigue", "125Hz polling rate limit"],
+    setupNotes: ["TEARDOWN: 3 screws under skates.", "BURNER MODDING: Great practice board."],
+    buttonSwitchMapping: [
+      { buttonGroup: "Main Left & Right Click", recommendedSwitchId: "huano-silent-yellow-73mm", reason: "30M click lifespan, crisp silent actuation." },
+      { buttonGroup: "Middle Mouse Click (G3)", recommendedSwitchId: "kailh-silent-5mm", reason: "30M click 5.0mm Kailh Mute switch." },
+      { buttonGroup: "Side Navigation Buttons (M4 / M5)", recommendedSwitchId: "huano-silent-yellow-73mm", reason: "Maintains silent acoustic profile." }
+    ]
+  },
+  {
+    id: "basilisk-v3-x", category: "mice", name: "Basilisk V3 X HyperSpeed", brand: "Razer", status: "Alternative",
+    isTopPick: false, topPickBadge: "Evaluated & Returned", price: "$39 - $59",
+    purchaseUrl: "https://www.razer.com/gaming-mice/razer-basilisk-v3-x-hyperspeed",
+    tags: ["Wireless", "Razer 18K", "Bluetooth/2.4G", "AA Battery", "Mechanical"],
+    summary: "Ergonomic wireless gaming mouse with thumb rest support, Razer 5G 18K optical sensor, and dual-mode wireless connectivity.",
+    properties: { "Ergonomic Rating": "9.0 / 10", "Grip Style Match": "Palm / Claw", "Wrist Strain Index": "Low (Thumb Rest Ledge)", "Weight Profile": "110g (With AA Battery)", "Sensor & Speed": "Razer 5G 18,000 DPI | 1000Hz Polling", "Acoustic Rating": "57-60 dB Stock → 50 dB Modded", "Power Source": "1x AA Battery (235h 2.4G / 535h BT)", "Switch Mounting": "3-Pin Mechanical (Main: Std, Sides: 90° Bent)" },
+    repairability: { score: "6.0 / 10 (Moderate)", screwCount: "5 Screws (Phillips #0 under skates)", fragilePoints: ["HyperSpeed 2.4GHz USB receiver dongle IC micro-fractures", "Side buttons require 90° bent pin switches"], recommendedIronTemp: "340°C - 350°C" },
+    weightBalance: { stockBalance: "Rear-Heavy (110g with AA battery in rear cavity)", moddedBalance: "Slightly Rear-Heavy" },
+    softwareConfig: { utility: "Razer Synapse 3", runtimeDependency: "Razer Synapse Service.exe", baseLayer: "Razer Hypershift Modifier Layer + DPI Cycle", gShiftLayer: "Razer Hypershift Commands" },
+    glidesAndPad: { stockSkates: "Virgin PTFE Skates", recommendedSkates: "Tiger Ice Basilisk V3 Skates", recommendedPadType: "PORON Foam Lined Mousepad" },
+    lifespanEstimates: { chassisLife: "1 - 3 Years (High risk of 2.4GHz HyperSpeed USB dongle chip failure)", stockSwitchesLife: "18 - 36 Months (~15M - 25M Clicks)", moddedSwitchesLife: "5 - 7 Years (80 Million Clicks via Huano BTSPD)", limitingFactor: "Hardware dongle IC solder micro-fractures (Device Descriptor Request Failed)." },
+    stockSwitchesList: [
+      { buttonGroup: "Main Left & Right (M1/M2)", switchModel: "Razer Gen-2 Mechanical (Kailh GM 4.0 variant)", lifespan: "60M Rated", sound: "57 - 60 dB (Loud clack)" },
+      { buttonGroup: "Side Forward & Back (M4/M5)", switchModel: "90° Bent Pin 3-Pin Mechanical", lifespan: "20M Clicks", sound: "55 dB" },
+      { buttonGroup: "Middle Scroll & DPI Buttons", switchModel: "Standard 2-Pin Tactile DIP (5.0mm)", lifespan: "10M Clicks", sound: "52 dB" }
+    ],
+    modsAndAddons: [
+      { name: "0.5mm Rogers PORON Battery Cavity Foam", difficulty: "Easy", impact: "Dampens loud hollow AA battery cavity echo from 60dB to 50dB." },
+      { name: "Huano BTSPD 80M Main Switch Swap", difficulty: "Moderate", impact: "Replaces stiff 70g stock springs with crisp 80M switches." },
+      { name: "90° Bent Pin Side Switch Upgrade", difficulty: "Moderate", impact: "Upgrades side buttons to Huano BSPD 80M." }
+    ],
+    ergonomicDetails: { scoreReason: "Comfortable right-hand contour with wide thumb rest wing. Deducted 1 point for rear-heavy AA battery balance and hollow click echo.", specificShapeContour: "130mm x 75mm x 42mm. Ergonomic shape inspired by G502.", comparisonVsCloseCompetitors: "Vs G502 LIGHTSPEED: Nearly identical outer shape, but AA battery causes rear-heavy balance and loud acoustic resonance (~60 dB).", gripCompatibility: "Medium-to-Large hands, Palm/Claw.", wristAndPosture: "Low wrist strain with comfortable thumb rest wing support." },
+    pros: ["Ergonomic shell contour with comfortable thumb rest wing", "Dual connectivity (2.4GHz + Bluetooth)", "Standard 3-pin mechanical main switch sockets (solderable)", "Long battery life on single AA cells"],
+    cons: ["High defect rate on 2.4GHz dongle IC", "Loud hollow click echo (~57–60 dB)", "Stiff 70g stock main switch springs", "Side buttons require specialized 90° bent pin switches"],
+    setupNotes: ["DEFECT DIAGNOSIS: Returned due to dongle IC micro-fracture.", "CAVITY ACOUSTIC DAMPENING: Line AA battery cavity with 0.5mm Rogers PORON foam."],
+    buttonSwitchMapping: [
+      { buttonGroup: "Main Left & Right Click", recommendedSwitchId: "huano-btspd-80m", reason: "Replaces stiff stock switches, lowers click force, dampens clack." },
+      { buttonGroup: "Side Navigation Buttons (M4 / M5)", recommendedSwitchId: "huano-bspd-90deg", reason: "80M click rated 90° right-angle pre-bent pins for vertical side PCB." },
+      { buttonGroup: "Middle Scroll Click & DPI Cycle", recommendedSwitchId: "kailh-5mm-tactile", reason: "50M click rated 5.0mm Kailh tactile switch clearing scroll wheel cradle." }
+    ]
   }
+];
 ];
