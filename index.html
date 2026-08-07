@@ -100,7 +100,7 @@
       color: var(--text-muted);
     }
 
-    /* Main Content Area */
+    /* Main Section */
     main { flex-grow: 1; display: flex; flex-direction: column; overflow: hidden; }
 
     header {
@@ -158,14 +158,14 @@
     /* Multi-Column Responsive Grid */
     .comparison-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
       gap: 20px;
       align-items: start;
     }
 
     @media (max-width: 1080px) { .comparison-grid { grid-template-columns: 1fr; } }
 
-    /* Product Card Container (Uncapped height for natural page scrolling) */
+    /* Card Box Structure */
     .card {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -219,7 +219,7 @@
 
     .card-summary { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
 
-    /* Interactive Spec Pills */
+    /* Interactive Quick Spec Pills */
     .quick-specs-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -243,7 +243,6 @@
     .spec-pill-interactive:hover {
       background: var(--primary-light);
       border-color: var(--primary);
-      transform: translateY(-1px);
     }
 
     .spec-key { font-size: 10px; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
@@ -265,7 +264,7 @@
 
     .card-expand-bar:hover { background: rgba(99, 102, 241, 0.08); }
 
-    /* Expanded Content Block (Fully scrollable via main page viewport) */
+    /* Sub-Section Accordion */
     .card-scroll-body {
       display: none;
       padding: 16px;
@@ -276,7 +275,6 @@
 
     .card.expanded .card-scroll-body { display: flex; }
 
-    /* Sub-Accordion Collapsible Blocks */
     .sub-accordion {
       background: rgba(0, 0, 0, 0.25);
       border: 1px solid var(--border);
@@ -300,7 +298,6 @@
     }
 
     .sub-accordion-header:hover { background: rgba(255, 255, 255, 0.06); }
-
     .sub-accordion-title { display: flex; align-items: center; gap: 8px; color: var(--primary); }
 
     .sub-accordion-arrow {
@@ -359,7 +356,6 @@
     .switch-table th { color: var(--text-muted); font-size: 10px; text-transform: uppercase; font-weight: 700; }
 
     .empty-state { text-align: center; padding: 60px 20px; color: var(--text-muted); }
-
     .buy-link { color: var(--primary); text-decoration: none; font-weight: 600; font-size: 12px; }
     .buy-link:hover { text-decoration: underline; }
   </style>
@@ -412,7 +408,7 @@
       let activeCategory = categories[0]?.id || 'mice';
       let searchQuery = '';
       let expandedCardIds = new Set();
-      let activeSubSections = new Set(); // Stores "cardId:subSectionKey"
+      let activeSubSections = new Set();
 
       const categoryNav = document.getElementById('categoryNav');
       const searchInput = document.getElementById('searchInput');
@@ -436,7 +432,7 @@
 
       function renderNav() {
         categoryNav.innerHTML = categories.map(cat => {
-          const count = products.filter(p => p.category === cat.id).length;
+          const count = products.filter(p => p && p.category === cat.id).length;
           return `
             <li class="nav-item ${cat.id === activeCategory ? 'active' : ''}" data-cat="${cat.id}">
               <span>${cat.label}</span>
@@ -448,209 +444,229 @@
 
       function getFilteredProducts() {
         return products.filter(p => {
+          if (!p) return false;
           const matchesCategory = p.category === activeCategory;
           const query = searchQuery.toLowerCase();
           return matchesCategory && (!query || 
-            p.name.toLowerCase().includes(query) ||
-            p.brand.toLowerCase().includes(query) ||
-            (p.tags && p.tags.some(t => t.toLowerCase().includes(query))) ||
+            (p.name && p.name.toLowerCase().includes(query)) ||
+            (p.brand && p.brand.toLowerCase().includes(query)) ||
+            (p.tags && Array.isArray(p.tags) && p.tags.some(t => String(t).toLowerCase().includes(query))) ||
             (p.summary && p.summary.toLowerCase().includes(query))
           );
         });
       }
 
       function renderProducts() {
-        const filtered = getFilteredProducts();
+        try {
+          const filtered = getFilteredProducts();
 
-        if (filtered.length === 0) {
+          if (filtered.length === 0) {
+            productList.innerHTML = `
+              <div class="empty-state">
+                <h3>No items match your search</h3>
+                <p style="margin-top: 6px;">Try clearing search filters or selecting another category.</p>
+              </div>`;
+            return;
+          }
+
+          productList.innerHTML = filtered.map(item => {
+            const isExpanded = expandedCardIds.has(item.id);
+            const statusClass = item.status === 'Owned' ? 'status-owned' : (item.status === 'Alternative' ? 'status-alternative' : 'status-wishlist');
+            
+            // Safe Property Getters
+            const props = (item.properties && typeof item.properties === 'object') ? item.properties : {};
+            const ergo = (item.ergonomicDetails && typeof item.ergonomicDetails === 'object') ? item.ergonomicDetails : null;
+            const pros = Array.isArray(item.pros) ? item.pros : [];
+            const cons = Array.isArray(item.cons) ? item.cons : [];
+            const setupNotes = Array.isArray(item.setupNotes) ? item.setupNotes : (item.setupNotes ? [String(item.setupNotes)] : []);
+            const switchMappings = Array.isArray(item.buttonSwitchMapping) ? item.buttonSwitchMapping : [];
+
+            return `
+              <div class="card ${isExpanded ? 'expanded' : ''}" id="card-${item.id}">
+                
+                <!-- Card Header -->
+                <div class="card-header">
+                  <div class="card-title-row">
+                    <div>
+                      <span class="product-brand">${item.brand || 'Generic'}</span>
+                      <div class="product-name">${item.name || 'Product'}</div>
+                    </div>
+                    <span class="status-badge ${statusClass}">${item.status || 'Wishlist'}</span>
+                  </div>
+
+                  ${item.isTopPick ? `<div><span class="top-pick-tag">★ ${item.topPickBadge || 'Top Pick'}</span></div>` : ''}
+
+                  <div class="card-summary">${item.summary || ''}</div>
+                </div>
+
+                <!-- Interactive Quick Spec Pills -->
+                <div class="quick-specs-grid">
+                  <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'ergonomics')">
+                    <span class="spec-key">Ergonomic Score ↗</span>
+                    <span class="spec-val">${props["Ergonomic Rating"] || 'N/A'}</span>
+                  </div>
+                  <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'properties')">
+                    <span class="spec-key">Weight Profile ↗</span>
+                    <span class="spec-val">${props["Weight Profile"] || props["Weight"] || 'N/A'}</span>
+                  </div>
+                  <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'ergonomics')">
+                    <span class="spec-key">Grip Style ↗</span>
+                    <span class="spec-val">${props["Grip Style Match"] || 'N/A'}</span>
+                  </div>
+                  <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'switches')">
+                    <span class="spec-key">Switch Sockets ↗</span>
+                    <span class="spec-val">${props["Switch Mounting"] || 'N/A'}</span>
+                  </div>
+                </div>
+
+                <!-- Expanded Content Body -->
+                <div class="card-scroll-body">
+                  
+                  <!-- 1. ERGONOMICS & COMPARISON -->
+                  ${ergo ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:ergonomics`) ? 'active' : ''}" id="sub-${item.id}-ergonomics">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'ergonomics')">
+                        <span class="sub-accordion-title">📐 Ergonomics & Multi-Mouse Comparison</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        ${ergo.scoreReason ? `
+                          <div>
+                            <strong>Why this Ergonomic Score (${props["Ergonomic Rating"] || ''}):</strong>
+                            <p style="font-size:12px; color:var(--text-muted); margin-top:2px;">${ergo.scoreReason}</p>
+                          </div>
+                        ` : ''}
+
+                        ${ergo.comparisonVsOthers ? `
+                          <div class="comparison-box">
+                            <strong>⚔️ Comparison Against Other Mice:</strong>
+                            <p style="margin-top:4px;">${ergo.comparisonVsOthers}</p>
+                          </div>
+                        ` : ''}
+
+                        <div style="font-size:12px;">
+                          ${ergo.gripCompatibility ? `<div><strong>Hand Size & Grip Match:</strong> ${ergo.gripCompatibility}</div>` : ''}
+                          ${ergo.wristAndPosture ? `<div style="margin-top:4px;"><strong>Wrist & Forearm Posture:</strong> ${ergo.wristAndPosture}</div>` : ''}
+                        </div>
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 2. TECHNICAL SPECS -->
+                  ${Object.keys(props).length > 0 ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:properties`) ? 'active' : ''}" id="sub-${item.id}-properties">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'properties')">
+                        <span class="sub-accordion-title">⚡ Performance, Sensor & Battery Specs</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px;">
+                          ${Object.entries(props).map(([k, v]) => `
+                            <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:4px; font-size:11px;">
+                              <div style="color:var(--text-muted); text-transform:uppercase; font-size:9px;">${k}</div>
+                              <div style="font-weight:600; margin-top:2px;">${v}</div>
+                            </div>
+                          `).join('')}
+                        </div>
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 3. PROS & CONS -->
+                  ${(pros.length > 0 || cons.length > 0) ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:proscons`) ? 'active' : ''}" id="sub-${item.id}-proscons">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'proscons')">
+                        <span class="sub-accordion-title">⚖️ Advantages & Disadvantages</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <div class="pro-con-grid">
+                          <div style="display:flex; flex-direction:column; gap:6px;">
+                            ${pros.map(p => `<div class="pro-con-item pro-item">✓ ${p}</div>`).join('')}
+                          </div>
+                          <div style="display:flex; flex-direction:column; gap:6px;">
+                            ${cons.map(c => `<div class="pro-con-item con-item">✕ ${c}</div>`).join('')}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 4. MICROSWITCH GUIDE -->
+                  ${switchMappings.length > 0 ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:switches`) ? 'active' : ''}" id="sub-${item.id}-switches">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'switches')">
+                        <span class="sub-accordion-title">🔌 Per-Button Microswitch Suggestions</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <table class="switch-table">
+                          <thead>
+                            <tr>
+                              <th>Button Zone</th>
+                              <th>Recommended Switch</th>
+                              <th>Tactile & Acoustic Reason</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            ${switchMappings.map(m => {
+                              const sw = (microswitches && microswitches[m.recommendedSwitchId]) ? microswitches[m.recommendedSwitchId] : {};
+                              return `
+                                <tr>
+                                  <td><strong>${m.buttonGroup || 'Button'}</strong></td>
+                                  <td>
+                                    <div><strong>${sw.name || m.recommendedSwitchId || 'Switch'}</strong></div>
+                                    <div style="color:var(--text-muted); font-size:10px;">${sw.force || ''} | ${sw.lifespan || ''}</div>
+                                  </td>
+                                  <td style="color:var(--text-muted); font-size:11px;">${m.reason || sw.feel || ''}</td>
+                                </tr>
+                              `;
+                            }).join('')}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  <!-- 5. MODDING & REPAIR NOTES -->
+                  ${setupNotes.length > 0 ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:notes`) ? 'active' : ''}" id="sub-${item.id}-notes">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'notes')">
+                        <span class="sub-accordion-title">🔧 Modding, Repair & Wiring Notes</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        <ul class="bullet-list">
+                          ${setupNotes.map(n => `<li>${n}</li>`).join('')}
+                        </ul>
+                      </div>
+                    </div>
+                  ` : ''}
+
+                  ${item.purchaseUrl ? `
+                    <div style="display:flex; justify-content:flex-end; padding-top:4px;">
+                      <a href="${item.purchaseUrl}" target="_blank" class="buy-link">Official Buy Page ↗</a>
+                    </div>
+                  ` : ''}
+
+                </div>
+
+                <!-- Card Expand Footer Bar -->
+                <div class="card-expand-bar" onclick="window.deskApp.toggleCard('${item.id}')">
+                  <span>${isExpanded ? '▲ Close Card Sections' : '▼ Expand Sub-Sections (Ergonomics, Specs, Switches)'}</span>
+                  <span>${item.price || ''}</span>
+                </div>
+
+              </div>
+            `;
+          }).join('');
+        } catch (err) {
           productList.innerHTML = `
             <div class="empty-state">
-              <h3>No items match your search</h3>
-              <p style="margin-top: 6px;">Try clearing search filters or selecting another category.</p>
+              <h3>Error rendering directory</h3>
+              <p style="color:#f87171; margin-top:6px;">${err.message}</p>
             </div>`;
-          return;
         }
-
-        productList.innerHTML = filtered.map(item => {
-          const isExpanded = expandedCardIds.has(item.id);
-          const statusClass = item.status === 'Owned' ? 'status-owned' : (item.status === 'Alternative' ? 'status-alternative' : 'status-wishlist');
-          const props = item.properties || {};
-
-          return `
-            <div class="card ${isExpanded ? 'expanded' : ''}" id="card-${item.id}">
-              
-              <!-- Card Header -->
-              <div class="card-header">
-                <div class="card-title-row">
-                  <div>
-                    <span class="product-brand">${item.brand}</span>
-                    <div class="product-name">${item.name}</div>
-                  </div>
-                  <span class="status-badge ${statusClass}">${item.status || 'Wishlist'}</span>
-                </div>
-
-                ${item.isTopPick ? `<div><span class="top-pick-tag">★ ${item.topPickBadge || 'Top Pick'}</span></div>` : ''}
-
-                <div class="card-summary">${item.summary || ''}</div>
-              </div>
-
-              <!-- Interactive Quick Spec Pills (Clicking expands and jumps to section) -->
-              <div class="quick-specs-grid">
-                <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'ergonomics')">
-                  <span class="spec-key">Ergonomic Score ↗</span>
-                  <span class="spec-val">${props["Ergonomic Rating"] || 'N/A'}</span>
-                </div>
-                <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'properties')">
-                  <span class="spec-key">Weight Profile ↗</span>
-                  <span class="spec-val">${props["Weight Profile"] || props["Weight"] || 'N/A'}</span>
-                </div>
-                <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'ergonomics')">
-                  <span class="spec-key">Grip Style ↗</span>
-                  <span class="spec-val">${props["Grip Style Match"] || 'N/A'}</span>
-                </div>
-                <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'switches')">
-                  <span class="spec-key">Switch Sockets ↗</span>
-                  <span class="spec-val">${props["Switch Mounting"] || 'N/A'}</span>
-                </div>
-              </div>
-
-              <!-- Expanded Content Body -->
-              <div class="card-scroll-body">
-                
-                <!-- 1. ERGONOMICS & COMPARISON -->
-                ${item.ergonomicDetails ? `
-                  <div class="sub-accordion ${activeSubSections.has(`${item.id}:ergonomics`) ? 'active' : ''}" id="sub-${item.id}-ergonomics">
-                    <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'ergonomics')">
-                      <span class="sub-accordion-title">📐 Ergonomics & Multi-Mouse Comparison</span>
-                      <span class="sub-accordion-arrow">▼</span>
-                    </div>
-                    <div class="sub-accordion-body">
-                      <div>
-                        <strong>Why this Ergonomic Score (${props["Ergonomic Rating"] || ''}):</strong>
-                        <p style="font-size:12px; color:var(--text-muted); margin-top:2px;">${item.ergonomicDetails.scoreReason}</p>
-                      </div>
-
-                      <div class="comparison-box">
-                        <strong>⚔️ Comparison Against Other Mice:</strong>
-                        <p style="margin-top:4px;">${item.ergonomicDetails.comparisonVsOthers}</p>
-                      </div>
-
-                      <div style="font-size:12px;">
-                        <div><strong>Hand Size & Grip Match:</strong> ${item.ergonomicDetails.gripCompatibility}</div>
-                        <div style="margin-top:4px;"><strong>Wrist & Forearm Posture:</strong> ${item.ergonomicDetails.wristAndPosture}</div>
-                      </div>
-                    </div>
-                  </div>
-                ` : ''}
-
-                <!-- 2. TECHNICAL SPECS -->
-                ${item.properties ? `
-                  <div class="sub-accordion ${activeSubSections.has(`${item.id}:properties`) ? 'active' : ''}" id="sub-${item.id}-properties">
-                    <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'properties')">
-                      <span class="sub-accordion-title">⚡ Performance, Sensor & Battery Specs</span>
-                      <span class="sub-accordion-arrow">▼</span>
-                    </div>
-                    <div class="sub-accordion-body">
-                      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px;">
-                        ${Object.entries(item.properties).map(([k, v]) => `
-                          <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:4px; font-size:11px;">
-                            <div style="color:var(--text-muted); text-transform:uppercase; font-size:9px;">${k}</div>
-                            <div style="font-weight:600; margin-top:2px;">${v}</div>
-                          </div>
-                        `).join('')}
-                      </div>
-                    </div>
-                  </div>
-                ` : ''}
-
-                <!-- 3. PROS & CONS -->
-                ${(item.pros || item.cons) ? `
-                  <div class="sub-accordion ${activeSubSections.has(`${item.id}:proscons`) ? 'active' : ''}" id="sub-${item.id}-proscons">
-                    <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'proscons')">
-                      <span class="sub-accordion-title">⚖️ Advantages & Disadvantages</span>
-                      <span class="sub-accordion-arrow">▼</span>
-                    </div>
-                    <div class="sub-accordion-body">
-                      <div class="pro-con-grid">
-                        <div style="display:flex; flex-direction:column; gap:6px;">
-                          ${(item.pros || []).map(p => `<div class="pro-con-item pro-item">✓ ${p}</div>`).join('')}
-                        </div>
-                        <div style="display:flex; flex-direction:column; gap:6px;">
-                          ${(item.cons || []).map(c => `<div class="pro-con-item con-item">✕ ${c}</div>`).join('')}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ` : ''}
-
-                <!-- 4. MICROSWITCH GUIDE -->
-                ${(item.buttonSwitchMapping && item.buttonSwitchMapping.length > 0) ? `
-                  <div class="sub-accordion ${activeSubSections.has(`${item.id}:switches`) ? 'active' : ''}" id="sub-${item.id}-switches">
-                    <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'switches')">
-                      <span class="sub-accordion-title">🔌 Per-Button Microswitch Suggestions</span>
-                      <span class="sub-accordion-arrow">▼</span>
-                    </div>
-                    <div class="sub-accordion-body">
-                      <table class="switch-table">
-                        <thead>
-                          <tr>
-                            <th>Button Zone</th>
-                            <th>Recommended Switch</th>
-                            <th>Tactile & Acoustic Reason</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          ${item.buttonSwitchMapping.map(m => {
-                            const sw = microswitches[m.recommendedSwitchId] || {};
-                            return `
-                              <tr>
-                                <td><strong>${m.buttonGroup}</strong></td>
-                                <td>
-                                  <div><strong>${sw.name || m.recommendedSwitchId}</strong></div>
-                                  <div style="color:var(--text-muted); font-size:10px;">${sw.force || ''} | ${sw.lifespan || ''}</div>
-                                </td>
-                                <td style="color:var(--text-muted); font-size:11px;">${m.reason || sw.feel || ''}</td>
-                              </tr>
-                            `;
-                          }).join('')}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                ` : ''}
-
-                <!-- 5. MODDING & REPAIR NOTES -->
-                ${item.setupNotes ? `
-                  <div class="sub-accordion ${activeSubSections.has(`${item.id}:notes`) ? 'active' : ''}" id="sub-${item.id}-notes">
-                    <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'notes')">
-                      <span class="sub-accordion-title">🔧 Modding, Repair & Wiring Notes</span>
-                      <span class="sub-accordion-arrow">▼</span>
-                    </div>
-                    <div class="sub-accordion-body">
-                      <ul class="bullet-list">
-                        ${(Array.isArray(item.setupNotes) ? item.setupNotes : [item.setupNotes]).map(n => `<li>${n}</li>`).join('')}
-                      </ul>
-                    </div>
-                  </div>
-                ` : ''}
-
-                ${item.purchaseUrl ? `
-                  <div style="display:flex; justify-content:flex-end; padding-top:4px;">
-                    <a href="${item.purchaseUrl}" target="_blank" class="buy-link">Official Buy Page ↗</a>
-                  </div>
-                ` : ''}
-
-              </div>
-
-              <!-- Card Expand Footer Bar -->
-              <div class="card-expand-bar" onclick="window.deskApp.toggleCard('${item.id}')">
-                <span>${isExpanded ? '▲ Close Card Sections' : '▼ Expand Sub-Sections (Ergonomics, Specs, Switches)'}</span>
-                <span>${item.price || ''}</span>
-              </div>
-
-            </div>
-          `;
-        }).join('');
       }
 
       function toggleCard(id) {
@@ -685,7 +701,7 @@
             const cardEl = document.getElementById(`card-${cardId}`);
             if (cardEl) cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
-        }, 50);
+        }, 60);
       }
 
       function setupEventListeners() {
