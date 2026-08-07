@@ -43,8 +43,9 @@
 
     #app { display: flex; width: 100%; height: 100%; }
 
+    /* Sidebar */
     sidebar {
-      width: 260px;
+      width: 250px;
       background-color: var(--sidebar-bg);
       border-right: 1px solid var(--border);
       display: flex;
@@ -53,7 +54,7 @@
     }
 
     .brand {
-      padding: 20px;
+      padding: 18px 20px;
       font-size: 1.1rem;
       font-weight: 700;
       border-bottom: 1px solid var(--border);
@@ -99,10 +100,11 @@
       color: var(--text-muted);
     }
 
+    /* Main View Area */
     main { flex-grow: 1; display: flex; flex-direction: column; overflow: hidden; }
 
     header {
-      padding: 16px 24px;
+      padding: 14px 24px;
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
@@ -150,22 +152,30 @@
 
     .btn-action:hover { background: rgba(255, 255, 255, 0.12); color: var(--text); }
 
-    .content-viewport { padding: 24px; overflow-y: auto; flex-grow: 1; }
+    .content-viewport { padding: 20px; overflow-y: auto; flex-grow: 1; }
 
-    .product-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      max-width: 1100px;
-      margin: 0 auto;
+    /* Side-by-Side Comparison Grid */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 20px;
+      align-items: start;
     }
 
+    @media (max-width: 1080px) {
+      .comparison-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Product Card */
     .card {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      overflow: hidden;
+      display: flex;
+      flex-direction: column;
       transition: border-color 0.15s ease;
+      max-height: 820px;
+      overflow: hidden;
     }
 
     .card.expanded {
@@ -175,20 +185,23 @@
     }
 
     .card-header {
-      padding: 16px 20px;
-      cursor: pointer;
+      padding: 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .card-title-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      user-select: none;
+      gap: 12px;
     }
 
-    .card-header:hover { background: rgba(255, 255, 255, 0.02); }
-
-    .card-title-group { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
     .product-brand { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
-    .product-name { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+    .product-name { font-size: 1.15rem; font-weight: 700; color: var(--text); }
 
     .status-badge {
       padding: 3px 10px;
@@ -210,106 +223,103 @@
       border-radius: 4px;
       font-size: 11px;
       font-weight: 600;
+      display: inline-block;
     }
 
-    .card-header-meta { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
-    .product-price { font-weight: 700; font-size: 1rem; color: var(--text); }
-
-    .expand-toggle {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      transition: transform 0.2s ease;
-    }
-
-    .card.expanded .expand-toggle { transform: rotate(180deg); background: var(--primary); color: #fff; }
-
-    .card-summary-bar {
-      padding: 0 20px 14px 20px;
+    .card-summary {
       font-size: 13px;
       color: var(--text-muted);
-      border-bottom: 1px solid transparent;
+      line-height: 1.4;
     }
 
-    .card.expanded .card-summary-bar { border-bottom-color: var(--border); }
+    /* Fast Comparison Specs Grid (Always Visible) */
+    .quick-specs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      padding: 12px 16px;
+      background: rgba(0, 0, 0, 0.15);
+      border-bottom: 1px solid var(--border);
+    }
 
-    .card-body {
-      display: none;
-      padding: 20px;
+    .spec-pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 6px 10px;
+      border-radius: 6px;
+      display: flex;
       flex-direction: column;
-      gap: 20px;
     }
 
-    .card.expanded .card-body { display: flex; }
+    .spec-key { font-size: 10px; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
+    .spec-val { font-size: 12px; font-weight: 600; color: var(--text); margin-top: 2px; }
+
+    /* Expand Button Footer */
+    .card-expand-bar {
+      padding: 10px 16px;
+      background: rgba(255, 255, 255, 0.02);
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      user-select: none;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .card-expand-bar:hover { background: rgba(99, 102, 241, 0.08); }
+
+    /* Internal Scrollable Body for Detailed Specs */
+    .card-scroll-body {
+      display: none;
+      padding: 16px;
+      overflow-y: auto;
+      max-height: 520px;
+      flex-direction: column;
+      gap: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .card.expanded .card-scroll-body { display: flex; }
 
     .section-block {
       background: rgba(0, 0, 0, 0.25);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 16px;
+      border-radius: 8px;
+      padding: 12px 14px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
 
     .section-title {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: var(--primary);
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
-    .properties-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      gap: 10px;
-    }
-
-    .property-pill {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      padding: 8px 12px;
-      border-radius: 6px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .property-key { font-size: 10px; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
-    .property-val { font-size: 13px; font-weight: 600; color: var(--text); margin-top: 2px; }
-
-    .pro-con-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-    @media (max-width: 768px) { .pro-con-grid { grid-template-columns: 1fr; } }
-
-    .pro-column, .con-column { display: flex; flex-direction: column; gap: 8px; }
+    .pro-con-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 
     .pro-con-item {
       font-size: 12px;
-      padding: 6px 10px;
+      padding: 6px 8px;
       border-radius: 6px;
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
+      line-height: 1.3;
     }
 
     .pro-item { background: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.2); color: #dcfce7; }
     .con-item { background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.2); color: #fee2e2; }
 
-    .bullet-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .bullet-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
 
     .bullet-list li {
       position: relative;
-      padding-left: 18px;
-      font-size: 13px;
+      padding-left: 16px;
+      font-size: 12px;
       color: #d1d5db;
     }
 
@@ -319,29 +329,17 @@
       left: 0;
       color: var(--primary);
       font-weight: bold;
-      font-size: 16px;
     }
 
     .switch-table { width: 100%; border-collapse: collapse; font-size: 12px; }
 
     .switch-table th, .switch-table td {
-      padding: 8px 12px;
+      padding: 6px 8px;
       text-align: left;
       border-bottom: 1px solid var(--border);
     }
 
     .switch-table th { color: var(--text-muted); font-size: 10px; text-transform: uppercase; font-weight: 700; }
-
-    .software-box {
-      background: rgba(99, 102, 241, 0.05);
-      border: 1px solid rgba(99, 102, 241, 0.2);
-      padding: 12px;
-      border-radius: 6px;
-      font-size: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
 
     .empty-state { text-align: center; padding: 60px 20px; color: var(--text-muted); }
 
@@ -378,7 +376,7 @@
       </header>
 
       <div class="content-viewport">
-        <div class="product-list" id="productList"></div>
+        <div class="comparison-grid" id="productList"></div>
       </div>
     </main>
   </div>
@@ -440,22 +438,13 @@
         return products.filter(p => {
           const matchesCategory = p.category === activeCategory;
           const query = searchQuery.toLowerCase();
-          const matchesSearch = !query || 
+          return matchesCategory && (!query || 
             p.name.toLowerCase().includes(query) ||
             p.brand.toLowerCase().includes(query) ||
             (p.tags && p.tags.some(t => t.toLowerCase().includes(query))) ||
-            (p.summary && p.summary.toLowerCase().includes(query));
-
-          return matchesCategory && matchesSearch;
+            (p.summary && p.summary.toLowerCase().includes(query))
+          );
         });
-      }
-
-      function renderBulletNotes(notes) {
-        if (!notes) return '';
-        if (Array.isArray(notes)) {
-          return `<ul class="bullet-list">${notes.map(n => `<li>${n}</li>`).join('')}</ul>`;
-        }
-        return `<ul class="bullet-list"><li>${notes}</li></ul>`;
       }
 
       function renderProducts() {
@@ -474,34 +463,58 @@
           const isExpanded = expandedCardIds.has(item.id);
           const statusClass = item.status === 'Owned' ? 'status-owned' : (item.status === 'Alternative' ? 'status-alternative' : 'status-wishlist');
 
+          // Extract key properties for quick side-by-side comparison header
+          const props = item.properties || {};
+
           return `
             <div class="card ${isExpanded ? 'expanded' : ''}" id="card-${item.id}">
-              <div class="card-header" onclick="window.deskApp.toggleCard('${item.id}')">
-                <div class="card-title-group">
-                  <span class="product-brand">${item.brand}</span>
-                  <span class="product-name">${item.name}</span>
+              
+              <!-- Card Header -->
+              <div class="card-header">
+                <div class="card-title-row">
+                  <div>
+                    <span class="product-brand">${item.brand}</span>
+                    <div class="product-name">${item.name}</div>
+                  </div>
                   <span class="status-badge ${statusClass}">${item.status || 'Wishlist'}</span>
-                  ${item.isTopPick ? `<span class="top-pick-tag">★ ${item.topPickBadge || 'Top Pick'}</span>` : ''}
                 </div>
-                <div class="card-header-meta">
-                  <span class="product-price">${item.price || ''}</span>
-                  <div class="expand-toggle">▼</div>
+
+                ${item.isTopPick ? `<div><span class="top-pick-tag">★ ${item.topPickBadge || 'Top Pick'}</span></div>` : ''}
+
+                <div class="card-summary">${item.summary || ''}</div>
+              </div>
+
+              <!-- Quick Specs Grid (Visible Side-by-Side for Direct Comparison) -->
+              <div class="quick-specs-grid">
+                <div class="spec-pill">
+                  <span class="spec-key">Ergonomic Score</span>
+                  <span class="spec-val">${props["Ergonomic Rating"] || 'N/A'}</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-key">Weight Profile</span>
+                  <span class="spec-val">${props["Weight Profile"] || props["Weight"] || 'N/A'}</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-key">Grip Type</span>
+                  <span class="spec-val">${props["Grip Style Match"] || 'N/A'}</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-key">Wrist Strain</span>
+                  <span class="spec-val">${props["Wrist Strain Index"] || 'N/A'}</span>
                 </div>
               </div>
 
-              <div class="card-summary-bar">
-                ${item.summary || ''}
-              </div>
-
-              <div class="card-body">
+              <!-- In-Place Scrollable Detail Body -->
+              <div class="card-scroll-body">
+                
                 ${item.properties ? `
                   <div class="section-block">
-                    <div class="section-title">📊 Specs & Ergonomic Ratings</div>
-                    <div class="properties-grid">
-                      ${Object.entries(item.properties).map(([key, val]) => `
-                        <div class="property-pill">
-                          <span class="property-key">${key}</span>
-                          <span class="property-val">${val}</span>
+                    <div class="section-title">📊 Full Specs & Qualitative Ratings</div>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px;">
+                      ${Object.entries(item.properties).map(([k, v]) => `
+                        <div class="spec-pill">
+                          <span class="spec-key">${k}</span>
+                          <span class="spec-val">${v}</span>
                         </div>
                       `).join('')}
                     </div>
@@ -510,12 +523,12 @@
 
                 ${(item.pros || item.cons) ? `
                   <div class="section-block">
-                    <div class="section-title">⚖️ Pros & Cons</div>
+                    <div class="section-title">⚖️ Advantages & Disadvantages</div>
                     <div class="pro-con-grid">
-                      <div class="pro-column">
+                      <div style="display:flex; flex-direction:column; gap:6px;">
                         ${(item.pros || []).map(p => `<div class="pro-con-item pro-item">✓ ${p}</div>`).join('')}
                       </div>
-                      <div class="con-column">
+                      <div style="display:flex; flex-direction:column; gap:6px;">
                         ${(item.cons || []).map(c => `<div class="pro-con-item con-item">✕ ${c}</div>`).join('')}
                       </div>
                     </div>
@@ -524,7 +537,7 @@
 
                 ${(item.buttonSwitchMapping && item.buttonSwitchMapping.length > 0) ? `
                   <div class="section-block">
-                    <div class="section-title">🔌 Per-Button Microswitch Configuration</div>
+                    <div class="section-title">🔌 Per-Button Microswitch Guide</div>
                     <table class="switch-table">
                       <thead>
                         <tr>
@@ -541,9 +554,9 @@
                               <td><strong>${m.buttonGroup}</strong></td>
                               <td>
                                 <div><strong>${sw.name || m.recommendedSwitchId}</strong></div>
-                                <div style="color:var(--text-muted); font-size:11px;">${sw.force || ''} | ${sw.lifespan || ''}</div>
+                                <div style="color:var(--text-muted); font-size:10px;">${sw.force || ''} | ${sw.lifespan || ''}</div>
                               </td>
-                              <td style="color:var(--text-muted);">${m.reason || sw.feel || ''}</td>
+                              <td style="color:var(--text-muted); font-size:11px;">${m.reason || sw.feel || ''}</td>
                             </tr>
                           `;
                         }).join('')}
@@ -554,28 +567,26 @@
 
                 ${item.setupNotes ? `
                   <div class="section-block">
-                    <div class="section-title">🔧 Modding & Repair Notes</div>
-                    ${renderBulletNotes(item.setupNotes)}
-                  </div>
-                ` : ''}
-
-                ${item.softwareSetup ? `
-                  <div class="section-block">
-                    <div class="section-title">🎛 Software & Macro Layout</div>
-                    <div class="software-box">
-                      ${item.softwareSetup.agentRequirement ? `<div><strong>Runtime:</strong> ${item.softwareSetup.agentRequirement}</div>` : ''}
-                      ${item.softwareSetup.baseLayer ? `<div><strong>Base Layer:</strong> ${item.softwareSetup.baseLayer}</div>` : ''}
-                      ${item.softwareSetup.gShiftLayer ? `<div><strong>G-Shift Layer:</strong> ${item.softwareSetup.gShiftLayer}</div>` : ''}
-                    </div>
+                    <div class="section-title">🔧 Modding & Repair Bullet Notes</div>
+                    <ul class="bullet-list">
+                      ${(Array.isArray(item.setupNotes) ? item.setupNotes : [item.setupNotes]).map(n => `<li>${n}</li>`).join('')}
+                    </ul>
                   </div>
                 ` : ''}
 
                 ${item.purchaseUrl ? `
-                  <div style="display:flex; justify-content:flex-end; padding-top:4px;">
-                    <a href="${item.purchaseUrl}" target="_blank" class="buy-link">Official Product Page / Buy Link ↗</a>
+                  <div style="display:flex; justify-content:flex-end;">
+                    <a href="${item.purchaseUrl}" target="_blank" class="buy-link">Buy Page ↗</a>
                   </div>
                 ` : ''}
               </div>
+
+              <!-- Card Expand Bar -->
+              <div class="card-expand-bar" onclick="window.deskApp.toggleCard('${item.id}')">
+                <span>${isExpanded ? '▲ Collapse Internal View' : '▼ Expand Full Specs, Ergonomics & Switch Matrix'}</span>
+                <span>${item.price || ''}</span>
+              </div>
+
             </div>
           `;
         }).join('');
