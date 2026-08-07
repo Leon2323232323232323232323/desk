@@ -82,15 +82,21 @@ window.DESK_DATA = {
       summary: "Primary daily workhorse for MOBAs, FPS, and high-DPI productivity. Features 11 fully programmable mechanical buttons, dual-mode hyper-fast scroll wheel, and complete switch moddability.",
       
       properties: {
-        "Ergonomic Rating": "9.5 / 10 (S-Tier Palm/Claw)",
-        "Grip Style Match": "Palm / Hybrid Claw (Medium to Large hands)",
-        "Wrist Strain Index": "Low (Sculpted thumb rest reduces pad drag)",
-        "Pinky Support": "Needs Sugru / Blu-Tack wing mod to stop desk drag",
-        "Weight Profile": "114g Stock → 101.5g Modded (Weight-Neutral Battery)",
-        "Sensor & Speed": "HERO 25K (100-25,600 DPI) | 1000Hz / 1ms Polling",
-        "Battery Specs": "240mAh Stock (48h) → 500mAh Modded (120h+ Runtime)",
-        "Acoustic Level": "48–51 dB (Deep 'thock' with 0.5mm PORON foam)",
-        "Switch Mounting": "100% Through-Hole Mechanical across all 11 buttons"
+        "Ergonomic Rating": "9.5 / 10",
+        "Grip Style Match": "Palm / Hybrid Claw",
+        "Wrist Strain Index": "Low (Thumb Rest Wing)",
+        "Pinky Support": "Requires Sugru / Blu-Tack Mod",
+        "Weight Profile": "114g Stock → 101.5g Modded",
+        "Sensor & Speed": "HERO 25K | 1000Hz Polling",
+        "Battery Specs": "240mAh Stock → 500mAh Modded (120h+)",
+        "Switch Mounting": "100% Through-Hole Mechanical (All 11)"
+      },
+
+      ergonomicDetails: {
+        scoreReason: "Scored 9.5/10 due to its contoured right-hand asymmetry, natural thumb ledge, and perfectly positioned index-finger DPI buttons. It prevents thumb drag and accommodates long gaming/work sessions without wrist fatigue.",
+        comparisonVsOthers: "Vs MX Master 3S: G502 is much lighter (101.5g vs 141g) and supports 1000Hz gaming polling (vs MX Master's 125Hz limit). Vs Basilisk V3 X: G502 offers superior 100% mechanical switch replacement across all 11 buttons and features a dual-mode scroll wheel. Vs M650: G502 provides full hand support versus M650's small travel footprint.",
+        gripCompatibility: "Optimal for Medium-to-Large hands using Palm or Hybrid Claw grip.",
+        wristAndPosture: "Neutral wrist pronation; thumb rest removes friction against mousepad."
       },
 
       pros: [
@@ -110,10 +116,10 @@ window.DESK_DATA = {
       ],
 
       setupNotes: [
-        "CRITICAL BATTERY PINOUT SAFETY: Standard aftermarket 3.7V Li-Po batteries reverse GND (Black) and NTC (White) wires. Logitech pinout is strictly Pin 1: Red (+), Pin 2: White (NTC), Pin 3: Black (-). Swap wires on JST 1.25mm plug before connection.",
+        "BATTERY PINOUT SAFETY: Standard aftermarket 3.7V Li-Po batteries reverse GND (Black) and NTC (White) wires. Logitech pinout is strictly Pin 1: Red (+), Pin 2: White (NTC), Pin 3: Black (-). Swap wires on JST 1.25mm plug before connection.",
         "BATTERY & WEIGHT MATH: Stock 240mAh cell (5.5g) + bracket (5.5g) = 11.0g. Upgraded 500mAh cell (9.0g) + tape (0.5g) = 9.5g. Delta: -1.5g net weight with +108% battery runtime.",
         "WEIGHT SAVINGS CEILING: Remove POWERPLAY puck door (-5g), copper coil (-5.5g), and swap steel wheel for G903 aluminum wheel (-9g). Saves ~19.5g total.",
-        "PINKY REST MOD: Mold Sugru or Bostik Blu-Tack along the lower right edge to eliminate pinky drag on mousepads.",
+        "PINKY REST MOD: Mold Sugru or Bostik Blu-Tack along lower right edge to eliminate pinky drag.",
         "CHARGING PORT MOD: Install aftermarket G502 Wireless Type-C daughterboard or 540° magnetic charging tip.",
         "ACOUSTIC TUNING: Line lower chassis floor with 0.5mm Rogers PORON foam to eliminate plastic echo."
       ],
@@ -172,14 +178,21 @@ window.DESK_DATA = {
       summary: "Dedicated stationary office productivity mouse featuring electromagnetic MagSpeed scrolling, side thumb wheel, gesture button, and ultra-quiet stock clicking.",
 
       properties: {
-        "Ergonomic Rating": "9.8 / 10 (Gold Standard Office Palm)",
-        "Grip Style Match": "Strict Palm Grip (Fills palm fully, reduces forearm pronation)",
-        "Wrist Strain Index": "Ultra-Low (57° angled posture minimizes carpal tunnel pressure)",
-        "Pinky Support": "Full sculpted thumb wing; right side flared for ring/pinky rest",
-        "Weight Profile": "141g Heavy Stationary (High inertia, unsuitable for gaming)",
-        "Sensor & Speed": "Darkfield 8,000 DPI (Tracks on Glass) | 125Hz Polling Limit",
-        "Battery Specs": "500mAh Native USB-C (Up to 70 Days per charge)",
-        "Switch Mounting": "2-Pin Silent Square (7.45mm height stock)"
+        "Ergonomic Rating": "9.8 / 10",
+        "Grip Style Match": "Strict Palm Grip",
+        "Wrist Strain Index": "Ultra-Low (57° Tilt Angle)",
+        "Pinky Support": "Full Flared Right Side",
+        "Weight Profile": "141g Heavy Stationary",
+        "Sensor & Speed": "Darkfield 8K (Glass) | 125Hz Polling",
+        "Battery Specs": "500mAh Native USB-C (70 Days)",
+        "Switch Mounting": "2-Pin Silent Square (7.45mm height)"
+      },
+
+      ergonomicDetails: {
+        scoreReason: "Scored 9.8/10 as the gold standard for office desk work. Its 57-degree vertical incline rotates the forearm into a natural handshake posture, relieving median nerve pressure.",
+        comparisonVsOthers: "Vs G502: MX Master offers significantly better palm support and horizontal thumb scrolling for spreadsheets, but its 125Hz polling and 141g weight make it poor for gaming. Vs Basilisk V3 X: Far quieter clicks (~35dB stock) and much higher build quality. Vs M650: Completely fills the hand for full-day office comfort.",
+        gripCompatibility: "Designed strictly for Medium to Large hands using a Palm Grip.",
+        wristAndPosture: "Elevated ergonomic angle reduces forearm pronation and carpal tunnel compression."
       },
 
       pros: [
@@ -198,9 +211,9 @@ window.DESK_DATA = {
       ],
 
       setupNotes: [
-        "TRACE REPAIR BLUEPRINT: If a solder pad is lifted during desoldering, scrape copper mask on the trace, apply Rosin Flux, and bridge a 0.1mm enamel jumper wire directly to the switch pin.",
-        "PRE-TRAVEL SHIM TUNING: Stock switches are 7.45mm tall. Standard 7.30mm switches (Zippy / Huano) leave a 0.15mm gap. Stick a 0.1mm micro-square of aluminum foil tape onto button plungers to eliminate pre-travel slop.",
-        "EMERGENCY CONTACT FIX: Flushing failing switches with 91%+ Isopropyl Alcohol (IPA) temporarily dissolves contact oxidation before full soldering repair."
+        "TRACE REPAIR BLUEPRINT: If a solder pad is lifted during desoldering, scrape copper mask on trace, apply Rosin Flux, and bridge 0.1mm enamel jumper wire directly to switch pin.",
+        "PRE-TRAVEL SHIM TUNING: Stock switches are 7.45mm tall. Standard 7.30mm switches leave 0.15mm gap. Stick 0.1mm aluminum foil tape onto button plungers.",
+        "EMERGENCY CONTACT FIX: Flushing failing switches with 91%+ IPA temporarily dissolves contact oxidation before full soldering repair."
       ],
 
       buttonSwitchMapping: [
@@ -252,14 +265,21 @@ window.DESK_DATA = {
       summary: "Compact, long-battery-life portable office mouse featuring SmartWheel adaptive scrolling, silent switch dampers, and simple dual-side button navigation.",
 
       properties: {
-        "Ergonomic Rating": "7.5 / 10 (Compact Portable)",
-        "Grip Style Match": "Fingertip / Claw Grip (Small to Medium hands)",
-        "Wrist Strain Index": "Moderate (Lacks thumb wing support)",
-        "Weight Profile": "101g (Including 1x AA Alkaline Battery)",
-        "Sensor & Speed": "Logitech Optical (400-4000 DPI) | 125Hz Polling",
-        "Battery Specs": "1x AA Battery (Up to 24 Months Runtime)",
+        "Ergonomic Rating": "7.5 / 10",
+        "Grip Style Match": "Fingertip / Claw",
+        "Wrist Strain Index": "Moderate (No Thumb Wing)",
+        "Weight Profile": "101g (With 1x AA Battery)",
+        "Sensor & Speed": "Logitech Optical | 125Hz Polling",
+        "Battery Specs": "1x AA Battery (24 Months)",
         "Switch Mounting": "2-Pin Through-Hole (Main: 7.3mm, Middle: 5.0mm)",
-        "Teardown Repairability": "10 / 10 (Simple 3-screw chassis tear-down)"
+        "Teardown Repairability": "10 / 10 (3-Screw Disassembly)"
+      },
+
+      ergonomicDetails: {
+        scoreReason: "Scored 7.5/10 due to its small, flat travel form factor. It lacks thumb wing support and palm arch height, which causes hand cramping during prolonged desktop use for larger hands.",
+        comparisonVsOthers: "Vs MX Master 3S & G502: Much more compact and travel-friendly at a fraction of the cost ($39), but provides far less hand support. Vs Basilisk V3 X: Quieter clicking and simpler 3-screw repair chassis.",
+        gripCompatibility: "Best for Small-to-Medium hands using Fingertip or Claw grip.",
+        wristAndPosture: "Flat posture requires more wrist movement over long periods."
       },
 
       pros: [
@@ -315,14 +335,21 @@ window.DESK_DATA = {
       summary: "Ergonomic wireless gaming mouse with thumb rest support, Razer 5G 18K optical sensor, and dual-mode wireless connectivity.",
 
       properties: {
-        "Ergonomic Rating": "9.0 / 10 (Ergonomic Right-Hand Sculpted)",
-        "Grip Style Match": "Palm / Claw Grip (Medium to Large hands)",
-        "Wrist Strain Index": "Low (Comfortable thumb ledge)",
-        "Weight Profile": "110g (With AA battery)",
+        "Ergonomic Rating": "9.0 / 10",
+        "Grip Style Match": "Palm / Claw",
+        "Wrist Strain Index": "Low (Thumb Rest Ledge)",
+        "Weight Profile": "110g (With AA Battery)",
         "Sensor & Speed": "Razer 5G 18,000 DPI | 1000Hz Polling",
-        "Acoustic Rating": "57-60 dB Stock (Hollow Cavity) → 50 dB Modded (PORON Foam)",
-        "Power Source": "1x AA Battery (235h 2.4G / 535h Bluetooth)",
-        "Switch Mounting": "3-Pin Mechanical (Main: Standard, Sides: 90° Bent Pins)"
+        "Acoustic Rating": "57-60 dB Stock → 50 dB Modded",
+        "Power Source": "1x AA Battery (235h 2.4G / 535h BT)",
+        "Switch Mounting": "3-Pin Mechanical (Main: Std, Sides: 90° Bent)"
+      },
+
+      ergonomicDetails: {
+        scoreReason: "Scored 9.0/10 for its comfortable right-hand ergonomic contour and wide thumb rest wing. Deducted 1.0 point due to rear-heavy AA battery balance and hollow click echo.",
+        comparisonVsOthers: "Vs G502: Very similar outer shape, but G502 has better button placement, a dual-mode scroll wheel, and higher moddability. Vs MX Master 3S: Higher 1000Hz gaming performance, but much louder click profile (~60dB stock).",
+        gripCompatibility: "Ideal for Medium-to-Large hands using Palm or Claw grip.",
+        wristAndPosture: "Low wrist strain with comfortable thumb rest wing support."
       },
 
       pros: [
