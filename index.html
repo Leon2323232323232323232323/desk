@@ -509,7 +509,7 @@
           `;
         }
 
-        // ----- GADGETS: why‑it's‑good now opens the summary, rating included -----
+        // ----- GADGETS -----
         if (activeCategory === 'gadgets') {
           const rating = item.suggestRating != null ? item.suggestRating + '/10' : 'N/A';
           return `
@@ -520,12 +520,12 @@
           `;
         }
 
-        // ----- MICE (fallback) – original pills, no rating -----
+        // ----- MICE: original pills, repair risk replaced with switch ease -----
         return `
           <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'ergonomics')"><span class="spec-key">Ergonomic Score ↗</span><span class="spec-val">${props["Ergonomic Rating"] || 'N/A'}</span></div>
           <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'lifespan')"><span class="spec-key">Modded Life ↗</span><span class="spec-val">${lifespan ? lifespan.moddedSwitchesLife : 'N/A'}</span></div>
           <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'procurement')"><span class="spec-key">Taobao Parts Copy ↗</span><span class="spec-val">${Array.isArray(item.procurement) ? item.procurement.length + ' Items' : '0'}</span></div>
-          <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'repairability')"><span class="spec-key">Repair Risk Score ↗</span><span class="spec-val">${item.repairability ? item.repairability.score : 'N/A'}</span></div>
+          <div class="spec-pill-interactive" onclick="window.deskApp.openAndJump('${item.id}', 'repairability')"><span class="spec-key">Switch Replace Ease</span><span class="spec-val">${item.repairability ? item.repairability.score.replace(/\s*\(.*\)/, '') : 'N/A'}</span></div>
         `;
       }
       function toggleCompare(id) {
@@ -594,6 +594,21 @@
             const setupNotes = Array.isArray(item.setupNotes) ? item.setupNotes : (item.setupNotes ? [String(item.setupNotes)] : []);
             const switchMappings = Array.isArray(item.buttonSwitchMapping) ? item.buttonSwitchMapping : [];
             const panelInfo = (item.panelDetails && typeof item.panelDetails === 'object') ? item.panelDetails : null;
+
+            // Calculate simplified lifespan in years
+            let lifespanCalcHTML = '';
+            if (lifespan && lifespan.stockSwitchesLife) {
+              // Try to extract a number of clicks from the string (e.g. "50M Rated", "80 Million Clicks")
+              const clicksMatch = String(lifespan.stockSwitchesLife).match(/(\d+)\s*M/i) || String(lifespan.stockSwitchesLife).match(/(\d+)\s*Million/i);
+              const stockClicks = clicksMatch ? parseInt(clicksMatch[1]) * 1000000 : null;
+              const dailyClicks = 10000;
+              if (stockClicks) {
+                const years = Math.round(stockClicks / dailyClicks / 365);
+                lifespanCalcHTML = `<p style="margin-top:6px; font-size:11px; color:var(--text-muted);"><strong>Lifespan estimate (stock):</strong> At ${dailyClicks.toLocaleString()} clicks/day, the rated ${(stockClicks/1000000).toFixed(0)}M click switch could last ~${years} years in wired mode. In wireless (low voltage), expect 10–20% of that due to oxidation.</p>`;
+              } else {
+                lifespanCalcHTML = `<p style="margin-top:6px; font-size:11px; color:var(--text-muted);"><strong>Lifespan estimate:</strong> Stock lifespan is highly variable – see 'Stock Switches Life' for typical real‑world duration. Wireless mode dramatically shortens switch life.</p>`;
+              }
+            }
 
             return `
               <div class="card ${isExpanded ? 'expanded' : ''}" id="card-${item.id}">
@@ -669,6 +684,54 @@
                     </div>
                   ` : ''}
 
+                  <!-- ============ MICE: combined Lifespan, Switches, Recommendations ============ -->
+                  ${activeCategory === 'mice' && (lifespan || stockList.length > 0 || switchMappings.length > 0) ? `
+                    <div class="sub-accordion ${activeSubSections.has(`${item.id}:lifespan-combo`) ? 'active' : ''}" id="sub-${item.id}-lifespan-combo">
+                      <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'lifespan-combo')">
+                        <span class="sub-accordion-title">⏳ Mouse Lifespan, Switches & Custom Microswitch Recommendations</span>
+                        <span class="sub-accordion-arrow">▼</span>
+                      </div>
+                      <div class="sub-accordion-body">
+                        ${lifespan ? `
+                        <div class="lifespan-grid">
+                          <div class="lifespan-pill"><div class="spec-key">Mouse Chassis & Sensor Life</div><div class="spec-val" style="color:var(--primary);">${lifespan.chassisLife}</div></div>
+                          <div class="lifespan-pill"><div class="spec-key">Stock Switches (Before Swap)</div><div class="spec-val" style="color:#f87171;">${lifespan.stockSwitchesLife}</div></div>
+                          <div class="lifespan-pill"><div class="spec-key">Custom Switches (After Swap)</div><div class="spec-val" style="color:#4ade80;">${lifespan.moddedSwitchesLife}</div></div>
+                        </div>
+                        <div class="comparison-box" style="margin-top:4px;">
+                          <strong>⚠️ Primary Hardware Limiting Factor:</strong>
+                          <div style="margin-top:2px;">${lifespan.limitingFactor}</div>
+                        </div>
+                        ${lifespanCalcHTML}
+                        ` : ''}
+
+                        ${stockList.length > 0 ? `
+                        <h4 style="margin-top:10px; font-size:13px; color:var(--text);">🏭 Stock Switches by Button</h4>
+                        <table class="switch-table">
+                          <thead><tr><th>Button Group</th><th>Stock Switch Model</th><th>Factory Lifespan</th><th>Sound Level</th></tr></thead>
+                          <tbody>
+                            ${stockList.map(s => `<tr><td><strong>${s.buttonGroup}</strong></td><td>${s.switchModel}</td><td><span style="color:#f87171; font-weight:600;">${s.lifespan}</span></td><td>${s.sound}</td></tr>`).join('')}
+                          </tbody>
+                        </table>
+                        ` : ''}
+
+                        ${switchMappings.length > 0 ? `
+                        <h4 style="margin-top:10px; font-size:13px; color:var(--text);">🔌 Per‑Button Custom Microswitch Recommendations</h4>
+                        <table class="switch-table">
+                          <thead><tr><th>Button Zone</th><th>Recommended Switch</th><th>Tactile, Durability & Acoustic Reason</th></tr></thead>
+                          <tbody>
+                            ${switchMappings.map(m => {
+                              const sw = (microswitches && microswitches[m.recommendedSwitchId]) ? microswitches[m.recommendedSwitchId] : {};
+                              return `<tr><td><strong>${m.buttonGroup || 'Button'}</strong></td><td><div><strong>${sw.name || m.recommendedSwitchId || 'Switch'}</strong></div><div style="color:var(--text-muted); font-size:10px;">${sw.force || ''} | ${sw.lifespan || ''}</div></td><td style="color:var(--text-muted); font-size:11px;">${m.reason || sw.feel || ''}</td></tr>`;
+                            }).join('')}
+                          </tbody>
+                        </table>
+                        ` : ''}
+                      </div>
+                    </div>
+                  ` : ''}
+                  <!-- ============ END MICE COMBINED SECTION ============ -->
+
                   <!-- 1. PROCUREMENT BOX -->
                   ${procList.length > 0 ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:procurement`) ? 'active' : ''}" id="sub-${item.id}-procurement">
@@ -692,8 +755,8 @@
                     </div>
                   ` : ''}
 
-                  <!-- 2. REPAIRABILITY -->
-                  ${repair ? `
+                  <!-- 2. REPAIRABILITY (shown for mice and any category that has it, but not duplicated in the combined section) -->
+                  ${activeCategory !== 'mice' && repair ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:repairability`) ? 'active' : ''}" id="sub-${item.id}-repairability">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'repairability')">
                         <span class="sub-accordion-title">🔬 Teardown & Repairability Scorecard</span>
@@ -715,7 +778,7 @@
                     </div>
                   ` : ''}
 
-                  <!-- 3. WEIGHT BALANCE -->
+                  <!-- 3. WEIGHT BALANCE (mice only, shown if exists) -->
                   ${balance ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:weight`) ? 'active' : ''}" id="sub-${item.id}-weight">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'weight')">
@@ -766,8 +829,8 @@
                     </div>
                   ` : ''}
 
-                  <!-- 6. LIFESPAN -->
-                  ${lifespan ? `
+                  <!-- 6. LIFESPAN (only for non-mice, since mice uses combined) -->
+                  ${activeCategory !== 'mice' && lifespan ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:lifespan`) ? 'active' : ''}" id="sub-${item.id}-lifespan">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'lifespan')">
                         <span class="sub-accordion-title">⏳ Mouse & Switch Lifespan Matrix</span>
@@ -787,8 +850,8 @@
                     </div>
                   ` : ''}
 
-                  <!-- 7. STOCK SWITCHES -->
-                  ${stockList.length > 0 ? `
+                  <!-- 7. STOCK SWITCHES (non-mice) -->
+                  ${activeCategory !== 'mice' && stockList.length > 0 ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:stock`) ? 'active' : ''}" id="sub-${item.id}-stock">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'stock')">
                         <span class="sub-accordion-title">🏭 Stock Switches by Individual Button</span>
@@ -893,8 +956,8 @@
                     </div>
                   ` : ''}
 
-                  <!-- 12. SWITCH MAPPINGS -->
-                  ${switchMappings.length > 0 ? `
+                  <!-- 12. SWITCH MAPPINGS (non-mice) -->
+                  ${activeCategory !== 'mice' && switchMappings.length > 0 ? `
                     <div class="sub-accordion ${activeSubSections.has(`${item.id}:switches`) ? 'active' : ''}" id="sub-${item.id}-switches">
                       <div class="sub-accordion-header" onclick="window.deskApp.toggleSub('${item.id}', 'switches')">
                         <span class="sub-accordion-title">🔌 Per-Button Custom Microswitch Recommendations</span>
