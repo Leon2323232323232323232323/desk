@@ -562,7 +562,7 @@
 
       function hideCompare() { compareOverlay.classList.add('hidden'); }
 
-            function renderProducts() {
+      function renderProducts() {
         try {
           const filtered = getFilteredProducts();
 
@@ -605,6 +605,7 @@
                     <div>
                       <span class="product-brand">${item.brand || 'Generic'}</span>
                       <div class="product-name">${item.name || 'Product'}</div>
+                      ${item.suggestRating != null ? `<span class="rating-badge">${item.suggestRating}/10</span>` : ''}
                     </div>
                     <span class="status-badge ${statusClass}">${item.status || 'Wishlist'}</span>
                   </div>
@@ -636,8 +637,16 @@
                           <div class="lifespan-pill"><div class="spec-key">Delta E (sRGB)</div><div class="spec-val">${panelInfo.deltaE}</div></div>
                           <div class="lifespan-pill"><div class="spec-key">Response Time (GtG)</div><div class="spec-val">${props["Response Time"] || 'N/A'}</div></div>
                         </div>
-                        <div class="comparison-box" style="margin-top:6px;"><strong>🎯 Recommended OSD Calibration Preset:</strong><p style="margin-top:4px; font-size:11px;">${panelInfo.osdPreset}</p></div>
-                        ${panelInfo.iccProfile ? `<div class="comparison-box" style="margin-top:4px;"><strong>📁 ICC Profile Download / Calibration Notes:</strong><p style="margin-top:4px; font-size:11px;">${panelInfo.iccProfile}</p></div>` : ''}
+                        <div class="comparison-box" style="margin-top:6px;">
+                          <strong>🎯 Recommended OSD Calibration Preset:</strong>
+                          <p style="margin-top:4px; font-size:11px;">${panelInfo.osdPreset}</p>
+                        </div>
+                        ${panelInfo.iccProfile ? `
+                        <div class="comparison-box" style="margin-top:4px;">
+                          <strong>📁 ICC Profile Download / Calibration Notes:</strong>
+                          <p style="margin-top:4px; font-size:11px;">${panelInfo.iccProfile}</p>
+                        </div>
+                        ` : ''}
                       </div>
                     </div>
                   ` : ''}
