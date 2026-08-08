@@ -1,24 +1,13 @@
 window.DESK_MONITORS = [
   {
     id: "asus-pg279qm", category: "monitors", name: "ROG Swift PG279QM", brand: "ASUS", status: "Owned", isTopPick: true,
-    topPickBadge: "Best Overall High-Refresh Gaming Monitor (1440p 240Hz)", price: "$799",
+    topPickBadge: "Best Overall High-Refresh Gaming Monitor (1440p 240Hz)", price: "$799", suggestRating: 9.5,
     purchaseUrl: "https://rog.asus.com/monitors/27-to-31-5-inches/rog-swift-pg279qm-model/",
     tags: ["1440p", "240Hz", "IPS", "G-Sync", "Fast-IPS", "sRGB 160%"],
     summary: "Primary high-refresh gaming monitor. 27-inch 1440p Fast-IPS with a true 240Hz overclockable panel, NVIDIA Reflex Latency Analyzer, and exceptional color accuracy for both competitive LoL/CS2 and color-critical work.",
-    properties: {
-      "Screen Size": "27-inch Flat", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "240Hz (Native) / 270Hz OC via DP",
-      "Response Time": "1ms (GtG)", "Panel Technology": "Fast-IPS (AHVA)", "Color Gamut": "160% sRGB / 98% DCI-P3",
-      "HDR Support": "VESA DisplayHDR 400", "VESA Mount": "100 x 100 mm",
-      "Connectivity": "DisplayPort 1.4 (DSC), HDMI 2.0 x2, USB 3.2 Hub", "Weight with Stand": "7.6 kg (16.8 lbs)"
-    },
+    properties: { "Screen Size": "27-inch Flat", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "240Hz (Native) / 270Hz OC via DP", "Response Time": "1ms (GtG)", "Panel Technology": "Fast-IPS (AHVA)", "Color Gamut": "160% sRGB / 98% DCI-P3", "HDR Support": "VESA DisplayHDR 400", "VESA Mount": "100 x 100 mm", "Connectivity": "DisplayPort 1.4 (DSC), HDMI 2.0 x2, USB 3.2 Hub", "Weight with Stand": "7.6 kg (16.8 lbs)" },
     panelDetails: { panelTech: "AUO M270DAN08.0 Fast-IPS (AHVA)", colorGamut: "98% DCI-P3 / 160% sRGB", deltaE: "< 2 (Factory Calibrated)", osdPreset: "Racing Mode → Color Temp: User (R97 G98 B100), Overdrive: Normal, Dark Boost: Off. For desktop: sRGB Emulation Mode (clamps wide gamut)", iccProfile: "Download ASUS PG279QM ICC from RTINGS.com for sRGB clamp; alternatively use Windows Color Management to load sRGB IEC61966-2.1 profile." },
-    procurement: [
-      { label: "Monitor Arm (Heavy Duty)", cnTerm: "桌面显示器支架 承重10公斤 气压弹簧" },
-      { label: "DisplayPort 1.4 DSC Cable", cnTerm: "DP1.4 视频线 8K 240Hz DSC" },
-      { label: "Monitor Light Bar", cnTerm: "屏幕挂灯 非对称光源 智能调光" },
-      { label: "Color Calibrator", cnTerm: "Datacolor SpyderX Pro 校色仪" },
-      { label: "VESA Adapter Plate (if needed)", cnTerm: "VESA 100x100 转换支架" }
-    ],
+    procurement: [ { label: "Monitor Arm (Heavy Duty)", cnTerm: "桌面显示器支架 承重10公斤 气压弹簧" }, { label: "DisplayPort 1.4 DSC Cable", cnTerm: "DP1.4 视频线 8K 240Hz DSC" }, { label: "Monitor Light Bar", cnTerm: "屏幕挂灯 非对称光源 智能调光" }, { label: "Color Calibrator", cnTerm: "Datacolor SpyderX Pro 校色仪" }, { label: "VESA Adapter Plate (if needed)", cnTerm: "VESA 100x100 转换支架" } ],
     softwareConfig: { utility: "ASUS DisplayWidget Center / NVIDIA Control Panel", runtimeDependency: "None (Hardware OSD + GPU driver)", baseLayer: "G-Sync On (Fullscreen & Windowed), 240Hz, 10-bit color (via DSC)", gShiftLayer: "N/A" },
     glidesAndPad: { stockSkates: "VESA 100x100 Mount & Sturdy Ergonomic Stand", recommendedSkates: "Amazon Basics Premium Single Monitor Stand (Lift Engine) or Ergotron LX", recommendedPadType: "Desk Clamp Grommet Mount (clean look, no base on desk)" },
     lifespanEstimates: { chassisLife: "6 – 8 years (IPS panel aging is gradual, backlight LEDs rated 30,000+ hrs)", stockSwitchesLife: "N/A", moddedSwitchesLife: "N/A", limitingFactor: "IPS glow permanence, potential G-Sync module capacitor degradation, or firmware bugs if not updated." },
@@ -29,7 +18,7 @@ window.DESK_MONITORS = [
   },
   {
     id: "lg-27gr95qe", category: "monitors", name: "UltraGear 27GR95QE-B", brand: "LG", status: "Wishlist", isTopPick: false,
-    topPickBadge: "OLED Upgrade Candidate", price: "$799 - $999",
+    topPickBadge: "OLED Upgrade Candidate", price: "$799 - $999", suggestRating: 8.0,
     purchaseUrl: "https://www.lg.com/us/monitors/lg-27gr95qe-b-gaming-monitor",
     tags: ["OLED", "240Hz", "0.03ms", "1440p", "G-Sync", "HDMI 2.1"],
     summary: "Future upgrade target: 27-inch 1440p OLED gaming monitor with true 0.03ms response time, per-pixel dimming, and HDMI 2.1 for console support. Offers infinite contrast ratio and stunning motion clarity.",
@@ -46,7 +35,7 @@ window.DESK_MONITORS = [
   },
   {
     id: "gigabyte-m27q", category: "monitors", name: "M27Q (Rev 2.0)", brand: "Gigabyte", status: "Wishlist", isTopPick: true,
-    topPickBadge: "Best Value 1440p 170Hz Gaming Monitor", price: "$269 - $299",
+    topPickBadge: "Best Value 1440p 170Hz Gaming Monitor", price: "$269 - $299", suggestRating: 9.0,
     purchaseUrl: "https://www.gigabyte.com/Monitor/M27Q-rev-20",
     tags: ["1440p", "170Hz", "IPS", "KVM", "USB-C", "Budget"],
     summary: "Excellent value 27-inch 1440p IPS gaming monitor with 170Hz refresh rate, built-in KVM switch, and USB-C connectivity. Covers 95% DCI-P3 for vibrant colors at a budget price.",
@@ -63,7 +52,7 @@ window.DESK_MONITORS = [
   },
   {
     id: "aoc-24g2", category: "monitors", name: "24G2", brand: "AOC", status: "Wishlist",
-    topPickBadge: "Best Budget 144Hz 1080p Gaming", price: "$179",
+    topPickBadge: "Best Budget 144Hz 1080p Gaming", price: "$179", suggestRating: 8.8,
     purchaseUrl: "https://aoc.com/us/gaming/products/monitors/24g2",
     tags: ["1080p", "144Hz", "IPS", "Budget", "FreeSync", "1ms"],
     summary: "The entry‑level 144Hz king. 24‑inch IPS panel with 1ms MPRT, FreeSync Premium, and surprisingly good color accuracy for under $180. Ideal for competitive gaming on a tight budget.",
@@ -79,7 +68,7 @@ window.DESK_MONITORS = [
   },
   {
     id: "lg-27gp850", category: "monitors", name: "27GP850‑B", brand: "LG", status: "Wishlist",
-    topPickBadge: "Best 1440p High‑Refresh Value (Nano IPS)", price: "$349",
+    topPickBadge: "Best 1440p High‑Refresh Value (Nano IPS)", price: "$349", suggestRating: 9.0,
     purchaseUrl: "https://www.lg.com/us/monitors/lg-27gp850-b-gaming-monitor",
     tags: ["1440p", "180Hz", "Nano IPS", "1ms", "G‑Sync Compatible"],
     summary: "Incredible 27‑inch Nano IPS with 180Hz overclock, 1ms GtG, and 98% DCI‑P3 coverage. The ideal middle ground between speed and color at a great price.",
@@ -95,7 +84,7 @@ window.DESK_MONITORS = [
   },
   {
     id: "samsung-odyssey-g5-27", category: "monitors", name: "Odyssey G5 27\" (G50A)", brand: "Samsung", status: "Wishlist",
-    topPickBadge: "Best budget 1440p 165Hz", price: "$249",
+    topPickBadge: "Best budget 1440p 165Hz", price: "$249", suggestRating: 8.5,
     purchaseUrl: "https://www.samsung.com/us/computing/monitors/gaming/27--odyssey-g5-g50a-gaming-monitor-ls27ag500pnxza/",
     tags: ["1440p", "165Hz", "IPS", "FreeSync Premium", "Budget"],
     summary: "Solid 27‑inch 1440p IPS panel with 165Hz, FreeSync Premium, and low input lag at a very attractive price. Great entry into 1440p high refresh.",
@@ -111,7 +100,7 @@ window.DESK_MONITORS = [
   },
   {
     id: "gigabyte-m28u", category: "monitors", name: "M28U", brand: "Gigabyte", status: "Wishlist",
-    topPickBadge: "Best value 4K 144Hz gaming", price: "$499",
+    topPickBadge: "Best value 4K 144Hz gaming", price: "$499", suggestRating: 8.8,
     purchaseUrl: "https://www.gigabyte.com/Monitor/M28U",
     tags: ["4K", "144Hz", "IPS", "HDMI 2.1", "KVM", "USB‑C"],
     summary: "The sweet spot for 4K gaming: 28‑inch IPS, 144Hz, HDMI 2.1 for consoles, and a built‑in KVM. Under $500 it’s a steal.",
@@ -127,7 +116,7 @@ window.DESK_MONITORS = [
   },
   {
     id: "asus-vg259qm", category: "monitors", name: "TUF VG259QM", brand: "ASUS", status: "Wishlist",
-    topPickBadge: "Best 280Hz 1080p esports monitor", price: "$249",
+    topPickBadge: "Best 280Hz 1080p esports monitor", price: "$249", suggestRating: 9.2,
     purchaseUrl: "https://www.asus.com/displays-desktops/monitors/tuf-gaming/tuf-gaming-vg259qm/",
     tags: ["1080p", "280Hz", "IPS", "ELMB SYNC", "Esports"],
     summary: "A true esports weapon: 24.5‑inch 1080p IPS, overclockable to 280Hz, with ELMB SYNC (motion blur reduction while adaptive sync is active). Unbeatable for competitive shooters.",
@@ -143,7 +132,7 @@ window.DESK_MONITORS = [
   },
   {
     id: "acer-xv252q", category: "monitors", name: "Nitro XV252Q F", brand: "Acer", status: "Wishlist",
-    topPickBadge: "Best Budget 240Hz 1080p for Competitive Esports", price: "$199",
+    topPickBadge: "Best Budget 240Hz 1080p for Competitive Esports", price: "$199", suggestRating: 9.0,
     purchaseUrl: "https://www.acer.com/us-en/predator/monitors/nitro-xv2/pdp/UM.KX2AA.F01",
     tags: ["1080p", "240Hz", "IPS", "FreeSync Premium", "Budget"],
     summary: "One of the cheapest 240Hz IPS monitors on the market. 24.5‑inch with 1ms response, FreeSync Premium, and a fully ergonomic stand. Perfect for competitive players who need high refresh without the premium price tag.",
@@ -159,7 +148,7 @@ window.DESK_MONITORS = [
   },
   {
     id: "gigabyte-g34wqc", category: "monitors", name: "G34WQC", brand: "Gigabyte", status: "Wishlist",
-    topPickBadge: "Best Value Ultrawide 1440p 144Hz", price: "$349",
+    topPickBadge: "Best Value Ultrawide 1440p 144Hz", price: "$349", suggestRating: 8.5,
     purchaseUrl: "https://www.gigabyte.com/Monitor/G34WQC",
     tags: ["Ultrawide", "1440p", "144Hz", "VA", "FreeSync Premium", "Budget"],
     summary: "The most affordable 34‑inch ultrawide 1440p 144Hz on the market. Immersive 1500R curve, deep VA contrast, and FreeSync Premium make it perfect for sim racing, RPGs, and productivity (side‑by‑side windows).",
