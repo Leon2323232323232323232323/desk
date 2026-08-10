@@ -637,5 +637,71 @@ window.DESK_MICE = [
     },
     pros: ["Incredibly comfortable for large hands", "Long battery life", "Light for its size", "Beautiful RGB implementation"],
     cons: ["Optical switches can't be modded", "Software (Swarm) can be finicky"]
+  },
+    {
+    id: "basilisk-v3-pro", category: "mice", name: "Basilisk V3 Pro", brand: "Razer", status: "Wishlist",
+    topPickBadge: "Best Wireless Ergonomic Mouse with Infinite Scroll", price: "$159",
+    purchaseUrl: "https://www.razer.com/gaming-mice/razer-basilisk-v3-pro",
+    tags: ["Wireless", "11 Buttons", "Focus Pro 30K", "HyperScroll", "RGB", "90h Battery"],
+    summary: "The premium wireless version of the Basilisk with Razer's HyperScroll tilt wheel (free‑spin & tactile), Focus Pro 30K sensor, and 90‑hour battery. The ultimate G502 competitor with optical switches that never double‑click.",
+    properties: {
+      "Ergonomic Rating": "9.3 / 10", "Grip Style Match": "Palm / Claw", "Wrist Strain Index": "Low (Thumb Rest Wing)",
+      "Pinky Support": "Flared Right Side", "Weight Profile": "112g",
+      "Sensor & Speed": "Focus Pro 30K | 1000Hz (4000Hz with dongle)", "Battery Specs": "90h (2.4 GHz) | USB‑C",
+      "Switch Mounting": "Optical Gen‑3 (main clicks), mechanical (side buttons)"
+    },
+    procurement: [
+      { label: "PTFE Skates", cnTerm: "Razer Basilisk V3 Pro 脚贴" },
+      { label: "Grip Tape", cnTerm: "雷蛇 防滑贴 Basilisk" }
+    ],
+    repairability: { score: "4.0 / 10 (Optical + SMD side switches)", screwCount: "4 Screws (Phillips #0 under skates)", fragilePoints: ["Optical main switches cannot be desoldered/replaced with standard mechanical switches", "Side buttons are SMD‑mounted and require precise hot‑air rework"], recommendedIronTemp: "Do not attempt soldering main clicks" },
+    weightBalance: { stockBalance: "Slightly front‑heavy (metal scroll wheel assembly)", moddedBalance: "Center balanced" },
+    softwareConfig: { utility: "Razer Synapse 3", runtimeDependency: "Razer Synapse Service.exe", baseLayer: "13 programmable buttons, HyperScroll toggle, DPI clutch", gShiftLayer: "Razer Hypershift secondary layer" },
+    glidesAndPad: { stockSkates: "White PTFE (good out of box)", recommendedSkates: "Tiger Ice / Corepad Pro", recommendedPadType: "Cloth pad / Hybrid pad" },
+    lifespanEstimates: { chassisLife: "5 - 8 Years (solid build, optical switches eliminate double‑click)", stockSwitchesLife: "Optical switches – no mechanical contact wear (10+ years)", moddedSwitchesLife: "N/A (optical main clicks are permanent)", limitingFactor: "Battery degradation after ~5 years or USB‑C port wear." },
+    stockSwitchesList: [
+      { buttonGroup: "Main Left & Right (M1/M2)", switchModel: "Razer Optical Gen‑3 (70M rated)", lifespan: "70M+ Clicks (optical, no double‑click)", sound: "54 - 56 dB (Crisp, slightly metallic)" },
+      { buttonGroup: "Side Forward & Back (M4/M5)", switchModel: "SMD Tactile (2‑pin)", lifespan: "20M Clicks", sound: "50 dB" },
+      { buttonGroup: "DPI Clutch / Sniper", switchModel: "SMD Tactile (2‑pin)", lifespan: "20M Clicks", sound: "50 dB" },
+      { buttonGroup: "Middle Scroll Click (G3)", switchModel: "Tactile DIP (5.0mm)", lifespan: "10M Clicks", sound: "48 dB" },
+      { buttonGroup: "Scroll Tilts", switchModel: "Tactile DIP (5.0mm)", lifespan: "10M Clicks", sound: "48 dB" }
+    ],
+    modsAndAddons: [
+      { name: "Tiger Ice / Corepad PTFE Skates", difficulty: "Easy", impact: "Improves glide and smoothness." },
+      { name: "Grip Tape Application", difficulty: "Easy", impact: "Enhances grip for sweaty hands during long sessions." },
+      { name: "HyperPolling Dongle (4000Hz)", difficulty: "Easy (purchase separately)", impact: "Boosts polling rate to 4000Hz for ultra‑low latency." }
+    ],
+    ergonomicDetails: {
+      scoreReason: "Scored 9.3/10 for its comfortable ergonomic shape, thumb rest, and HyperScroll wheel that's perfect for both gaming and productivity. The optical switches eliminate any double‑click anxiety. Loses points for being slightly heavier and having non‑replaceable main switches.",
+      specificShapeContour: "130mm x 75mm x 42mm. Ergonomic right‑hand design with a flared thumb rest. The scroll wheel has a clutch mechanism for free‑spin/tactile switching. RGB underglow rings add flair.",
+      comparisonVsCloseCompetitors: "Vs G502 X LIGHTSPEED: Basilisk V3 Pro has a better scroll wheel (HyperScroll vs dual‑mode), more RGB, and a slightly more comfortable thumb rest. Vs G502 LIGHTSPEED (original): Basilisk V3 Pro is the direct modern competitor with optical switches and USB‑C. Vs DeathAdder V3: Basilisk V3 Pro has more buttons and the HyperScroll wheel, but is heavier.",
+      gripCompatibility: "Medium‑to‑Large hands, Palm or Claw grip.",
+      wristAndPosture: "Thumb rest and ergonomic contour reduce wrist strain during long sessions."
+    },
+    pros: [
+      "HyperScroll wheel – toggles between free‑spin and tactile with a button",
+      "Optical switches – zero double‑click issues",
+      "13 programmable buttons with G‑Shift",
+      "Long 90‑hour battery life",
+      "Premium build and RGB underglow"
+    ],
+    cons: [
+      "Optical main switches cannot be replaced or modded",
+      "Heavier than ultralight mice (112g)",
+      "Synapse software is required for full functionality",
+      "Price premium at $159"
+    ],
+    setupNotes: [
+      "HYPERSCROLL: Use the button behind the wheel to toggle modes. Free‑spin is excellent for long documents.",
+      "DPI CLUTCH: The thumb paddle is removable – swap it with the included flat cover if you don't use it.",
+      "4000Hz DONGLE: Purchase the Razer HyperPolling dongle separately for 4000Hz polling.",
+      "CLEANING: The textured rubber side grips can accumulate dirt – wipe with a damp microfiber cloth."
+    ],
+    buttonSwitchMapping: [
+      { buttonGroup: "Main Left & Right Click", recommendedSwitchId: "rog-microswitch-70m", reason: "Optical switches are integrated and cannot be swapped. No replacement recommendation." },
+      { buttonGroup: "Side Buttons (M4/M5)", recommendedSwitchId: "huano-bspd-90deg", reason: "90° bent pin switches required for vertical side PCB. Huano BSPD 80M offers 80M durability." },
+      { buttonGroup: "DPI Clutch / Sniper", recommendedSwitchId: "huano-bspd-90deg", reason: "Same 90° bent pin format. Crisp tactile feel prevents accidental presses." },
+      { buttonGroup: "Middle Scroll Click (G3)", recommendedSwitchId: "kailh-5mm-tactile", reason: "50M click rated 5.0mm Kailh tactile switch clearing scroll wheel cradle." }
+    ]
   }
 ];
