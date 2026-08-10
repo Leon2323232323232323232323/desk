@@ -188,5 +188,25 @@ window.DESK_CHAIRS = [
       { label: "Rollerblade wheels", cnTerm: "办公椅 静音滚轮 橡胶" },
       { label: "Seat cushion (if needed)", cnTerm: "记忆棉 坐垫 办公椅" }
     ]
+  },
+    {
+    id: "colamy-atlas", category: "chairs", name: "Atlas Ergonomic Chair", brand: "Colamy", status: "Wishlist",
+    topPickBadge: "Best Budget Ergonomic Chair with All Adjustments", price: "$249 - $299",
+    purchaseUrl: "https://www.colamy.com/products/colamy-atlas-ergonomic-office-chair",
+    tags: ["Ergonomic", "Mesh", "Adjustable", "Lumbar", "Headrest", "Budget"],
+    summary: "A surprisingly feature‑rich ergonomic chair at a budget price. Includes an adjustable headrest, 4D armrests, seat depth adjustment, and a breathable mesh back. A direct competitor to the Staples Hyken but with more adjustments.",
+    properties: {
+      "Ergonomic Rating": "8.5 / 10", "Weight Capacity": "125 kg (275 lbs)", "Seat Material": "Mesh + foam cushion",
+      "Armrests": "4D (height, depth, width, angle)", "Recline": "90° – 135° (adjustable tension)", "Lumbar Support": "Adjustable (height & depth)",
+      "Warranty": "3 years", "Assembly Difficulty": "Moderate (45 min)"
+    },
+    ergonomicDetails: { scoreReason: "Impressive feature set for the price – headrest, 4D armrests, and seat depth are rare under $300. The mesh back is comfortable for long hours. The seat cushion could be thicker, but it’s acceptable.", specificShapeContour: "High‑back mesh design with a pronounced lumbar curve. The headrest is height‑ and angle‑adjustable.", comparisonVsCloseCompetitors: "Vs Staples Hyken: Atlas adds 4D armrests, seat depth, and a headrest for only $100 more. Vs Autonomous ErgoChair Pro: Atlas is half the price with nearly identical features." },
+    pros: ["Incredible value – 4D armrests, headrest, seat depth under $300", "Breathable mesh back", "Adjustable lumbar (height & depth)", "Good build quality for the price"],
+    cons: ["Seat cushion could be thicker", "Warranty is only 3 years", "Less known brand – long‑term durability unproven", "Assembly can be slightly fiddly"],
+    setupNotes: ["SEAT DEPTH: Adjust to leave 2‑3 fingers between the edge and your knees.", "HEADREST: Set height so the pad touches the back of your head, not your neck.", "UPGRADE: Replace the stock casters with rollerblade wheels for smoother rolling."],
+    procurement: [
+      { label: "Rollerblade wheels", cnTerm: "办公椅 静音滚轮 橡胶" },
+      { label: "Gel seat cushion", cnTerm: "凝胶 坐垫 办公椅 蜂窝" }
+    ]
   }
 ];
