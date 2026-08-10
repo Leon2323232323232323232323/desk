@@ -94,5 +94,48 @@ window.DESK_KEYBOARDS = [
     pros: ["Ergonomic Alice layout reduces strain", "Full aluminium, premium build", "Hot‑swap + QMK/VIA", "Gasket mount for comfortable typing", "Stunning aesthetics"],
     cons: ["Takes 1–2 weeks to adapt to Alice layout", "No wireless option", "Premium price (but justifiable for long‑term ergonomics)"],
     setupNotes: ["ADAPTATION: Spend 1–2 weeks typing slowly to get comfortable with the layout.", "SWITCHES: Tactile switches like Boba U4T complement the ergonomic typing experience.", "WRIST REST: A dedicated Alice wrist rest significantly improves comfort.", "MODS: Add force‑break mod and PE foam to enhance the already great sound."]
+  },
+    {
+    id: "aula-f87-pro", category: "keyboards", name: "F87 Pro", brand: "AULA", status: "Owned", isTopPick: true,
+    topPickBadge: "Best Budget Wireless Mechanical Keyboard with Screen", price: "$59 - $69",
+    purchaseUrl: "https://www.amazon.com/AULA-Mechanical-Keyboard-Bluetooth-Hot-Swappable/dp/B0CZPLDMBJ",
+    tags: ["75%", "Hot‑Swap", "Wireless", "LCD Screen", "Gasket Mount", "Budget"],
+    summary: "Incredible value 75% wireless mechanical keyboard with a built‑in LCD smart screen, gasket mount, hot‑swap PCB, and PBT keycaps. Has a volume knob and USB passthrough. Sounds great stock and costs under $70.",
+    properties: {
+      "Layout": "75% (81 keys)", "Switch Type": "AULA x Huano (Linear / Tactile)", "Hot‑Swappable": "Yes (3‑pin & 5‑pin)",
+      "Connectivity": "2.4 GHz, Bluetooth 5.0, USB‑C", "Keycap Profile": "Cherry‑profile PBT double‑shot",
+      "Weight": "~1.1 kg", "Lighting": "Per‑key RGB (south‑facing)"
+    },
+    switchDetails: {
+      stockSwitches: "AULA x Huano linear (45g) or tactile (55g), pre‑lubed",
+      actuationForce: "45g – 55g",
+      typingFeel: "Gasket mount with PC plate gives a soft, bouncy feel. Pre‑lubed switches are smooth and have a pleasant marbly sound. The LCD screen adds a unique touch without being gimmicky.",
+      modPotential: "Standard 3‑pin/5‑pin hot‑swap. Tape mod and PE foam mod work great. South‑facing LEDs avoid keycap interference."
+    },
+    procurement: [
+      { label: "Switches (Gateron Milky Yellow Pro)", cnTerm: "佳达隆 Milky Yellow Pro 润滑轴" },
+      { label: "Keycaps (PBT XDA profile)", cnTerm: "XDA PBT 键帽 复古" }
+    ],
+    softwareConfig: { utility: "AULA Driver (Windows)", runtimeDependency: "None (hardware controls for screen)", baseLayer: "Fn layer for media, RGB, and screen settings" },
+    lifespanEstimates: { chassisLife: "5+ years (plastic, solid build)", stockSwitchesLife: "50 million keystrokes", limitingFactor: "Battery degradation after 3‑4 years (replaceable)" },
+    ergonomicDetails: { scoreReason: "Compact 75% with a volume knob and screen. Gasket mount reduces typing fatigue. Excellent for both gaming and office work.", specificShapeContour: "Flat profile with adjustable feet. LCD screen is positioned above the arrow keys.", comparisonVsCloseCompetitors: "Vs RK R65: F87 Pro adds an LCD screen and has slightly better stock switches. Vs Keychron V1: F87 Pro is wireless and includes a screen, but lacks QMK/VIA." },
+    pros: [
+      "Unbelievable value – wireless, gasket mount, PBT caps, and an LCD screen for under $70",
+      "Hot‑swap 3‑pin/5‑pin PCB",
+      "Volume knob + USB passthrough",
+      "Decent pre‑lubed switches",
+      "Unique LCD display for time, battery, or custom GIFs"
+    ],
+    cons: [
+      "No QMK/VIA support",
+      "LCD software is Windows‑only",
+      "Plastic case can feel hollow without mods",
+      "Battery life with RGB and screen on is average (~30h)"
+    ],
+    setupNotes: [
+      "SCREEN: Use the AULA driver to upload custom GIFs or monitor system temps.",
+      "WIRELESS: 2.4 GHz dongle is stored under the keyboard – don't lose it.",
+      "MODS: Add PE foam and tape mod for an even deeper sound. Force‑break mod reduces case ping."
+    ]
   }
 ];
