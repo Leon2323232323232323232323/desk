@@ -168,5 +168,25 @@ window.DESK_CHAIRS = [
       { label: "Replacement armrest pads", cnTerm: "Steelcase Leap 扶手 替换 垫" },
       { label: "Hard‑floor casters", cnTerm: "办公椅 静音滚轮 橡胶 替换" }
     ]
+  },
+    {
+    id: "haworth-soji", category: "chairs", name: "Soji", brand: "Haworth", status: "Wishlist",
+    topPickBadge: "Best Premium Ergonomic Chair for Smaller Budgets", price: "$699 - $899",
+    purchaseUrl: "https://www.haworth.com/na/en/products/seating/task-chairs/soji.html",
+    tags: ["Ergonomic", "Mesh", "Adjustable", "Lumbar", "Premium"],
+    summary: "Haworth’s entry‑level ergonomic chair with the same DNA as the legendary Fern. Fully adjustable arms, seat depth, and lumbar tension. Excellent build quality at a more accessible price than the flagship models.",
+    properties: {
+      "Ergonomic Rating": "9.2 / 10", "Weight Capacity": "136 kg (300 lbs)", "Seat Material": "Fabric + foam cushion",
+      "Armrests": "4D (height, depth, width, pivot)", "Recline": "90° – 135° (adjustable tension)", "Lumbar Support": "Adjustable (tension dial)",
+      "Warranty": "12 years", "Assembly Difficulty": "Easy (20 min, arrives mostly assembled)"
+    },
+    ergonomicDetails: { scoreReason: "Excellent ergonomics with a highly adjustable lumbar system and 4D armrests. The mesh back is breathable, and the build quality is typical Haworth – solid. Loses points for a slightly firmer seat than some prefer.", specificShapeContour: "Contoured mesh back with a flexible lumbar zone. The seat has a slight waterfall edge. Compact footprint fits smaller desks.", comparisonVsCloseCompetitors: "Vs Steelcase Leap v2: Soji is lighter, cheaper, and has a more modern aesthetic. Vs Autonomous ErgoChair Pro: Soji has better build quality and a longer warranty." },
+    pros: ["Premium Haworth build quality", "12‑year warranty", "4D armrests and adjustable lumbar", "Breathable mesh back", "Compact and lightweight"],
+    cons: ["Seat cushion is firm – not for plush‑lovers", "No headrest option", "Price still high for budget buyers"],
+    setupNotes: ["LUMBAR: Adjust the tension dial until you feel gentle support. Don't over‑tighten.", "ARMRESTS: The 4D pads can be moved inward for narrow shoulders.", "UPGRADE: Add rollerblade wheels for hard floors."],
+    procurement: [
+      { label: "Rollerblade wheels", cnTerm: "办公椅 静音滚轮 橡胶" },
+      { label: "Seat cushion (if needed)", cnTerm: "记忆棉 坐垫 办公椅" }
+    ]
   }
 ];
