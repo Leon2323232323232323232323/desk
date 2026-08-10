@@ -161,5 +161,49 @@ window.DESK_MONITORS = [
     pros: ["3440x1440 ultrawide immersion at a bargain price", "144Hz, FreeSync Premium", "VA panel delivers deep blacks and good contrast", "Height/tilt adjustable stand"],
     cons: ["VA panel has slight black smearing", "No USB‑C or KVM", "Stand footprint is large"],
     setupNotes: ["OVERDRIVE: Set to 'Balanced' – 'Speed' introduces overshoot.", "COLOR: Use sRGB mode for accurate work; FPS mode for gaming.", "MOUNT: Monitor is heavy (8.2 kg) – use a heavy‑duty arm."]
+  },
+    {
+    id: "aoc-q27g4x", category: "monitors", name: "Q27G4X", brand: "AOC", status: "Wishlist",
+    topPickBadge: "Best Value 1440p 180Hz IPS Gaming Monitor", price: "$199 - $229",
+    purchaseUrl: "https://aoc.com/us/gaming/products/monitors/q27g4x",
+    tags: ["1440p", "180Hz", "IPS", "1ms", "FreeSync", "Budget"],
+    summary: "A standout budget 27‑inch 1440p IPS gaming monitor with 180Hz refresh rate, 1ms GtG response, and excellent color accuracy (100% sRGB). One of the best value monitors for competitive gaming and productivity at under $230.",
+    properties: {
+      "Screen Size": "27‑inch Flat", "Resolution": "2560 x 1440 (QHD)", "Refresh Rate": "180Hz", "Response Time": "1ms (GtG)",
+      "Panel Technology": "IPS", "Color Gamut": "100% sRGB / 90% DCI‑P3", "HDR Support": "HDR10 (software)",
+      "VESA Mount": "100 x 100 mm", "Connectivity": "DisplayPort 1.4, HDMI 2.0 x2", "Weight with Stand": "5.2 kg (11.5 lbs)"
+    },
+    panelDetails: {
+      panelTech: "IPS (BOE MV270QHM‑NF1)", colorGamut: "100% sRGB / 90% DCI‑P3", deltaE: "~2.0 (factory calibrated)",
+      osdPreset: "Game Mode: FPS, Overdrive: Medium, Shadow Control: 50, Color Temp: User",
+      iccProfile: "RTINGS ICC profile available. Good out‑of‑box accuracy for sRGB work."
+    },
+    procurement: [
+      { label: "Monitor Arm", cnTerm: "显示器支架 气压弹簧 5公斤" },
+      { label: "DisplayPort 1.4 Cable", cnTerm: "DP1.4 视频线 2米" }
+    ],
+    softwareConfig: { utility: "AOC G‑Menu", runtimeDependency: "None (standalone .exe)" },
+    glidesAndPad: { stockSkates: "Height/Tilt/Swivel stand + VESA", recommendedSkates: "Single gas spring arm", recommendedPadType: "Desk clamp" },
+    lifespanEstimates: { chassisLife: "5 – 7 years", limitingFactor: "Backlight LED aging or capacitor wear" },
+    ergonomicDetails: { scoreReason: "8/10 – Fully adjustable stand (height, tilt, swivel) is rare at this price. 27″ 1440p is the sweet spot for both gaming and productivity.", specificShapeContour: "Thin 3‑sided frameless design with a subtle red accent. Minimalist aesthetic fits any setup.", comparisonVsCloseCompetitors: "Vs Gigabyte M27Q: AOC Q27G4X is $70 cheaper with a faster 180Hz panel and similar color coverage. Vs LG 27GP850: AOC is nearly half the price with only a slight loss in color volume (90% vs 98% DCI‑P3). Vs Samsung Odyssey G5: AOC has a better stand and faster response times." },
+    pros: [
+      "Outstanding value – 1440p 180Hz IPS at under $230",
+      "Fully ergonomic stand (height, tilt, swivel) included",
+      "Good color accuracy out of the box (100% sRGB)",
+      "Fast 1ms GtG response time",
+      "FreeSync Premium + G‑Sync Compatible"
+    ],
+    cons: [
+      "Contrast ratio is typical IPS (~1000:1)",
+      "No USB‑C or built‑in speakers",
+      "HDR is basic (no local dimming)",
+      "Plastic build quality is decent but not premium"
+    ],
+    setupNotes: [
+      "OVERDRIVE: Set to 'Medium' for best motion clarity. 'Strong' introduces minor overshoot.",
+      "COLOR: Use the 'User' color temp and adjust RGB to your preference. sRGB mode is available but locks brightness.",
+      "FREESYNC: Enable in OSD and activate G‑Sync in NVIDIA Control Panel for tear‑free gaming.",
+      "MOUNT: VESA mount ready – an arm is recommended to reclaim desk space."
+    ]
   }
 ];
